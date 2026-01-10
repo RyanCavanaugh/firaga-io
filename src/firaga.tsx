@@ -47,6 +47,7 @@ const DefaultAppProps: AppProps = {
     ui: {
         isUploadOpen: false,
         isPrintOpen: false,
+        is3DExportOpen: false,
         isWelcomeOpen: true,
         showLegend: false,
         showSettings: false,
