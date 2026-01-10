@@ -66,11 +66,18 @@ export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
     nudgeGrid: boolean;
 };
 
+export type Export3DProps = {
+    format: "3mf" | "openscad-masks";
+    pixelHeight: number;
+    pixelSize: number;
+};
+
 export type AppProps = {
     material: MaterialProps;
     print: PrintProps;
     display: DisplayProps;
     image: ImageProps;
+    export3d: Export3DProps;
     source: {
         uri: string;
         displayName: string;
@@ -80,6 +87,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        is3DExportOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
