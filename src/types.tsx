@@ -80,6 +80,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        is3dOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
