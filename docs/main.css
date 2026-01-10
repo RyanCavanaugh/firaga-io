@@ -661,6 +661,33 @@ div.print-dialog img.pdf-logo {
     vertical-align: middle;
 }
 
+div.print-dialog div.dimensions-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    padding: 0.5em;
+}
+
+div.print-dialog div.dimensions-inputs label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+div.print-dialog div.dimensions-inputs input[type="number"] {
+    width: 80px;
+    padding: 0.3em;
+    font-size: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+div.print-dialog span.format-icon {
+    font-size: 48px;
+    line-height: 60px;
+}
+
 label.download-button-label {
     padding: 3px;
     margin-left: 5px;
