@@ -39,6 +39,12 @@ const DefaultAppProps: AppProps = {
         imageSize: "actual",
         breakStrategy: "page"
     },
+    threeD: {
+        format: "3mf",
+        pixelWidth: 5.0,
+        pixelHeight: 5.0,
+        pixelDepth: 2.5
+    },
     source: {
         displayName: galleryStorage.current[0][0],
         uri: galleryStorage.current[0][1],
@@ -47,6 +53,7 @@ const DefaultAppProps: AppProps = {
     ui: {
         isUploadOpen: false,
         isPrintOpen: false,
+        is3DOpen: false,
         isWelcomeOpen: true,
         showLegend: false,
         showSettings: false,
