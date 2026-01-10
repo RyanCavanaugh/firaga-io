@@ -2,6 +2,7 @@ import * as preact from 'preact';
 import { ColorEntry } from './color-data';
 import { PrintSettings } from './pdf-generator';
 import { RadioSettings } from "./utils";
+import { ThreeDFormat } from './3d-types';
 
 declare global {
     export interface Element {
@@ -66,9 +67,16 @@ export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
     nudgeGrid: boolean;
 };
 
+export type ThreeDPrintProps = {
+    format: ThreeDFormat;
+    height: number;
+    pixelSize: number;
+};
+
 export type AppProps = {
     material: MaterialProps;
     print: PrintProps;
+    threeDPrint: ThreeDPrintProps;
     display: DisplayProps;
     image: ImageProps;
     source: {
@@ -80,6 +88,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        is3DPrintOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
