@@ -630,6 +630,29 @@ div.print-dialog span.size-size {
     line-height: 200%;
 }
 
+div.print-dialog div.dimension-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+div.print-dialog div.dimension-controls label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.print-dialog div.dimension-controls input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+div.print-dialog span.format-icon {
+    font-size: 30px;
+}
+
 div.print-dialog div.print-buttons {
     display: flex;
     flex-direction: row;
