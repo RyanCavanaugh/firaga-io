@@ -23,6 +23,7 @@
     "rgb-hsv": "^1.0.0"
   },
   "devDependencies": {
+    "@esbuild/win32-x64": "^0.27.2",
     "@types/blob-stream": "^0.1.30",
     "@types/color-convert": "^2.0.0",
     "@types/color-diff": "^1.2.0",
