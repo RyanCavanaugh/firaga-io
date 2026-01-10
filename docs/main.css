@@ -661,6 +661,35 @@ div.print-dialog img.pdf-logo {
     vertical-align: middle;
 }
 
+/* 3D Dialog specific styles */
+div.print-dialog div.dimension-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+div.print-dialog label.dimension-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 90%;
+}
+
+div.print-dialog input.dimension-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 100%;
+}
+
+div.print-dialog span.format-icon {
+    font-size: 48px;
+    line-height: 60px;
+}
+
 label.download-button-label {
     padding: 3px;
     margin-left: 5px;
