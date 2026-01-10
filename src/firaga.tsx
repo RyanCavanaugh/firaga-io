@@ -39,6 +39,11 @@ const DefaultAppProps: AppProps = {
         imageSize: "actual",
         breakStrategy: "page"
     },
+    threeDModel: {
+        format: "3mf",
+        height: 2,
+        baseHeight: 1
+    },
     source: {
         displayName: galleryStorage.current[0][0],
         uri: galleryStorage.current[0][1],
@@ -47,6 +52,7 @@ const DefaultAppProps: AppProps = {
     ui: {
         isUploadOpen: false,
         isPrintOpen: false,
+        is3DOpen: false,
         isWelcomeOpen: true,
         showLegend: false,
         showSettings: false,
@@ -62,6 +68,13 @@ window.addEventListener("DOMContentLoaded", function () {
         props = DefaultAppProps;
     } else {
         props = JSON.parse(s);
+        // Ensure new properties exist for backwards compatibility
+        if (!props.threeDModel) {
+            props.threeDModel = DefaultAppProps.threeDModel;
+        }
+        if (props.ui && props.ui.is3DOpen === undefined) {
+            props.ui.is3DOpen = false;
+        }
     }
     try {
         createApp(props, galleryStorage, document.body);
