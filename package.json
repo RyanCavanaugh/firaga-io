@@ -18,6 +18,7 @@
     "file-saver": "^2.0.5",
     "hsv-rgb": "^1.0.0",
     "jspdf": "^2.3.1",
+    "jszip": "^3.10.1",
     "pdfkit": "^0.12.3",
     "preact": "^10.5.13",
     "rgb-hsv": "^1.0.0"
@@ -27,6 +28,7 @@
     "@types/color-convert": "^2.0.0",
     "@types/color-diff": "^1.2.0",
     "@types/file-saver": "^2.0.2",
+    "@types/jszip": "^3.4.0",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "esbuild": "^0.11.23",
