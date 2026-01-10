@@ -1,5 +1,11 @@
 (() => {
+  var __create = Object.create;
   var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
   var __esm = (fn, res) => function __init() {
     return fn && (res = (0, fn[Object.keys(fn)[0]])(fn = 0)), res;
   };
@@ -10,66 +16,73 @@
     for (var name in all)
       __defProp(target, name, {get: all[name], enumerable: true});
   };
+  var __reExport = (target, module, desc) => {
+    if (module && typeof module === "object" || typeof module === "function") {
+      for (let key of __getOwnPropNames(module))
+        if (!__hasOwnProp.call(target, key) && key !== "default")
+          __defProp(target, key, {get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable});
+    }
+    return target;
+  };
+  var __toModule = (module) => {
+    return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? {get: () => module.default, enumerable: true} : {value: module, enumerable: true})), module);
+  };
 
   // node_modules/preact/dist/preact.module.js
   var preact_module_exports = {};
   __export(preact_module_exports, {
-    Component: () => p,
-    Fragment: () => y,
-    cloneElement: () => S,
-    createContext: () => q,
-    createElement: () => a,
-    createRef: () => h,
-    h: () => a,
-    hydrate: () => O,
-    isValidElement: () => l,
-    options: () => n,
-    render: () => N,
-    toChildArray: () => w
+    Component: () => x,
+    Fragment: () => k,
+    cloneElement: () => K,
+    createContext: () => Q,
+    createElement: () => _,
+    createRef: () => b,
+    h: () => _,
+    hydrate: () => J,
+    isValidElement: () => t,
+    options: () => l,
+    render: () => G,
+    toChildArray: () => H
   });
-  function c(n2, l3) {
+  function w(n2, l3) {
     for (var u3 in l3)
       n2[u3] = l3[u3];
     return n2;
   }
-  function s(n2) {
-    var l3 = n2.parentNode;
-    l3 && l3.removeChild(n2);
+  function g(n2) {
+    n2 && n2.parentNode && n2.parentNode.removeChild(n2);
   }
-  function a(n2, l3, u3) {
-    var i3, t3, o3, r3 = arguments, f3 = {};
-    for (o3 in l3)
-      o3 == "key" ? i3 = l3[o3] : o3 == "ref" ? t3 = l3[o3] : f3[o3] = l3[o3];
-    if (arguments.length > 3)
-      for (u3 = [u3], o3 = 3; o3 < arguments.length; o3++)
-        u3.push(r3[o3]);
-    if (u3 != null && (f3.children = u3), typeof n2 == "function" && n2.defaultProps != null)
-      for (o3 in n2.defaultProps)
-        f3[o3] === void 0 && (f3[o3] = n2.defaultProps[o3]);
-    return v(n2, f3, i3, t3, null);
+  function _(l3, u3, t3) {
+    var i3, o3, r3, e3 = {};
+    for (r3 in u3)
+      r3 == "key" ? i3 = u3[r3] : r3 == "ref" ? o3 = u3[r3] : e3[r3] = u3[r3];
+    if (arguments.length > 2 && (e3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), typeof l3 == "function" && l3.defaultProps != null)
+      for (r3 in l3.defaultProps)
+        e3[r3] === void 0 && (e3[r3] = l3.defaultProps[r3]);
+    return m(l3, e3, i3, o3, null);
   }
-  function v(l3, u3, i3, t3, o3) {
-    var r3 = {type: l3, props: u3, key: i3, ref: t3, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: o3 == null ? ++n.__v : o3};
-    return n.vnode != null && n.vnode(r3), r3;
+  function m(n2, t3, i3, o3, r3) {
+    var e3 = {type: n2, props: t3, key: i3, ref: o3, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: r3 == null ? ++u : r3, __i: -1, __u: 0};
+    return r3 == null && l.vnode != null && l.vnode(e3), e3;
   }
-  function h() {
+  function b() {
     return {current: null};
   }
-  function y(n2) {
+  function k(n2) {
     return n2.children;
   }
-  function p(n2, l3) {
+  function x(n2, l3) {
     this.props = n2, this.context = l3;
   }
-  function d(n2, l3) {
+  function S(n2, l3) {
     if (l3 == null)
-      return n2.__ ? d(n2.__, n2.__.__k.indexOf(n2) + 1) : null;
+      return n2.__ ? S(n2.__, n2.__i + 1) : null;
     for (var u3; l3 < n2.__k.length; l3++)
       if ((u3 = n2.__k[l3]) != null && u3.__e != null)
         return u3.__e;
-    return typeof n2.type == "function" ? d(n2) : null;
+    return typeof n2.type == "function" ? S(n2) : null;
   }
-  function _(n2) {
+  function C(n2) {
     var l3, u3;
     if ((n2 = n2.__) != null && n2.__c != null) {
       for (n2.__e = n2.__c.base = null, l3 = 0; l3 < n2.__k.length; l3++)
@@ -77,271 +90,308 @@
           n2.__e = n2.__c.base = u3.__e;
           break;
         }
-      return _(n2);
+      return C(n2);
     }
   }
-  function k(l3) {
-    (!l3.__d && (l3.__d = true) && u.push(l3) && !b.__r++ || t !== n.debounceRendering) && ((t = n.debounceRendering) || i)(b);
+  function M(n2) {
+    (!n2.__d && (n2.__d = true) && i.push(n2) && !$.__r++ || o != l.debounceRendering) && ((o = l.debounceRendering) || r)($);
   }
-  function b() {
-    for (var n2; b.__r = u.length; )
-      n2 = u.sort(function(n3, l3) {
-        return n3.__v.__b - l3.__v.__b;
-      }), u = [], n2.some(function(n3) {
-        var l3, u3, i3, t3, o3, r3;
-        n3.__d && (o3 = (t3 = (l3 = n3).__v).__e, (r3 = l3.__P) && (u3 = [], (i3 = c({}, t3)).__v = t3.__v + 1, I(r3, t3, i3, l3.__n, r3.ownerSVGElement !== void 0, t3.__h != null ? [o3] : null, u3, o3 == null ? d(t3) : o3, t3.__h), T(u3, t3), t3.__e != o3 && _(t3)));
-      });
+  function $() {
+    for (var n2, u3, t3, o3, r3, f3, c3, s3 = 1; i.length; )
+      i.length > s3 && i.sort(e), n2 = i.shift(), s3 = i.length, n2.__d && (t3 = void 0, o3 = void 0, r3 = (o3 = (u3 = n2).__v).__e, f3 = [], c3 = [], u3.__P && ((t3 = w({}, o3)).__v = o3.__v + 1, l.vnode && l.vnode(t3), O(u3.__P, t3, o3, u3.__n, u3.__P.namespaceURI, 32 & o3.__u ? [r3] : null, f3, r3 == null ? S(o3) : r3, !!(32 & o3.__u), c3), t3.__v = o3.__v, t3.__.__k[t3.__i] = t3, N(f3, t3, c3), o3.__e = o3.__ = null, t3.__e != r3 && C(t3)));
+    $.__r = 0;
   }
-  function m(n2, l3, u3, i3, t3, o3, e3, c3, s3, a3) {
-    var h3, p3, _2, k3, b3, m3, w3, A2 = i3 && i3.__k || f, P2 = A2.length;
-    for (u3.__k = [], h3 = 0; h3 < l3.length; h3++)
-      if ((k3 = u3.__k[h3] = (k3 = l3[h3]) == null || typeof k3 == "boolean" ? null : typeof k3 == "string" || typeof k3 == "number" || typeof k3 == "bigint" ? v(null, k3, null, null, k3) : Array.isArray(k3) ? v(y, {children: k3}, null, null, null) : k3.__b > 0 ? v(k3.type, k3.props, k3.key, null, k3.__v) : k3) != null) {
-        if (k3.__ = u3, k3.__b = u3.__b + 1, (_2 = A2[h3]) === null || _2 && k3.key == _2.key && k3.type === _2.type)
-          A2[h3] = void 0;
-        else
-          for (p3 = 0; p3 < P2; p3++) {
-            if ((_2 = A2[p3]) && k3.key == _2.key && k3.type === _2.type) {
-              A2[p3] = void 0;
-              break;
-            }
-            _2 = null;
-          }
-        I(n2, k3, _2 = _2 || r, t3, o3, e3, c3, s3, a3), b3 = k3.__e, (p3 = k3.ref) && _2.ref != p3 && (w3 || (w3 = []), _2.ref && w3.push(_2.ref, null, k3), w3.push(p3, k3.__c || b3, k3)), b3 != null ? (m3 == null && (m3 = b3), typeof k3.type == "function" && k3.__k != null && k3.__k === _2.__k ? k3.__d = s3 = g(k3, s3, n2) : s3 = x(n2, k3, _2, A2, b3, s3), a3 || u3.type !== "option" ? typeof u3.type == "function" && (u3.__d = s3) : n2.value = "") : s3 && _2.__e == s3 && s3.parentNode != n2 && (s3 = d(_2));
-      }
-    for (u3.__e = m3, h3 = P2; h3--; )
-      A2[h3] != null && (typeof u3.type == "function" && A2[h3].__e != null && A2[h3].__e == u3.__d && (u3.__d = d(i3, h3 + 1)), L(A2[h3], A2[h3]));
-    if (w3)
-      for (h3 = 0; h3 < w3.length; h3++)
-        z(w3[h3], w3[++h3], w3[++h3]);
+  function I(n2, l3, u3, t3, i3, o3, r3, e3, f3, c3, s3) {
+    var a3, h3, y3, d3, w3, g2, _3, m3 = t3 && t3.__k || v, b2 = l3.length;
+    for (f3 = P(u3, l3, m3, f3, b2), a3 = 0; a3 < b2; a3++)
+      (y3 = u3.__k[a3]) != null && (h3 = y3.__i == -1 ? p : m3[y3.__i] || p, y3.__i = a3, g2 = O(n2, y3, h3, i3, o3, r3, e3, f3, c3, s3), d3 = y3.__e, y3.ref && h3.ref != y3.ref && (h3.ref && B(h3.ref, null, y3), s3.push(y3.ref, y3.__c || d3, y3)), w3 == null && d3 != null && (w3 = d3), (_3 = !!(4 & y3.__u)) || h3.__k === y3.__k ? f3 = A(y3, f3, n2, _3) : typeof y3.type == "function" && g2 !== void 0 ? f3 = g2 : d3 && (f3 = d3.nextSibling), y3.__u &= -7);
+    return u3.__e = w3, f3;
   }
-  function g(n2, l3, u3) {
-    var i3, t3;
-    for (i3 = 0; i3 < n2.__k.length; i3++)
-      (t3 = n2.__k[i3]) && (t3.__ = n2, l3 = typeof t3.type == "function" ? g(t3, l3, u3) : x(u3, t3, t3, n2.__k, t3.__e, l3));
+  function P(n2, l3, u3, t3, i3) {
+    var o3, r3, e3, f3, c3, s3 = u3.length, a3 = s3, h3 = 0;
+    for (n2.__k = new Array(i3), o3 = 0; o3 < i3; o3++)
+      (r3 = l3[o3]) != null && typeof r3 != "boolean" && typeof r3 != "function" ? (typeof r3 == "string" || typeof r3 == "number" || typeof r3 == "bigint" || r3.constructor == String ? r3 = n2.__k[o3] = m(null, r3, null, null, null) : d(r3) ? r3 = n2.__k[o3] = m(k, {children: r3}, null, null, null) : r3.constructor === void 0 && r3.__b > 0 ? r3 = n2.__k[o3] = m(r3.type, r3.props, r3.key, r3.ref ? r3.ref : null, r3.__v) : n2.__k[o3] = r3, f3 = o3 + h3, r3.__ = n2, r3.__b = n2.__b + 1, e3 = null, (c3 = r3.__i = L(r3, u3, f3, a3)) != -1 && (a3--, (e3 = u3[c3]) && (e3.__u |= 2)), e3 == null || e3.__v == null ? (c3 == -1 && (i3 > s3 ? h3-- : i3 < s3 && h3++), typeof r3.type != "function" && (r3.__u |= 4)) : c3 != f3 && (c3 == f3 - 1 ? h3-- : c3 == f3 + 1 ? h3++ : (c3 > f3 ? h3-- : h3++, r3.__u |= 4))) : n2.__k[o3] = null;
+    if (a3)
+      for (o3 = 0; o3 < s3; o3++)
+        (e3 = u3[o3]) != null && (2 & e3.__u) == 0 && (e3.__e == t3 && (t3 = S(e3)), D(e3, e3));
+    return t3;
+  }
+  function A(n2, l3, u3, t3) {
+    var i3, o3;
+    if (typeof n2.type == "function") {
+      for (i3 = n2.__k, o3 = 0; i3 && o3 < i3.length; o3++)
+        i3[o3] && (i3[o3].__ = n2, l3 = A(i3[o3], l3, u3, t3));
+      return l3;
+    }
+    n2.__e != l3 && (t3 && (l3 && n2.type && !l3.parentNode && (l3 = S(n2)), u3.insertBefore(n2.__e, l3 || null)), l3 = n2.__e);
+    do {
+      l3 = l3 && l3.nextSibling;
+    } while (l3 != null && l3.nodeType == 8);
     return l3;
   }
-  function w(n2, l3) {
-    return l3 = l3 || [], n2 == null || typeof n2 == "boolean" || (Array.isArray(n2) ? n2.some(function(n3) {
-      w(n3, l3);
+  function H(n2, l3) {
+    return l3 = l3 || [], n2 == null || typeof n2 == "boolean" || (d(n2) ? n2.some(function(n3) {
+      H(n3, l3);
     }) : l3.push(n2)), l3;
   }
-  function x(n2, l3, u3, i3, t3, o3) {
-    var r3, f3, e3;
-    if (l3.__d !== void 0)
-      r3 = l3.__d, l3.__d = void 0;
-    else if (u3 == null || t3 != o3 || t3.parentNode == null)
-      n:
-        if (o3 == null || o3.parentNode !== n2)
-          n2.appendChild(t3), r3 = null;
-        else {
-          for (f3 = o3, e3 = 0; (f3 = f3.nextSibling) && e3 < i3.length; e3 += 2)
-            if (f3 == t3)
-              break n;
-          n2.insertBefore(t3, o3), r3 = o3;
-        }
-    return r3 !== void 0 ? r3 : t3.nextSibling;
+  function L(n2, l3, u3, t3) {
+    var i3, o3, r3, e3 = n2.key, f3 = n2.type, c3 = l3[u3], s3 = c3 != null && (2 & c3.__u) == 0;
+    if (c3 === null && e3 == null || s3 && e3 == c3.key && f3 == c3.type)
+      return u3;
+    if (t3 > (s3 ? 1 : 0)) {
+      for (i3 = u3 - 1, o3 = u3 + 1; i3 >= 0 || o3 < l3.length; )
+        if ((c3 = l3[r3 = i3 >= 0 ? i3-- : o3++]) != null && (2 & c3.__u) == 0 && e3 == c3.key && f3 == c3.type)
+          return r3;
+    }
+    return -1;
   }
-  function A(n2, l3, u3, i3, t3) {
-    var o3;
-    for (o3 in u3)
-      o3 === "children" || o3 === "key" || o3 in l3 || C(n2, o3, null, u3[o3], i3);
-    for (o3 in l3)
-      t3 && typeof l3[o3] != "function" || o3 === "children" || o3 === "key" || o3 === "value" || o3 === "checked" || u3[o3] === l3[o3] || C(n2, o3, l3[o3], u3[o3], i3);
+  function T(n2, l3, u3) {
+    l3[0] == "-" ? n2.setProperty(l3, u3 == null ? "" : u3) : n2[l3] = u3 == null ? "" : typeof u3 != "number" || y.test(l3) ? u3 : u3 + "px";
   }
-  function P(n2, l3, u3) {
-    l3[0] === "-" ? n2.setProperty(l3, u3) : n2[l3] = u3 == null ? "" : typeof u3 != "number" || e.test(l3) ? u3 : u3 + "px";
-  }
-  function C(n2, l3, u3, i3, t3) {
-    var o3;
+  function j(n2, l3, u3, t3, i3) {
+    var o3, r3;
     n:
-      if (l3 === "style")
+      if (l3 == "style")
         if (typeof u3 == "string")
           n2.style.cssText = u3;
         else {
-          if (typeof i3 == "string" && (n2.style.cssText = i3 = ""), i3)
-            for (l3 in i3)
-              u3 && l3 in u3 || P(n2.style, l3, "");
+          if (typeof t3 == "string" && (n2.style.cssText = t3 = ""), t3)
+            for (l3 in t3)
+              u3 && l3 in u3 || T(n2.style, l3, "");
           if (u3)
             for (l3 in u3)
-              i3 && u3[l3] === i3[l3] || P(n2.style, l3, u3[l3]);
+              t3 && u3[l3] == t3[l3] || T(n2.style, l3, u3[l3]);
         }
-      else if (l3[0] === "o" && l3[1] === "n")
-        o3 = l3 !== (l3 = l3.replace(/Capture$/, "")), l3 = l3.toLowerCase() in n2 ? l3.toLowerCase().slice(2) : l3.slice(2), n2.l || (n2.l = {}), n2.l[l3 + o3] = u3, u3 ? i3 || n2.addEventListener(l3, o3 ? H : $, o3) : n2.removeEventListener(l3, o3 ? H : $, o3);
-      else if (l3 !== "dangerouslySetInnerHTML") {
-        if (t3)
-          l3 = l3.replace(/xlink[H:h]/, "h").replace(/sName$/, "s");
-        else if (l3 !== "href" && l3 !== "list" && l3 !== "form" && l3 !== "tabIndex" && l3 !== "download" && l3 in n2)
+      else if (l3[0] == "o" && l3[1] == "n")
+        o3 = l3 != (l3 = l3.replace(f, "$1")), r3 = l3.toLowerCase(), l3 = r3 in n2 || l3 == "onFocusOut" || l3 == "onFocusIn" ? r3.slice(2) : l3.slice(2), n2.l || (n2.l = {}), n2.l[l3 + o3] = u3, u3 ? t3 ? u3.u = t3.u : (u3.u = c, n2.addEventListener(l3, o3 ? a : s, o3)) : n2.removeEventListener(l3, o3 ? a : s, o3);
+      else {
+        if (i3 == "http://www.w3.org/2000/svg")
+          l3 = l3.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+        else if (l3 != "width" && l3 != "height" && l3 != "href" && l3 != "list" && l3 != "form" && l3 != "tabIndex" && l3 != "download" && l3 != "rowSpan" && l3 != "colSpan" && l3 != "role" && l3 != "popover" && l3 in n2)
           try {
             n2[l3] = u3 == null ? "" : u3;
             break n;
           } catch (n3) {
           }
-        typeof u3 == "function" || (u3 != null && (u3 !== false || l3[0] === "a" && l3[1] === "r") ? n2.setAttribute(l3, u3) : n2.removeAttribute(l3));
+        typeof u3 == "function" || (u3 == null || u3 === false && l3[4] != "-" ? n2.removeAttribute(l3) : n2.setAttribute(l3, l3 == "popover" && u3 == 1 ? "" : u3));
       }
   }
-  function $(l3) {
-    this.l[l3.type + false](n.event ? n.event(l3) : l3);
+  function F(n2) {
+    return function(u3) {
+      if (this.l) {
+        var t3 = this.l[u3.type + n2];
+        if (u3.t == null)
+          u3.t = c++;
+        else if (u3.t < t3.u)
+          return;
+        return t3(l.event ? l.event(u3) : u3);
+      }
+    };
   }
-  function H(l3) {
-    this.l[l3.type + true](n.event ? n.event(l3) : l3);
-  }
-  function I(l3, u3, i3, t3, o3, r3, f3, e3, s3) {
-    var a3, v3, h3, d3, _2, k3, b3, g3, w3, x3, A2, P2 = u3.type;
+  function O(n2, u3, t3, i3, o3, r3, e3, f3, c3, s3) {
+    var a3, h3, p3, v3, y3, _3, m3, b2, S2, C3, M2, $2, P2, A3, H2, L2, T3, j3 = u3.type;
     if (u3.constructor !== void 0)
       return null;
-    i3.__h != null && (s3 = i3.__h, e3 = u3.__e = i3.__e, u3.__h = null, r3 = [e3]), (a3 = n.__b) && a3(u3);
-    try {
-      n:
-        if (typeof P2 == "function") {
-          if (g3 = u3.props, w3 = (a3 = P2.contextType) && t3[a3.__c], x3 = a3 ? w3 ? w3.props.value : a3.__ : t3, i3.__c ? b3 = (v3 = u3.__c = i3.__c).__ = v3.__E : ("prototype" in P2 && P2.prototype.render ? u3.__c = v3 = new P2(g3, x3) : (u3.__c = v3 = new p(g3, x3), v3.constructor = P2, v3.render = M), w3 && w3.sub(v3), v3.props = g3, v3.state || (v3.state = {}), v3.context = x3, v3.__n = t3, h3 = v3.__d = true, v3.__h = []), v3.__s == null && (v3.__s = v3.state), P2.getDerivedStateFromProps != null && (v3.__s == v3.state && (v3.__s = c({}, v3.__s)), c(v3.__s, P2.getDerivedStateFromProps(g3, v3.__s))), d3 = v3.props, _2 = v3.state, h3)
-            P2.getDerivedStateFromProps == null && v3.componentWillMount != null && v3.componentWillMount(), v3.componentDidMount != null && v3.__h.push(v3.componentDidMount);
+    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [f3 = u3.__e = t3.__e]), (a3 = l.__b) && a3(u3);
+    n:
+      if (typeof j3 == "function")
+        try {
+          if (b2 = u3.props, S2 = "prototype" in j3 && j3.prototype.render, C3 = (a3 = j3.contextType) && i3[a3.__c], M2 = a3 ? C3 ? C3.props.value : a3.__ : i3, t3.__c ? m3 = (h3 = u3.__c = t3.__c).__ = h3.__E : (S2 ? u3.__c = h3 = new j3(b2, M2) : (u3.__c = h3 = new x(b2, M2), h3.constructor = j3, h3.render = E), C3 && C3.sub(h3), h3.state || (h3.state = {}), h3.__n = i3, p3 = h3.__d = true, h3.__h = [], h3._sb = []), S2 && h3.__s == null && (h3.__s = h3.state), S2 && j3.getDerivedStateFromProps != null && (h3.__s == h3.state && (h3.__s = w({}, h3.__s)), w(h3.__s, j3.getDerivedStateFromProps(b2, h3.__s))), v3 = h3.props, y3 = h3.state, h3.__v = u3, p3)
+            S2 && j3.getDerivedStateFromProps == null && h3.componentWillMount != null && h3.componentWillMount(), S2 && h3.componentDidMount != null && h3.__h.push(h3.componentDidMount);
           else {
-            if (P2.getDerivedStateFromProps == null && g3 !== d3 && v3.componentWillReceiveProps != null && v3.componentWillReceiveProps(g3, x3), !v3.__e && v3.shouldComponentUpdate != null && v3.shouldComponentUpdate(g3, v3.__s, x3) === false || u3.__v === i3.__v) {
-              v3.props = g3, v3.state = v3.__s, u3.__v !== i3.__v && (v3.__d = false), v3.__v = u3, u3.__e = i3.__e, u3.__k = i3.__k, u3.__k.forEach(function(n2) {
-                n2 && (n2.__ = u3);
-              }), v3.__h.length && f3.push(v3);
+            if (S2 && j3.getDerivedStateFromProps == null && b2 !== v3 && h3.componentWillReceiveProps != null && h3.componentWillReceiveProps(b2, M2), u3.__v == t3.__v || !h3.__e && h3.shouldComponentUpdate != null && h3.shouldComponentUpdate(b2, h3.__s, M2) === false) {
+              for (u3.__v != t3.__v && (h3.props = b2, h3.state = h3.__s, h3.__d = false), u3.__e = t3.__e, u3.__k = t3.__k, u3.__k.some(function(n3) {
+                n3 && (n3.__ = u3);
+              }), $2 = 0; $2 < h3._sb.length; $2++)
+                h3.__h.push(h3._sb[$2]);
+              h3._sb = [], h3.__h.length && e3.push(h3);
               break n;
             }
-            v3.componentWillUpdate != null && v3.componentWillUpdate(g3, v3.__s, x3), v3.componentDidUpdate != null && v3.__h.push(function() {
-              v3.componentDidUpdate(d3, _2, k3);
+            h3.componentWillUpdate != null && h3.componentWillUpdate(b2, h3.__s, M2), S2 && h3.componentDidUpdate != null && h3.__h.push(function() {
+              h3.componentDidUpdate(v3, y3, _3);
             });
           }
-          v3.context = x3, v3.props = g3, v3.state = v3.__s, (a3 = n.__r) && a3(u3), v3.__d = false, v3.__v = u3, v3.__P = l3, a3 = v3.render(v3.props, v3.state, v3.context), v3.state = v3.__s, v3.getChildContext != null && (t3 = c(c({}, t3), v3.getChildContext())), h3 || v3.getSnapshotBeforeUpdate == null || (k3 = v3.getSnapshotBeforeUpdate(d3, _2)), A2 = a3 != null && a3.type === y && a3.key == null ? a3.props.children : a3, m(l3, Array.isArray(A2) ? A2 : [A2], u3, i3, t3, o3, r3, f3, e3, s3), v3.base = u3.__e, u3.__h = null, v3.__h.length && f3.push(v3), b3 && (v3.__E = v3.__ = null), v3.__e = false;
-        } else
-          r3 == null && u3.__v === i3.__v ? (u3.__k = i3.__k, u3.__e = i3.__e) : u3.__e = j(i3.__e, u3, i3, t3, o3, r3, f3, s3);
-      (a3 = n.diffed) && a3(u3);
-    } catch (l4) {
-      u3.__v = null, (s3 || r3 != null) && (u3.__e = e3, u3.__h = !!s3, r3[r3.indexOf(e3)] = null), n.__e(l4, u3, i3);
-    }
+          if (h3.context = M2, h3.props = b2, h3.__P = n2, h3.__e = false, P2 = l.__r, A3 = 0, S2) {
+            for (h3.state = h3.__s, h3.__d = false, P2 && P2(u3), a3 = h3.render(h3.props, h3.state, h3.context), H2 = 0; H2 < h3._sb.length; H2++)
+              h3.__h.push(h3._sb[H2]);
+            h3._sb = [];
+          } else
+            do {
+              h3.__d = false, P2 && P2(u3), a3 = h3.render(h3.props, h3.state, h3.context), h3.state = h3.__s;
+            } while (h3.__d && ++A3 < 25);
+          h3.state = h3.__s, h3.getChildContext != null && (i3 = w(w({}, i3), h3.getChildContext())), S2 && !p3 && h3.getSnapshotBeforeUpdate != null && (_3 = h3.getSnapshotBeforeUpdate(v3, y3)), L2 = a3, a3 != null && a3.type === k && a3.key == null && (L2 = V(a3.props.children)), f3 = I(n2, d(L2) ? L2 : [L2], u3, t3, i3, o3, r3, e3, f3, c3, s3), h3.base = u3.__e, u3.__u &= -161, h3.__h.length && e3.push(h3), m3 && (h3.__E = h3.__ = null);
+        } catch (n3) {
+          if (u3.__v = null, c3 || r3 != null)
+            if (n3.then) {
+              for (u3.__u |= c3 ? 160 : 128; f3 && f3.nodeType == 8 && f3.nextSibling; )
+                f3 = f3.nextSibling;
+              r3[r3.indexOf(f3)] = null, u3.__e = f3;
+            } else {
+              for (T3 = r3.length; T3--; )
+                g(r3[T3]);
+              z(u3);
+            }
+          else
+            u3.__e = t3.__e, u3.__k = t3.__k, n3.then || z(u3);
+          l.__e(n3, u3, t3);
+        }
+      else
+        r3 == null && u3.__v == t3.__v ? (u3.__k = t3.__k, u3.__e = t3.__e) : f3 = u3.__e = q(t3.__e, u3, t3, i3, o3, r3, e3, c3, s3);
+    return (a3 = l.diffed) && a3(u3), 128 & u3.__u ? void 0 : f3;
   }
-  function T(l3, u3) {
-    n.__c && n.__c(u3, l3), l3.some(function(u4) {
+  function z(n2) {
+    n2 && n2.__c && (n2.__c.__e = true), n2 && n2.__k && n2.__k.forEach(z);
+  }
+  function N(n2, u3, t3) {
+    for (var i3 = 0; i3 < t3.length; i3++)
+      B(t3[i3], t3[++i3], t3[++i3]);
+    l.__c && l.__c(u3, n2), n2.some(function(u4) {
       try {
-        l3 = u4.__h, u4.__h = [], l3.some(function(n2) {
-          n2.call(u4);
+        n2 = u4.__h, u4.__h = [], n2.some(function(n3) {
+          n3.call(u4);
         });
-      } catch (l4) {
-        n.__e(l4, u4.__v);
+      } catch (n3) {
+        l.__e(n3, u4.__v);
       }
     });
   }
-  function j(n2, l3, u3, i3, t3, o3, e3, c3) {
-    var a3, v3, h3, y3, p3 = u3.props, d3 = l3.props, _2 = l3.type, k3 = 0;
-    if (_2 === "svg" && (t3 = true), o3 != null) {
-      for (; k3 < o3.length; k3++)
-        if ((a3 = o3[k3]) && (a3 === n2 || (_2 ? a3.localName == _2 : a3.nodeType == 3))) {
-          n2 = a3, o3[k3] = null;
+  function V(n2) {
+    return typeof n2 != "object" || n2 == null || n2.__b && n2.__b > 0 ? n2 : d(n2) ? n2.map(V) : w({}, n2);
+  }
+  function q(u3, t3, i3, o3, r3, e3, f3, c3, s3) {
+    var a3, h3, v3, y3, w3, _3, m3, b2 = i3.props || p, k3 = t3.props, x3 = t3.type;
+    if (x3 == "svg" ? r3 = "http://www.w3.org/2000/svg" : x3 == "math" ? r3 = "http://www.w3.org/1998/Math/MathML" : r3 || (r3 = "http://www.w3.org/1999/xhtml"), e3 != null) {
+      for (a3 = 0; a3 < e3.length; a3++)
+        if ((w3 = e3[a3]) && "setAttribute" in w3 == !!x3 && (x3 ? w3.localName == x3 : w3.nodeType == 3)) {
+          u3 = w3, e3[a3] = null;
           break;
         }
     }
-    if (n2 == null) {
-      if (_2 === null)
-        return document.createTextNode(d3);
-      n2 = t3 ? document.createElementNS("http://www.w3.org/2000/svg", _2) : document.createElement(_2, d3.is && d3), o3 = null, c3 = false;
+    if (u3 == null) {
+      if (x3 == null)
+        return document.createTextNode(k3);
+      u3 = document.createElementNS(r3, x3, k3.is && k3), c3 && (l.__m && l.__m(t3, e3), c3 = false), e3 = null;
     }
-    if (_2 === null)
-      p3 === d3 || c3 && n2.data === d3 || (n2.data = d3);
+    if (x3 == null)
+      b2 === k3 || c3 && u3.data == k3 || (u3.data = k3);
     else {
-      if (o3 = o3 && f.slice.call(n2.childNodes), v3 = (p3 = u3.props || r).dangerouslySetInnerHTML, h3 = d3.dangerouslySetInnerHTML, !c3) {
-        if (o3 != null)
-          for (p3 = {}, y3 = 0; y3 < n2.attributes.length; y3++)
-            p3[n2.attributes[y3].name] = n2.attributes[y3].value;
-        (h3 || v3) && (h3 && (v3 && h3.__html == v3.__html || h3.__html === n2.innerHTML) || (n2.innerHTML = h3 && h3.__html || ""));
-      }
-      if (A(n2, d3, p3, t3, c3), h3)
-        l3.__k = [];
-      else if (k3 = l3.props.children, m(n2, Array.isArray(k3) ? k3 : [k3], l3, u3, i3, t3 && _2 !== "foreignObject", o3, e3, n2.firstChild, c3), o3 != null)
-        for (k3 = o3.length; k3--; )
-          o3[k3] != null && s(o3[k3]);
-      c3 || ("value" in d3 && (k3 = d3.value) !== void 0 && (k3 !== n2.value || _2 === "progress" && !k3) && C(n2, "value", k3, p3.value, false), "checked" in d3 && (k3 = d3.checked) !== void 0 && k3 !== n2.checked && C(n2, "checked", k3, p3.checked, false));
-    }
-    return n2;
-  }
-  function z(l3, u3, i3) {
-    try {
-      typeof l3 == "function" ? l3(u3) : l3.current = u3;
-    } catch (l4) {
-      n.__e(l4, i3);
-    }
-  }
-  function L(l3, u3, i3) {
-    var t3, o3, r3;
-    if (n.unmount && n.unmount(l3), (t3 = l3.ref) && (t3.current && t3.current !== l3.__e || z(t3, null, u3)), i3 || typeof l3.type == "function" || (i3 = (o3 = l3.__e) != null), l3.__e = l3.__d = void 0, (t3 = l3.__c) != null) {
-      if (t3.componentWillUnmount)
-        try {
-          t3.componentWillUnmount();
-        } catch (l4) {
-          n.__e(l4, u3);
+      if (e3 = e3 && n.call(u3.childNodes), !c3 && e3 != null)
+        for (b2 = {}, a3 = 0; a3 < u3.attributes.length; a3++)
+          b2[(w3 = u3.attributes[a3]).name] = w3.value;
+      for (a3 in b2)
+        if (w3 = b2[a3], a3 == "children")
+          ;
+        else if (a3 == "dangerouslySetInnerHTML")
+          v3 = w3;
+        else if (!(a3 in k3)) {
+          if (a3 == "value" && "defaultValue" in k3 || a3 == "checked" && "defaultChecked" in k3)
+            continue;
+          j(u3, a3, null, w3, r3);
         }
-      t3.base = t3.__P = null;
+      for (a3 in k3)
+        w3 = k3[a3], a3 == "children" ? y3 = w3 : a3 == "dangerouslySetInnerHTML" ? h3 = w3 : a3 == "value" ? _3 = w3 : a3 == "checked" ? m3 = w3 : c3 && typeof w3 != "function" || b2[a3] === w3 || j(u3, a3, w3, b2[a3], r3);
+      if (h3)
+        c3 || v3 && (h3.__html == v3.__html || h3.__html == u3.innerHTML) || (u3.innerHTML = h3.__html), t3.__k = [];
+      else if (v3 && (u3.innerHTML = ""), I(t3.type == "template" ? u3.content : u3, d(y3) ? y3 : [y3], t3, i3, o3, x3 == "foreignObject" ? "http://www.w3.org/1999/xhtml" : r3, e3, f3, e3 ? e3[0] : i3.__k && S(i3, 0), c3, s3), e3 != null)
+        for (a3 = e3.length; a3--; )
+          g(e3[a3]);
+      c3 || (a3 = "value", x3 == "progress" && _3 == null ? u3.removeAttribute("value") : _3 != null && (_3 !== u3[a3] || x3 == "progress" && !_3 || x3 == "option" && _3 != b2[a3]) && j(u3, a3, _3, b2[a3], r3), a3 = "checked", m3 != null && m3 != u3[a3] && j(u3, a3, m3, b2[a3], r3));
     }
-    if (t3 = l3.__k)
-      for (r3 = 0; r3 < t3.length; r3++)
-        t3[r3] && L(t3[r3], u3, i3);
-    o3 != null && s(o3);
+    return u3;
   }
-  function M(n2, l3, u3) {
+  function B(n2, u3, t3) {
+    try {
+      if (typeof n2 == "function") {
+        var i3 = typeof n2.__u == "function";
+        i3 && n2.__u(), i3 && u3 == null || (n2.__u = n2(u3));
+      } else
+        n2.current = u3;
+    } catch (n3) {
+      l.__e(n3, t3);
+    }
+  }
+  function D(n2, u3, t3) {
+    var i3, o3;
+    if (l.unmount && l.unmount(n2), (i3 = n2.ref) && (i3.current && i3.current != n2.__e || B(i3, null, u3)), (i3 = n2.__c) != null) {
+      if (i3.componentWillUnmount)
+        try {
+          i3.componentWillUnmount();
+        } catch (n3) {
+          l.__e(n3, u3);
+        }
+      i3.base = i3.__P = null;
+    }
+    if (i3 = n2.__k)
+      for (o3 = 0; o3 < i3.length; o3++)
+        i3[o3] && D(i3[o3], u3, t3 || typeof n2.type != "function");
+    t3 || g(n2.__e), n2.__c = n2.__ = n2.__e = void 0;
+  }
+  function E(n2, l3, u3) {
     return this.constructor(n2, u3);
   }
-  function N(l3, u3, i3) {
-    var t3, o3, e3;
-    n.__ && n.__(l3, u3), o3 = (t3 = typeof i3 == "function") ? null : i3 && i3.__k || u3.__k, e3 = [], I(u3, l3 = (!t3 && i3 || u3).__k = a(y, null, [l3]), o3 || r, r, u3.ownerSVGElement !== void 0, !t3 && i3 ? [i3] : o3 ? null : u3.firstChild ? f.slice.call(u3.childNodes) : null, e3, !t3 && i3 ? i3 : o3 ? o3.__e : u3.firstChild, t3), T(e3, l3);
+  function G(u3, t3, i3) {
+    var o3, r3, e3, f3;
+    t3 == document && (t3 = document.documentElement), l.__ && l.__(u3, t3), r3 = (o3 = typeof i3 == "function") ? null : i3 && i3.__k || t3.__k, e3 = [], f3 = [], O(t3, u3 = (!o3 && i3 || t3).__k = _(k, null, [u3]), r3 || p, p, t3.namespaceURI, !o3 && i3 ? [i3] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, e3, !o3 && i3 ? i3 : r3 ? r3.__e : t3.firstChild, o3, f3), N(e3, u3, f3);
   }
-  function O(n2, l3) {
-    N(n2, l3, O);
+  function J(n2, l3) {
+    G(n2, l3, J);
   }
-  function S(n2, l3, u3) {
-    var i3, t3, o3, r3 = arguments, f3 = c({}, n2.props);
-    for (o3 in l3)
-      o3 == "key" ? i3 = l3[o3] : o3 == "ref" ? t3 = l3[o3] : f3[o3] = l3[o3];
-    if (arguments.length > 3)
-      for (u3 = [u3], o3 = 3; o3 < arguments.length; o3++)
-        u3.push(r3[o3]);
-    return u3 != null && (f3.children = u3), v(n2.type, f3, i3 || n2.key, t3 || n2.ref, null);
+  function K(l3, u3, t3) {
+    var i3, o3, r3, e3, f3 = w({}, l3.props);
+    for (r3 in l3.type && l3.type.defaultProps && (e3 = l3.type.defaultProps), u3)
+      r3 == "key" ? i3 = u3[r3] : r3 == "ref" ? o3 = u3[r3] : f3[r3] = u3[r3] === void 0 && e3 != null ? e3[r3] : u3[r3];
+    return arguments.length > 2 && (f3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), m(l3.type, f3, i3 || l3.key, o3 || l3.ref, null);
   }
-  function q(n2, l3) {
-    var u3 = {__c: l3 = "__cC" + o++, __: n2, Consumer: function(n3, l4) {
-      return n3.children(l4);
-    }, Provider: function(n3) {
-      var u4, i3;
-      return this.getChildContext || (u4 = [], (i3 = {})[l3] = this, this.getChildContext = function() {
-        return i3;
+  function Q(n2) {
+    function l3(n3) {
+      var u3, t3;
+      return this.getChildContext || (u3 = new Set(), (t3 = {})[l3.__c] = this, this.getChildContext = function() {
+        return t3;
+      }, this.componentWillUnmount = function() {
+        u3 = null;
       }, this.shouldComponentUpdate = function(n4) {
-        this.props.value !== n4.value && u4.some(k);
+        this.props.value != n4.value && u3.forEach(function(n5) {
+          n5.__e = true, M(n5);
+        });
       }, this.sub = function(n4) {
-        u4.push(n4);
+        u3.add(n4);
         var l4 = n4.componentWillUnmount;
         n4.componentWillUnmount = function() {
-          u4.splice(u4.indexOf(n4), 1), l4 && l4.call(n4);
+          u3 && u3.delete(n4), l4 && l4.call(n4);
         };
       }), n3.children;
-    }};
-    return u3.Provider.__ = u3.Consumer.contextType = u3;
+    }
+    return l3.__c = "__cC" + h++, l3.__ = n2, l3.Provider = l3.__l = (l3.Consumer = function(n3, l4) {
+      return n3.children(l4);
+    }).contextType = l3, l3;
   }
-  var n, l, u, i, t, o, r, f, e;
+  var n, l, u, t, i, o, r, e, f, c, s, a, h, p, v, y, d;
   var init_preact_module = __esm({
     "node_modules/preact/dist/preact.module.js"() {
-      r = {};
-      f = [];
-      e = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
-      n = {__e: function(n2, l3) {
-        for (var u3, i3, t3; l3 = l3.__; )
-          if ((u3 = l3.__c) && !u3.__)
+      p = {};
+      v = [];
+      y = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+      d = Array.isArray;
+      n = v.slice, l = {__e: function(n2, l3, u3, t3) {
+        for (var i3, o3, r3; l3 = l3.__; )
+          if ((i3 = l3.__c) && !i3.__)
             try {
-              if ((i3 = u3.constructor) && i3.getDerivedStateFromError != null && (u3.setState(i3.getDerivedStateFromError(n2)), t3 = u3.__d), u3.componentDidCatch != null && (u3.componentDidCatch(n2), t3 = u3.__d), t3)
-                return u3.__E = u3;
+              if ((o3 = i3.constructor) && o3.getDerivedStateFromError != null && (i3.setState(o3.getDerivedStateFromError(n2)), r3 = i3.__d), i3.componentDidCatch != null && (i3.componentDidCatch(n2, t3 || {}), r3 = i3.__d), r3)
+                return i3.__E = i3;
             } catch (l4) {
               n2 = l4;
             }
         throw n2;
-      }, __v: 0}, l = function(n2) {
+      }}, u = 0, t = function(n2) {
         return n2 != null && n2.constructor === void 0;
-      }, p.prototype.setState = function(n2, l3) {
+      }, x.prototype.setState = function(n2, l3) {
         var u3;
-        u3 = this.__s != null && this.__s !== this.state ? this.__s : this.__s = c({}, this.state), typeof n2 == "function" && (n2 = n2(c({}, u3), this.props)), n2 && c(u3, n2), n2 != null && this.__v && (l3 && this.__h.push(l3), k(this));
-      }, p.prototype.forceUpdate = function(n2) {
-        this.__v && (this.__e = true, n2 && this.__h.push(n2), k(this));
-      }, p.prototype.render = y, u = [], i = typeof Promise == "function" ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, b.__r = 0, o = 0;
+        u3 = this.__s != null && this.__s != this.state ? this.__s : this.__s = w({}, this.state), typeof n2 == "function" && (n2 = n2(w({}, u3), this.props)), n2 && w(u3, n2), n2 != null && this.__v && (l3 && this._sb.push(l3), M(this));
+      }, x.prototype.forceUpdate = function(n2) {
+        this.__v && (this.__e = true, n2 && this.__h.push(n2), M(this));
+      }, x.prototype.render = k, i = [], r = typeof Promise == "function" ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, e = function(n2, l3) {
+        return n2.__v.__b - l3.__v.__b;
+      }, $.__r = 0, f = /(PointerCapture)$|Capture$/i, c = 0, s = F(false), a = F(true), h = 0;
     }
   });
 
@@ -362,80 +412,157 @@
   // data/color/lego.txt
   var require_lego = __commonJS({
     "data/color/lego.txt"(exports, module) {
-      module.exports = "FFFFFF.1.White\r\nDDDEDD.2.Grey\r\nD9BB7B.5.Brick Yellow\r\nD67240.18.Nougat\r\nFF0000.21.Bright Red\r\n0000FF.23.Bright Blue\r\nFFFF00.24.Bright Yellow\r\n000000.26.Black\r\n009900.28.Dark Green\r\n00CC00.37.Bright Green\r\nA83D15.38.Dark Orange\r\n478CC6.102.Medium Blue\r\nFF6600.106.Bright Orange\r\n059D9E.107.Bright Bluish Green\r\n95B90B.119.Bright Yellowish-Green\r\n990066.124.Bright Reddish Violet\r\n5E748C.135.Sand Blue\r\n8D7452.138.Sand Yellow\r\n002541.140.Earth Blue\r\n003300.141.Earth Green\r\n5F8265.151.Sand Green\r\n80081B.154.Dark Red\r\nF49B00.191.Flame Yellowish Orange\r\n5B1C0C.192.Reddish Brown\r\n9C9291.194.Medium Stone Grey\r\n4C5156.199.Dark Stone Grey\r\nE4E4DA.208.Light Stone Grey\r\n87C0EA.212.Light Royal Blue\r\nDE378B.221.Bright Purple\r\nEE9DC3.222.Light Purple\r\nFFFF99.226.Cool Yellow\r\n2C1577.268.Dark Purple\r\nF5C189.283.Light Nougat\r\n300F06.308.Dark Brown\r\nAA7D55.312.Medium Nougat\r\n469BC3.321.Dark Azur\r\n68C3E2.322.Medium Azur\r\nD3F2EA.323.Aqua\r\nA06EB9.324.Medium Lavender\r\nCDA4DE.325.Lavender\r\nF5F3D7.329.White Glow\r\nE2F99A.326.Spring Yellowish Green\r\n77774E.330.Olive Green\r\n96B93B.331.Medium-Yellowish Green";
+      module.exports = "FFFFFF.1.White\r\nDDDEDD.2.Grey\r\nD9BB7B.5.Brick Yellow\r\nD67240.18.Nougat\r\nFF0000.21.Bright Red\r\n0000FF.23.Bright Blue\r\nFFFF00.24.Bright Yellow\r\n000000.26.Black\r\n009900.28.Dark Green\r\n00CC00.37.Bright Green\r\nA83D15.38.Dark Orange\r\n478CC6.102.Medium Blue\r\nFF6600.106.Bright Orange\r\n059D9E.107.Bright Bluish Green\r\n95B90B.119.Bright Yellowish-Green\r\n990066.124.Bright Reddish Violet\r\n5E748C.135.Sand Blue\r\n8D7452.138.Sand Yellow\r\n002541.140.Earth Blue\r\n003300.141.Earth Green\r\n5F8265.151.Sand Green\r\n80081B.154.Dark Red\r\nF49B00.191.Flame Yellowish Orange\r\n5B1C0C.192.Reddish Brown\r\n9C9291.194.Medium Stone Grey\r\n4C5156.199.Dark Stone Grey\r\nE4E4DA.208.Light Stone Grey\r\n87C0EA.212.Light Royal Blue\r\nDE378B.221.Bright Purple\r\nEE9DC3.222.Light Purple\r\nFFFF99.226.Cool Yellow\r\n2C1577.268.Dark Purple\r\nF5C189.283.Light Nougat\r\n300F06.308.Dark Brown\r\nAA7D55.312.Medium Nougat\r\n469BC3.321.Dark Azure\r\n68C3E2.322.Medium Azure\r\nD3F2EA.323.Aqua\r\nA06EB9.324.Medium Lavender\r\nCDA4DE.325.Lavender\r\nF5F3D7.329.White Glow\r\nE2F99A.326.Spring Yellowish Green\r\n77774E.330.Olive Green\r\n96B93B.331.Medium-Yellowish Green";
     }
   });
 
-  // node_modules/color-diff/lib/diff.js
-  var require_diff = __commonJS({
-    "node_modules/color-diff/lib/diff.js"(exports) {
-      exports.ciede2000 = ciede2000;
-      var sqrt = Math.sqrt;
-      var pow = Math.pow;
-      var cos = Math.cos;
-      var atan2 = Math.atan2;
-      var sin = Math.sin;
-      var abs = Math.abs;
-      var exp = Math.exp;
-      var PI = Math.PI;
-      function ciede2000(c1, c22) {
-        var L1 = c1.L;
-        var a1 = c1.a;
-        var b1 = c1.b;
-        var L2 = c22.L;
-        var a22 = c22.a;
-        var b22 = c22.b;
-        var kL = 1;
-        var kC = 1;
-        var kH = 1;
-        var C1 = sqrt(pow(a1, 2) + pow(b1, 2));
-        var C2 = sqrt(pow(a22, 2) + pow(b22, 2));
-        var a_C1_C2 = (C1 + C2) / 2;
-        var G = 0.5 * (1 - sqrt(pow(a_C1_C2, 7) / (pow(a_C1_C2, 7) + pow(25, 7))));
-        var a1p = (1 + G) * a1;
-        var a2p = (1 + G) * a22;
-        var C1p = sqrt(pow(a1p, 2) + pow(b1, 2));
-        var C2p = sqrt(pow(a2p, 2) + pow(b22, 2));
-        var h1p = hp_f(b1, a1p);
-        var h2p = hp_f(b22, a2p);
-        var dLp = L2 - L1;
-        var dCp = C2p - C1p;
-        var dhp = dhp_f(C1, C2, h1p, h2p);
-        var dHp = 2 * sqrt(C1p * C2p) * sin(radians(dhp) / 2);
-        var a_L = (L1 + L2) / 2;
-        var a_Cp = (C1p + C2p) / 2;
-        var a_hp = a_hp_f(C1, C2, h1p, h2p);
-        var T2 = 1 - 0.17 * cos(radians(a_hp - 30)) + 0.24 * cos(radians(2 * a_hp)) + 0.32 * cos(radians(3 * a_hp + 6)) - 0.2 * cos(radians(4 * a_hp - 63));
-        var d_ro = 30 * exp(-pow((a_hp - 275) / 25, 2));
-        var RC = sqrt(pow(a_Cp, 7) / (pow(a_Cp, 7) + pow(25, 7)));
-        var SL = 1 + 0.015 * pow(a_L - 50, 2) / sqrt(20 + pow(a_L - 50, 2));
-        var SC = 1 + 0.045 * a_Cp;
-        var SH = 1 + 0.015 * a_Cp * T2;
-        var RT = -2 * RC * sin(radians(2 * d_ro));
-        var dE = sqrt(pow(dLp / (SL * kL), 2) + pow(dCp / (SC * kC), 2) + pow(dHp / (SH * kH), 2) + RT * (dCp / (SC * kC)) * (dHp / (SH * kH)));
+  // node_modules/color-diff/index.cjs
+  var require_color_diff = __commonJS({
+    "node_modules/color-diff/index.cjs"(exports) {
+      "use strict";
+      function rgbaToLab(c3, bc) {
+        bc = normalize(bc || {R: 255, G: 255, B: 255});
+        c3 = normalize(c3);
+        let newC = c3;
+        if (c3.A !== void 0) {
+          newC = {
+            R: bc.R + (c3.R - bc.R) * c3.A,
+            G: bc.G + (c3.G - bc.G) * c3.A,
+            B: bc.B + (c3.B - bc.B) * c3.A
+          };
+        }
+        return xyzToLab(rgbToXyz2(newC));
+      }
+      function rgbToXyz2(c3) {
+        let R = c3.R / 255;
+        let G2 = c3.G / 255;
+        let B3 = c3.B / 255;
+        if (R > 0.04045)
+          R = Math.pow((R + 0.055) / 1.055, 2.4);
+        else
+          R = R / 12.92;
+        if (G2 > 0.04045)
+          G2 = Math.pow((G2 + 0.055) / 1.055, 2.4);
+        else
+          G2 = G2 / 12.92;
+        if (B3 > 0.04045)
+          B3 = Math.pow((B3 + 0.055) / 1.055, 2.4);
+        else
+          B3 = B3 / 12.92;
+        R *= 100;
+        G2 *= 100;
+        B3 *= 100;
+        const X = R * 0.4124 + G2 * 0.3576 + B3 * 0.1805;
+        const Y = R * 0.2126 + G2 * 0.7152 + B3 * 0.0722;
+        const Z = R * 0.0193 + G2 * 0.1192 + B3 * 0.9505;
+        return {X, Y, Z};
+      }
+      function xyzToLab(c3) {
+        const refY = 100;
+        const refZ = 108.883;
+        const refX = 95.047;
+        let Y = c3.Y / refY;
+        let Z = c3.Z / refZ;
+        let X = c3.X / refX;
+        if (X > 8856e-6)
+          X = Math.pow(X, 1 / 3);
+        else
+          X = 7.787 * X + 16 / 116;
+        if (Y > 8856e-6)
+          Y = Math.pow(Y, 1 / 3);
+        else
+          Y = 7.787 * Y + 16 / 116;
+        if (Z > 8856e-6)
+          Z = Math.pow(Z, 1 / 3);
+        else
+          Z = 7.787 * Z + 16 / 116;
+        const L2 = 116 * Y - 16;
+        const a3 = 500 * (X - Y);
+        const b2 = 200 * (Y - Z);
+        return {L: L2, a: a3, b: b2};
+      }
+      function normalize(c3) {
+        let r3, g2, b2, a3;
+        if ("R" in c3) {
+          r3 = c3.R;
+          g2 = c3.G;
+          b2 = c3.B;
+          a3 = c3.A;
+        } else {
+          r3 = c3.r;
+          g2 = c3.g;
+          b2 = c3.b;
+          a3 = c3.a;
+        }
+        const normalizedC = {R: r3, G: g2, B: b2};
+        if (a3 !== void 0)
+          normalizedC.A = a3;
+        return normalizedC;
+      }
+      function ciede2000(c1, c22, bc) {
+        if ("R" in c1 || "r" in c1) {
+          c1 = rgbaToLab(c1, bc);
+        }
+        if ("R" in c22 || "r" in c22) {
+          c22 = rgbaToLab(c22, bc);
+        }
+        const L1 = c1.L;
+        const a1 = c1.a;
+        const b1 = c1.b;
+        const L2 = c22.L;
+        const a22 = c22.a;
+        const b2 = c22.b;
+        const kL = 1;
+        const kC = 1;
+        const kH = 1;
+        const C1 = Math.sqrt(Math.pow(a1, 2) + Math.pow(b1, 2));
+        const C22 = Math.sqrt(Math.pow(a22, 2) + Math.pow(b2, 2));
+        const aC1C2 = (C1 + C22) / 2;
+        const G2 = 0.5 * (1 - Math.sqrt(Math.pow(aC1C2, 7) / (Math.pow(aC1C2, 7) + Math.pow(25, 7))));
+        const a1p = (1 + G2) * a1;
+        const a2p = (1 + G2) * a22;
+        const C1p = Math.sqrt(Math.pow(a1p, 2) + Math.pow(b1, 2));
+        const C2p = Math.sqrt(Math.pow(a2p, 2) + Math.pow(b2, 2));
+        const h1p = hpF(b1, a1p);
+        const h2p = hpF(b2, a2p);
+        const dLp = L2 - L1;
+        const dCp = C2p - C1p;
+        const dhp = dhpF(C1, C22, h1p, h2p);
+        const dHp = 2 * Math.sqrt(C1p * C2p) * Math.sin(radians(dhp) / 2);
+        const aL = (L1 + L2) / 2;
+        const aCp = (C1p + C2p) / 2;
+        const aHp = aHpF(C1, C22, h1p, h2p);
+        const T3 = 1 - 0.17 * Math.cos(radians(aHp - 30)) + 0.24 * Math.cos(radians(2 * aHp)) + 0.32 * Math.cos(radians(3 * aHp + 6)) - 0.2 * Math.cos(radians(4 * aHp - 63));
+        const dRo = 30 * Math.exp(-Math.pow((aHp - 275) / 25, 2));
+        const RC = Math.sqrt(Math.pow(aCp, 7) / (Math.pow(aCp, 7) + Math.pow(25, 7)));
+        const SL = 1 + 0.015 * Math.pow(aL - 50, 2) / Math.sqrt(20 + Math.pow(aL - 50, 2));
+        const SC = 1 + 0.045 * aCp;
+        const SH = 1 + 0.015 * aCp * T3;
+        const RT = -2 * RC * Math.sin(radians(2 * dRo));
+        const dE = Math.sqrt(Math.pow(dLp / (SL * kL), 2) + Math.pow(dCp / (SC * kC), 2) + Math.pow(dHp / (SH * kH), 2) + RT * (dCp / (SC * kC)) * (dHp / (SH * kH)));
         return dE;
       }
       function degrees(n2) {
-        return n2 * (180 / PI);
+        return n2 * (180 / Math.PI);
       }
       function radians(n2) {
-        return n2 * (PI / 180);
+        return n2 * (Math.PI / 180);
       }
-      function hp_f(x3, y3) {
+      function hpF(x3, y3) {
         if (x3 === 0 && y3 === 0)
           return 0;
         else {
-          var tmphp = degrees(atan2(x3, y3));
+          const tmphp = degrees(Math.atan2(x3, y3));
           if (tmphp >= 0)
             return tmphp;
           else
             return tmphp + 360;
         }
       }
-      function dhp_f(C1, C2, h1p, h2p) {
-        if (C1 * C2 === 0)
+      function dhpF(C1, C22, h1p, h2p) {
+        if (C1 * C22 === 0)
           return 0;
-        else if (abs(h2p - h1p) <= 180)
+        else if (Math.abs(h2p - h1p) <= 180)
           return h2p - h1p;
         else if (h2p - h1p > 180)
           return h2p - h1p - 360;
@@ -444,227 +571,230 @@
         else
           throw new Error();
       }
-      function a_hp_f(C1, C2, h1p, h2p) {
-        if (C1 * C2 === 0)
+      function aHpF(C1, C22, h1p, h2p) {
+        if (C1 * C22 === 0)
           return h1p + h2p;
-        else if (abs(h1p - h2p) <= 180)
+        else if (Math.abs(h1p - h2p) <= 180)
           return (h1p + h2p) / 2;
-        else if (abs(h1p - h2p) > 180 && h1p + h2p < 360)
+        else if (Math.abs(h1p - h2p) > 180 && h1p + h2p < 360)
           return (h1p + h2p + 360) / 2;
-        else if (abs(h1p - h2p) > 180 && h1p + h2p >= 360)
+        else if (Math.abs(h1p - h2p) > 180 && h1p + h2p >= 360)
           return (h1p + h2p - 360) / 2;
         else
           throw new Error();
       }
-    }
-  });
-
-  // node_modules/color-diff/lib/convert.js
-  var require_convert = __commonJS({
-    "node_modules/color-diff/lib/convert.js"(exports) {
-      exports.rgb_to_lab = rgb_to_lab;
-      exports.rgba_to_lab = rgba_to_lab;
-      exports.normalize_rgb = normalize_rgb;
-      var pow = Math.pow;
-      function rgba_to_lab(c3, bc) {
-        c3 = normalize_rgb(c3);
-        var bc = typeof bc !== "undefined" ? normalize_rgb(bc) : {R: 255, G: 255, B: 255};
-        var new_c = {
-          R: bc.R + (c3.R - bc.R) * c3.A,
-          G: bc.G + (c3.G - bc.G) * c3.A,
-          B: bc.B + (c3.B - bc.B) * c3.A
-        };
-        return rgb_to_lab(new_c);
+      function paletteMapKey(c3) {
+        c3 = normalize(c3);
+        if (c3.A !== 1) {
+          return `rgba(${c3.R}, ${c3.G}, ${c3.B}, ${c3.A})`;
+        }
+        return `rgb(${c3.R}, ${c3.G}, ${c3.B})`;
+      }
+      function labPaletteMapKey(c3) {
+        return `lab(${c3.L}, ${c3.a}, ${c3.b})`;
+      }
+      function mapPalette(a3, b2, type, bc) {
+        const c3 = {};
+        bc = bc || {R: 255, G: 255, B: 255};
+        type = type || "closest";
+        for (let idx1 = 0; idx1 < a3.length; idx1 += 1) {
+          const color1 = a3[idx1];
+          let bestColor;
+          let bestColorDiff;
+          for (let idx2 = 0; idx2 < b2.length; idx2 += 1) {
+            const color2 = b2[idx2];
+            const currentColorDiff = ciede2000(color1, color2, bc);
+            if (!bestColor) {
+              bestColor = color2;
+              bestColorDiff = currentColorDiff;
+              continue;
+            }
+            if (bestColorDiff !== void 0 && type === "closest" && currentColorDiff < bestColorDiff) {
+              bestColor = color2;
+              bestColorDiff = currentColorDiff;
+              continue;
+            }
+            if (bestColorDiff !== void 0 && type === "furthest" && currentColorDiff > bestColorDiff) {
+              bestColor = color2;
+              bestColorDiff = currentColorDiff;
+              continue;
+            }
+          }
+          if (bestColor)
+            c3[paletteMapKey(color1)] = bestColor;
+        }
+        return c3;
+      }
+      function matchPaletteLab(targetColor, palette, findFurthest) {
+        let color2, currentColorDiff;
+        let bestColor = palette[0];
+        let bestColorDiff = ciede2000(targetColor, bestColor);
+        for (let idx2 = 1, l3 = palette.length; idx2 < l3; idx2 += 1) {
+          color2 = palette[idx2];
+          currentColorDiff = ciede2000(targetColor, color2);
+          if (!findFurthest && currentColorDiff < bestColorDiff || findFurthest && currentColorDiff > bestColorDiff) {
+            bestColor = color2;
+            bestColorDiff = currentColorDiff;
+          }
+        }
+        return bestColor;
+      }
+      function mapPaletteLab(a3, b2, type) {
+        const c3 = {};
+        const findFurthest = type === "furthest";
+        for (let idx1 = 0; idx1 < a3.length; idx1 += 1) {
+          const color1 = a3[idx1];
+          c3[labPaletteMapKey(color1)] = matchPaletteLab(color1, b2, findFurthest);
+        }
+        return c3;
+      }
+      function closest(target, relative, bc) {
+        const key = paletteMapKey(target);
+        bc = bc || {R: 255, G: 255, B: 255};
+        const result = mapPalette([target], relative, "closest", bc);
+        return result[key];
+      }
+      function closestLab(target, relative) {
+        return matchPaletteLab(target, relative, false);
+      }
+      function furthest(target, relative, bc) {
+        const key = paletteMapKey(target);
+        bc = bc || {R: 255, G: 255, B: 255};
+        const result = mapPalette([target], relative, "furthest", bc);
+        return result[key];
+      }
+      function furthestLab(target, relative) {
+        return matchPaletteLab(target, relative, true);
+      }
+      function map_palette(a3, b2, type, bc) {
+        return mapPalette(a3, b2, type, bc);
+      }
+      function palette_map_key(c3) {
+        return paletteMapKey(c3);
       }
       function rgb_to_lab(c3) {
-        return xyz_to_lab(rgb_to_xyz(c3));
+        return rgbaToLab(c3);
       }
-      function rgb_to_xyz(c3) {
-        c3 = normalize_rgb(c3);
-        var R = c3.R / 255;
-        var G = c3.G / 255;
-        var B = c3.B / 255;
-        if (R > 0.04045)
-          R = pow((R + 0.055) / 1.055, 2.4);
-        else
-          R = R / 12.92;
-        if (G > 0.04045)
-          G = pow((G + 0.055) / 1.055, 2.4);
-        else
-          G = G / 12.92;
-        if (B > 0.04045)
-          B = pow((B + 0.055) / 1.055, 2.4);
-        else
-          B = B / 12.92;
-        R *= 100;
-        G *= 100;
-        B *= 100;
-        var X = R * 0.4124 + G * 0.3576 + B * 0.1805;
-        var Y = R * 0.2126 + G * 0.7152 + B * 0.0722;
-        var Z = R * 0.0193 + G * 0.1192 + B * 0.9505;
-        return {"X": X, "Y": Y, "Z": Z};
+      function rgba_to_lab(c3) {
+        return rgbaToLab(c3);
       }
-      function xyz_to_lab(c3) {
-        var ref_Y = 100;
-        var ref_Z = 108.883;
-        var ref_X = 95.047;
-        var Y = c3.Y / ref_Y;
-        var Z = c3.Z / ref_Z;
-        var X = c3.X / ref_X;
-        if (X > 8856e-6)
-          X = pow(X, 1 / 3);
-        else
-          X = 7.787 * X + 16 / 116;
-        if (Y > 8856e-6)
-          Y = pow(Y, 1 / 3);
-        else
-          Y = 7.787 * Y + 16 / 116;
-        if (Z > 8856e-6)
-          Z = pow(Z, 1 / 3);
-        else
-          Z = 7.787 * Z + 16 / 116;
-        var L2 = 116 * Y - 16;
-        var a3 = 500 * (X - Y);
-        var b3 = 200 * (Y - Z);
-        return {"L": L2, "a": a3, "b": b3};
+      function match_palette_lab(targetColor, palette, findFurthest) {
+        return matchPaletteLab(targetColor, palette, findFurthest);
       }
-      function normalize_rgb(c3) {
-        var new_c = {
-          R: c3.R || c3.r || 0,
-          G: c3.G || c3.g || 0,
-          B: c3.B || c3.b || 0
-        };
-        if (typeof c3.a !== "undefined" || typeof c3.A !== "undefined") {
-          new_c.A = c3.A || c3.a || 0;
-        }
-        return new_c;
-      }
-    }
-  });
-
-  // node_modules/color-diff/lib/palette.js
-  var require_palette = __commonJS({
-    "node_modules/color-diff/lib/palette.js"(exports) {
-      exports.map_palette = map_palette;
-      exports.map_palette_lab = map_palette_lab;
-      exports.match_palette_lab = match_palette_lab;
-      exports.palette_map_key = palette_map_key;
-      exports.lab_palette_map_key = lab_palette_map_key;
-      var ciede2000 = require_diff().ciede2000;
-      var color_convert = require_convert();
-      function palette_map_key(c3) {
-        c3 = color_convert.normalize_rgb(c3);
-        var s3 = "R" + c3.R + "B" + c3.B + "G" + c3.G;
-        if ("A" in c3) {
-          s3 = s3 + "A" + c3.A;
-        }
-        return s3;
+      function map_palette_lab(a3, b2, type) {
+        return mapPaletteLab(a3, b2, type);
       }
       function lab_palette_map_key(c3) {
-        return "L" + c3.L + "a" + c3.a + "b" + c3.b;
+        return labPaletteMapKey(c3);
       }
-      function map_palette(a3, b3, type, bc) {
-        var c3 = {};
-        bc = typeof bc !== "undefined" ? bc : {R: 255, G: 255, B: 255};
-        type = type || "closest";
-        for (var idx1 = 0; idx1 < a3.length; idx1 += 1) {
-          var color1 = a3[idx1];
-          var best_color = void 0;
-          var best_color_diff = void 0;
-          for (var idx2 = 0; idx2 < b3.length; idx2 += 1) {
-            var color2 = b3[idx2];
-            var current_color_diff = diff3(color1, color2, bc);
-            if (best_color == void 0 || type === "closest" && current_color_diff < best_color_diff) {
-              best_color = color2;
-              best_color_diff = current_color_diff;
-              continue;
-            }
-            if (type === "furthest" && current_color_diff > best_color_diff) {
-              best_color = color2;
-              best_color_diff = current_color_diff;
-              continue;
-            }
-          }
-          c3[palette_map_key(color1)] = best_color;
-        }
-        return c3;
+      function closest_lab(target, relative) {
+        return closestLab(target, relative);
       }
-      function match_palette_lab(target_color, palette, find_furthest) {
-        var color2, current_color_diff;
-        var best_color = palette[0];
-        var best_color_diff = ciede2000(target_color, best_color);
-        for (var idx2 = 1, l3 = palette.length; idx2 < l3; idx2 += 1) {
-          color2 = palette[idx2];
-          current_color_diff = ciede2000(target_color, color2);
-          if (!find_furthest && current_color_diff < best_color_diff || find_furthest && current_color_diff > best_color_diff) {
-            best_color = color2;
-            best_color_diff = current_color_diff;
-          }
-        }
-        return best_color;
+      function furthest_lab(target, relative) {
+        return furthestLab(target, relative);
       }
-      function map_palette_lab(a3, b3, type) {
-        var c3 = {};
-        var find_furthest = type === "furthest";
-        for (var idx1 = 0; idx1 < a3.length; idx1 += 1) {
-          var color1 = a3[idx1];
-          c3[lab_palette_map_key(color1)] = match_palette_lab(color1, b3, find_furthest);
-        }
-        return c3;
-      }
-      function diff3(c1, c22, bc) {
-        var conv_c1 = color_convert.rgb_to_lab;
-        var conv_c2 = color_convert.rgb_to_lab;
-        var rgba_conv = function(x3) {
-          return color_convert.rgba_to_lab(x3, bc);
-        };
-        if ("A" in c1) {
-          conv_c1 = rgba_conv;
-        }
-        if ("A" in c22) {
-          conv_c2 = rgba_conv;
-        }
-        c1 = conv_c1(c1);
-        c22 = conv_c2(c22);
-        return ciede2000(c1, c22);
-      }
+      exports.closest = closest;
+      exports.closestLab = closestLab;
+      exports.closest_lab = closest_lab;
+      exports.diff = ciede2000;
+      exports.furthest = furthest;
+      exports.furthestLab = furthestLab;
+      exports.furthest_lab = furthest_lab;
+      exports.labPaletteMapKey = labPaletteMapKey;
+      exports.lab_palette_map_key = lab_palette_map_key;
+      exports.mapPalette = mapPalette;
+      exports.mapPaletteLab = mapPaletteLab;
+      exports.map_palette = map_palette;
+      exports.map_palette_lab = map_palette_lab;
+      exports.matchPaletteLab = matchPaletteLab;
+      exports.match_palette_lab = match_palette_lab;
+      exports.paletteMapKey = paletteMapKey;
+      exports.palette_map_key = palette_map_key;
+      exports.rgb_to_lab = rgb_to_lab;
+      exports.rgbaToLab = rgbaToLab;
+      exports.rgba_to_lab = rgba_to_lab;
     }
   });
 
-  // node_modules/color-diff/lib/index.js
-  var require_lib = __commonJS({
-    "node_modules/color-diff/lib/index.js"(exports, module) {
-      "use strict";
-      var diff3 = require_diff();
-      var convert = require_convert();
-      var palette = require_palette();
-      var color = module.exports = {};
-      color.diff = diff3.ciede2000;
-      color.rgb_to_lab = convert.rgb_to_lab;
-      color.rgba_to_lab = convert.rgba_to_lab;
-      color.map_palette = palette.map_palette;
-      color.palette_map_key = palette.palette_map_key;
-      color.map_palette_lab = palette.map_palette_lab;
-      color.lab_palette_map_key = palette.lab_palette_map_key;
-      color.match_palette_lab = palette.match_palette_lab;
-      color.closest = function(target, relative, bc) {
-        var key = color.palette_map_key(target);
-        bc = typeof bc !== "undefined" ? bc : {R: 255, G: 255, B: 255};
-        var result = color.map_palette([target], relative, "closest", bc);
-        return result[key];
-      };
-      color.furthest = function(target, relative, bc) {
-        var key = color.palette_map_key(target);
-        bc = typeof bc !== "undefined" ? bc : {R: 255, G: 255, B: 255};
-        var result = color.map_palette([target], relative, "furthest", bc);
-        return result[key];
-      };
-      color.closest_lab = function(target, relative) {
-        return color.match_palette_lab(target, relative, false);
-      };
-      color.furthest_lab = function(target, relative) {
-        return color.match_palette_lab(target, relative, true);
-      };
+  // node_modules/file-saver/dist/FileSaver.min.js
+  var require_FileSaver_min = __commonJS({
+    "node_modules/file-saver/dist/FileSaver.min.js"(exports, module) {
+      (function(a3, b2) {
+        if (typeof define == "function" && define.amd)
+          define([], b2);
+        else if (typeof exports != "undefined")
+          b2();
+        else {
+          b2(), a3.FileSaver = {exports: {}}.exports;
+        }
+      })(exports, function() {
+        "use strict";
+        function b2(a4, b3) {
+          return typeof b3 == "undefined" ? b3 = {autoBom: false} : typeof b3 != "object" && (console.warn("Deprecated: Expected third argument to be a object"), b3 = {autoBom: !b3}), b3.autoBom && /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(a4.type) ? new Blob(["\uFEFF", a4], {type: a4.type}) : a4;
+        }
+        function c3(a4, b3, c4) {
+          var d4 = new XMLHttpRequest();
+          d4.open("GET", a4), d4.responseType = "blob", d4.onload = function() {
+            g2(d4.response, b3, c4);
+          }, d4.onerror = function() {
+            console.error("could not download file");
+          }, d4.send();
+        }
+        function d3(a4) {
+          var b3 = new XMLHttpRequest();
+          b3.open("HEAD", a4, false);
+          try {
+            b3.send();
+          } catch (a5) {
+          }
+          return 200 <= b3.status && 299 >= b3.status;
+        }
+        function e3(a4) {
+          try {
+            a4.dispatchEvent(new MouseEvent("click"));
+          } catch (c4) {
+            var b3 = document.createEvent("MouseEvents");
+            b3.initMouseEvent("click", true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null), a4.dispatchEvent(b3);
+          }
+        }
+        var f3 = typeof window == "object" && window.window === window ? window : typeof self == "object" && self.self === self ? self : typeof global == "object" && global.global === global ? global : void 0, a3 = f3.navigator && /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent), g2 = f3.saveAs || (typeof window != "object" || window !== f3 ? function() {
+        } : "download" in HTMLAnchorElement.prototype && !a3 ? function(b3, g3, h3) {
+          var i3 = f3.URL || f3.webkitURL, j3 = document.createElement("a");
+          g3 = g3 || b3.name || "download", j3.download = g3, j3.rel = "noopener", typeof b3 == "string" ? (j3.href = b3, j3.origin === location.origin ? e3(j3) : d3(j3.href) ? c3(b3, g3, h3) : e3(j3, j3.target = "_blank")) : (j3.href = i3.createObjectURL(b3), setTimeout(function() {
+            i3.revokeObjectURL(j3.href);
+          }, 4e4), setTimeout(function() {
+            e3(j3);
+          }, 0));
+        } : "msSaveOrOpenBlob" in navigator ? function(f4, g3, h3) {
+          if (g3 = g3 || f4.name || "download", typeof f4 != "string")
+            navigator.msSaveOrOpenBlob(b2(f4, h3), g3);
+          else if (d3(f4))
+            c3(f4, g3, h3);
+          else {
+            var i3 = document.createElement("a");
+            i3.href = f4, i3.target = "_blank", setTimeout(function() {
+              e3(i3);
+            });
+          }
+        } : function(b3, d4, e4, g3) {
+          if (g3 = g3 || open("", "_blank"), g3 && (g3.document.title = g3.document.body.innerText = "downloading..."), typeof b3 == "string")
+            return c3(b3, d4, e4);
+          var h3 = b3.type === "application/octet-stream", i3 = /constructor/i.test(f3.HTMLElement) || f3.safari, j3 = /CriOS\/[\d]+/.test(navigator.userAgent);
+          if ((j3 || h3 && i3 || a3) && typeof FileReader != "undefined") {
+            var k3 = new FileReader();
+            k3.onloadend = function() {
+              var a4 = k3.result;
+              a4 = j3 ? a4 : a4.replace(/^data:[^;]*;/, "data:attachment/file;"), g3 ? g3.location.href = a4 : location = a4, g3 = null;
+            }, k3.readAsDataURL(b3);
+          } else {
+            var l3 = f3.URL || f3.webkitURL, m3 = l3.createObjectURL(b3);
+            g3 ? g3.location = m3 : location.href = m3, g3 = null, setTimeout(function() {
+              l3.revokeObjectURL(m3);
+            }, 4e4);
+          }
+        });
+        f3.saveAs = g2.saveAs = g2, typeof module != "undefined" && (module.exports = g2);
+      });
     }
   });
 
@@ -681,113 +811,152 @@
   // node_modules/preact/hooks/dist/hooks.module.js
   init_preact_module();
   var t2;
-  var u2;
   var r2;
+  var u2;
+  var i2;
   var o2 = 0;
-  var i2 = [];
-  var c2 = n.__b;
-  var f2 = n.__r;
-  var e2 = n.diffed;
-  var a2 = n.__c;
-  var v2 = n.unmount;
-  function m2(t3, r3) {
-    n.__h && n.__h(u2, t3, o2 || r3), o2 = 0;
-    var i3 = u2.__H || (u2.__H = {__: [], __h: []});
-    return t3 >= i3.__.length && i3.__.push({}), i3.__[t3];
+  var f2 = [];
+  var c2 = l;
+  var e2 = c2.__b;
+  var a2 = c2.__r;
+  var v2 = c2.diffed;
+  var l2 = c2.__c;
+  var m2 = c2.unmount;
+  var s2 = c2.__;
+  function p2(n2, t3) {
+    c2.__h && c2.__h(r2, n2, o2 || t3), o2 = 0;
+    var u3 = r2.__H || (r2.__H = {__: [], __h: []});
+    return n2 >= u3.__.length && u3.__.push({}), u3.__[n2];
   }
-  function l2(n2) {
-    return o2 = 1, p2(w2, n2);
+  function d2(n2) {
+    return o2 = 1, h2(D2, n2);
   }
-  function p2(n2, r3, o3) {
-    var i3 = m2(t2++, 2);
-    return i3.t = n2, i3.__c || (i3.__ = [o3 ? o3(r3) : w2(void 0, r3), function(n3) {
-      var t3 = i3.t(i3.__[0], n3);
-      i3.__[0] !== t3 && (i3.__ = [t3, i3.__[1]], i3.__c.setState({}));
-    }], i3.__c = u2), i3.__;
+  function h2(n2, u3, i3) {
+    var o3 = p2(t2++, 2);
+    if (o3.t = n2, !o3.__c && (o3.__ = [i3 ? i3(u3) : D2(void 0, u3), function(n3) {
+      var t3 = o3.__N ? o3.__N[0] : o3.__[0], r3 = o3.t(t3, n3);
+      t3 !== r3 && (o3.__N = [r3, o3.__[1]], o3.__c.setState({}));
+    }], o3.__c = r2, !r2.__f)) {
+      var f3 = function(n3, t3, r3) {
+        if (!o3.__c.__H)
+          return true;
+        var u4 = o3.__c.__H.__.filter(function(n4) {
+          return !!n4.__c;
+        });
+        if (u4.every(function(n4) {
+          return !n4.__N;
+        }))
+          return !c3 || c3.call(this, n3, t3, r3);
+        var i4 = o3.__c.props !== n3;
+        return u4.forEach(function(n4) {
+          if (n4.__N) {
+            var t4 = n4.__[0];
+            n4.__ = n4.__N, n4.__N = void 0, t4 !== n4.__[0] && (i4 = true);
+          }
+        }), c3 && c3.call(this, n3, t3, r3) || i4;
+      };
+      r2.__f = true;
+      var c3 = r2.shouldComponentUpdate, e3 = r2.componentWillUpdate;
+      r2.componentWillUpdate = function(n3, t3, r3) {
+        if (this.__e) {
+          var u4 = c3;
+          c3 = void 0, f3(n3, t3, r3), c3 = u4;
+        }
+        e3 && e3.call(this, n3, t3, r3);
+      }, r2.shouldComponentUpdate = f3;
+    }
+    return o3.__N || o3.__;
   }
-  function y2(r3, o3) {
-    var i3 = m2(t2++, 3);
-    !n.__s && k2(i3.__H, o3) && (i3.__ = r3, i3.__H = o3, u2.__H.__h.push(i3));
+  function y2(n2, u3) {
+    var i3 = p2(t2++, 3);
+    !c2.__s && C2(i3.__H, u3) && (i3.__ = n2, i3.u = u3, r2.__H.__h.push(i3));
   }
-  function h2(r3, o3) {
-    var i3 = m2(t2++, 4);
-    !n.__s && k2(i3.__H, o3) && (i3.__ = r3, i3.__H = o3, u2.__h.push(i3));
+  function _2(n2, u3) {
+    var i3 = p2(t2++, 4);
+    !c2.__s && C2(i3.__H, u3) && (i3.__ = n2, i3.u = u3, r2.__h.push(i3));
   }
-  function s2(n2) {
-    return o2 = 5, d2(function() {
+  function A2(n2) {
+    return o2 = 5, T2(function() {
       return {current: n2};
     }, []);
   }
-  function d2(n2, u3) {
-    var r3 = m2(t2++, 7);
-    return k2(r3.__H, u3) && (r3.__ = n2(), r3.__H = u3, r3.__h = n2), r3.__;
+  function T2(n2, r3) {
+    var u3 = p2(t2++, 7);
+    return C2(u3.__H, r3) && (u3.__ = n2(), u3.__H = r3, u3.__h = n2), u3.__;
   }
-  function F(n2) {
-    var r3 = u2.context[n2.__c], o3 = m2(t2++, 9);
-    return o3.__c = n2, r3 ? (o3.__ == null && (o3.__ = true, r3.sub(u2)), r3.props.value) : n2.__;
+  function x2(n2) {
+    var u3 = r2.context[n2.__c], i3 = p2(t2++, 9);
+    return i3.c = n2, u3 ? (i3.__ == null && (i3.__ = true, u3.sub(r2)), u3.props.value) : n2.__;
   }
-  function x2() {
-    i2.forEach(function(t3) {
-      if (t3.__P)
+  function j2() {
+    for (var n2; n2 = f2.shift(); )
+      if (n2.__P && n2.__H)
         try {
-          t3.__H.__h.forEach(g2), t3.__H.__h.forEach(j2), t3.__H.__h = [];
-        } catch (u3) {
-          t3.__H.__h = [], n.__e(u3, t3.__v);
+          n2.__H.__h.forEach(z2), n2.__H.__h.forEach(B2), n2.__H.__h = [];
+        } catch (t3) {
+          n2.__H.__h = [], c2.__e(t3, n2.__v);
         }
-    }), i2 = [];
   }
-  n.__b = function(n2) {
-    u2 = null, c2 && c2(n2);
-  }, n.__r = function(n2) {
-    f2 && f2(n2), t2 = 0;
-    var r3 = (u2 = n2.__c).__H;
-    r3 && (r3.__h.forEach(g2), r3.__h.forEach(j2), r3.__h = []);
-  }, n.diffed = function(t3) {
-    e2 && e2(t3);
-    var o3 = t3.__c;
-    o3 && o3.__H && o3.__H.__h.length && (i2.push(o3) !== 1 && r2 === n.requestAnimationFrame || ((r2 = n.requestAnimationFrame) || function(n2) {
-      var t4, u3 = function() {
-        clearTimeout(r3), b2 && cancelAnimationFrame(t4), setTimeout(n2);
-      }, r3 = setTimeout(u3, 100);
-      b2 && (t4 = requestAnimationFrame(u3));
-    })(x2)), u2 = void 0;
-  }, n.__c = function(t3, u3) {
-    u3.some(function(t4) {
+  c2.__b = function(n2) {
+    r2 = null, e2 && e2(n2);
+  }, c2.__ = function(n2, t3) {
+    n2 && t3.__k && t3.__k.__m && (n2.__m = t3.__k.__m), s2 && s2(n2, t3);
+  }, c2.__r = function(n2) {
+    a2 && a2(n2), t2 = 0;
+    var i3 = (r2 = n2.__c).__H;
+    i3 && (u2 === r2 ? (i3.__h = [], r2.__h = [], i3.__.forEach(function(n3) {
+      n3.__N && (n3.__ = n3.__N), n3.u = n3.__N = void 0;
+    })) : (i3.__h.forEach(z2), i3.__h.forEach(B2), i3.__h = [], t2 = 0)), u2 = r2;
+  }, c2.diffed = function(n2) {
+    v2 && v2(n2);
+    var t3 = n2.__c;
+    t3 && t3.__H && (t3.__H.__h.length && (f2.push(t3) !== 1 && i2 === c2.requestAnimationFrame || ((i2 = c2.requestAnimationFrame) || w2)(j2)), t3.__H.__.forEach(function(n3) {
+      n3.u && (n3.__H = n3.u), n3.u = void 0;
+    })), u2 = r2 = null;
+  }, c2.__c = function(n2, t3) {
+    t3.some(function(n3) {
       try {
-        t4.__h.forEach(g2), t4.__h = t4.__h.filter(function(n2) {
-          return !n2.__ || j2(n2);
+        n3.__h.forEach(z2), n3.__h = n3.__h.filter(function(n4) {
+          return !n4.__ || B2(n4);
         });
       } catch (r3) {
-        u3.some(function(n2) {
-          n2.__h && (n2.__h = []);
-        }), u3 = [], n.__e(r3, t4.__v);
+        t3.some(function(n4) {
+          n4.__h && (n4.__h = []);
+        }), t3 = [], c2.__e(r3, n3.__v);
       }
-    }), a2 && a2(t3, u3);
-  }, n.unmount = function(t3) {
-    v2 && v2(t3);
-    var u3 = t3.__c;
-    if (u3 && u3.__H)
+    }), l2 && l2(n2, t3);
+  }, c2.unmount = function(n2) {
+    m2 && m2(n2);
+    var t3, r3 = n2.__c;
+    r3 && r3.__H && (r3.__H.__.forEach(function(n3) {
       try {
-        u3.__H.__.forEach(g2);
-      } catch (t4) {
-        n.__e(t4, u3.__v);
+        z2(n3);
+      } catch (n4) {
+        t3 = n4;
       }
+    }), r3.__H = void 0, t3 && c2.__e(t3, r3.__v));
   };
-  var b2 = typeof requestAnimationFrame == "function";
-  function g2(n2) {
-    var t3 = u2;
-    typeof n2.__c == "function" && n2.__c(), u2 = t3;
+  var k2 = typeof requestAnimationFrame == "function";
+  function w2(n2) {
+    var t3, r3 = function() {
+      clearTimeout(u3), k2 && cancelAnimationFrame(t3), setTimeout(n2);
+    }, u3 = setTimeout(r3, 35);
+    k2 && (t3 = requestAnimationFrame(r3));
   }
-  function j2(n2) {
-    var t3 = u2;
-    n2.__c = n2.__(), u2 = t3;
+  function z2(n2) {
+    var t3 = r2, u3 = n2.__c;
+    typeof u3 == "function" && (n2.__c = void 0, u3()), r2 = t3;
   }
-  function k2(n2, t3) {
-    return !n2 || n2.length !== t3.length || t3.some(function(t4, u3) {
-      return t4 !== n2[u3];
+  function B2(n2) {
+    var t3 = r2;
+    n2.__c = n2.__(), r2 = t3;
+  }
+  function C2(n2, t3) {
+    return !n2 || n2.length !== t3.length || t3.some(function(t4, r3) {
+      return t4 !== n2[r3];
     });
   }
-  function w2(n2, t3) {
+  function D2(n2, t3) {
     return typeof t3 == "function" ? t3(n2) : t3;
   }
 
@@ -916,13 +1085,13 @@
     let denom = 1 + 2392 / 128 * Math.pow(n2 / 1e4, m1);
     return Math.pow((3424 / 4096 + 2413 / 128 * Math.pow(n2 / 1e4, m1)) / (1 + 2392 / 128 * Math.pow(n2 / 1e4, m1)), 2523 / 32);
   }
-  function rgbToXyz(r3, g3, b3) {
+  function rgbToXyz(r3, g2, b2) {
     r3 = sRGBtoLinearRGB(r3 / 255);
-    g3 = sRGBtoLinearRGB(g3 / 255);
-    b3 = sRGBtoLinearRGB(b3 / 255);
-    const X = 0.4124 * r3 + 0.3576 * g3 + 0.1805 * b3;
-    const Y = 0.2126 * r3 + 0.7152 * g3 + 0.0722 * b3;
-    const Z = 0.0193 * r3 + 0.1192 * g3 + 0.9505 * b3;
+    g2 = sRGBtoLinearRGB(g2 / 255);
+    b2 = sRGBtoLinearRGB(b2 / 255);
+    const X = 0.4124 * r3 + 0.3576 * g2 + 0.1805 * b2;
+    const Y = 0.2126 * r3 + 0.7152 * g2 + 0.0722 * b2;
+    const Z = 0.0193 * r3 + 0.1192 * g2 + 0.9505 * b2;
     return [X, Y, Z];
   }
   function xyzToXYZa(xyz) {
@@ -937,10 +1106,10 @@
   function rgbToICtCp(arg) {
     const xyz = rgbToXyz(arg.r, arg.g, arg.b);
     const xyza = xyzToXYZa(xyz);
-    const [R, G, B] = xyza;
-    const L2 = 0.3592 * R + 0.6976 * G - 0.0358 * B;
-    const M2 = -0.1922 * R + 1.1004 * G + 0.0755 * B;
-    const S2 = 7e-3 * R + 0.0749 * G + 0.8434 * B;
+    const [R, G2, B3] = xyza;
+    const L2 = 0.3592 * R + 0.6976 * G2 - 0.0358 * B3;
+    const M2 = -0.1922 * R + 1.1004 * G2 + 0.0755 * B3;
+    const S2 = 7e-3 * R + 0.0749 * G2 + 0.8434 * B3;
     const [Lp, Mp, Sp] = PQ(L2, M2, S2);
     const I2 = 0.5 * Lp + 0.5 * Mp;
     const Ct = (6610 * Lp - 13613 * Mp + 7003 * Sp) / 4096;
@@ -950,7 +1119,7 @@
 
   // src/utils.tsx
   var preact2 = (init_preact_module(), preact_module_exports);
-  var diff = require_lib();
+  var diff = require_color_diff();
   var symbolAlphabet = "ABCDEFGHJKLMNPQRSTVXZ\u03B1\u03B2\u0394\u03B8\u03BB\u03C0\u03A6\u03A8\u03A9abcdefghijklmnopqrstuvwxyz0123456789";
   var GridFormats = {
     "perler": {
@@ -1152,7 +1321,7 @@
   }
 
   // src/palettizer.ts
-  var diff2 = require_lib();
+  var diff2 = require_color_diff();
   function palettize(rgbaArray, palette) {
     const pixels = [];
     const colorLookup = new Map();
@@ -1207,18 +1376,18 @@
     const perf = timer();
     const noDuplicates = settings.nodupes && (!allowedColors || inputColors.length < allowedColors.length);
     const tempAssignments = [];
-    inputColors.sort((a3, b3) => b3.count - a3.count);
+    inputColors.sort((a3, b2) => b2.count - a3.count);
     const diff3 = colorDiff[settings.colorMatch];
     for (const inColor of inputColors) {
       if (allowedColors === void 0) {
-        const {r: r3, g: g3, b: b3} = inColor;
+        const {r: r3, g: g2, b: b2} = inColor;
         tempAssignments.push({
           color: inColor.color,
           target: {
             r: r3,
-            g: g3,
-            b: b3,
-            name: colorEntryToHex({r: r3, g: g3, b: b3}),
+            g: g2,
+            b: b2,
+            name: colorEntryToHex({r: r3, g: g2, b: b2}),
             code: ""
           },
           count: inColor.count
@@ -1270,15 +1439,15 @@
     rgb: (lhs, rhs) => {
       return Math.pow(lhs.r - rhs.r, 2) * 3 + Math.pow(lhs.g - rhs.g, 2) * 4 + Math.pow(lhs.b - rhs.b, 2) * 2;
     },
-    rgb2: (r3, g3, b3, rhs) => {
-      return Math.pow(r3 - rhs.r, 2) * 3 + Math.pow(g3 - rhs.g, 2) * 4 + Math.pow(b3 - rhs.b, 2) * 2;
+    rgb2: (r3, g2, b2, rhs) => {
+      return Math.pow(r3 - rhs.r, 2) * 3 + Math.pow(g2 - rhs.g, 2) * 4 + Math.pow(b2 - rhs.b, 2) * 2;
     },
     "ciede2000": (lhs, rhs) => {
       return diff2.diff(rgbToLabCached(lhs), rgbToLabCached(rhs));
     },
     "ictcp": (lhs, rhs) => {
-      const a3 = rgbToICtCp(lhs), b3 = rgbToICtCp(rhs);
-      const di = a3[0] - b3[0], dct = (a3[1] - b3[1]) / 2, dcp = a3[2] - b3[2];
+      const a3 = rgbToICtCp(lhs), b2 = rgbToICtCp(rhs);
+      const di = a3[0] - b2[0], dct = (a3[1] - b2[1]) / 2, dcp = a3[2] - b2[2];
       return di * di + dct * dct + dcp * dcp;
     }
   };
@@ -1296,9 +1465,9 @@
     for (let y3 = 0; y3 < imageData.height; y3++) {
       const row = [];
       for (let x3 = 0; x3 < imageData.width; x3++) {
-        const b3 = 4 * (y3 * imageData.width + x3);
-        if (imageData.data[b3 + 3] === 255) {
-          row.push((imageData.data[b3 + 2] << 16) + (imageData.data[b3 + 1] << 8) + imageData.data[b3]);
+        const b2 = 4 * (y3 * imageData.width + x3);
+        if (imageData.data[b2 + 3] === 255) {
+          row.push((imageData.data[b2 + 2] << 16) + (imageData.data[b2 + 1] << 8) + imageData.data[b2]);
         } else {
           row.push(-1);
         }
@@ -1643,7 +1812,7 @@
     for (const entry of lookup.entries()) {
       res.push(entry[1]);
     }
-    res.sort((a3, b3) => b3.count - a3.count);
+    res.sort((a3, b2) => b2.count - a3.count);
     for (let i3 = 0; i3 < res.length; i3++) {
       res[i3].symbol = symbolAlphabet[i3];
     }
@@ -1651,7 +1820,7 @@
   }
   function getImageStats(image) {
     return {
-      pixels: image.partList.reduce((a3, b3) => a3 + b3.count, 0)
+      pixels: image.partList.reduce((a3, b2) => a3 + b2.count, 0)
     };
   }
   function renderPartListImageToDataURL(image, maxPartFrame = Infinity) {
@@ -1747,14 +1916,14 @@
         }
       }
     }
-    function applyError(x3, y3, r3, g3, b3, f3) {
+    function applyError(x3, y3, r3, g2, b2, f3) {
       if (x3 < 0 || x3 >= image.width)
         return;
       if (y3 < 0 || y3 >= image.height)
         return;
       chR[y3][x3] -= r3 * f3;
-      chG[y3][x3] -= g3 * f3;
-      chB[y3][x3] -= b3 * f3;
+      chG[y3][x3] -= g2 * f3;
+      chB[y3][x3] -= b2 * f3;
     }
   }
   function isTrueColorImage(img, threshold) {
@@ -1774,7 +1943,7 @@
   // src/types.tsx
   init_preact_module();
   var BuyLink = ({code}) => {
-    return /* @__PURE__ */ a("a", {
+    return /* @__PURE__ */ _("a", {
       href: "https://amzn.to/" + code,
       rel: "noreferrer",
       target: "_blank",
@@ -1783,50 +1952,50 @@
   };
   var MaterialSettings = {
     palette: [
-      ["artkal-mini-starter", /* @__PURE__ */ a("span", null, "Artkal Mini Starter ", /* @__PURE__ */ a(BuyLink, {
+      ["artkal-mini-starter", /* @__PURE__ */ _("span", null, "Artkal Mini Starter ", /* @__PURE__ */ _(BuyLink, {
         code: "3wThLo8"
       }))],
       ["artkal-all-mini", "All Artkal Mini"],
-      ["perler-multimix", /* @__PURE__ */ a("span", null, "Perler Multi Mix ", /* @__PURE__ */ a(BuyLink, {
+      ["perler-multimix", /* @__PURE__ */ _("span", null, "Perler Multi Mix ", /* @__PURE__ */ _(BuyLink, {
         code: "2WjPiLU"
       }))],
-      ["perler-all", /* @__PURE__ */ a("span", null, "All Perler ", /* @__PURE__ */ a(BuyLink, {
+      ["perler-all", /* @__PURE__ */ _("span", null, "All Perler ", /* @__PURE__ */ _(BuyLink, {
         code: "3kPFwL9"
       }))],
-      ["evoretro", /* @__PURE__ */ a("span", null, "Evoretro ", /* @__PURE__ */ a(BuyLink, {
+      ["evoretro", /* @__PURE__ */ _("span", null, "Evoretro ", /* @__PURE__ */ _(BuyLink, {
         code: "39Lp3kO"
       }))],
-      ["funzbo", /* @__PURE__ */ a("span", null, "Funzbo ", /* @__PURE__ */ a(BuyLink, {
+      ["funzbo", /* @__PURE__ */ _("span", null, "Funzbo ", /* @__PURE__ */ _(BuyLink, {
         code: "3GDH7N3"
       }))],
-      ["lego", /* @__PURE__ */ a("span", null, "LEGO ", /* @__PURE__ */ a(BuyLink, {
+      ["lego", /* @__PURE__ */ _("span", null, "LEGO ", /* @__PURE__ */ _(BuyLink, {
         code: "3omMszN"
       }))],
-      ["dmc", /* @__PURE__ */ a("span", null, "DMC ", /* @__PURE__ */ a(BuyLink, {
+      ["dmc", /* @__PURE__ */ _("span", null, "DMC ", /* @__PURE__ */ _(BuyLink, {
         code: "3D4PRtf"
       }))],
       ["all", "All Colors"]
     ],
     size: [
-      ["artkal-mini", /* @__PURE__ */ a("span", null, "Artkal Mini", /* @__PURE__ */ a(BuyLink, {
+      ["artkal-mini", /* @__PURE__ */ _("span", null, "Artkal Mini", /* @__PURE__ */ _(BuyLink, {
         code: "3eNjvcm"
       }))],
-      ["perler-mini", /* @__PURE__ */ a("span", null, "Perler Mini", /* @__PURE__ */ a(BuyLink, {
+      ["perler-mini", /* @__PURE__ */ _("span", null, "Perler Mini", /* @__PURE__ */ _(BuyLink, {
         code: "2WcXJIH"
       }))],
-      ["perler", /* @__PURE__ */ a("span", null, "Perler", /* @__PURE__ */ a(BuyLink, {
+      ["perler", /* @__PURE__ */ _("span", null, "Perler", /* @__PURE__ */ _(BuyLink, {
         code: "36U2tov"
       }))],
-      ["evoretro", /* @__PURE__ */ a("span", null, "Evoretro", /* @__PURE__ */ a(BuyLink, {
+      ["evoretro", /* @__PURE__ */ _("span", null, "Evoretro", /* @__PURE__ */ _(BuyLink, {
         code: "39Lp3kO"
       }))],
-      ["funzbo", /* @__PURE__ */ a("span", null, "Funzbo", /* @__PURE__ */ a(BuyLink, {
+      ["funzbo", /* @__PURE__ */ _("span", null, "Funzbo", /* @__PURE__ */ _(BuyLink, {
         code: "3GDH7N3"
       }))],
-      ["16 ct", /* @__PURE__ */ a("span", {
+      ["16 ct", /* @__PURE__ */ _("span", {
         title: "16 threads per inch (cross-stitch)"
       }, "16 ct")],
-      ["30 ct", /* @__PURE__ */ a("span", {
+      ["30 ct", /* @__PURE__ */ _("span", {
         title: "30 threads per inch (cross-stitch)"
       }, "30 ct")],
       ["lego", "LEGO \u2122"]
@@ -1883,7 +2052,7 @@
 
   // src/components/context.ts
   init_preact_module();
-  var PropContext = q(null);
+  var PropContext = Q(null);
 
   // src/components/print-dialog.tsx
   init_preact_module();
@@ -2340,28 +2509,28 @@
 
   // src/components/print-dialog.tsx
   function PrintDialog(props) {
-    const updateProp = F(PropContext);
-    return /* @__PURE__ */ a("div", {
+    const updateProp = x2(PropContext);
+    return /* @__PURE__ */ _("div", {
       class: "print-dialog"
-    }, /* @__PURE__ */ a("div", {
+    }, /* @__PURE__ */ _("div", {
       class: "print-options"
-    }, /* @__PURE__ */ a(FormatGroup, {
+    }, /* @__PURE__ */ _(FormatGroup, {
       ...props
-    }), /* @__PURE__ */ a(PaperSizeGroup, {
+    }), /* @__PURE__ */ _(PaperSizeGroup, {
       ...props
-    }), /* @__PURE__ */ a(ImageSizeGroup, {
+    }), /* @__PURE__ */ _(ImageSizeGroup, {
       ...props
-    }), /* @__PURE__ */ a(PageBreakingGroup, {
+    }), /* @__PURE__ */ _(PageBreakingGroup, {
       ...props
-    })), /* @__PURE__ */ a("div", {
+    })), /* @__PURE__ */ _("div", {
       class: "print-buttons"
-    }, /* @__PURE__ */ a("button", {
+    }, /* @__PURE__ */ _("button", {
       class: "cancel",
       onClick: () => updateProp("ui", "isPrintOpen", false)
-    }, "Cancel"), /* @__PURE__ */ a("button", {
+    }, "Cancel"), /* @__PURE__ */ _("button", {
       class: "print",
       onClick: () => print()
-    }, "Print\xA0", /* @__PURE__ */ a("img", {
+    }, "Print\xA0", /* @__PURE__ */ _("img", {
       class: "pdf-logo",
       src: "./pdf-logo.png"
     }))));
@@ -2376,6 +2545,7 @@
         filename: props.filename.replace(".png", ""),
         debug: window.location.host.indexOf("localhost") === 0
       };
+      window.clarity?.("event", "print");
       makePdf(props.image, settings);
     }
   }
@@ -2387,7 +2557,7 @@
         value: "step-by-step",
         title: "Single Color",
         description: "Print one black-and-white grid per color. Best for laser printers or when colors are difficult to tell apart.",
-        icon: /* @__PURE__ */ a(StepByStepPreviewer, {
+        icon: /* @__PURE__ */ _(StepByStepPreviewer, {
           image
         })
       },
@@ -2395,7 +2565,7 @@
         value: "color",
         title: "Color Image",
         description: "Print a single color image. Best for color printers and images with fewer colors.",
-        icon: /* @__PURE__ */ a(ColorImagePreviewer, {
+        icon: /* @__PURE__ */ _(ColorImagePreviewer, {
           image
         })
       },
@@ -2403,7 +2573,7 @@
         value: "legend",
         title: "Legend",
         description: "Print a grid of letters corresponding to the legend",
-        icon: /* @__PURE__ */ a(SinglePlanPreviewer, {
+        icon: /* @__PURE__ */ _(SinglePlanPreviewer, {
           image
         })
       }
@@ -2417,7 +2587,7 @@
         title: "Letter",
         value: "letter",
         description: '8.5" x 11"',
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "letter-icon"
         })
       },
@@ -2425,7 +2595,7 @@
         title: "A4",
         value: "a4",
         description: "210mm x 297mm",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "a4-icon"
         })
       }
@@ -2439,7 +2609,7 @@
         title: "Page",
         value: "single-page",
         description: "Scale the image to fit a single page",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "size-stretch"
         }, "\u26F6")
       },
@@ -2447,7 +2617,7 @@
         title: "Actual",
         value: "actual",
         description: "Print at actual size. Multiple pages will be generated if necessary",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "size-actual"
         }, "1:1")
       },
@@ -2455,7 +2625,7 @@
         title: "Legible",
         value: "legible",
         description: "Print at a legible size. Multiple pages will be generated if necessary",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "size-legible"
         }, "\u{1F441}")
       }
@@ -2469,7 +2639,7 @@
         title: "Grid",
         value: "grid",
         description: "Split large images based on the pegboard grid size",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "break-grid"
         }, "\u{1F533}")
       },
@@ -2477,15 +2647,15 @@
         title: "Page",
         value: "page",
         description: "Split large images based on the page size",
-        icon: /* @__PURE__ */ a("span", {
+        icon: /* @__PURE__ */ _("span", {
           class: "break-paper"
         }, "\u{1F4C4}")
       }
     ]
   }));
   function StepByStepPreviewer(props) {
-    const [frame, setFrame] = l2(0);
-    const imgRef = s2();
+    const [frame, setFrame] = d2(0);
+    const imgRef = A2();
     y2(() => {
       drawNextFrame();
       const id = window.setInterval(incrementFrame, 600);
@@ -2493,7 +2663,7 @@
         window.clearInterval(id);
       };
     });
-    return /* @__PURE__ */ a("img", {
+    return /* @__PURE__ */ _("img", {
       class: "step-by-step-preview",
       ref: imgRef
     });
@@ -2505,7 +2675,7 @@
     }
   }
   function ColorImagePreviewer(props) {
-    return /* @__PURE__ */ a("img", {
+    return /* @__PURE__ */ _("img", {
       src: renderPartListImageToDataURL(props.image)
     });
   }
@@ -2523,28 +2693,312 @@
       }
       lines.push(s3);
     }
-    return /* @__PURE__ */ a("span", null, /* @__PURE__ */ a("pre", null, lines.join("\n")));
+    return /* @__PURE__ */ _("span", null, /* @__PURE__ */ _("pre", null, lines.join("\n")));
   }
   function makeRadioGroup(factory) {
     return function(props) {
-      const updateProp = F(PropContext);
+      const updateProp = x2(PropContext);
       const p3 = factory(props);
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "print-setting-group"
-      }, /* @__PURE__ */ a("h1", null, p3.title), /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("h1", null, p3.title), /* @__PURE__ */ _("div", {
         class: "print-setting-group-options"
-      }, p3.values.map((v3) => /* @__PURE__ */ a("label", null, /* @__PURE__ */ a("input", {
+      }, p3.values.map((v3) => /* @__PURE__ */ _("label", null, /* @__PURE__ */ _("input", {
         type: "radio",
         name: p3.key,
         checked: v3.value === props.settings[p3.key],
         onChange: () => {
           updateProp("print", p3.key, v3.value);
         }
-      }), /* @__PURE__ */ a("div", {
+      }), /* @__PURE__ */ _("div", {
         class: "option"
-      }, /* @__PURE__ */ a("h3", null, v3.title), v3.icon)))), /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("h3", null, v3.title), v3.icon)))), /* @__PURE__ */ _("span", {
         class: "description"
       }, p3.values.filter((v3) => v3.value === props.settings[p3.key])[0]?.description));
+    };
+  }
+
+  // src/components/3d-dialog.tsx
+  init_preact_module();
+
+  // src/3d-generator.ts
+  var import_file_saver = __toModule(require_FileSaver_min());
+  async function generate3D(image, settings) {
+    await loadJSZipAnd(() => generate3DWorker(image, settings));
+  }
+  async function loadJSZipAnd(func) {
+    const tagName = "jszip-script-tag";
+    const scriptEl = document.getElementById(tagName);
+    if (scriptEl === null) {
+      const tag = document.createElement("script");
+      tag.id = tagName;
+      tag.onload = () => {
+        func();
+      };
+      tag.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+      document.head.appendChild(tag);
+    } else {
+      func();
+    }
+  }
+  async function generate3DWorker(image, settings) {
+    if (settings.format === "3mf") {
+      await generate3MF(image, settings);
+    } else if (settings.format === "openscad") {
+      await generateOpenSCAD(image, settings);
+    }
+  }
+  async function generate3MF(image, settings) {
+    const xml = create3MFContent(image, settings);
+    const zip = new JSZip();
+    zip.file("[Content_Types].xml", getContentTypesXML());
+    const relsFolder = zip.folder("_rels");
+    relsFolder.file(".rels", getRelsXML());
+    const modelFolder = zip.folder("3D");
+    modelFolder.file("3dmodel.model", xml);
+    const blob = await zip.generateAsync({type: "blob"});
+    (0, import_file_saver.saveAs)(blob, `${settings.filename}.3mf`);
+  }
+  function create3MFContent(image, settings) {
+    const {width, height, pixels, partList} = image;
+    const {pitch, height: blockHeight} = settings;
+    let vertices = "";
+    let triangles = "";
+    let vertexCount = 0;
+    let triangleCount = 0;
+    let objectsXML = "";
+    for (let colorIdx = 0; colorIdx < partList.length; colorIdx++) {
+      const part = partList[colorIdx];
+      if (!part)
+        continue;
+      const colorVertices = [];
+      const colorTriangles = [];
+      let localVertexCount = 0;
+      for (let y3 = 0; y3 < height; y3++) {
+        for (let x3 = 0; x3 < width; x3++) {
+          if (pixels[y3][x3] === colorIdx) {
+            const x0 = x3 * pitch;
+            const x1 = (x3 + 1) * pitch;
+            const y0 = y3 * pitch;
+            const y1 = (y3 + 1) * pitch;
+            const z0 = 0;
+            const z1 = blockHeight;
+            const baseVertex = localVertexCount;
+            colorVertices.push(`<vertex x="${x0}" y="${y0}" z="${z0}" />`, `<vertex x="${x1}" y="${y0}" z="${z0}" />`, `<vertex x="${x1}" y="${y1}" z="${z0}" />`, `<vertex x="${x0}" y="${y1}" z="${z0}" />`, `<vertex x="${x0}" y="${y0}" z="${z1}" />`, `<vertex x="${x1}" y="${y0}" z="${z1}" />`, `<vertex x="${x1}" y="${y1}" z="${z1}" />`, `<vertex x="${x0}" y="${y1}" z="${z1}" />`);
+            localVertexCount += 8;
+            colorTriangles.push(`<triangle v1="${baseVertex + 0}" v2="${baseVertex + 1}" v3="${baseVertex + 2}" />`, `<triangle v1="${baseVertex + 0}" v2="${baseVertex + 2}" v3="${baseVertex + 3}" />`, `<triangle v1="${baseVertex + 4}" v2="${baseVertex + 6}" v3="${baseVertex + 5}" />`, `<triangle v1="${baseVertex + 4}" v2="${baseVertex + 7}" v3="${baseVertex + 6}" />`, `<triangle v1="${baseVertex + 0}" v2="${baseVertex + 4}" v3="${baseVertex + 5}" />`, `<triangle v1="${baseVertex + 0}" v2="${baseVertex + 5}" v3="${baseVertex + 1}" />`, `<triangle v1="${baseVertex + 2}" v2="${baseVertex + 6}" v3="${baseVertex + 7}" />`, `<triangle v1="${baseVertex + 2}" v2="${baseVertex + 7}" v3="${baseVertex + 3}" />`, `<triangle v1="${baseVertex + 0}" v2="${baseVertex + 3}" v3="${baseVertex + 7}" />`, `<triangle v1="${baseVertex + 0}" v2="${baseVertex + 7}" v3="${baseVertex + 4}" />`, `<triangle v1="${baseVertex + 1}" v2="${baseVertex + 5}" v3="${baseVertex + 6}" />`, `<triangle v1="${baseVertex + 1}" v2="${baseVertex + 6}" v3="${baseVertex + 2}" />`);
+          }
+        }
+      }
+      if (colorVertices.length > 0) {
+        const r3 = part.target.r / 255;
+        const g2 = part.target.g / 255;
+        const b2 = part.target.b / 255;
+        objectsXML += `
+    <object id="${colorIdx + 2}" type="model">
+      <mesh>
+        <vertices>
+${colorVertices.join("\n")}
+        </vertices>
+        <triangles>
+${colorTriangles.join("\n")}
+        </triangles>
+      </mesh>
+    </object>`;
+      }
+    }
+    let componentsXML = "";
+    for (let colorIdx = 0; colorIdx < partList.length; colorIdx++) {
+      const part = partList[colorIdx];
+      if (!part)
+        continue;
+      const r3 = part.target.r / 255;
+      const g2 = part.target.g / 255;
+      const b2 = part.target.b / 255;
+      componentsXML += `      <component objectid="${colorIdx + 2}" />
+`;
+    }
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02">
+  <resources>
+${objectsXML}
+    <object id="1" type="model">
+      <components>
+${componentsXML}
+      </components>
+    </object>
+  </resources>
+  <build>
+    <item objectid="1" />
+  </build>
+</model>`;
+  }
+  function getContentTypesXML() {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+  <Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml" />
+</Types>`;
+  }
+  function getRelsXML() {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Target="/3D/3dmodel.model" Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel" />
+</Relationships>`;
+  }
+  async function generateOpenSCAD(image, settings) {
+    const {width, height, pixels, partList} = image;
+    const {pitch} = settings;
+    const zip = new JSZip();
+    for (let colorIdx = 0; colorIdx < partList.length; colorIdx++) {
+      const part = partList[colorIdx];
+      if (!part)
+        continue;
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = "#000000";
+      for (let y3 = 0; y3 < height; y3++) {
+        for (let x3 = 0; x3 < width; x3++) {
+          if (pixels[y3][x3] === colorIdx) {
+            ctx.fillRect(x3, y3, 1, 1);
+          }
+        }
+      }
+      const blob2 = await new Promise((resolve) => {
+        canvas.toBlob((blob3) => resolve(blob3), "image/png");
+      });
+      const colorName = part.target.name.replace(/[^a-zA-Z0-9]/g, "_");
+      zip.file(`mask_${colorIdx}_${colorName}.png`, blob2);
+    }
+    const scadContent = createOpenSCADFile(image, settings);
+    zip.file(`${settings.filename}.scad`, scadContent);
+    const blob = await zip.generateAsync({type: "blob"});
+    (0, import_file_saver.saveAs)(blob, `${settings.filename}_openscad.zip`);
+  }
+  function createOpenSCADFile(image, settings) {
+    const {width, height, partList} = image;
+    const {pitch, height: blockHeight} = settings;
+    let scadCode = `// Generated by firaga.io
+// Image size: ${width}x${height}
+// Pitch: ${pitch}mm
+
+`;
+    for (let colorIdx = 0; colorIdx < partList.length; colorIdx++) {
+      const part = partList[colorIdx];
+      if (!part)
+        continue;
+      const colorName = part.target.name.replace(/[^a-zA-Z0-9]/g, "_");
+      const r3 = part.target.r / 255;
+      const g2 = part.target.g / 255;
+      const b2 = part.target.b / 255;
+      scadCode += `
+// ${part.target.name}
+color([${r3.toFixed(3)}, ${g2.toFixed(3)}, ${b2.toFixed(3)}])
+translate([0, 0, ${colorIdx * blockHeight}])
+scale([${pitch}, ${pitch}, ${blockHeight}])
+surface(file = "mask_${colorIdx}_${colorName}.png", invert = true, center = false);
+
+`;
+    }
+    return scadCode;
+  }
+
+  // src/components/3d-dialog.tsx
+  function ThreeDDialog(props) {
+    const updateProp = x2(PropContext);
+    const [format, setFormat] = d2("3mf");
+    const [height, setHeight] = d2(2);
+    return /* @__PURE__ */ _("div", {
+      class: "print-dialog"
+    }, /* @__PURE__ */ _("div", {
+      class: "print-options"
+    }, /* @__PURE__ */ _(FormatGroup2, {
+      format,
+      setFormat
+    }), /* @__PURE__ */ _(HeightGroup, {
+      height,
+      setHeight
+    })), /* @__PURE__ */ _("div", {
+      class: "print-buttons"
+    }, /* @__PURE__ */ _("button", {
+      class: "cancel",
+      onClick: () => updateProp("ui", "is3DOpen", false)
+    }, "Cancel"), /* @__PURE__ */ _("button", {
+      class: "print",
+      onClick: () => exportModel()
+    }, "Export 3D")));
+    function exportModel() {
+      const pitch = getPitch(props.gridSize);
+      window.clarity?.("event", "export-3d");
+      generate3D(props.image, {
+        format,
+        filename: props.filename.replace(".png", ""),
+        pitch,
+        height
+      });
+    }
+  }
+  var FormatGroup2 = makeRadioGroup2(() => ({
+    title: "Format",
+    values: [
+      {
+        value: "3mf",
+        title: "3MF",
+        description: "3D Manufacturing Format - Triangle mesh with separate material shapes for each color. Compatible with most 3D printing software.",
+        icon: /* @__PURE__ */ _("span", {
+          class: "format-icon"
+        }, "\u{1F4D0}")
+      },
+      {
+        value: "openscad",
+        title: "OpenSCAD Masks",
+        description: "Zip file containing monochrome mask images (one per color) and an OpenSCAD file that combines them into a 3D display.",
+        icon: /* @__PURE__ */ _("span", {
+          class: "format-icon"
+        }, "\u{1F3AD}")
+      }
+    ]
+  }));
+  var HeightGroup = ({height, setHeight}) => {
+    return /* @__PURE__ */ _("div", {
+      class: "print-setting-group"
+    }, /* @__PURE__ */ _("h1", null, "Block Height"), /* @__PURE__ */ _("div", {
+      class: "slider-caption"
+    }, /* @__PURE__ */ _("input", {
+      type: "range",
+      class: "slider",
+      onChange: (e3) => setHeight(parseFloat(e3.target.value)),
+      min: "0.5",
+      max: "10",
+      step: "0.5",
+      value: height
+    }), /* @__PURE__ */ _("span", null, height.toFixed(1), " mm")), /* @__PURE__ */ _("span", {
+      class: "description"
+    }, "Height of each color layer in the 3D model"));
+  };
+  function makeRadioGroup2(factory) {
+    return function({format, setFormat}) {
+      const p3 = factory();
+      return /* @__PURE__ */ _("div", {
+        class: "print-setting-group"
+      }, /* @__PURE__ */ _("h1", null, p3.title), /* @__PURE__ */ _("div", {
+        class: "print-setting-group-options"
+      }, p3.values.map((v3) => /* @__PURE__ */ _("label", null, /* @__PURE__ */ _("input", {
+        type: "radio",
+        name: "format",
+        checked: v3.value === format,
+        onChange: () => {
+          setFormat(v3.value);
+        }
+      }), /* @__PURE__ */ _("div", {
+        class: "option"
+      }, /* @__PURE__ */ _("h3", null, v3.title), v3.icon)))), /* @__PURE__ */ _("span", {
+        class: "description"
+      }, p3.values.filter((v3) => v3.value === format)[0]?.description));
     };
   }
 
@@ -2578,94 +3032,94 @@
       planStyle
     } = displaySettings;
     const isBackgroundDark = displaySettings.background === "#000" || displaySettings.background === "#777";
-    return /* @__PURE__ */ a("svg", {
+    return /* @__PURE__ */ _("svg", {
       class: "plan",
       xmlns: "http://www.w3.org/2000/svg",
       viewBox: `-16 -16 ${(image.width + 1) * 32} ${(image.height + 1) * 32}`,
       preserveAspectRatio: "xMidYMid meet"
-    }, /* @__PURE__ */ a("style", null, svgCss), /* @__PURE__ */ a("defs", null, /* @__PURE__ */ a("rect", {
+    }, /* @__PURE__ */ _("style", null, svgCss), /* @__PURE__ */ _("defs", null, /* @__PURE__ */ _("rect", {
       id: "melted",
       width: "32",
       height: "32",
       rx: "7",
       ry: "7"
-    }), /* @__PURE__ */ a("rect", {
+    }), /* @__PURE__ */ _("rect", {
       id: "square",
       width: "32",
       height: "32"
-    }), /* @__PURE__ */ a("rect", {
+    }), /* @__PURE__ */ _("rect", {
       id: "circle",
       width: "32",
       height: "32",
       rx: "16",
       ry: "16"
-    }), /* @__PURE__ */ a("pattern", {
+    }), /* @__PURE__ */ _("pattern", {
       id: "wood",
       patternUnits: "userSpaceOnUse",
       width: "400",
       height: "400"
-    }, /* @__PURE__ */ a("image", {
+    }, /* @__PURE__ */ _("image", {
       href: "https://upload.wikimedia.org/wikipedia/commons/5/50/Mahag%C3%B3ni_001.jpg",
       x: "0",
       y: "0",
       width: "400",
       height: "400"
-    })), /* @__PURE__ */ a("filter", {
+    })), /* @__PURE__ */ _("filter", {
       id: "blurFilter"
-    }, /* @__PURE__ */ a("feGaussianBlur", {
+    }, /* @__PURE__ */ _("feGaussianBlur", {
       in: "SourceGraphic",
       stdDeviation: "4"
-    })), /* @__PURE__ */ a("pattern", {
+    })), /* @__PURE__ */ _("pattern", {
       id: "checkPattern",
       viewBox: "0 0 32 32",
       width: "32",
       height: "32",
       patternUnits: "userSpaceOnUse"
-    }, /* @__PURE__ */ a("rect", {
+    }, /* @__PURE__ */ _("rect", {
       x: "0",
       y: "0",
       width: "16",
       height: "16",
       fill: "#DDDDDD"
-    }), /* @__PURE__ */ a("rect", {
+    }), /* @__PURE__ */ _("rect", {
       x: "0",
       y: "16",
       width: "16",
       height: "16",
       fill: "#999999"
-    }), /* @__PURE__ */ a("rect", {
+    }), /* @__PURE__ */ _("rect", {
       x: "16",
       y: "0",
       width: "16",
       height: "16",
       fill: "#999999"
-    }), /* @__PURE__ */ a("rect", {
+    }), /* @__PURE__ */ _("rect", {
       x: "16",
       y: "16",
       width: "16",
       height: "16",
       fill: "#DDDDDD"
-    }))), /* @__PURE__ */ a(BackgroundLayer, {
+    }))), /* @__PURE__ */ _(BackgroundLayer, {
       image,
       bg: displaySettings.background
-    }), /* @__PURE__ */ a(ColorLayer, {
+    }), /* @__PURE__ */ _(ColorLayer, {
       image
-    }), /* @__PURE__ */ a(GridLayer, {
+    }), /* @__PURE__ */ _(GridLayer, {
       image,
       grid: displaySettings.grid,
       boardSize: props.gridSize,
       nudgeGrid: displaySettings.nudgeGrid
-    }), /* @__PURE__ */ a(TextLayer, {
+    }), /* @__PURE__ */ _(TextLayer, {
       image,
       planStyle: props.displaySettings.planStyle,
       isBackgroundDark
-    }), /* @__PURE__ */ a(RefObjLayer, {
+    }), /* @__PURE__ */ _(RefObjLayer, {
       pitch: props.pitch,
       name: displaySettings.refobj
     }));
   }
   function BackgroundLayer(props) {
-    return /* @__PURE__ */ a("rect", {
+    return /* @__PURE__ */ _("rect", {
       x: -16,
       y: -16,
       width: (props.image.width + 1) * 32,
@@ -2676,11 +3130,11 @@
   }
   function TextLayer(props) {
     const {image, planStyle, isBackgroundDark} = props;
-    const textLayer = s2(null);
+    const textLayer = A2(null);
     y2(() => {
       renderSpans();
     }, [image, planStyle, isBackgroundDark]);
-    return /* @__PURE__ */ a("g", {
+    return /* @__PURE__ */ _("g", {
       ref: textLayer
     });
     function renderSpans() {
@@ -2765,11 +3219,11 @@
   }
   function GridLayer(props) {
     const {image, grid, nudgeGrid} = props;
-    const gridLayer = s2(null);
+    const gridLayer = A2(null);
     y2(() => {
       renderGrid();
     }, [image, grid, nudgeGrid]);
-    return /* @__PURE__ */ a("g", {
+    return /* @__PURE__ */ _("g", {
       ref: gridLayer
     });
     function renderGrid() {
@@ -2806,13 +3260,13 @@
     }
   }
   function ColorLayer(props) {
-    const colorsLayer = s2(null);
+    const colorsLayer = A2(null);
     const {image} = props;
     y2(() => {
       clearChildren(colorsLayer.current);
       renderColors(colorsLayer.current);
     }, [props.image]);
-    return /* @__PURE__ */ a("g", {
+    return /* @__PURE__ */ _("g", {
       ref: colorsLayer
     });
     function renderColors(colorLayer) {
@@ -2840,11 +3294,11 @@
   }
   function RefObjLayer(props) {
     if (props.name === "none") {
-      return /* @__PURE__ */ a("g", null);
+      return /* @__PURE__ */ _("g", null);
     }
     const refObj = refObjs[props.name];
     const factor = 32 / props.pitch;
-    return /* @__PURE__ */ a("g", null, /* @__PURE__ */ a("image", {
+    return /* @__PURE__ */ _("g", null, /* @__PURE__ */ _("image", {
       href: refObj.url,
       width: refObj.width * factor,
       height: refObj.height * factor,
@@ -2862,16 +3316,16 @@
   // src/components/welcome-screen.tsx
   init_preact_module();
   function WelcomeScreen() {
-    const updateProp = F(PropContext);
-    return /* @__PURE__ */ a("div", {
+    const updateProp = x2(PropContext);
+    return /* @__PURE__ */ _("div", {
       class: "welcome-screen"
-    }, /* @__PURE__ */ a("h1", null, "Welcome to firaga.io!"), /* @__PURE__ */ a("p", null, /* @__PURE__ */ a("b", null, "firaga"), " is an online tool to help you plan and create pixel art crafts using materials like Perler beads, cross-stitching, LEGO, or just regular old paint."), /* @__PURE__ */ a("p", null, /* @__PURE__ */ a("b", null, "firaga"), " comes preconfigured with color palettes corresponding to many popular crafting products, and uses an ", /* @__PURE__ */ a("b", null, "advanced color-matching"), " formula to produce the most accurate results."), /* @__PURE__ */ a("p", null, /* @__PURE__ */ a("b", null, "firaga"), " also makes high-quality, actual-size ", /* @__PURE__ */ a("b", null, "printable plans"), " for both color and black-and-white printers. Placing one of these plans under a transparent pegboard makes for quick and easy crafting."), /* @__PURE__ */ a("p", null, "For more info, read ", /* @__PURE__ */ a("a", {
+    }, /* @__PURE__ */ _("h1", null, "Welcome to firaga.io!"), /* @__PURE__ */ _("p", null, /* @__PURE__ */ _("b", null, "firaga"), " is an online tool to help you plan and create pixel art crafts using materials like Perler beads, cross-stitching, LEGO, or just regular old paint."), /* @__PURE__ */ _("p", null, /* @__PURE__ */ _("b", null, "firaga"), " comes preconfigured with color palettes corresponding to many popular crafting products, and uses an ", /* @__PURE__ */ _("b", null, "advanced color-matching"), " formula to produce the most accurate results."), /* @__PURE__ */ _("p", null, /* @__PURE__ */ _("b", null, "firaga"), " also makes high-quality, actual-size ", /* @__PURE__ */ _("b", null, "printable plans"), " for both color and black-and-white printers. Placing one of these plans under a transparent pegboard makes for quick and easy crafting."), /* @__PURE__ */ _("p", null, "For more info, read ", /* @__PURE__ */ _("a", {
       href: "https://firaga.io/help"
-    }, "the documentation"), ", or talk to us on ", /* @__PURE__ */ a("a", {
+    }, "the documentation"), ", or talk to us on ", /* @__PURE__ */ _("a", {
       href: "https://twitter.com/firaga_io"
-    }, "Twitter"), " or ", /* @__PURE__ */ a("a", {
+    }, "Twitter"), " or ", /* @__PURE__ */ _("a", {
       href: "https://github.com/SeaRyanC/firaga-io"
-    }, "GitHub"), ". Happy making!"), /* @__PURE__ */ a("button", {
+    }, "GitHub"), ". Happy making!"), /* @__PURE__ */ _("button", {
       class: "cancel",
       onClick: () => updateProp("ui", "isWelcomeOpen", false)
     }, "Let's go!"));
@@ -2890,7 +3344,7 @@
     function updateProp(parent, name, value, skipRender = false) {
       _props = {..._props, [parent]: {..._props[parent], [name]: value}};
       if (!skipRender) {
-        N(/* @__PURE__ */ a(App, {
+        G(/* @__PURE__ */ _(App, {
           ..._props
         }), renderTarget);
         window.localStorage.setItem("props", JSON.stringify(_props, (name2, val) => name2.startsWith("_") ? void 0 : val));
@@ -2913,7 +3367,7 @@
       });
     }
     function App(props) {
-      h2(() => {
+      _2(() => {
         window.addEventListener("paste", function(evt) {
           const e3 = evt;
           for (const item of e3.clipboardData?.items ?? []) {
@@ -2934,15 +3388,23 @@
           if (evt.ctrlKey) {
             switch (evt.key) {
               case "o":
+                window.clarity?.("event", "toggle-upload");
                 toggleProp("ui", "isUploadOpen");
                 break;
               case "p":
+                window.clarity?.("event", "toggle-print");
                 toggleProp("ui", "isPrintOpen");
                 break;
+              case "d":
+                window.clarity?.("event", "toggle-3d");
+                toggleProp("ui", "is3DOpen");
+                break;
               case "l":
+                window.clarity?.("event", "toggle-legend");
                 toggleProp("ui", "showLegend");
                 break;
               case "e":
+                window.clarity?.("event", "toggle-settings");
                 toggleProp("ui", "showSettings");
                 break;
               default:
@@ -2954,6 +3416,7 @@
               case "Escape":
                 updateProp("ui", "isPrintOpen", false);
                 updateProp("ui", "isUploadOpen", false);
+                updateProp("ui", "is3DOpen", false);
                 break;
             }
           }
@@ -2966,208 +3429,218 @@
       const {quantized} = processedRgbaArray ? memoized.palettizeImage(processedRgbaArray, props.material, props.image) : none;
       const image = quantized ? memoized.createPartListImage(quantized) : void 0;
       const pitch = getPitch(props.material.size);
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "app-top"
-      }, /* @__PURE__ */ a(PropContext.Provider, {
+      }, /* @__PURE__ */ _(PropContext.Provider, {
         value: updateProp
-      }, props.ui.isWelcomeOpen && /* @__PURE__ */ a(WelcomeScreen, null), /* @__PURE__ */ a("div", {
+      }, props.ui.isWelcomeOpen && /* @__PURE__ */ _(WelcomeScreen, null), /* @__PURE__ */ _("div", {
         class: "toolbar"
-      }, /* @__PURE__ */ a("button", {
+      }, /* @__PURE__ */ _("button", {
         title: "Open...",
         class: `toolbar-button ${props.ui.isUploadOpen ? "on" : "off"} text`,
         onClick: () => toggleProp("ui", "isUploadOpen")
-      }, "\u{1F4C2}", /* @__PURE__ */ a("span", {
+      }, "\u{1F4C2}", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Open")), /* @__PURE__ */ a("button", {
+      }, "Open")), /* @__PURE__ */ _("button", {
         title: "Print...",
         class: `toolbar-button ${props.ui.isPrintOpen ? "on" : "off"} text`,
         onClick: () => toggleProp("ui", "isPrintOpen")
-      }, "\u{1F5A8}\uFE0F", /* @__PURE__ */ a("span", {
+      }, "\u{1F5A8}\uFE0F", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Print")), /* @__PURE__ */ a("span", {
+      }, "Print")), /* @__PURE__ */ _("button", {
+        title: "3D Export...",
+        class: `toolbar-button ${props.ui.is3DOpen ? "on" : "off"} text`,
+        onClick: () => toggleProp("ui", "is3DOpen")
+      }, "\u{1F9CA}", /* @__PURE__ */ _("span", {
+        class: "extended-label"
+      }, "3D")), /* @__PURE__ */ _("span", {
         class: "toolbar-divider"
-      }), /* @__PURE__ */ a("button", {
+      }), /* @__PURE__ */ _("button", {
         title: "Settings",
         class: `toolbar-button ${props.ui.showSettings ? "on" : "off"} text`,
         onClick: () => toggleProp("ui", "showSettings")
-      }, "\u2699\uFE0F", /* @__PURE__ */ a("span", {
+      }, "\u2699\uFE0F", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Settings")), /* @__PURE__ */ a("button", {
+      }, "Settings")), /* @__PURE__ */ _("button", {
         title: "Legend",
         class: `toolbar-button ${props.ui.showLegend ? "on" : "off"} text`,
         onClick: () => toggleProp("ui", "showLegend")
-      }, "\u{1F511}", /* @__PURE__ */ a("span", {
+      }, "\u{1F511}", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Legend")), /* @__PURE__ */ a("span", {
+      }, "Legend")), /* @__PURE__ */ _("span", {
         class: "toolbar-divider"
-      }), /* @__PURE__ */ a("button", {
+      }), /* @__PURE__ */ _("button", {
         title: "Help",
         class: `toolbar-button ${props.ui.isWelcomeOpen ? "on" : "off"} text`,
         onClick: () => toggleProp("ui", "isWelcomeOpen")
-      }, "\u2754", /* @__PURE__ */ a("span", {
+      }, "\u2754", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Help")), /* @__PURE__ */ a("a", {
+      }, "Help")), /* @__PURE__ */ _("a", {
         class: `toolbar-button off`,
         title: "GitHub",
         href: "https://github.com/SeaRyanC/firaga-io"
-      }, "\u{1F468}\u200D\u{1F4BB}", /* @__PURE__ */ a("span", {
+      }, "\u{1F468}\u200D\u{1F4BB}", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Code")), /* @__PURE__ */ a("a", {
+      }, "Code")), /* @__PURE__ */ _("a", {
         class: `toolbar-button off`,
         title: "Twitter",
         href: "https://twitter.com/firaga_io"
-      }, "\u{1F4AC}", /* @__PURE__ */ a("span", {
+      }, "\u{1F4AC}", /* @__PURE__ */ _("span", {
         class: "extended-label"
-      }, "Twitter"))), /* @__PURE__ */ a("div", {
+      }, "Twitter"))), /* @__PURE__ */ _("div", {
         class: "app-main"
-      }, props.ui.showSettings && /* @__PURE__ */ a("div", {
+      }, props.ui.showSettings && /* @__PURE__ */ _("div", {
         class: "settings"
-      }, /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("div", {
         class: "settings-header"
-      }, "Settings", /* @__PURE__ */ a("div", {
+      }, "Settings", /* @__PURE__ */ _("div", {
         class: "close-button",
         onClick: () => updateProp("ui", "showSettings", false)
-      }, "\u2716")), /* @__PURE__ */ a("div", {
+      }, "\u2716")), /* @__PURE__ */ _("div", {
         class: "settings-list"
-      }, /* @__PURE__ */ a(MaterialSettingsRow, {
+      }, /* @__PURE__ */ _(MaterialSettingsRow, {
         ...props.material
-      }), /* @__PURE__ */ a(ImageSettingsRow, {
+      }), /* @__PURE__ */ _(ImageSettingsRow, {
         ...props.image
-      }), /* @__PURE__ */ a(DisplaySettingsRow, {
+      }), /* @__PURE__ */ _(DisplaySettingsRow, {
         ...props.display
-      }))), image ? /* @__PURE__ */ a(PlanSvg, {
+      }))), image ? /* @__PURE__ */ _(PlanSvg, {
         image,
         pitch,
         displaySettings: props.display,
         gridSize: props.material.size
-      }) : /* @__PURE__ */ a("div", null, "Loading..."), props.ui.showLegend && image && /* @__PURE__ */ a(Legend, {
+      }) : /* @__PURE__ */ _("div", null, "Loading..."), props.ui.showLegend && image && /* @__PURE__ */ _(Legend, {
         partList: image.partList,
         image,
         pitch: getPitch(props.material.size)
-      })), props.ui.isUploadOpen && /* @__PURE__ */ a(GalleryContainer, {
+      })), props.ui.isUploadOpen && /* @__PURE__ */ _(GalleryContainer, {
         gallery: galleryStorage2.current,
         load: (name, uri) => {
           selectImage(name, uri);
         },
         requestDelete: (uri) => {
           galleryStorage2.remove(uri);
-          N(/* @__PURE__ */ a(App, {
+          G(/* @__PURE__ */ _(App, {
             ..._props
           }), renderTarget);
         }
-      }), props.ui.isPrintOpen && image && /* @__PURE__ */ a(PrintDialog, {
+      }), props.ui.isPrintOpen && image && /* @__PURE__ */ _(PrintDialog, {
         image,
         settings: props.print,
         gridSize: props.material.size,
         filename: props.source.displayName
-      })), /* @__PURE__ */ a("datalist", {
+      }), props.ui.is3DOpen && image && /* @__PURE__ */ _(ThreeDDialog, {
+        image,
+        gridSize: props.material.size,
+        filename: props.source.displayName
+      })), /* @__PURE__ */ _("datalist", {
         id: "image-ticks"
-      }, /* @__PURE__ */ a("option", {
+      }, /* @__PURE__ */ _("option", {
         value: "0",
         label: "0"
       })));
     }
     function ImageSettingsRow(props) {
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "settings-row"
-      }, /* @__PURE__ */ a("h1", null, "Image"), /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("h1", null, "Image"), /* @__PURE__ */ _("div", {
         class: "options-row"
-      }, /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Transparency"), getRadioGroup(props, "image", "transparency", ImageSettings.transparency), getCheckbox(props, "image", "keepOutline", "Keep Outline")), navigator.vendor !== "Apple Computer, Inc." && /* @__PURE__ */ a("div", {
+      }, "Transparency"), getRadioGroup(props, "image", "transparency", ImageSettings.transparency), getCheckbox(props, "image", "keepOutline", "Keep Outline")), navigator.vendor !== "Apple Computer, Inc." && /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Color Adjust"), getSlider(props, "image", "brightness", "Brightness"), getSlider(props, "image", "contrast", "Contrast"), getSlider(props, "image", "saturation", "Saturation")), /* @__PURE__ */ a("div", {
+      }, "Color Adjust"), getSlider(props, "image", "brightness", "Brightness"), getSlider(props, "image", "contrast", "Contrast"), getSlider(props, "image", "saturation", "Saturation")), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Dithering"), getRadioGroup(props, "image", "dithering", ImageSettings.dithering)), /* @__PURE__ */ a("div", {
+      }, "Dithering"), getRadioGroup(props, "image", "dithering", ImageSettings.dithering)), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
       }, "Transforms"), getCheckbox(props, "image", "flip", "Flip"), getCheckbox(props, "image", "mirror", "Mirror"), getCheckbox(props, "image", "descale", "Undo Upscaling"))));
     }
     function MaterialSettingsRow(props) {
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "settings-row"
-      }, /* @__PURE__ */ a("h1", null, "Material"), /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("h1", null, "Material"), /* @__PURE__ */ _("div", {
         class: "options-row"
-      }, /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Color Matching"), getRadioGroup(props, "material", "colorMatch", MaterialSettings.colorMatch), getCheckbox(props, "material", "nodupes", "No Duplicates"), getCheckbox(props, "material", "matchBlackAndWhite", "Improve Black/White")), /* @__PURE__ */ a("div", {
+      }, "Color Matching"), getRadioGroup(props, "material", "colorMatch", MaterialSettings.colorMatch), getCheckbox(props, "material", "nodupes", "No Duplicates"), getCheckbox(props, "material", "matchBlackAndWhite", "Improve Black/White")), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Palette"), getRadioGroup(props, "material", "palette", MaterialSettings.palette)), /* @__PURE__ */ a("div", {
+      }, "Palette"), getRadioGroup(props, "material", "palette", MaterialSettings.palette)), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
       }, "Size"), getRadioGroup(props, "material", "size", MaterialSettings.size))));
     }
     function Legend({partList, image, pitch}) {
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "part-list-container"
-      }, /* @__PURE__ */ a("table", {
+      }, /* @__PURE__ */ _("table", {
         class: "part-list"
-      }, /* @__PURE__ */ a("thead", null, /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("th", {
+      }, /* @__PURE__ */ _("thead", null, /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("th", {
         colSpan: 5,
         class: "top-header"
-      }, "Legend"))), /* @__PURE__ */ a("tbody", null, partList.map((ent) => {
-        return /* @__PURE__ */ a("tr", {
+      }, "Legend"))), /* @__PURE__ */ _("tbody", null, partList.map((ent) => {
+        return /* @__PURE__ */ _("tr", {
           key: ent.symbol + ent.count + ent.target.name
-        }, /* @__PURE__ */ a("td", {
+        }, /* @__PURE__ */ _("td", {
           class: "legend-symbol"
-        }, ent.symbol), /* @__PURE__ */ a("td", {
+        }, ent.symbol), /* @__PURE__ */ _("td", {
           class: "part-count"
-        }, ent.count.toLocaleString()), ent.target.code && /* @__PURE__ */ a("td", {
+        }, ent.count.toLocaleString()), ent.target.code && /* @__PURE__ */ _("td", {
           class: "color-code"
-        }, ent.target.code), /* @__PURE__ */ a("td", {
+        }, ent.target.code), /* @__PURE__ */ _("td", {
           class: "color-swatch",
           style: {color: colorEntryToHex(ent.target)}
-        }, "\u2B24"), /* @__PURE__ */ a("td", {
+        }, "\u2B24"), /* @__PURE__ */ _("td", {
           class: "color-name"
-        }, /* @__PURE__ */ a("span", {
+        }, /* @__PURE__ */ _("span", {
           class: "colorName"
         }, ent.target.name)));
-      }))), /* @__PURE__ */ a(Stats, {
+      }))), /* @__PURE__ */ _(Stats, {
         image,
         pitch
       }));
     }
     function Stats({image, pitch}) {
       const pixelCount = getImageStats(image).pixels;
-      return /* @__PURE__ */ a("table", {
+      return /* @__PURE__ */ _("table", {
         class: "plan-stats"
-      }, /* @__PURE__ */ a("thead", null, /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("th", {
+      }, /* @__PURE__ */ _("thead", null, /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("th", {
         colSpan: 4,
         class: "top-header"
-      }, "Statistics"))), /* @__PURE__ */ a("tbody", null, /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, "Statistics"))), /* @__PURE__ */ _("tbody", null, /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-label",
         rowSpan: 3
-      }, "Size"), /* @__PURE__ */ a("td", {
+      }, "Size"), /* @__PURE__ */ _("td", {
         class: "stat-value"
-      }, image.width.toLocaleString(), "\xD7", image.height.toLocaleString(), "px")), /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, image.width.toLocaleString(), "\xD7", image.height.toLocaleString(), "px")), /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-value"
-      }, feetInches(image.width * pitch), "\xD7", feetInches(image.height * pitch))), /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, feetInches(image.width * pitch), "\xD7", feetInches(image.height * pitch))), /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-value"
-      }, fmt(image.width * pitch / 10), "\xD7", fmt(image.height * pitch / 10), "cm")), /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, fmt(image.width * pitch / 10), "\xD7", fmt(image.height * pitch / 10), "cm")), /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-label"
-      }, "Pixels"), /* @__PURE__ */ a("td", {
+      }, "Pixels"), /* @__PURE__ */ _("td", {
         colSpan: 4,
         class: "stat-value"
-      }, pixelCount.toLocaleString())), /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, pixelCount.toLocaleString())), /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-label"
-      }, "Cost (USD)"), /* @__PURE__ */ a("td", {
+      }, "Cost (USD)"), /* @__PURE__ */ _("td", {
         colSpan: 4,
         class: "stat-value"
-      }, dollars(pixelCount * 2e-3))), /* @__PURE__ */ a("tr", null, /* @__PURE__ */ a("td", {
+      }, dollars(pixelCount * 2e-3))), /* @__PURE__ */ _("tr", null, /* @__PURE__ */ _("td", {
         class: "stat-label"
-      }, "Time"), /* @__PURE__ */ a("td", {
+      }, "Time"), /* @__PURE__ */ _("td", {
         colSpan: 4,
         class: "stat-value"
       }, timeAmount(pixelCount * 4)))));
@@ -3176,31 +3649,31 @@
       }
     }
     function DisplaySettingsRow(props) {
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "settings-row"
-      }, /* @__PURE__ */ a("h1", null, "Plan"), /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("h1", null, "Plan"), /* @__PURE__ */ _("div", {
         class: "options-row"
-      }, /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Legend"), getRadioGroup(props, "display", "planStyle", DisplaySettings.planStyle)), /* @__PURE__ */ a("div", {
+      }, "Legend"), getRadioGroup(props, "display", "planStyle", DisplaySettings.planStyle)), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Grid"), getRadioGroup(props, "display", "grid", DisplaySettings.grid), getCheckbox(props, "display", "nudgeGrid", "Nudge Grid")), /* @__PURE__ */ a("div", {
+      }, "Grid"), getRadioGroup(props, "display", "grid", DisplaySettings.grid), getCheckbox(props, "display", "nudgeGrid", "Nudge Grid")), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
-      }, "Background"), getRadioGroup(props, "display", "background", DisplaySettings.background)), /* @__PURE__ */ a("div", {
+      }, "Background"), getRadioGroup(props, "display", "background", DisplaySettings.background)), /* @__PURE__ */ _("div", {
         class: "options-group"
-      }, /* @__PURE__ */ a("span", {
+      }, /* @__PURE__ */ _("span", {
         class: "header"
       }, "Comparison"), getRadioGroup(props, "display", "refobj", DisplaySettings.refobj))));
     }
     function GalleryContainer(props) {
-      const fileInputRef = s2();
-      const dropBoxRef = s2();
+      const fileInputRef = A2();
+      const dropBoxRef = A2();
       y2(() => {
         const db = dropBoxRef.current;
         db.addEventListener("dragenter", (e3) => (e3.stopPropagation(), e3.preventDefault()), false);
@@ -3225,19 +3698,19 @@
           }
         }, false);
       }, []);
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "gallery"
-      }, /* @__PURE__ */ a("div", {
+      }, /* @__PURE__ */ _("div", {
         class: "close-button",
         onClick: () => updateProp("ui", "isUploadOpen", false)
-      }, "\u2716"), /* @__PURE__ */ a("h2", null, "Pick Image"), /* @__PURE__ */ a("div", {
+      }, "\u2716"), /* @__PURE__ */ _("h2", null, "Pick Image"), /* @__PURE__ */ _("div", {
         ref: dropBoxRef,
         class: "dropbox"
-      }, /* @__PURE__ */ a("label", {
+      }, /* @__PURE__ */ _("label", {
         for: "upload-image-button",
         style: "display: inline",
         class: "download-button-label"
-      }, "Upload"), /* @__PURE__ */ a("input", {
+      }, "Upload"), /* @__PURE__ */ _("input", {
         id: "upload-image-button",
         style: "display: none;",
         type: "file",
@@ -3245,9 +3718,9 @@
         ref: fileInputRef,
         onChange: fileInputChanged,
         value: "Choose..."
-      }), ", Paste, or Drag & Drop here"), /* @__PURE__ */ a("h2", null, "Gallery"), /* @__PURE__ */ a("div", {
+      }), ", Paste, or Drag & Drop here"), /* @__PURE__ */ _("h2", null, "Gallery"), /* @__PURE__ */ _("div", {
         class: "gallery-list-container"
-      }, /* @__PURE__ */ a(Gallery, {
+      }, /* @__PURE__ */ _(Gallery, {
         ...props
       })));
       function fileInputChanged() {
@@ -3267,7 +3740,7 @@
       }
     }
     function getCheckbox(props, subKey, valueKey, label) {
-      return /* @__PURE__ */ a("label", null, /* @__PURE__ */ a("input", {
+      return /* @__PURE__ */ _("label", null, /* @__PURE__ */ _("input", {
         type: "checkbox",
         checked: props[valueKey],
         onChange: (arg) => {
@@ -3276,9 +3749,9 @@
       }), label);
     }
     function getSlider(props, parentKey, key, label) {
-      return /* @__PURE__ */ a("div", {
+      return /* @__PURE__ */ _("div", {
         class: "slider-caption"
-      }, /* @__PURE__ */ a("input", {
+      }, /* @__PURE__ */ _("input", {
         type: "range",
         list: "image-ticks",
         class: "slider",
@@ -3287,7 +3760,7 @@
         max: "10",
         step: "1",
         value: props[key]
-      }), /* @__PURE__ */ a("span", null, label));
+      }), /* @__PURE__ */ _("span", null, label));
       function changed(e3) {
         updateProp(parentKey, key, e3.target.value);
       }
@@ -3297,10 +3770,10 @@
     }
   }
   function radioGroup(name, changed, defaultValue, values) {
-    return /* @__PURE__ */ a(y, null, values.map(([value, caption]) => {
-      return /* @__PURE__ */ a("label", {
+    return /* @__PURE__ */ _(k, null, values.map(([value, caption]) => {
+      return /* @__PURE__ */ _("label", {
         key: value
-      }, /* @__PURE__ */ a("input", {
+      }, /* @__PURE__ */ _("input", {
         type: "radio",
         onChange: fireChanged,
         name,
@@ -3388,6 +3861,7 @@
       }
       current = [[name, uri], ...current];
       window.setTimeout(save, 250);
+      window.clarity?.("event", "add-user-image");
     }
     function remove(uri) {
       for (let i3 = 0; i3 < current.length; i3++) {
@@ -3451,6 +3925,7 @@
     ui: {
       isUploadOpen: false,
       isPrintOpen: false,
+      is3DOpen: false,
       isWelcomeOpen: true,
       showLegend: false,
       showSettings: false,
@@ -3478,8 +3953,8 @@
 })();
 /**
  * @author Markus Ekholm
- * @copyright 2012-2016 (c) Markus Ekholm <markus at botten dot org >
- * @license Copyright (c) 2012-2016, Markus Ekholm
+ * @copyright 2012-2023 (c) Markus Ekholm <markus at botten dot org >
+ * @license Copyright (c) 2012-2023, Markus Ekholm
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
