@@ -12,6 +12,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "@esbuild/win32-x64": "^0.27.2",
     "@types/pdfkit": "^0.11.2",
     "color-convert": "^2.0.1",
     "color-diff": "^1.2.0",
