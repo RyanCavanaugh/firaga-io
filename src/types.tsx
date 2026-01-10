@@ -1,6 +1,7 @@
 import * as preact from 'preact';
 import { ColorEntry } from './color-data';
 import { PrintSettings } from './pdf-generator';
+import { Export3DSettings } from './export-3d';
 import { RadioSettings } from "./utils";
 
 declare global {
@@ -62,6 +63,13 @@ export type PrintProps = {
     breakStrategy: PrintSettings["breakStrategy"];
 };
 
+export type Export3DProps = {
+    format: Export3DSettings["format"];
+    pixelSize: number;
+    layerHeight: number;
+    baseHeight: number;
+};
+
 export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
     nudgeGrid: boolean;
 };
@@ -69,6 +77,7 @@ export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
 export type AppProps = {
     material: MaterialProps;
     print: PrintProps;
+    export3d: Export3DProps;
     display: DisplayProps;
     image: ImageProps;
     source: {
@@ -80,6 +89,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        isExport3DOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
