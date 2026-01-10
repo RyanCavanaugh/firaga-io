@@ -1,6 +1,12 @@
 
 # Release Notes
 
+ * January 10, 2026
+   * Added 3D Export functionality with two output formats:
+     * 3MF triangle mesh format with separate material shapes for each color
+     * OpenSCAD masks format (ZIP file with heightmap images and .scad file)
+   * New toolbar button (📦) and keyboard shortcut (Ctrl+D) for 3D export
+   
  * November 11, 2021
    * Added loading screen
    * You can now navigate to https://firaga.io?reset to clear all local data in case of bugs or just to get a fresh start
