@@ -8,6 +8,7 @@ import { GalleryStorage } from './user-gallery';
 import { PropContext } from './components/context';
 import { PrintDialog } from './components/print-dialog';
 import { PlanSvg } from './components/plan-display';
+import { Export3DDialog } from './components/export-3d-dialog';
 import { WelcomeScreen } from './components/welcome-screen';
 
 const memoized = {
@@ -81,6 +82,10 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                             window.clarity?.("event", "toggle-print");
                             toggleProp("ui", "isPrintOpen");
                             break;
+                        case "d":
+                            window.clarity?.("event", "toggle-3d-export");
+                            toggleProp("ui", "is3DExportOpen");
+                            break;
                         case "l":
                             window.clarity?.("event", "toggle-legend");
                             toggleProp("ui", "showLegend");
@@ -99,6 +104,7 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                         case "Escape":
                             updateProp("ui", "isPrintOpen", false);
                             updateProp("ui", "isUploadOpen", false);
+                            updateProp("ui", "is3DExportOpen", false);
                             break;
                     }
                 }
@@ -119,6 +125,7 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                 <div class="toolbar">
                     <button title="Open..." class={`toolbar-button ${props.ui.isUploadOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "isUploadOpen")}>📂<span class="extended-label">Open</span></button>
                     <button title="Print..." class={`toolbar-button ${props.ui.isPrintOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "isPrintOpen")}>🖨️<span class="extended-label">Print</span></button>
+                    <button title="3D Export..." class={`toolbar-button ${props.ui.is3DExportOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "is3DExportOpen")}>📦<span class="extended-label">3D</span></button>
                     <span class="toolbar-divider" />
                     <button title="Settings" class={`toolbar-button ${props.ui.showSettings ? "on" : "off"} text`} onClick={() => toggleProp("ui", "showSettings")}>⚙️<span class="extended-label">Settings</span></button>
                     <button title="Legend" class={`toolbar-button ${props.ui.showLegend ? "on" : "off"} text`} onClick={() => toggleProp("ui", "showLegend")}>🔑<span class="extended-label">Legend</span></button>
@@ -158,6 +165,10 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                         image={image}
                         settings={props.print}
                         gridSize={props.material.size}
+                        filename={props.source.displayName} />}
+                {props.ui.is3DExportOpen && image &&
+                    <Export3DDialog
+                        image={image}
                         filename={props.source.displayName} />}
             </PropContext.Provider>
             <datalist id="image-ticks">
