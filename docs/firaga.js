@@ -362,7 +362,7 @@
   // data/color/lego.txt
   var require_lego = __commonJS({
     "data/color/lego.txt"(exports, module) {
-      module.exports = "FFFFFF.1.White\r\nDDDEDD.2.Grey\r\nD9BB7B.5.Brick Yellow\r\nD67240.18.Nougat\r\nFF0000.21.Bright Red\r\n0000FF.23.Bright Blue\r\nFFFF00.24.Bright Yellow\r\n000000.26.Black\r\n009900.28.Dark Green\r\n00CC00.37.Bright Green\r\nA83D15.38.Dark Orange\r\n478CC6.102.Medium Blue\r\nFF6600.106.Bright Orange\r\n059D9E.107.Bright Bluish Green\r\n95B90B.119.Bright Yellowish-Green\r\n990066.124.Bright Reddish Violet\r\n5E748C.135.Sand Blue\r\n8D7452.138.Sand Yellow\r\n002541.140.Earth Blue\r\n003300.141.Earth Green\r\n5F8265.151.Sand Green\r\n80081B.154.Dark Red\r\nF49B00.191.Flame Yellowish Orange\r\n5B1C0C.192.Reddish Brown\r\n9C9291.194.Medium Stone Grey\r\n4C5156.199.Dark Stone Grey\r\nE4E4DA.208.Light Stone Grey\r\n87C0EA.212.Light Royal Blue\r\nDE378B.221.Bright Purple\r\nEE9DC3.222.Light Purple\r\nFFFF99.226.Cool Yellow\r\n2C1577.268.Dark Purple\r\nF5C189.283.Light Nougat\r\n300F06.308.Dark Brown\r\nAA7D55.312.Medium Nougat\r\n469BC3.321.Dark Azur\r\n68C3E2.322.Medium Azur\r\nD3F2EA.323.Aqua\r\nA06EB9.324.Medium Lavender\r\nCDA4DE.325.Lavender\r\nF5F3D7.329.White Glow\r\nE2F99A.326.Spring Yellowish Green\r\n77774E.330.Olive Green\r\n96B93B.331.Medium-Yellowish Green";
+      module.exports = "FFFFFF.1.White\r\nDDDEDD.2.Grey\r\nD9BB7B.5.Brick Yellow\r\nD67240.18.Nougat\r\nFF0000.21.Bright Red\r\n0000FF.23.Bright Blue\r\nFFFF00.24.Bright Yellow\r\n000000.26.Black\r\n009900.28.Dark Green\r\n00CC00.37.Bright Green\r\nA83D15.38.Dark Orange\r\n478CC6.102.Medium Blue\r\nFF6600.106.Bright Orange\r\n059D9E.107.Bright Bluish Green\r\n95B90B.119.Bright Yellowish-Green\r\n990066.124.Bright Reddish Violet\r\n5E748C.135.Sand Blue\r\n8D7452.138.Sand Yellow\r\n002541.140.Earth Blue\r\n003300.141.Earth Green\r\n5F8265.151.Sand Green\r\n80081B.154.Dark Red\r\nF49B00.191.Flame Yellowish Orange\r\n5B1C0C.192.Reddish Brown\r\n9C9291.194.Medium Stone Grey\r\n4C5156.199.Dark Stone Grey\r\nE4E4DA.208.Light Stone Grey\r\n87C0EA.212.Light Royal Blue\r\nDE378B.221.Bright Purple\r\nEE9DC3.222.Light Purple\r\nFFFF99.226.Cool Yellow\r\n2C1577.268.Dark Purple\r\nF5C189.283.Light Nougat\r\n300F06.308.Dark Brown\r\nAA7D55.312.Medium Nougat\r\n469BC3.321.Dark Azure\r\n68C3E2.322.Medium Azure\r\nD3F2EA.323.Aqua\r\nA06EB9.324.Medium Lavender\r\nCDA4DE.325.Lavender\r\nF5F3D7.329.White Glow\r\nE2F99A.326.Spring Yellowish Green\r\n77774E.330.Olive Green\r\n96B93B.331.Medium-Yellowish Green";
     }
   });
 
@@ -2376,6 +2376,7 @@
         filename: props.filename.replace(".png", ""),
         debug: window.location.host.indexOf("localhost") === 0
       };
+      window.clarity?.("event", "print");
       makePdf(props.image, settings);
     }
   }
@@ -2543,6 +2544,492 @@
       }), /* @__PURE__ */ a("div", {
         class: "option"
       }, /* @__PURE__ */ a("h3", null, v3.title), v3.icon)))), /* @__PURE__ */ a("span", {
+        class: "description"
+      }, p3.values.filter((v3) => v3.value === props.settings[p3.key])[0]?.description));
+    };
+  }
+
+  // src/components/threed-dialog.tsx
+  init_preact_module();
+
+  // src/export-3mf.ts
+  async function generate3MF(image, settings) {
+    await loadJSZip();
+    const {height: pixelHeight = 1, baseThickness = 0.5} = settings;
+    const materials = [];
+    const objects = [];
+    image.partList.forEach((part, index) => {
+      const hexColor = colorEntryToHex(part.target).substring(1);
+      materials.push(`    <base:material id="${index + 1}" name="${part.target.name}" color="#${hexColor}FF" />`);
+    });
+    image.partList.forEach((part, colorIndex) => {
+      const vertices = [];
+      const triangles = [];
+      const pixels = [];
+      for (let y3 = 0; y3 < image.height; y3++) {
+        for (let x3 = 0; x3 < image.width; x3++) {
+          const pixelColorIndex = image.pixels[y3][x3];
+          if (pixelColorIndex === colorIndex) {
+            pixels.push([x3, y3]);
+          }
+        }
+      }
+      if (pixels.length === 0)
+        return;
+      pixels.forEach(([px, py]) => {
+        const x3 = px;
+        const y3 = py;
+        const z2 = 0;
+        const baseIdx = vertices.length;
+        vertices.push([x3, y3, z2]);
+        vertices.push([x3 + 1, y3, z2]);
+        vertices.push([x3 + 1, y3 + 1, z2]);
+        vertices.push([x3, y3 + 1, z2]);
+        vertices.push([x3, y3, z2 + pixelHeight]);
+        vertices.push([x3 + 1, y3, z2 + pixelHeight]);
+        vertices.push([x3 + 1, y3 + 1, z2 + pixelHeight]);
+        vertices.push([x3, y3 + 1, z2 + pixelHeight]);
+        triangles.push([baseIdx + 0, baseIdx + 2, baseIdx + 1]);
+        triangles.push([baseIdx + 0, baseIdx + 3, baseIdx + 2]);
+        triangles.push([baseIdx + 4, baseIdx + 5, baseIdx + 6]);
+        triangles.push([baseIdx + 4, baseIdx + 6, baseIdx + 7]);
+        triangles.push([baseIdx + 0, baseIdx + 1, baseIdx + 5]);
+        triangles.push([baseIdx + 0, baseIdx + 5, baseIdx + 4]);
+        triangles.push([baseIdx + 1, baseIdx + 2, baseIdx + 6]);
+        triangles.push([baseIdx + 1, baseIdx + 6, baseIdx + 5]);
+        triangles.push([baseIdx + 2, baseIdx + 3, baseIdx + 7]);
+        triangles.push([baseIdx + 2, baseIdx + 7, baseIdx + 6]);
+        triangles.push([baseIdx + 3, baseIdx + 0, baseIdx + 4]);
+        triangles.push([baseIdx + 3, baseIdx + 4, baseIdx + 7]);
+      });
+      let meshXml = `    <object id="${colorIndex + 2}" type="model" pid="1" pindex="${colorIndex + 1}">
+`;
+      meshXml += `      <mesh>
+`;
+      meshXml += `        <vertices>
+`;
+      vertices.forEach(([x3, y3, z2]) => {
+        meshXml += `          <vertex x="${x3.toFixed(3)}" y="${y3.toFixed(3)}" z="${z2.toFixed(3)}" />
+`;
+      });
+      meshXml += `        </vertices>
+`;
+      meshXml += `        <triangles>
+`;
+      triangles.forEach(([v1, v22, v3]) => {
+        meshXml += `          <triangle v1="${v1}" v2="${v22}" v3="${v3}" />
+`;
+      });
+      meshXml += `        </triangles>
+`;
+      meshXml += `      </mesh>
+`;
+      meshXml += `    </object>
+`;
+      objects.push(meshXml);
+    });
+    if (baseThickness > 0) {
+      const baseIdx = image.partList.length + 2;
+      let baseXml = `    <object id="${baseIdx}" type="model">
+`;
+      baseXml += `      <mesh>
+`;
+      baseXml += `        <vertices>
+`;
+      baseXml += `          <vertex x="0" y="0" z="${-baseThickness}" />
+`;
+      baseXml += `          <vertex x="${image.width}" y="0" z="${-baseThickness}" />
+`;
+      baseXml += `          <vertex x="${image.width}" y="${image.height}" z="${-baseThickness}" />
+`;
+      baseXml += `          <vertex x="0" y="${image.height}" z="${-baseThickness}" />
+`;
+      baseXml += `          <vertex x="0" y="0" z="0" />
+`;
+      baseXml += `          <vertex x="${image.width}" y="0" z="0" />
+`;
+      baseXml += `          <vertex x="${image.width}" y="${image.height}" z="0" />
+`;
+      baseXml += `          <vertex x="0" y="${image.height}" z="0" />
+`;
+      baseXml += `        </vertices>
+`;
+      baseXml += `        <triangles>
+`;
+      baseXml += `          <triangle v1="0" v2="2" v3="1" />
+`;
+      baseXml += `          <triangle v1="0" v2="3" v3="2" />
+`;
+      baseXml += `          <triangle v1="4" v2="5" v3="6" />
+`;
+      baseXml += `          <triangle v1="4" v2="6" v3="7" />
+`;
+      baseXml += `          <triangle v1="0" v2="1" v3="5" />
+`;
+      baseXml += `          <triangle v1="0" v2="5" v3="4" />
+`;
+      baseXml += `          <triangle v1="1" v2="2" v3="6" />
+`;
+      baseXml += `          <triangle v1="1" v2="6" v3="5" />
+`;
+      baseXml += `          <triangle v1="2" v2="3" v3="7" />
+`;
+      baseXml += `          <triangle v1="2" v2="7" v3="6" />
+`;
+      baseXml += `          <triangle v1="3" v2="0" v3="4" />
+`;
+      baseXml += `          <triangle v1="3" v2="4" v3="7" />
+`;
+      baseXml += `        </triangles>
+`;
+      baseXml += `      </mesh>
+`;
+      baseXml += `    </object>
+`;
+      objects.push(baseXml);
+    }
+    const model = `<?xml version="1.0" encoding="UTF-8"?>
+<model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" xmlns:base="http://schemas.microsoft.com/3dmanufacturing/material/2015/02">
+  <resources>
+    <basematerials id="1">
+${materials.join("\n")}
+    </basematerials>
+${objects.join("")}
+  </resources>
+  <build>
+${objects.map((_2, idx) => `    <item objectid="${idx + 2}" />`).join("\n")}
+  </build>
+</model>`;
+    const zip = new JSZip();
+    zip.file("3D/3dmodel.model", model);
+    const contentTypes = `<?xml version="1.0" encoding="UTF-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+  <Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml" />
+</Types>`;
+    zip.file("[Content_Types].xml", contentTypes);
+    const rels = `<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Target="/3D/3dmodel.model" Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel" />
+</Relationships>`;
+    zip.file("_rels/.rels", rels);
+    return zip.generateAsync({type: "blob"});
+  }
+  async function loadJSZip() {
+    if (typeof JSZip !== "undefined") {
+      return;
+    }
+    const tagName = "jszip-script-tag-3mf";
+    const scriptEl = document.getElementById(tagName);
+    if (scriptEl === null) {
+      return new Promise((resolve, reject) => {
+        const tag = document.createElement("script");
+        tag.id = tagName;
+        tag.onload = () => resolve();
+        tag.onerror = () => reject(new Error("Failed to load JSZip"));
+        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+        document.head.appendChild(tag);
+      });
+    }
+  }
+
+  // src/export-openscad.ts
+  async function generateOpenSCADMasks(image, settings) {
+    await loadJSZip2();
+    const zip = new JSZip();
+    const {pixelHeight = 1, baseThickness = 0.5} = settings;
+    const imageFiles = [];
+    for (let colorIndex = 0; colorIndex < image.partList.length; colorIndex++) {
+      const part = image.partList[colorIndex];
+      const filename = `color_${colorIndex}_${sanitizeFilename(part.target.name)}.png`;
+      imageFiles.push(filename);
+      const canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#000000";
+      for (let y3 = 0; y3 < image.height; y3++) {
+        for (let x3 = 0; x3 < image.width; x3++) {
+          if (image.pixels[y3][x3] === colorIndex) {
+            ctx.fillRect(x3, y3, 1, 1);
+          }
+        }
+      }
+      const blob = await canvasToBlob(canvas);
+      zip.file(filename, blob);
+    }
+    const scadContent = generateOpenSCADFile(image, imageFiles, pixelHeight, baseThickness);
+    zip.file("model.scad", scadContent);
+    const readme = `3D Model Export from firaga.io
+
+This archive contains:
+- model.scad: OpenSCAD file that generates the 3D model
+- ${imageFiles.length} PNG mask files (one per color)
+
+To use:
+1. Open model.scad in OpenSCAD (https://openscad.org/)
+2. Press F5 to preview or F6 to render
+3. Export as STL for 3D printing
+
+Colors are separated into individual layers that can be:
+- Printed separately and assembled
+- Combined in multi-material 3D printers
+- Used as a reference for painting
+
+Image size: ${image.width} x ${image.height} pixels
+Colors: ${image.partList.length}
+`;
+    zip.file("README.txt", readme);
+    return zip.generateAsync({type: "blob"});
+  }
+  function generateOpenSCADFile(image, imageFiles, pixelHeight, baseThickness) {
+    let scad = `// Generated by firaga.io
+// Image: ${image.width} x ${image.height} pixels
+// Colors: ${image.partList.length}
+
+// Parameters
+pixel_height = ${pixelHeight}; // Height of each colored pixel in mm
+base_thickness = ${baseThickness}; // Thickness of base plate in mm
+image_width = ${image.width};
+image_height = ${image.height};
+
+// Scale factor (1 pixel = 1mm by default)
+scale_factor = 1;
+
+`;
+    scad += `// Color definitions
+`;
+    image.partList.forEach((part, index) => {
+      const hex = colorEntryToHex(part.target).substring(1);
+      const r3 = parseInt(hex.substring(0, 2), 16) / 255;
+      const g3 = parseInt(hex.substring(2, 4), 16) / 255;
+      const b3 = parseInt(hex.substring(4, 6), 16) / 255;
+      scad += `color_${index} = [${r3.toFixed(3)}, ${g3.toFixed(3)}, ${b3.toFixed(3)}]; // ${part.target.name}
+`;
+    });
+    scad += `
+// Main model
+`;
+    scad += `union() {
+`;
+    if (baseThickness > 0) {
+      scad += `  // Base plate
+`;
+      scad += `  translate([0, 0, -base_thickness])
+`;
+      scad += `    cube([image_width * scale_factor, image_height * scale_factor, base_thickness]);
+
+`;
+    }
+    imageFiles.forEach((filename, index) => {
+      const colorVar = `color_${index}`;
+      scad += `  // Layer ${index + 1}: ${image.partList[index].target.name}
+`;
+      scad += `  color(${colorVar})
+`;
+      scad += `    scale([scale_factor, scale_factor, pixel_height])
+`;
+      scad += `      surface(file = "${filename}", center = false, invert = true);
+
+`;
+    });
+    scad += `}
+`;
+    return scad;
+  }
+  function sanitizeFilename(name) {
+    return name.replace(/[^a-zA-Z0-9_-]/g, "_").toLowerCase();
+  }
+  async function canvasToBlob(canvas) {
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          resolve(blob);
+        } else {
+          reject(new Error("Failed to convert canvas to blob"));
+        }
+      }, "image/png");
+    });
+  }
+  async function loadJSZip2() {
+    const tagName = "jszip-script-tag";
+    const scriptEl = document.getElementById(tagName);
+    if (scriptEl === null) {
+      return new Promise((resolve, reject) => {
+        const tag = document.createElement("script");
+        tag.id = tagName;
+        tag.onload = () => resolve();
+        tag.onerror = () => reject(new Error("Failed to load JSZip"));
+        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+        document.head.appendChild(tag);
+      });
+    }
+  }
+
+  // src/components/threed-dialog.tsx
+  function ThreeDDialog(props) {
+    const updateProp = F(PropContext);
+    const [isExporting, setIsExporting] = l2(false);
+    const [error, setError] = l2(void 0);
+    return /* @__PURE__ */ a("div", {
+      class: "print-dialog"
+    }, /* @__PURE__ */ a("div", {
+      class: "print-options"
+    }, /* @__PURE__ */ a(FormatGroup2, {
+      ...props
+    }), /* @__PURE__ */ a(HeightGroup, {
+      ...props
+    }), /* @__PURE__ */ a(BaseThicknessGroup, {
+      ...props
+    })), /* @__PURE__ */ a("div", {
+      class: "print-buttons"
+    }, error && /* @__PURE__ */ a("div", {
+      class: "error-message"
+    }, error), /* @__PURE__ */ a("button", {
+      class: "cancel",
+      onClick: () => updateProp("ui", "is3DOpen", false)
+    }, "Cancel"), /* @__PURE__ */ a("button", {
+      class: "print",
+      onClick: () => exportModel(),
+      disabled: isExporting
+    }, isExporting ? "Exporting..." : "Export 3D")));
+    async function exportModel() {
+      setIsExporting(true);
+      setError(void 0);
+      try {
+        const settings = {
+          height: props.settings.pixelHeight,
+          baseThickness: props.settings.baseThickness,
+          pixelHeight: props.settings.pixelHeight
+        };
+        let blob;
+        let filename;
+        if (props.settings.format === "3mf") {
+          blob = await generate3MF(props.image, settings);
+          filename = props.filename.replace(/\.[^.]+$/, "") + ".3mf";
+        } else {
+          blob = await generateOpenSCADMasks(props.image, settings);
+          filename = props.filename.replace(/\.[^.]+$/, "") + "_openscad.zip";
+        }
+        window.clarity?.("event", "export-3d", props.settings.format);
+        await loadFileSaver();
+        saveAs(blob, filename);
+        updateProp("ui", "is3DOpen", false);
+      } catch (err) {
+        console.error("Export failed:", err);
+        setError(err instanceof Error ? err.message : "Export failed");
+      } finally {
+        setIsExporting(false);
+      }
+    }
+  }
+  async function loadFileSaver() {
+    if (typeof saveAs !== "undefined") {
+      return;
+    }
+    const tagName = "filesaver-script-tag";
+    const scriptEl = document.getElementById(tagName);
+    if (scriptEl === null) {
+      return new Promise((resolve, reject) => {
+        const tag = document.createElement("script");
+        tag.id = tagName;
+        tag.onload = () => resolve();
+        tag.onerror = () => reject(new Error("Failed to load FileSaver"));
+        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js";
+        document.head.appendChild(tag);
+      });
+    }
+  }
+  var FormatGroup2 = makeRadioGroup2(() => ({
+    title: "Format",
+    key: "format",
+    values: [
+      {
+        value: "3mf",
+        title: "3MF Triangle Mesh",
+        description: "Industry-standard 3D Manufacturing Format with separate materials per color. Compatible with most 3D printing software."
+      },
+      {
+        value: "openscad",
+        title: "OpenSCAD Masks",
+        description: "ZIP file with monochrome mask images and OpenSCAD script. Allows customization and parametric modifications."
+      }
+    ]
+  }));
+  var HeightGroup = makeRadioGroup2(() => ({
+    key: "pixelHeight",
+    title: "Pixel Height",
+    values: [
+      {
+        title: "0.5mm",
+        value: 0.5,
+        description: "Thin layers, faster printing"
+      },
+      {
+        title: "1mm",
+        value: 1,
+        description: "Standard height"
+      },
+      {
+        title: "2mm",
+        value: 2,
+        description: "Thicker, more pronounced 3D effect"
+      },
+      {
+        title: "3mm",
+        value: 3,
+        description: "Very thick layers"
+      }
+    ]
+  }));
+  var BaseThicknessGroup = makeRadioGroup2(() => ({
+    key: "baseThickness",
+    title: "Base Thickness",
+    values: [
+      {
+        title: "None",
+        value: 0,
+        description: "No base plate"
+      },
+      {
+        title: "0.5mm",
+        value: 0.5,
+        description: "Thin base"
+      },
+      {
+        title: "1mm",
+        value: 1,
+        description: "Standard base"
+      },
+      {
+        title: "2mm",
+        value: 2,
+        description: "Thick base for stability"
+      }
+    ]
+  }));
+  function makeRadioGroup2(factory) {
+    return function(props) {
+      const updateProp = F(PropContext);
+      const p3 = factory(props);
+      return /* @__PURE__ */ a("div", {
+        class: "print-setting-group"
+      }, /* @__PURE__ */ a("h1", null, p3.title), /* @__PURE__ */ a("div", {
+        class: "print-setting-group-options"
+      }, p3.values.map((v3) => /* @__PURE__ */ a("label", {
+        key: String(v3.value)
+      }, /* @__PURE__ */ a("input", {
+        type: "radio",
+        name: p3.key,
+        checked: v3.value === props.settings[p3.key],
+        onChange: () => {
+          updateProp("threed", p3.key, v3.value);
+        }
+      }), /* @__PURE__ */ a("div", {
+        class: "option"
+      }, /* @__PURE__ */ a("h3", null, v3.title))))), /* @__PURE__ */ a("span", {
         class: "description"
       }, p3.values.filter((v3) => v3.value === props.settings[p3.key])[0]?.description));
     };
@@ -2934,15 +3421,23 @@
           if (evt.ctrlKey) {
             switch (evt.key) {
               case "o":
+                window.clarity?.("event", "toggle-upload");
                 toggleProp("ui", "isUploadOpen");
                 break;
               case "p":
+                window.clarity?.("event", "toggle-print");
                 toggleProp("ui", "isPrintOpen");
                 break;
+              case "d":
+                window.clarity?.("event", "toggle-3d");
+                toggleProp("ui", "is3DOpen");
+                break;
               case "l":
+                window.clarity?.("event", "toggle-legend");
                 toggleProp("ui", "showLegend");
                 break;
               case "e":
+                window.clarity?.("event", "toggle-settings");
                 toggleProp("ui", "showSettings");
                 break;
               default:
@@ -2953,6 +3448,7 @@
             switch (evt.key) {
               case "Escape":
                 updateProp("ui", "isPrintOpen", false);
+                updateProp("ui", "is3DOpen", false);
                 updateProp("ui", "isUploadOpen", false);
                 break;
             }
@@ -2984,7 +3480,13 @@
         onClick: () => toggleProp("ui", "isPrintOpen")
       }, "\u{1F5A8}\uFE0F", /* @__PURE__ */ a("span", {
         class: "extended-label"
-      }, "Print")), /* @__PURE__ */ a("span", {
+      }, "Print")), /* @__PURE__ */ a("button", {
+        title: "3D Export...",
+        class: `toolbar-button ${props.ui.is3DOpen ? "on" : "off"} text`,
+        onClick: () => toggleProp("ui", "is3DOpen")
+      }, "\u{1F4E6}", /* @__PURE__ */ a("span", {
+        class: "extended-label"
+      }, "3D")), /* @__PURE__ */ a("span", {
         class: "toolbar-divider"
       }), /* @__PURE__ */ a("button", {
         title: "Settings",
@@ -3059,6 +3561,10 @@
         image,
         settings: props.print,
         gridSize: props.material.size,
+        filename: props.source.displayName
+      }), props.ui.is3DOpen && image && /* @__PURE__ */ a(ThreeDDialog, {
+        image,
+        settings: props.threed,
         filename: props.source.displayName
       })), /* @__PURE__ */ a("datalist", {
         id: "image-ticks"
@@ -3388,6 +3894,7 @@
       }
       current = [[name, uri], ...current];
       window.setTimeout(save, 250);
+      window.clarity?.("event", "add-user-image");
     }
     function remove(uri) {
       for (let i3 = 0; i3 < current.length; i3++) {
@@ -3443,6 +3950,11 @@
       imageSize: "actual",
       breakStrategy: "page"
     },
+    threed: {
+      format: "3mf",
+      pixelHeight: 1,
+      baseThickness: 0.5
+    },
     source: {
       displayName: galleryStorage.current[0][0],
       uri: galleryStorage.current[0][1],
@@ -3451,6 +3963,7 @@
     ui: {
       isUploadOpen: false,
       isPrintOpen: false,
+      is3DOpen: false,
       isWelcomeOpen: true,
       showLegend: false,
       showSettings: false,
