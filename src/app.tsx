@@ -5,8 +5,9 @@ import { adjustImage, createPartListImage, getImageData, getImageStats, imageDat
 import { AppProps, DisplayProps, DisplaySettings, ImageProps, ImageSettings, MaterialProps, MaterialSettings } from "./types";
 import { colorEntryToHex, dollars, feetInches, getPitch, timeAmount } from './utils';
 import { GalleryStorage } from './user-gallery';
-import { PropContext, PropContextProvider } from './components/context';
+import { PropContext, PropProvider } from './components/context';
 import { PrintDialog } from './components/print-dialog';
+import { ThreeDDialog } from './components/threed-dialog';
 import { PlanSvg } from './components/plan-display';
 import { WelcomeScreen } from './components/welcome-screen';
 
@@ -98,6 +99,7 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                     switch (evt.key) {
                         case "Escape":
                             updateProp("ui", "isPrintOpen", false);
+                            updateProp("ui", "is3DOpen", false);
                             updateProp("ui", "isUploadOpen", false);
                             break;
                     }
@@ -114,11 +116,12 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
         const pitch = getPitch(props.material.size);
 
         return <div class="app-top">
-            <PropContextProvider value={updateProp}>
+            <PropProvider value={updateProp}>
                 {props.ui.isWelcomeOpen && <WelcomeScreen />}
                 <div class="toolbar">
                     <button title="Open..." class={`toolbar-button ${props.ui.isUploadOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "isUploadOpen")}>📂<span class="extended-label">Open</span></button>
                     <button title="Print..." class={`toolbar-button ${props.ui.isPrintOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "isPrintOpen")}>🖨️<span class="extended-label">Print</span></button>
+                    <button title="3D..." class={`toolbar-button ${props.ui.is3DOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "is3DOpen")}>🎲<span class="extended-label">3D</span></button>
                     <span class="toolbar-divider" />
                     <button title="Settings" class={`toolbar-button ${props.ui.showSettings ? "on" : "off"} text`} onClick={() => toggleProp("ui", "showSettings")}>⚙️<span class="extended-label">Settings</span></button>
                     <button title="Legend" class={`toolbar-button ${props.ui.showLegend ? "on" : "off"} text`} onClick={() => toggleProp("ui", "showLegend")}>🔑<span class="extended-label">Legend</span></button>
@@ -159,7 +162,13 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                         settings={props.print}
                         gridSize={props.material.size}
                         filename={props.source.displayName} />}
-            </PropContextProvider>
+                {props.ui.is3DOpen && image &&
+                    <ThreeDDialog
+                        image={image}
+                        settings={props.threeD}
+                        gridSize={props.material.size}
+                        filename={props.source.displayName} />}
+            </PropProvider>
             <datalist id="image-ticks">
                 <option value="0" label="0" />
             </datalist>

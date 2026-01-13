@@ -62,6 +62,17 @@ export type PrintProps = {
     breakStrategy: PrintSettings["breakStrategy"];
 };
 
+export type ThreeDProps = {
+    format: "3mf" | "openscad";
+};
+
+export interface ThreeDSettings {
+    format: ThreeDProps["format"];
+    filename: string;
+    pitch: number;
+    gridSize: string;
+}
+
 export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
     nudgeGrid: boolean;
 };
@@ -69,6 +80,7 @@ export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
 export type AppProps = {
     material: MaterialProps;
     print: PrintProps;
+    threeD: ThreeDProps;
     display: DisplayProps;
     image: ImageProps;
     source: {
@@ -80,6 +92,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        is3DOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
