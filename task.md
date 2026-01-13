@@ -1,0 +1,1 @@
+Make the app print "Hello, world" to the console on load

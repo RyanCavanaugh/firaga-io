@@ -56,6 +56,7 @@ const DefaultAppProps: AppProps = {
 } as const;
 
 window.addEventListener("DOMContentLoaded", function () {
+    console.log("Hello, world");
     const s = window.localStorage.getItem("props");
     let props;
     if (s === null) {
