@@ -181,7 +181,7 @@ const PageBreakingGroup = makeRadioGroup(() => ({
 
 function StepByStepPreviewer(props: { image: PartListImage }) {
     const [frame, setFrame] = useState(0);
-    const imgRef = useRef<HTMLImageElement>();
+    const imgRef = useRef<HTMLImageElement>(null);
     useEffect(() => {
         drawNextFrame();
         const id = window.setInterval(incrementFrame, 600);
@@ -198,7 +198,9 @@ function StepByStepPreviewer(props: { image: PartListImage }) {
     }
 
     function drawNextFrame() {
-        imgRef.current.src = renderPartListImageToDataURL(props.image, frame);
+        if (imgRef.current) {
+            imgRef.current.src = renderPartListImageToDataURL(props.image, frame);
+        }
     }
 }
 
