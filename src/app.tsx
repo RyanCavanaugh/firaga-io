@@ -5,7 +5,7 @@ import { adjustImage, createPartListImage, getImageData, getImageStats, imageDat
 import { AppProps, DisplayProps, DisplaySettings, ImageProps, ImageSettings, MaterialProps, MaterialSettings } from "./types";
 import { colorEntryToHex, dollars, feetInches, getPitch, timeAmount } from './utils';
 import { GalleryStorage } from './user-gallery';
-import { PropContext, PropProvider } from './components/context';
+import { PropContext, PropContextProvider } from './components/context';
 import { PrintDialog } from './components/print-dialog';
 import { PlanSvg } from './components/plan-display';
 import { WelcomeScreen } from './components/welcome-screen';
@@ -114,7 +114,7 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
         const pitch = getPitch(props.material.size);
 
         return <div class="app-top">
-            <PropProvider value={updateProp}>
+            <PropContextProvider value={updateProp}>
                 {props.ui.isWelcomeOpen && <WelcomeScreen />}
                 <div class="toolbar">
                     <button title="Open..." class={`toolbar-button ${props.ui.isUploadOpen ? "on" : "off"} text`} onClick={() => toggleProp("ui", "isUploadOpen")}>📂<span class="extended-label">Open</span></button>
@@ -159,7 +159,7 @@ export function createApp(initProps: AppProps, galleryStorage: GalleryStorage, r
                         settings={props.print}
                         gridSize={props.material.size}
                         filename={props.source.displayName} />}
-            </PropProvider>
+            </PropContextProvider>
             <datalist id="image-ticks">
                 <option value="0" label="0" />
             </datalist>
