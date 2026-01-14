@@ -1,3406 +1,888 @@
-"use strict";
-(() => {
-  var __defProp = Object.defineProperty;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __esm = (fn, res) => function __init() {
-    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
-  };
-  var __commonJS = (cb, mod) => function __require() {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-  };
-  var __export = (target, all) => {
-    for (var name in all)
-      __defProp(target, name, { get: all[name], enumerable: true });
-  };
-  var __copyProps = (to, from, except, desc) => {
-    if (from && typeof from === "object" || typeof from === "function") {
-      for (let key of __getOwnPropNames(from))
-        if (!__hasOwnProp.call(to, key) && key !== except)
-          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-    }
-    return to;
-  };
-  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+"use strict";(()=>{var Re=Object.defineProperty;var jr=Object.getOwnPropertyDescriptor;var Kr=Object.getOwnPropertyNames;var Yr=Object.prototype.hasOwnProperty;var qr=(e,t)=>()=>(e&&(t=e(e=0)),t);var W=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),Xr=(e,t)=>{for(var r in t)Re(e,r,{get:t[r],enumerable:!0})},Jr=(e,t,r,n)=>{if(t&&typeof t=="object"||typeof t=="function")for(let a of Kr(t))!Yr.call(e,a)&&a!==r&&Re(e,a,{get:()=>t[a],enumerable:!(n=jr(t,a))||n.enumerable});return e};var gt=e=>Jr(Re({},"__esModule",{value:!0}),e);var Ce={};Xr(Ce,{Component:()=>le,Fragment:()=>V,cloneElement:()=>an,createContext:()=>Ne,createElement:()=>de,createRef:()=>Qr,h:()=>de,hydrate:()=>Et,isValidElement:()=>bt,options:()=>P,render:()=>pe,toChildArray:()=>xt});function T(e,t){for(var r in t)e[r]=t[r];return e}function $e(e){e&&e.parentNode&&e.parentNode.removeChild(e)}function de(e,t,r){var n,a,o,i={};for(o in t)o=="key"?n=t[o]:o=="ref"?a=t[o]:i[o]=t[o];if(arguments.length>2&&(i.children=arguments.length>3?ce.call(arguments,2):r),typeof e=="function"&&e.defaultProps!=null)for(o in e.defaultProps)i[o]===void 0&&(i[o]=e.defaultProps[o]);return ie(e,i,n,a,null)}function ie(e,t,r,n,a){var o={type:e,props:t,key:r,ref:n,__k:null,__:null,__b:0,__e:null,__c:null,constructor:void 0,__v:a??++_t,__i:-1,__u:0};return a==null&&P.vnode!=null&&P.vnode(o),o}function Qr(){return{current:null}}function V(e){return e.children}function le(e,t){this.props=e,this.context=t}function Q(e,t){if(t==null)return e.__?Q(e.__,e.__i+1):null;for(var r;t<e.__k.length;t++)if((r=e.__k[t])!=null&&r.__e!=null)return r.__e;return typeof e.type=="function"?Q(e):null}function At(e){var t,r;if((e=e.__)!=null&&e.__c!=null){for(e.__e=e.__c.base=null,t=0;t<e.__k.length;t++)if((r=e.__k[t])!=null&&r.__e!=null){e.__e=e.__c.base=r.__e;break}return At(e)}}function Ve(e){(!e.__d&&(e.__d=!0)&&q.push(e)&&!be.__r++||ft!=P.debounceRendering)&&((ft=P.debounceRendering)||Ct)(be)}function be(){for(var e,t,r,n,a,o,i,d=1;q.length;)q.length>d&&q.sort(vt),e=q.shift(),d=q.length,e.__d&&(r=void 0,n=void 0,a=(n=(t=e).__v).__e,o=[],i=[],t.__P&&((r=T({},n)).__v=n.__v+1,P.vnode&&P.vnode(r),He(t.__P,r,n,t.__n,t.__P.namespaceURI,32&n.__u?[a]:null,o,a??Q(n),!!(32&n.__u),i),r.__v=n.__v,r.__.__k[r.__i]=r,Pt(o,r,i),n.__e=n.__=null,r.__e!=a&&At(r)));be.__r=0}function Bt(e,t,r,n,a,o,i,d,p,c,s){var u,f,g,m,C,v,b,h=n&&n.__k||kt,_=t.length;for(p=en(r,t,h,p,_),u=0;u<_;u++)(g=r.__k[u])!=null&&(f=g.__i==-1?se:h[g.__i]||se,g.__i=u,v=He(e,g,f,a,o,i,d,p,c,s),m=g.__e,g.ref&&f.ref!=g.ref&&(f.ref&&Ue(f.ref,null,g),s.push(g.ref,g.__c||m,g)),C==null&&m!=null&&(C=m),(b=!!(4&g.__u))||f.__k===g.__k?p=St(g,p,e,b):typeof g.type=="function"&&v!==void 0?p=v:m&&(p=m.nextSibling),g.__u&=-7);return r.__e=C,p}function en(e,t,r,n,a){var o,i,d,p,c,s=r.length,u=s,f=0;for(e.__k=new Array(a),o=0;o<a;o++)(i=t[o])!=null&&typeof i!="boolean"&&typeof i!="function"?(typeof i=="string"||typeof i=="number"||typeof i=="bigint"||i.constructor==String?i=e.__k[o]=ie(null,i,null,null,null):ue(i)?i=e.__k[o]=ie(V,{children:i},null,null,null):i.constructor===void 0&&i.__b>0?i=e.__k[o]=ie(i.type,i.props,i.key,i.ref?i.ref:null,i.__v):e.__k[o]=i,p=o+f,i.__=e,i.__b=e.__b+1,d=null,(c=i.__i=tn(i,r,p,u))!=-1&&(u--,(d=r[c])&&(d.__u|=2)),d==null||d.__v==null?(c==-1&&(a>s?f--:a<s&&f++),typeof i.type!="function"&&(i.__u|=4)):c!=p&&(c==p-1?f--:c==p+1?f++:(c>p?f--:f++,i.__u|=4))):e.__k[o]=null;if(u)for(o=0;o<s;o++)(d=r[o])!=null&&(2&d.__u)==0&&(d.__e==n&&(n=Q(d)),Ft(d,d));return n}function St(e,t,r,n){var a,o;if(typeof e.type=="function"){for(a=e.__k,o=0;a&&o<a.length;o++)a[o]&&(a[o].__=e,t=St(a[o],t,r,n));return t}e.__e!=t&&(n&&(t&&e.type&&!t.parentNode&&(t=Q(e)),r.insertBefore(e.__e,t||null)),t=e.__e);do t=t&&t.nextSibling;while(t!=null&&t.nodeType==8);return t}function xt(e,t){return t=t||[],e==null||typeof e=="boolean"||(ue(e)?e.some(function(r){xt(r,t)}):t.push(e)),t}function tn(e,t,r,n){var a,o,i,d=e.key,p=e.type,c=t[r],s=c!=null&&(2&c.__u)==0;if(c===null&&d==null||s&&d==c.key&&p==c.type)return r;if(n>(s?1:0)){for(a=r-1,o=r+1;a>=0||o<t.length;)if((c=t[i=a>=0?a--:o++])!=null&&(2&c.__u)==0&&d==c.key&&p==c.type)return i}return-1}function mt(e,t,r){t[0]=="-"?e.setProperty(t,r??""):e[t]=r==null?"":typeof r!="number"||Zr.test(t)?r:r+"px"}function _e(e,t,r,n,a){var o,i;e:if(t=="style")if(typeof r=="string")e.style.cssText=r;else{if(typeof n=="string"&&(e.style.cssText=n=""),n)for(t in n)r&&t in r||mt(e.style,t,"");if(r)for(t in r)n&&r[t]==n[t]||mt(e.style,t,r[t])}else if(t[0]=="o"&&t[1]=="n")o=t!=(t=t.replace(wt,"$1")),i=t.toLowerCase(),t=i in e||t=="onFocusOut"||t=="onFocusIn"?i.slice(2):t.slice(2),e.l||(e.l={}),e.l[t+o]=r,r?n?r.u=n.u:(r.u=ze,e.addEventListener(t,o?Te:Ie,o)):e.removeEventListener(t,o?Te:Ie,o);else{if(a=="http://www.w3.org/2000/svg")t=t.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if(t!="width"&&t!="height"&&t!="href"&&t!="list"&&t!="form"&&t!="tabIndex"&&t!="download"&&t!="rowSpan"&&t!="colSpan"&&t!="role"&&t!="popover"&&t in e)try{e[t]=r??"";break e}catch{}typeof r=="function"||(r==null||r===!1&&t[4]!="-"?e.removeAttribute(t):e.setAttribute(t,t=="popover"&&r==1?"":r))}}function yt(e){return function(t){if(this.l){var r=this.l[t.type+e];if(t.t==null)t.t=ze++;else if(t.t<r.u)return;return r(P.event?P.event(t):t)}}}function He(e,t,r,n,a,o,i,d,p,c){var s,u,f,g,m,C,v,b,h,_,k,y,D,w,B,x,A,S=t.type;if(t.constructor!==void 0)return null;128&r.__u&&(p=!!(32&r.__u),o=[d=t.__e=r.__e]),(s=P.__b)&&s(t);e:if(typeof S=="function")try{if(b=t.props,h="prototype"in S&&S.prototype.render,_=(s=S.contextType)&&n[s.__c],k=s?_?_.props.value:s.__:n,r.__c?v=(u=t.__c=r.__c).__=u.__E:(h?t.__c=u=new S(b,k):(t.__c=u=new le(b,k),u.constructor=S,u.render=nn),_&&_.sub(u),u.state||(u.state={}),u.__n=n,f=u.__d=!0,u.__h=[],u._sb=[]),h&&u.__s==null&&(u.__s=u.state),h&&S.getDerivedStateFromProps!=null&&(u.__s==u.state&&(u.__s=T({},u.__s)),T(u.__s,S.getDerivedStateFromProps(b,u.__s))),g=u.props,m=u.state,u.__v=t,f)h&&S.getDerivedStateFromProps==null&&u.componentWillMount!=null&&u.componentWillMount(),h&&u.componentDidMount!=null&&u.__h.push(u.componentDidMount);else{if(h&&S.getDerivedStateFromProps==null&&b!==g&&u.componentWillReceiveProps!=null&&u.componentWillReceiveProps(b,k),t.__v==r.__v||!u.__e&&u.shouldComponentUpdate!=null&&u.shouldComponentUpdate(b,u.__s,k)===!1){for(t.__v!=r.__v&&(u.props=b,u.state=u.__s,u.__d=!1),t.__e=r.__e,t.__k=r.__k,t.__k.some(function(F){F&&(F.__=t)}),y=0;y<u._sb.length;y++)u.__h.push(u._sb[y]);u._sb=[],u.__h.length&&i.push(u);break e}u.componentWillUpdate!=null&&u.componentWillUpdate(b,u.__s,k),h&&u.componentDidUpdate!=null&&u.__h.push(function(){u.componentDidUpdate(g,m,C)})}if(u.context=k,u.props=b,u.__P=e,u.__e=!1,D=P.__r,w=0,h){for(u.state=u.__s,u.__d=!1,D&&D(t),s=u.render(u.props,u.state,u.context),B=0;B<u._sb.length;B++)u.__h.push(u._sb[B]);u._sb=[]}else do u.__d=!1,D&&D(t),s=u.render(u.props,u.state,u.context),u.state=u.__s;while(u.__d&&++w<25);u.state=u.__s,u.getChildContext!=null&&(n=T(T({},n),u.getChildContext())),h&&!f&&u.getSnapshotBeforeUpdate!=null&&(C=u.getSnapshotBeforeUpdate(g,m)),x=s,s!=null&&s.type===V&&s.key==null&&(x=Lt(s.props.children)),d=Bt(e,ue(x)?x:[x],t,r,n,a,o,i,d,p,c),u.base=t.__e,t.__u&=-161,u.__h.length&&i.push(u),v&&(u.__E=u.__=null)}catch(F){if(t.__v=null,p||o!=null)if(F.then){for(t.__u|=p?160:128;d&&d.nodeType==8&&d.nextSibling;)d=d.nextSibling;o[o.indexOf(d)]=null,t.__e=d}else{for(A=o.length;A--;)$e(o[A]);Oe(t)}else t.__e=r.__e,t.__k=r.__k,F.then||Oe(t);P.__e(F,t,r)}else o==null&&t.__v==r.__v?(t.__k=r.__k,t.__e=r.__e):d=t.__e=rn(r.__e,t,r,n,a,o,i,p,c);return(s=P.diffed)&&s(t),128&t.__u?void 0:d}function Oe(e){e&&e.__c&&(e.__c.__e=!0),e&&e.__k&&e.__k.forEach(Oe)}function Pt(e,t,r){for(var n=0;n<r.length;n++)Ue(r[n],r[++n],r[++n]);P.__c&&P.__c(t,e),e.some(function(a){try{e=a.__h,a.__h=[],e.some(function(o){o.call(a)})}catch(o){P.__e(o,a.__v)}})}function Lt(e){return typeof e!="object"||e==null||e.__b&&e.__b>0?e:ue(e)?e.map(Lt):T({},e)}function rn(e,t,r,n,a,o,i,d,p){var c,s,u,f,g,m,C,v=r.props||se,b=t.props,h=t.type;if(h=="svg"?a="http://www.w3.org/2000/svg":h=="math"?a="http://www.w3.org/1998/Math/MathML":a||(a="http://www.w3.org/1999/xhtml"),o!=null){for(c=0;c<o.length;c++)if((g=o[c])&&"setAttribute"in g==!!h&&(h?g.localName==h:g.nodeType==3)){e=g,o[c]=null;break}}if(e==null){if(h==null)return document.createTextNode(b);e=document.createElementNS(a,h,b.is&&b),d&&(P.__m&&P.__m(t,o),d=!1),o=null}if(h==null)v===b||d&&e.data==b||(e.data=b);else{if(o=o&&ce.call(e.childNodes),!d&&o!=null)for(v={},c=0;c<e.attributes.length;c++)v[(g=e.attributes[c]).name]=g.value;for(c in v)if(g=v[c],c!="children"){if(c=="dangerouslySetInnerHTML")u=g;else if(!(c in b)){if(c=="value"&&"defaultValue"in b||c=="checked"&&"defaultChecked"in b)continue;_e(e,c,null,g,a)}}for(c in b)g=b[c],c=="children"?f=g:c=="dangerouslySetInnerHTML"?s=g:c=="value"?m=g:c=="checked"?C=g:d&&typeof g!="function"||v[c]===g||_e(e,c,g,v[c],a);if(s)d||u&&(s.__html==u.__html||s.__html==e.innerHTML)||(e.innerHTML=s.__html),t.__k=[];else if(u&&(e.innerHTML=""),Bt(t.type=="template"?e.content:e,ue(f)?f:[f],t,r,n,h=="foreignObject"?"http://www.w3.org/1999/xhtml":a,o,i,o?o[0]:r.__k&&Q(r,0),d,p),o!=null)for(c=o.length;c--;)$e(o[c]);d||(c="value",h=="progress"&&m==null?e.removeAttribute("value"):m!=null&&(m!==e[c]||h=="progress"&&!m||h=="option"&&m!=v[c])&&_e(e,c,m,v[c],a),c="checked",C!=null&&C!=e[c]&&_e(e,c,C,v[c],a))}return e}function Ue(e,t,r){try{if(typeof e=="function"){var n=typeof e.__u=="function";n&&e.__u(),n&&t==null||(e.__u=e(t))}else e.current=t}catch(a){P.__e(a,r)}}function Ft(e,t,r){var n,a;if(P.unmount&&P.unmount(e),(n=e.ref)&&(n.current&&n.current!=e.__e||Ue(n,null,t)),(n=e.__c)!=null){if(n.componentWillUnmount)try{n.componentWillUnmount()}catch(o){P.__e(o,t)}n.base=n.__P=null}if(n=e.__k)for(a=0;a<n.length;a++)n[a]&&Ft(n[a],t,r||typeof e.type!="function");r||$e(e.__e),e.__c=e.__=e.__e=void 0}function nn(e,t,r){return this.constructor(e,r)}function pe(e,t,r){var n,a,o,i;t==document&&(t=document.documentElement),P.__&&P.__(e,t),a=(n=typeof r=="function")?null:r&&r.__k||t.__k,o=[],i=[],He(t,e=(!n&&r||t).__k=de(V,null,[e]),a||se,se,t.namespaceURI,!n&&r?[r]:a?null:t.firstChild?ce.call(t.childNodes):null,o,!n&&r?r:a?a.__e:t.firstChild,n,i),Pt(o,e,i)}function Et(e,t){pe(e,t,Et)}function an(e,t,r){var n,a,o,i,d=T({},e.props);for(o in e.type&&e.type.defaultProps&&(i=e.type.defaultProps),t)o=="key"?n=t[o]:o=="ref"?a=t[o]:d[o]=t[o]===void 0&&i!=null?i[o]:t[o];return arguments.length>2&&(d.children=arguments.length>3?ce.call(arguments,2):r),ie(e.type,d,n||e.key,a||e.ref,null)}function Ne(e){function t(r){var n,a;return this.getChildContext||(n=new Set,(a={})[t.__c]=this,this.getChildContext=function(){return a},this.componentWillUnmount=function(){n=null},this.shouldComponentUpdate=function(o){this.props.value!=o.value&&n.forEach(function(i){i.__e=!0,Ve(i)})},this.sub=function(o){n.add(o);var i=o.componentWillUnmount;o.componentWillUnmount=function(){n&&n.delete(o),i&&i.call(o)}}),r.children}return t.__c="__cC"+Dt++,t.__=e,t.Provider=t.__l=(t.Consumer=function(r,n){return r.children(n)}).contextType=t,t}var ce,P,_t,bt,q,ft,Ct,vt,wt,ze,Ie,Te,Dt,se,kt,Zr,ue,j=qr(()=>{se={},kt=[],Zr=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,ue=Array.isArray;ce=kt.slice,P={__e:function(e,t,r,n){for(var a,o,i;t=t.__;)if((a=t.__c)&&!a.__)try{if((o=a.constructor)&&o.getDerivedStateFromError!=null&&(a.setState(o.getDerivedStateFromError(e)),i=a.__d),a.componentDidCatch!=null&&(a.componentDidCatch(e,n||{}),i=a.__d),i)return a.__E=a}catch(d){e=d}throw e}},_t=0,bt=function(e){return e!=null&&e.constructor===void 0},le.prototype.setState=function(e,t){var r;r=this.__s!=null&&this.__s!=this.state?this.__s:this.__s=T({},this.state),typeof e=="function"&&(e=e(T({},r),this.props)),e&&T(r,e),e!=null&&this.__v&&(t&&this._sb.push(t),Ve(this))},le.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),Ve(this))},le.prototype.render=V,q=[],Ct=typeof Promise=="function"?Promise.prototype.then.bind(Promise.resolve()):setTimeout,vt=function(e,t){return e.__v.__b-t.__v.__b},be.__r=0,wt=/(PointerCapture)$|Capture$/i,ze=0,Ie=yt(!1),Te=yt(!0),Dt=0});var Kt=W((Sa,pn)=>{pn.exports=`R,G,B,Name,Artkal Midi,Artkal Mini,Artkal Mini Starter,Artkal Midi Soft,Artkal Mini Soft,All Perler,Perler Multi Mix,Perler Mini Assorted,Perler Mini Bulk,EvoRetro,Funzbo\r
+255,255,255,White,S01,C01,C01,R01,A01,,,,,,\r
+255,163,139,Burning Sand,S02,C44,C44,R02,A44,,,,,,\r
+246,176,76,Tangerine,S03,C03,C03,R03,A03,,,,,,\r
+255,103,31,Orange,S04,C17,C17,R04,A17,,,,,,\r
+225,6,0,Tall Poppy,S05,C05,C05,R05,A05,,,,,,\r
+236,134,208,Raspberry Pink,S06,C49,,R06,A49,,,,,,\r
+155,155,155,Gray,S07,C33,C33,R07,A33,,,,,,\r
+36,222,91,Emerald,S08,,,R08,,,,,,,\r
+0,104,94,Dark Green,S09,,,R09,,,,,,,\r
+65,182,230,Baby Blue,S10,C19,C19,R10,A19,,,,,,\r
+79,159,179,Lagoon,S100,C99,,,A99,,,,,,\r
+49,150,221,Electric Blue,S101,C100,,,A100,,,,,,\r
+27,108,182,Pool Blue,S102,C101,,,A101,,,,,,\r
+8,57,128,Caribbean Blue,S103,C102,,,A102,,,,,,\r
+10,102,139,Deep Water,S104,C103,,,A103,,,,,,\r
+8,91,110,Petrol Blue,S105,C104,,,A104,,,,,,\r
+0,78,120,Wegdewood Blue,S106,C105,,,A105,,,,,,\r
+0,85,116,Pond Blue,S107,C106,,,A106,,,,,,\r
+204,190,128,Seashell Beige,S108,C107,,,A107,,,,,,\r
+164,147,80,Beige,S109,C108,,,A108,,,,,,\r
+0,51,153,Dark Blue,S11,C21,C21,R11,A21,,,,,,\r
+158,136,60,Beach Beige,S110,C109,,,A109,,,,,,\r
+118,108,43,Caffe Latt\xE9,S111,C110,,,A110,,,,,,\r
+121,95,38,Oaktree Brown,S112,C111,,,A111,,,,,,\r
+186,184,162,Khaki,S113,C112,,,A112,,,,,,\r
+114,140,84,Light Greengray,S114,C113,,,A113,,,,,,\r
+126,124,68,Mossy Green,S115,C114,,,A114,,,,,,\r
+100,105,46,Earth Green,S116,C115,,,A115,,,,,,\r
+78,88,44,Sage Green,S117,C116,,,A116,,,,,,\r
+74,94,45,Pinetree Green,S118,C117,,,A117,,,,,,\r
+113,196,182,Frosty Blue,S119,C118,,,A118,,,,,,\r
+160,94,181,Pastel Lavender,S12,C26,C26,R12,A26,,,,,,\r
+102,204,153,Polar Mint,S120,C119,,,A119,,,,,,\r
+86,154,131,Celadon Green,S121,C120,,,A120,,,,,,\r
+20,194,91,Eucalyptus,S122,C121,,,A121,,,,,,\r
+24,168,24,Clover Field,S123,C122,,,A122,,,,,,\r
+4,85,46,Pooltable Felt,S124,C123,,,A123,,,,,,\r
+19,107,90,Snake Green,S125,C124,,,A124,,,,,,\r
+5,70,65,Dark Eucalyptus,S126,C125,,,A125,,,,,,\r
+217,182,214,Marsmallow Rose,S127,C126,,,A126,,,,,,\r
+173,98,164,Light Grape,S128,C127,,,A127,,,,,,\r
+230,140,163,Rosebud Pink,S129,C128,,,A128,,,,,,\r
+0,0,0,Black,S13,C02,C02,R13,A02,,,,,,\r
+222,84,121,Fuschia,S130,C129,,,A129,,,,,,\r
+158,130,186,Candy Violet,S131,C130,,,A130,,,,,,\r
+232,65,107,Flamingo,S132,C131,,,A131,,,,,,\r
+183,56,143,Pink Plum,S133,C132,,,A132,,,,,,\r
+88,31,126,Amethyst,S134,C133,,,A133,,,,,,\r
+140,163,212,Moonlight Blue,S135,C134,,,A134,,,,,,\r
+154,154,204,Summer Rain,S136,C135,,,A135,,,,,,\r
+89,129,193,Azure Blue,S137,C136,,,A136,,,,,,\r
+65,102,176,Cornflower Blue,S138,C137,,,A137,,,,,,\r
+71,95,171,Forget Me Not,S139,C138,,,A138,,,,,,\r
+250,224,83,Sandstorm,S14,C42,C42,R14,A42,,,,,,\r
+55,69,147,Indigo,S140,C139,,,A139,,,,,,\r
+61,86,165,Horizon Blue,S141,C140,,,A140,,,,,,\r
+41,66,135,Cobalt,S142,C141,,,A141,,,,,,\r
+37,38,138,Royal Blue,S143,C142,,,A142,,,,,,\r
+26,47,111,Marine,S144,C143,,,A143,,,,,,\r
+211,201,93,Pale Yellow Moss,S145,C144,,,A144,,,,,,\r
+81,9,24,Bloodrose Red,S146,C145,,,A145,,,,,,\r
+100,179,158,Spearmint,S147,C146,,,A146,,,,,,\r
+99,67,56,Mocha,S148,C147,,,A147,,,,,,\r
+237,211,158,Creme,S149,C148,,,A148,,,,,,\r
+122,62,44,Redwood,S15,C30,,R15,A30,,,,,,\r
+105,99,171,Iris Violet,S150,C149,,,A149,,,,,,\r
+43,63,31,Forest Green,S151,C150,,,A150,,,,,,\r
+151,145,197,Lilac,S152,C151,,,A151,,,,,,\r
+184,189,224,Pale Lilac,S153,C152,,,A152,,,,,,\r
+249,200,152,Sahara Sand,S154,C153,,,A153,,,,,,\r
+195,144,105,Sunkissed Teint,S155,C154,,,A154,,,,,,\r
+90,90,90,Steel Grey,S156,C155,,,A155,,,,,,\r
+60,60,60,Iron Grey,S157,C156,,,A156,,,,,,\r
+26,26,26,Pepper,S158,C157,,,A157,,,,,,\r
+139,139,139,Oslo Gray,S159,C56,,,A56,,,,,,\r
+92,71,56,Brown,S16,C32,C32,R16,A32,,,,,,\r
+123,77,53,Light Brown,S17,C31,C31,R17,A31,,,,,,\r
+204,153,102,Sand,S18,C23,C23,R18,A23,,,,,,\r
+252,191,169,Bubble Gum,S19,C22,C22,R19,A22,,,,,,\r
+36,158,107,Green,S20,C14,,R20,A14,,,,,,\r
+135,216,57,Pastel Green,S21,C13,C13,R21,A13,,,,,,\r
+51,0,114,Purple,S22,C27,C27,R22,A27,,,,,,\r
+100,53,155,Royal Purple,S23,,,R23,,,,,,,\r
+20,123,209,True Blue,S24,C37,C37,R24,A37,,,,,,\r
+255,52,179,Hot Pink,S25,C08,,R25,A08,,,,,,\r
+219,33,82,Magenta,S26,C09,C09,R26,A09,,,,,,\r
+255,209,0,Yellow,S27,C11,,R27,A11,,,,,,\r
+234,184,228,Lily Pink,S28,,,R28,,,,,,,\r
+246,235,97,Pastel Yellow,S29,C41,,R29,A41,,,,,,\r
+153,214,234,Shadow Green,S30,C39,C39,R30,A39,,,,,,\r
+158,229,176,Sea Mist,S31,C60,C60,R31,A60,,,,,,\r
+255,231,128,Beeswax,S32,C24,,R32,A24,,,,,,\r
+197,180,227,Maverick,S33,C50,C50,R33,A50,,,,,,\r
+186,12,47,Red,S34,C06,,R34,A06,,,,,,\r
+247,206,215,Mona Lisa,S35,,,R35,,,,,,,\r
+201,128,158,Old Pink,S36,C36,,R36,A36,,,,,,\r
+113,216,191,Blue-Green,S37,,,R37,,,,,,,\r
+171,37,86,Burgundy,S38,,,R38,,,,,,,\r
+237,139,0,Yellow Orange,S39,C04,C04,R39,A04,,,,,,\r
+241,167,220,Carnation Pink,S40,C07,C07,R40,A07,,,,,,\r
+154,85,22,Metallic Gold,S41,,,R41,,,,,,,\r
+125,124,121,Metallic Silver,S42,C35,,R42,A35,,,,,,\r
+118,119,119,Dark Gray,S43,C34,C34,R43,A34,,,,,,\r
+170,220,235,Sky Blue,S44,C18,,R44,A18,,,,,,\r
+0,178,169,Medium Turquoise,S45,C54,C54,R45,A54,,,,,,\r
+115,211,60,Bright Green,S46,C53,,R46,A53,,,,,,\r
+180,126,0,Marigold,S47,C28,,R47,A28,,,,,,\r
+255,199,44,Corn,S48,C48,C48,R48,A48,,,,,,\r
+114,25,95,Mulberry Wood,S49,,,R49,,,,,,,\r
+250,170,114,Mandy's Pink,S50,,,R50,,,,,,,\r
+252,251,205,Spring Sun,S51,C51,C51,R51,A51,,,,,,\r
+242,240,161,Picasso,S52,C10,C10,R52,A10,,,,,,\r
+105,179,231,Turquoise,S53,C38,C38,R53,A38,,,,,,\r
+0,144,218,Light Blue,S54,C20,C20,R54,A20,,,,,,\r
+173,220,145,Pistachio,S55,C12,C12,R57,A12,,,,,,\r
+255,106,19,Bright Carrot,S56,C16,,R59,A16,,,,,,\r
+164,73,61,Buccaneer,S57,C29,,R63,A29,,,,,,\r
+165,0,52,Paprika,S58,C43,,R64,A43,,,,,,\r
+74,31,135,Butterfly Bush,S59,C52,C52,,A52,,,,,,\r
+167,123,202,Lavender,S60,C25,C25,R66,A25,,,,,,\r
+206,220,0,Key Lime Pie,S61,C40,,R68,A40,,,,,,\r
+0,124,88,Green Tea,S62,C15,C15,R69,A15,,,,,,\r
+88,87,53,Metallic Copper,S63,,,R70,,,,,,,\r
+5,8,73,Black Rock,S64,C58,,R55,A58,,,,,,\r
+243,234,93,Canary,S65,C46,,R58,A46,,,,,,\r
+244,99,58,Blaze Orange,S66,,,R60,,,,,,,\r
+243,207,179,Vanilla,S67,C47,C47,R61,A47,,,,,,\r
+225,192,120,Tan,S68,,,R71,,,,,,,\r
+40,40,40,Mine Shaft,S69,C69,,R72,A69,,,,,,\r
+155,188,17,Dark Algae,S70,C84,,R89,A84,,,,,,\r
+0,133,34,Jade Green,S71,C86,C86,R73,A86,,,,,,\r
+89,213,216,Light Sea Blue,S72,C79,C79,R74,A79,,,,,,\r
+72,169,197,Steel Blue,S73,C81,C81,R91,A81,,,,,,\r
+0,174,214,Azure,S74,C82,C82,R75,A82,,,,,,\r
+0,133,173,Dark Steel Blue,S75,C83,,R92,A83,,,,,,\r
+0,174,199,Sea Blue,S76,C80,,R76,A80,,,,,,\r
+239,239,239,Ghost While,S77,C87,,R77,A87,,,,,,\r
+209,209,209,Ash Grey,S78,C88,C88,R78,A88,,,,,,\r
+187,188,188,Light Gray,S79,C89,,R79,A89,,,,,,\r
+153,155,48,Dark Olive,S80,C85,,R90,A85,,,,,,\r
+205,178,119,Deer,S81,C74,,R81,A74,,,,,,\r
+181,129,80,Clay,S82,C75,,R82,A75,,,,,,\r
+184,97,37,Sienna,S83,C73,,R83,A73,,,,,,\r
+170,87,97,Deep Chestnut,S84,C77,,R84,A77,,,,,,\r
+92,19,27,Red Wine,S85,C78,C78,R85,A78,,,,,,\r
+234,170,0,Goldenrod,S86,C71,,R86,A71,,,,,,\r
+255,109,106,Coral Red,S87,C76,,R87,A76,,,,,,\r
+218,24,132,Dark Pink,S88,,,,,,,,,,\r
+77,77,77,Charcoal Gray,S89,C90,,R88,A90,,,,,,\r
+255,197,110,Pastel Orange,S90,C72,,R80,A72,,,,,,\r
+24,48,40,Brunswick Green,S91,C70,C70,R93,A70,,,,,,\r
+222,185,71,Dandelion,S92,C91,,,A91,,,,,,\r
+218,182,152,Pale Skin,S93,C92,,,A92,,,,,,\r
+244,169,153,Warm Blush,S94,C93,,,A93,,,,,,\r
+238,125,103,Salmon,S95,C94,,,A94,,,,,,\r
+240,134,97,Apricot,S96,C95,,,A95,,,,,,\r
+212,114,42,Papaya,S97,C96,,,A96,,,,,,\r
+100,172,223,Himalaya Blue,S98,C97,,,A97,,,,,,\r
+100,194,220,Waterfall,S99,C98,,,A98,,,,,,\r
+93,219,93,Spring Green,,C45,,R56,A45,,,,,,\r
+108,194,74,Confier,,C55,,,A55,,,,,,\r
+188,4,35,Fresh Red,,C57,C57,R65,A57,,,,,,\r
+83,26,35,Scarlett,,C59,,R62,A59,,,,,,\r
+241,235,156,Feta,,C61,,,A61,,,,,,\r
+252,63,63,Carnation,,C62,,,A62,,,,,,\r
+234,190,219,Pink Pearl,,C63,,,A63,,,,,,\r
+165,0,80,Rose,,C64,C64,,A64,,,,,,\r
+239,129,46,Mango Tango,,C65,,,A65,,,,,,\r
+252,108,133,Wild Watermelon,,C66,,,A66,,,,,,\r
+177,78,181,Orchid,,C67,,,A67,,,,,,\r
+105,194,238,Toothpaste Blue,,C68,C68,,A68,,,,,,\r
+255,197,110,Yolk Yellow,,,,R67,,,,,,,\r
+255,255,255,White,,,,,,1,1,,1,,\r
+190,195,191,Light Gray,,,,,,1,,,1,,\r
+150,152,156,Gray,,,,,,1,1,,1,,\r
+147,161,159,Pewter,,,,,,1,,,,,\r
+84,95,95,Charcoal,,,,,,1,,,,,\r
+86,87,92,Dark Gray,,,,,,1,,,,,\r
+0,0,0,Black,,,,,,1,1,,1,,\r
+241,229,216,Toasted Marshmallow,,,,,,1,,,1,,\r
+234,196,159,Sand,,,,,,1,,,1,,\r
+215,176,135,Fawn,,,,,,1,,,,,\r
+207,168,137,Tan,,,,,,1,1,,1,,\r
+160,78,63,Rust,,,,,,1,,,,,\r
+136,64,79,Cranapple,,,,,,1,,,,,\r
+164,123,71,Light Brown,,,,,,1,1,,1,,\r
+126,84,70,Gingerbread,,,,,,1,,,,,\r
+108,82,77,Brown,,,,,,1,1,,1,,\r
+237,231,186,Creme,,,,,,1,,,,,\r
+250,238,141,Pastel Yellow,,,,,,1,,,,,\r
+249,215,55,Yellow,,,,,,1,1,,1,,\r
+255,182,78,Cheddar,,,,,,1,1,,,,\r
+255,128,62,Orange,,,,,,1,,,1,,\r
+225,154,82,Butterscotch,,,,,,1,1,,1,,\r
+218,140,44,Honey,,,,,,1,,,,,\r
+255,97,88,Hot Coral,,,,,,1,1,,,,\r
+255,119,127,Salmon,,,,,,1,,,,,\r
+255,158,141,Blush,,,,,,1,1,,,,\r
+255,181,190,Flamingo,,,,,,1,,,,,\r
+252,198,184,Peach,,,,,,1,,,1,,\r
+245,192,213,Light Pink,,,,,,1,,,,,\r
+225,109,157,Bubblegum,,,,,,1,,,1,,\r
+230,87,148,Pink,,,,,,1,,,,,\r
+243,70,118,Magenta,,,,,,1,,,,,\r
+196,58,68,Red,,,,,,1,1,,1,,\r
+173,51,69,Cherry,,,,,,1,,,,,\r
+173,60,108,Raspberry,,,,,,1,1,,,,\r
+178,95,170,Plum,,,,,,1,1,,,,\r
+180,166,211,Lavender,,,,,,1,,,,,\r
+149,130,187,Pastel Lavender,,,,,,1,1,,1,,\r
+111,84,147,Purple,,,,,,1,1,,1,,\r
+135,167,225,Blueberry Cr\xE8me,,,,,,1,,,,,\r
+108,136,191,Periwinkle,,,,,,1,,,,,\r
+180,217,223,Robin's Egg,,,,,,1,,,,,\r
+99,169,214,Pastel Blue,,,,,,1,,,,,\r
+39,138,203,Light Blue,,,,,,1,1,,1,,\r
+0,102,179,Cobalt,,,,,,1,,,,,\r
+43,48,124,Dark Blue,,,,,,1,1,,1,,\r
+22,40,70,Midnight,,,,,,1,,,,,\r
+176,232,213,Toothpaste,,,,,,1,1,,1,,\r
+0,143,204,Turquoise,,,,,,1,1,,1,,\r
+56,199,175,Light Green,,,,,,1,,,,,\r
+0,150,138,Parrot Green,,,,,,1,1,,,,\r
+115,213,148,Pastel Green,,,,,,1,1,,,,\r
+119,202,74,Kiwi Lime,,,,,,1,1,,1,,\r
+84,177,96,Bright Green,,,,,,1,,,1,,\r
+0,150,84,Shamrock,,,,,,1,,,,,\r
+16,131,85,Dark Green,,,,,,1,1,,1,,\r
+203,215,53,Prickly Pear,,,,,,1,,,,,\r
+60,97,79,Evergreen,,,,,,1,,,,,\r
+247,209,0,Yellow,,,,,,,,,,1,\r
+255,147,0,Orange,,,,,,,,,,1,\r
+250,217,138,Cream,,,,,,,,,,1,\r
+238,0,4,Red,,,,,,,,,,1,\r
+161,171,172,Gray,,,,,,,,,,1,\r
+0,63,44,Dark Green,,,,,,,,,,1,\r
+2,18,153,Blue,,,,,,,,,,1,\r
+116,38,160,Purple,,,,,,,,,,1,\r
+0,111,223,Light Blue,,,,,,,,,,1,\r
+80,50,22,Brown,,,,,,,,,,1,\r
+80,171,110,Light Green,,,,,,,,,,1,\r
+243,0,118,Pink,,,,,,,,,,1,\r
+0,0,0,Black,,,,,,,,,,1,\r
+255,255,255,White,,,,,,,,,,1,\r
+0,0,0,Black,,,,,,,,,,,1\r
+1,78,218,Blue,,,,,,,,,,,1\r
+1,0,78,Dark Blue,,,,,,,,,,,1\r
+0,196,249,Light Blue,,,,,,,,,,,1\r
+0,40,39,Forest Green,,,,,,,,,,,1\r
+1,195,81,Green,,,,,,,,,,,1\r
+157,212,0,Light Green,,,,,,,,,,,1\r
+248,235,193,Peach,,,,,,,,,,,1\r
+239,240,244,White,,,,,,,,,,,1\r
+126,101,221,Purple,,,,,,,,,,,1\r
+116,0,160,Royal Purple,,,,,,,,,,,1\r
+170,91,0,Leather,,,,,,,,,,,1\r
+161,102,0,Brown,,,,,,,,,,,1\r
+155,158,151,Gray,,,,,,,,,,,1\r
+252,218,0,Yellow,,,,,,,,,,,1\r
+254,230,0,Light Yellow,,,,,,,,,,,1\r
+251,197,62,Light Orange,,,,,,,,,,,1\r
+255,176,224,Pink,,,,,,,,,,,1\r
+241,0,109,Deep Pink,,,,,,,,,,,1\r
+255,151,0,Orange,,,,,,,,,,,1\r
+149,0,2,Burgundy,,,,,,,,,,,1\r
+240,12,1,Red,,,,,,,,,,,1`});var Yt=W((xa,hn)=>{hn.exports=`FFE2E2.3713.Salmon Very Light\r
+FFC9C9.761.Salmon Light\r
+F5ADAD.760.Salmon\r
+F18787.3712.Salmon Medium\r
+E36D6D.3328.Salmon Dark\r
+BF2D2D.347.Salmon Very Dark\r
+FED7CC.353.Peach\r
+FD9C97.352.Coral Light\r
+E96A67.351.Coral\r
+E04848.350.Coral Medium\r
+D21035.349.Coral Dark\r
+BB051F.817.Coral Red Very Dark\r
+FFCBD5.3708.Melon Light\r
+FFADBC.3706.Melon Medium\r
+FF7992.3705.Melon Dark\r
+E74967.3801.Melon Very Dark\r
+E31D42.666.Bright Red\r
+C72B3B.321.Red\r
+B71F33.304.Red Medium\r
+A7132B.498.Red Dark\r
+970B23.816.Garnet\r
+87071F.815.Garnet Medium\r
+7B001B.814.Garnet Dark\r
+FFB2BB.894.Carnation Very Light\r
+FC90A2.893.Carnation Light\r
+FF798C.892.Carnation Medium\r
+FF5773.891.Carnation Dark\r
+FFDFD9.818.Baby Pink\r
+FDB5B5.957.Geranium Pale\r
+FF9191.956.Geranium\r
+564A4A.309.Rose Dark\r
+FFD7D7.963.Dusty Rose Ultra Very Light\r
+FFBDBD.3716.Dusty Rose Medium Very Light\r
+E68A8A.962.Dusty Rose Medium\r
+CF7373.961.Dusty Rose Dark\r
+EA8699.3833.Raspberry Light\r
+DB556E.3832.Raspberry Medium\r
+B32F48.3831.Raspberry Dark\r
+913546.777.Raspberry Very Dark\r
+FFEEEB.819.Baby Pink Light\r
+FBADB4.3326.Rose Light\r
+FCB0B9.776.Pink Medium\r
+F27688.899.Rose Medium\r
+EE546E.335.Rose\r
+B33B4B.326.Rose Very Dark\r
+F0CED4.151.Dusty Rose Very Light\r
+E4A6AC.3354.Dusty Rose Light\r
+E8879B.3733.Dusty Rose\r
+DA6783.3731.Dusty Rose Very Dark\r
+BC4365.3350.Dusty Rose Ultra Dark\r
+AB0249.150.Dusty Rose Ultra Very Dark\r
+FBBFC2.3689.Mauve Light\r
+E7A9AC.3688.Mauve Medium\r
+C96B70.3687.Mauve\r
+AB3357.3803.Mauve Dark\r
+881531.3685.Mauve Very Dark\r
+FFC0CD.605.Cranberry Very Light\r
+FFB0BE.604.Cranberry Light\r
+FFA4BE.603.Cranberry\r
+E24874.602.Cranberry Medium\r
+D1286A.601.Cranberry Dark\r
+CD2F63.600.Cranberry Very Dark\r
+FF8CAE.3806.Cyclamen Pink Light\r
+F3478B.3805.Cyclamen Pink\r
+E02876.3804.Cyclamen Pink Dark\r
+F4AED5.3609.Plum Ultra Light\r
+EA9CC4.3608.Plum Very Light\r
+C54989.3607.Plum Light\r
+9C2462.718.Plum\r
+9B1359.917.Plum Medium\r
+820043.915.Plum Dark\r
+FFDFD5.225.Shell Pink Ultra Very Light\r
+EBB7AF.224.Shell Pink Very Light\r
+E2A099.152.Shell Pink Medium Light\r
+CC847C.223.Shell Pink Light\r
+BC6C64.3722.Shell Pink Medium\r
+A14B51.3721.Shell Pink Dark\r
+883E43.221.Shell Pink Very Dark\r
+DFB3BB.778.Antique Mauve Very Light\r
+DBA9B2.3727.Antique Mauve Light\r
+B7737F.316.Antique Mauve Medium\r
+9B5B66.3726.Antique Mauve Dark\r
+814952.315.Antique Mauve Medium Dark\r
+714149.3802.Antique Mauve Very Darkv\r
+822637.902.Garnet Very Dark\r
+D7CBD3.3743.Antique Violet Very Light\r
+B79DA7.3042.Antique Violet Light\r
+956F7C.3041.Antique Violet Medium\r
+785762.3740.Antique Violet Dark\r
+BA91AA.3836.Grape Light\r
+946083.3835.Grape Medium\r
+72375D.3834.Grape Dark\r
+572433.154.Grape Very Dark\r
+E3CBE3.211.Lavender Light\r
+C39FC3.210.Lavender Medium\r
+A37BA7.209.Lavender Dark\r
+835B8B.208.Lavender Very Dark\r
+6C3A6E.3837.Lavender Ultra Dark\r
+633666.327.Violet Dark\r
+E6CCD9.153.Violet Very Light\r
+DBB3CB.554.Violet Light\r
+A3638B.553.Violet\r
+803A6B.552.Violet Medium\r
+5C184E.550.Violet Very Dark\r
+D3D7ED.3747.Blue Violet Very Light\r
+B7BFDD.341.Blue Violet Light\r
+A3AED1.156.Blue Violet Medium Light\r
+ADA7C7.340.Blue Violet Medium\r
+9891B6.155.Blue Violet Medium Dark\r
+776B98.3746.Blue Violet Dark\r
+5C5478.333.Blue Violet Very Dark\r
+BBC3D9.157.Cornflower Blue Very Light\r
+8F9CC1.794.Cornflower Blue Light\r
+707DA2.793.Cornflower Blue Medium\r
+60678C.3807.Cornflower Blue\r
+555B7B.792.Cornflower Blue Dark\r
+4C526E.158.Cornflower Blue Very Dark\r
+464563.791.Cornflower Blue Very Dark\r
+B0C0DA.3840.Lavender Blue Light\r
+7B8EAB.3839.Lavender Blue Medium\r
+5C7294.3838.Lavender Blue Dark\r
+C0CCDE.800.Delft Blue Pale\r
+94A8C6.809.Delft Blue\r
+748EB6.799.Delft Blue Medium\r
+466A8E.798.Delft Blue Dark\r
+13477D.797.Royal Blue\r
+11416D.796.Royal Blue Dark\r
+0E365C.820.Royal Blue Very Dark\r
+DBECF5.162.Blue Ultra Very Light\r
+BDDDED.827.Blue Very Light\r
+A1C2D7.813.Blue Light\r
+6B9EBF.826.Blue Medium\r
+4781A5.825.Blue Dark\r
+396987.824.Blue Very Dark\r
+30C2EC.996.Electric Blue Medium\r
+14AAD0.3843.Electric Blue\r
+2696B6.995.Electric Blue Dark\r
+06E3E6.3846.Turquoise Bright Light\r
+04C4CA.3845.Turquoise Bright Medium\r
+12AEBA.3844.Turquoise Bright Dark\r
+C7CAD7.159.Blue Gray Light\r
+999FB7.160.Blue Gray Medium\r
+7880A4.161.Blue Gray\r
+EEFCFC.3756.Baby Blue Ultra Very Light\r
+D9EBF1.775.Baby Blue Very Light\r
+CDDFED.3841.Baby Blue Pale\r
+B8D2E6.3325.Baby Blue Light\r
+93B4CE.3755.Baby Blue\r
+739FC1.334.Baby Blue Medium\r
+5A8FB8.322.Baby Blue Dark\r
+35668B.312.Baby Blue Very Dark\r
+2C597C.803.Baby Blue Ultra Very Dark\r
+253B73.336.Navy Blue\r
+213063.823.Navy Blue Dark\r
+1B2853.939.Navy Blue Very Dark\r
+DBE2E9.3753.Antique Blue Ultra Very Light\r
+C7D1DB.3752.Antique Blue Very Light\r
+A2B5C6.932.Antique Blue Light\r
+6A859E.931.Antique Blue Medium\r
+455C71.930.Antique Blue Dark\r
+384C5E.3750.Antique Blue Very Dark\r
+C5E8ED.828.Sky Blue Very Light\r
+ACD8E2.3761.Sky Blue Light\r
+7EB1C8.519.Sky Blue\r
+4F93A7.518.Wedgewood Light\r
+3E85A2.3760.Wedgewood Medium\r
+3B768F.517.Wedgewood Dark\r
+32667C.3842.Wedgewood Very Dark\r
+1C5066.311.Wedgewood Ultra Very Dark\r
+E5FCFD.747.Peacock Blue Very Light\r
+99CFD9.3766.Peacock Blue Light\r
+64ABBA.807.Peacock Blue\r
+3D95A5.806.Peacock Blue Dark\r
+347F8C.3765.Peacock Blue Very Dark\r
+BCE3E6.3811.Turquoise Very Light\r
+90C3CC.598.Turquoise Light\r
+5BA3B3.597.Turquoise\r
+488E9A.3810.Turquoise Dark\r
+3F7C85.3809.Turquoise Vy Dark\r
+366970.3808.Turquoise Ultra Very Dark\r
+DDE3E3.928.Gray Green Very Light\r
+BDCBCB.927.Gray Green Light\r
+98AEAE.926.Gray Green Medium\r
+657F7F.3768.Gray Green Dark\r
+566A6A.924.Gray Green Vy Dark\r
+52B3A4.3849.Teal Green Light\r
+559392.3848.Teal Green Medium\r
+347D75.3847.Teal Green Dark\r
+A9E2D8.964.Sea Green Light\r
+59C7B4.959.Sea Green Medium\r
+3EB6A1.958.Sea Green Dark\r
+2F8C84.3812.Sea Green Very Dark\r
+49B3A1.3851.Green Bright Light\r
+3D9384.943.Green Bright Medium\r
+378477.3850.Green Bright Dark\r
+90C0B4.993.Aquamarine Very Light\r
+6FAE9F.992.Aquamarine Light\r
+508B7D.3814.Aquamarine\r
+477B6E.991.Aquamarine Dark\r
+B9D7C0.966.Jade Ultra Very Light\r
+A7CDAF.564.Jade Very Light\r
+8FC098.563.Jade Light\r
+53976A.562.Jade Medium\r
+338362.505.Jade Green\r
+99C3AA.3817.Celadon Green Light\r
+65A57D.3816.Celadon Green\r
+4D8361.163.Celadon Green Medium\r
+477759.3815.Celadon Green Dark\r
+2C6A45.561.Celadon Green VD\r
+C4DECC.504.Blue Green Very Light\r
+B2D4BD.3813.Blue Green Light\r
+7BAC94.503.Blue Green Medium\r
+5B9071.502.Blue Green\r
+396F52.501.Blue Green Dark\r
+044D33.500.Blue Green Very Dark\r
+A2D6AD.955.Nile Green Light\r
+88BA91.954.Nile Green\r
+6DAB77.913.Nile Green Medium\r
+1B9D6B.912.Emerald Green Light\r
+189065.911.Emerald Green Medium\r
+187E56.910.Emerald Green Dark\r
+156F49.909.Emerald Green Very Dark\r
+115A3B.3818.Emerald Green Ultra Very Dark\r
+D7EDCC.369.Pistachio Green Very Light\r
+A6C298.368.Pistachio Green Light\r
+69885A.320.Pistachio Green Medium\r
+617A52.367.Pistachio Green Dark\r
+205F2E.319.Pistachio Grn Very Dark\r
+174923.890.Pistachio Grn Ultra Very Dark\r
+C8D8B8.164.Forest Green Light\r
+8DA675.989.Forest Green\r
+738B5B.988.Forest Green Medium\r
+587141.987.Forest Green Dark\r
+405230.986.Forest Green Very Dark\r
+E4ECD4.772.Yellow Green Very Light\r
+CCD9B1.3348.Yellow Green Light\r
+71935C.3347.Yellow Green Medium\r
+406A3A.3346.Hunter Green\r
+1B5915.3345.Hunter Green Dark\r
+1B5300.895.Hunter Green Very Dark\r
+9ECF34.704.Chartreuse Bright\r
+7BB547.703.Chartreuse\r
+47A72F.702.Kelly Green\r
+3F8F29.701.Green Light\r
+07731B.700.Green Bright\r
+056517.699.Green\r
+C7E666.907.Parrot Green Light\r
+7FB335.906.Parrot Green Medium\r
+628A28.905.Parrot Green Dark\r
+557822.904.Parrot Green Very Dark\r
+D8E498.472.Avocado Green Ultra Light\r
+AEBF79.471.Avocado Grn Very Light\r
+94AB4F.470.Avocado Grn Light\r
+72843C.469.Avocado Green\r
+627133.937.Avocado Green Medium\r
+4C5826.936.Avocado Green Very Dark\r
+424D21.935.Avocado Green Dark\r
+313919.934.Avocado Grn Black\r
+ABB197.523.Fern Green Light\r
+9CA482.3053.Green Gray\r
+889268.3052.Green Gray Medium\r
+5F6648.3051.Green Gray Dark\r
+C4CDAC.524.Fern Green Very Light\r
+969E7E.522.Fern Green\r
+666D4F.520.Fern Green Dark\r
+83975F.3364.Pine Green\r
+728256.3363.Pine Green Medium\r
+5E6B47.3362.Pine Green Dark\r
+EFF4A4.165.Moss Green Very Light\r
+E0E868.3819.Moss Green Light\r
+C0C840.166.Moss Green Medium Light\r
+A7AE38.581.Moss Green\r
+888D33.580.Moss Green Dark\r
+C7C077.734.Olive Green Light\r
+BCB34C.733.Olive Green Medium\r
+948C36.732.Olive Green\r
+938B37.731.Olive Green Dark\r
+827B30.730.Olive Green Very Dark\r
+B9B982.3013.Khaki Green Light\r
+A6A75D.3012.Khaki Green Medium\r
+898A58.3011.Khaki Green Dark\r
+CCB784.372.Mustard Light\r
+BFA671.371.Mustard\r
+B89D64.370.Mustard Medium\r
+DBBE7F.834.Golden Olive Very Light\r
+C8AB6C.833.Golden Olive Light\r
+BD9B51.832.Golden Olive\r
+AA8F56.831.Golden Olive Medium\r
+8D784B.830.Golden Olive Dark\r
+7E6B42.829.Golden Olive Very Dark\r
+DCC4AA.613.Drab Brown Very Light\r
+BC9A78.612.Drab Brown Light\r
+967656.611.Drab Brown\r
+796047.610.Drab Brown Dark\r
+E7D6C1.3047.Yellow Beige Light\r
+D8BC9A.3046.Yellow Beige Medium\r
+BC966A.3045.Yellow Beige Dark\r
+A77C49.167.Yellow Beige Very Dark\r
+FCFCEE.746.Off White\r
+F5ECCB.677.Old Gold Very Light\r
+C69F7B.422.Hazelnut Brown Light\r
+B78B61.3828.Hazelnut Brown\r
+A07042.420.Hazelnut Brown Dark\r
+835E39.869.Hazelnut Brown Very Dark\r
+E4B468.728.Topaz\r
+CE9124.783.Topaz Medium\r
+AE7720.782.Topaz Dark\r
+A26D20.781.Topaz Very Dark\r
+94631A.780.Topaz Ultra Very Dark\r
+E5CE97.676.Old Gold Light\r
+D0A53E.729.Old Gold Medium\r
+BC8D0E.680.Old Gold Dark\r
+A98204.3829.Old Gold Vy Dark\r
+F6DC98.3822.Straw Light\r
+F3CE75.3821.Straw\r
+DFB65F.3820.Straw Dark\r
+CD9D37.3852.Straw Very Dark\r
+FFFB8B.445.Lemon Light\r
+FDED54.307.Lemon\r
+FFE300.973.Canary Bright\r
+FFD600.444.Lemon Dark\r
+FDF9CD.3078.Golden Yellow Very Light\r
+FFF1AF.727.Topaz Very Light\r
+FDD755.726.Topaz Light\r
+FFC840.725.Topaz Medium Light\r
+FFB515.972.Canary Deep\r
+FFE9AD.745.Yellow Pale Light\r
+FFE793.744.Yellow Pale\r
+FED376.743.Yellow Medium\r
+FFBF57.742.Tangerine Light\r
+FFA32B.741.Tangerine Medium\r
+FF8B00.740.Tangerine\r
+F78B13.970.Pumpkin Light\r
+F67F00.971.Pumpkin\r
+FF7B4D.947.Burnt Orange\r
+EB6307.946.Burnt Orange Medium\r
+D15807.900.Burnt Orange Dark\r
+FFDED5.967.Apricot Very Light\r
+FECDC2.3824.Apricot Light\r
+FCAB98.3341.Apricot\r
+FF836F.3340.Apricot Medium\r
+FD5D35.608.Burnt Orange Bright\r
+FA3203.606.Orange Red Bright\r
+FFE2CF.951.Tawny Light\r
+FFD3B5.3856.Mahogany Ultra Very Light\r
+F7976F.722.Orange Spice Light\r
+F27842.721.Orange Spice Medium\r
+E55C1F.720.Orange Spice Dark\r
+FDBD96.3825.Pumpkin Pale\r
+E27323.922.Copper Light\r
+C66218.921.Copper\r
+AC5414.920.Copper Medium\r
+A64510.919.Red Copper\r
+82340A.918.Red Copper Dark\r
+FFEEE3.3770.Tawny Vy Light\r
+FBD5BB.945.Tawny\r
+F7A777.402.Mahogany Very Light\r
+CF7939.3776.Mahogany Light\r
+B35F2B.301.Mahogany Medium\r
+8F430F.400.Mahogany Dark\r
+6F2F00.300.Mahogany Very Dark\r
+FFFDE3.3823.Yellow Ultra Pale\r
+FAD396.3855.Autumn Gold Light\r
+F2AF68.3854.Autumn Gold Medium\r
+F29746.3853.Autumn Gold Dark\r
+F7BB77.3827.Golden Brown Pale\r
+DC9C56.977.Golden Brown Light\r
+C28142.976.Golden Brown Medium\r
+AD7239.3826.Golden Brown\r
+914F12.975.Golden Brown Dark\r
+FEE7DA.948.Peach Very Light\r
+F7CBBF.754.Peach Light\r
+F4BBA9.3771.Terra Cotta Ultra Very Light\r
+EEAA9B.758.Terra Cotta Very Light\r
+D98978.3778.Terra Cotta Light\r
+C56A5B.356.Terra Cotta Medium\r
+B95544.3830.Terra Cotta\r
+984436.355.Terra Cotta Dark\r
+863022.3777.Terra Cotta Very Dark\r
+F8CAC8.3779.Rosewood Ultra Very Light\r
+BA8B7C.3859.Rosewood Light\r
+964A3F.3858.Rosewood Medium\r
+68251A.3857.Rosewood Dark\r
+F3E1D7.3774.Desert Sand Very Light\r
+EED3C4.950.Desert Sand Light\r
+C48E70.3064.Desert Sand\r
+BB8161.407.Desert Sand Medium\r
+B67552.3773.Desert Sand Dark\r
+A06C50.3772.Desert Sand Very Dark\r
+875539.632.Desert Sand Ultra Very Dark\r
+D7CECB.453.Shell Gray Light\r
+C0B3AE.452.Shell Gray Medium\r
+917B73.451.Shell Gray Dark\r
+A68881.3861.Cocoa Light\r
+7D5D57.3860.Cocoa\r
+624B45.779.Cocoa Dark\r
+FFFBEF.712.Cream\r
+F8E4C8.739.Tan Ultra Very Light\r
+ECCC9E.738.Tan Very Light\r
+E4BB8E.437.Tan Light\r
+CB9051.436.Tan\r
+B87748.435.Brown Very Light\r
+985E33.434.Brown Light\r
+7A451F.433.Brown Medium\r
+653919.801.Coffee Brown Dark\r
+492A13.898.Coffee Brown Very Dark\r
+361F0E.938.Coffee Brown Ultra Dark\r
+1E1108.3371.Black Brown\r
+F2E3CE.543.Beige Brown Ultra Very Light\r
+CBB69C.3864.Mocha Beige Light\r
+A4835C.3863.Mocha Beige Medium\r
+8A6E4E.3862.Mocha Beige Dark\r
+4B3C2A.3031.Mocha Brown Very Dark\r
+FFFFFF.B5200.Snow White\r
+FCFBF8.Blanc.White\r
+F9F7F1.3865.Winter White\r
+F0EADA.Ecru.Ecru\r
+E7E2D3.822.Beige Gray Light\r
+DDD8CB.644.Beige Gray Medium\r
+A49878.642.Beige Gray Dark\r
+857B61.640.Beige Gray Very Dark\r
+625D50.3787.Brown Gray Dark\r
+4F4B41.3021.Brown Gray Very Dark\r
+EBEAE7.3024.Brown Gray Very Light\r
+B1AA97.3023.Brown Gray Light\r
+8E9078.3022.Brown Gray Medium\r
+636458.535.Ash Gray Very Light\r
+E3D8CC.3033.Mocha Brown Very Light\r
+D2BCA6.3782.Mocha Brown Light\r
+B39F8B.3032.Mocha Brown Medium\r
+7F6A55.3790.Beige Gray Ultra Dark\r
+6B5743.3781.Mocha Brown Dark\r
+FAF6F0.3866.Mocha Brown Ultra Very Light\r
+D1BAA1.842.Beige Brown Very Light\r
+B69B7E.841.Beige Brown Light\r
+9A7C5C.840.Beige Brown Medium\r
+675541.839.Beige Brown Dark\r
+594937.838.Beige Brown Very Dark\r
+E6E8E8.3072.Beaver Gray Very Light\r
+BCB4AC.648.Beaver Gray Light\r
+B0A69C.647.Beaver Gray Medium\r
+877D73.646.Beaver Gray Dark\r
+6E655C.645.Beaver Gray Very Dark\r
+484848.844.Beaver Gray Ultra Dark\r
+ECECEC.762.Pearl Gray Very Light\r
+D3D3D6.415.Pearl Gray\r
+ABABAB.318.Steel Gray Light\r
+8C8C8C.414.Steel Gray Dark\r
+D1D1D1.168.Pewter Very Light\r
+848484.169.Pewter Light\r
+6C6C6C.317.Pewter Gray\r
+565656.413.Pewter Gray Dark\r
+424242.3799.Pewter Gray Very Dark\r
+000000.310.Black\r
+E3E3E6.1.White Tin\r
+D7D7D8.2.Tin\r
+B8B8BB.3.Tin Medium\r
+AEAEB1.4.Tin Dark\r
+E3CCBE.5.Driftwood Light\r
+DCC6B8.6.Driftwood Medium Light\r
+8F7B6E.7.Driftwood\r
+6A5046.8.Driftwood Dark\r
+55200E.9.Cocoa Very Dark\r
+EDFED9.10.Tender Green Very Light\r
+E2EDB5.11.Tender Green Light\r
+CDD99A.12.Tender Green\r
+BFF6E0.13.Nile Green Medium Light\r
+D0FBB2.14.Apple Green Pale\r
+D1EDA4.15.Apple Green\r
+C9C258.16.Chartreuse Light\r
+E5E272.17.Yellow Plum Light\r
+D9D56D.18.Yellow Plum\r
+F7C95F.19.Autumn Gold medium Light\r
+F7AF93.20.Shrimp\r
+D79982.21.Alizarin Light\r
+BC604E.22.Alizarin\r
+EDE2ED.23.Apple Blossom\r
+E0D7EE.24.White Lavender\r
+DAD2E9.25.Lavender Ultra Light\r
+D7CAE6.26.Lavender Pale\r
+F0EEF9.27.White Violet\r
+9086A9.28.Eggplant Medium Light\r
+674076.29.Eggplant\r
+7D77A5.30.Blueberry Medium Light\r
+50518D.31.Blueberry\r
+4D2E8A.32.Blueberry Dark\r
+9C599E.33.Fuschia\r
+7D3064.34.Fuschia Dark\r
+46052D.35.Fuschia Very Dark`});var qt=W((Pa,gn)=>{gn.exports=`FFFFFF.1.White\r
+DDDEDD.2.Grey\r
+D9BB7B.5.Brick Yellow\r
+D67240.18.Nougat\r
+FF0000.21.Bright Red\r
+0000FF.23.Bright Blue\r
+FFFF00.24.Bright Yellow\r
+000000.26.Black\r
+009900.28.Dark Green\r
+00CC00.37.Bright Green\r
+A83D15.38.Dark Orange\r
+478CC6.102.Medium Blue\r
+FF6600.106.Bright Orange\r
+059D9E.107.Bright Bluish Green\r
+95B90B.119.Bright Yellowish-Green\r
+990066.124.Bright Reddish Violet\r
+5E748C.135.Sand Blue\r
+8D7452.138.Sand Yellow\r
+002541.140.Earth Blue\r
+003300.141.Earth Green\r
+5F8265.151.Sand Green\r
+80081B.154.Dark Red\r
+F49B00.191.Flame Yellowish Orange\r
+5B1C0C.192.Reddish Brown\r
+9C9291.194.Medium Stone Grey\r
+4C5156.199.Dark Stone Grey\r
+E4E4DA.208.Light Stone Grey\r
+87C0EA.212.Light Royal Blue\r
+DE378B.221.Bright Purple\r
+EE9DC3.222.Light Purple\r
+FFFF99.226.Cool Yellow\r
+2C1577.268.Dark Purple\r
+F5C189.283.Light Nougat\r
+300F06.308.Dark Brown\r
+AA7D55.312.Medium Nougat\r
+469BC3.321.Dark Azure\r
+68C3E2.322.Medium Azure\r
+D3F2EA.323.Aqua\r
+A06EB9.324.Medium Lavender\r
+CDA4DE.325.Lavender\r
+F5F3D7.329.White Glow\r
+E2F99A.326.Spring Yellowish Green\r
+77774E.330.Olive Green\r
+96B93B.331.Medium-Yellowish Green`});var Je=W(tr=>{tr.ciede2000=Cn;var N=Math.sqrt,M=Math.pow,ke=Math.cos,_n=Math.atan2,Zt=Math.sin,Ae=Math.abs,bn=Math.exp,er=Math.PI;function Cn(e,t){var r=e.L,n=e.a,a=e.b,o=t.L,i=t.a,d=t.b,p=1,c=1,s=1,u=N(M(n,2)+M(a,2)),f=N(M(i,2)+M(d,2)),g=(u+f)/2,m=.5*(1-N(M(g,7)/(M(g,7)+M(25,7)))),C=(1+m)*n,v=(1+m)*i,b=N(M(C,2)+M(a,2)),h=N(M(v,2)+M(d,2)),_=Qt(a,C),k=Qt(d,v),y=o-r,D=h-b,w=wn(u,f,_,k),B=2*N(b*h)*Zt(ee(w)/2),x=(r+o)/2,A=(b+h)/2,S=Dn(u,f,_,k),F=1-.17*ke(ee(S-30))+.24*ke(ee(2*S))+.32*ke(ee(3*S+6))-.2*ke(ee(4*S-63)),I=30*bn(-M((S-275)/25,2)),$=N(M(A,7)/(M(A,7)+M(25,7))),oe=1+.015*M(x-50,2)/N(20+M(x-50,2)),Z=1+.045*A,ht=1+.015*A*F,Nr=-2*$*Zt(ee(2*I)),Wr=N(M(y/(oe*p),2)+M(D/(Z*c),2)+M(B/(ht*s),2)+Nr*(D/(Z*c))*(B/(ht*s)));return Wr}function vn(e){return e*(180/er)}function ee(e){return e*(er/180)}function Qt(e,t){if(e===0&&t===0)return 0;var r=vn(_n(e,t));return r>=0?r:r+360}function wn(e,t,r,n){if(e*t===0)return 0;if(Ae(n-r)<=180)return n-r;if(n-r>180)return n-r-360;if(n-r<-180)return n-r+360;throw new Error}function Dn(e,t,r,n){if(e*t===0)return r+n;if(Ae(r-n)<=180)return(r+n)/2;if(Ae(r-n)>180&&r+n<360)return(r+n+360)/2;if(Ae(r-n)>180&&r+n>=360)return(r+n-360)/2;throw new Error}});var Ze=W(Se=>{Se.rgb_to_lab=rr;Se.rgba_to_lab=kn;Se.normalize_rgb=Be;var te=Math.pow;function kn(e,r){e=Be(e);var r=typeof r<"u"?Be(r):{R:255,G:255,B:255},n={R:r.R+(e.R-r.R)*e.A,G:r.G+(e.G-r.G)*e.A,B:r.B+(e.B-r.B)*e.A};return rr(n)}function rr(e){return Bn(An(e))}function An(e){e=Be(e);var t=e.R/255,r=e.G/255,n=e.B/255;t>.04045?t=te((t+.055)/1.055,2.4):t=t/12.92,r>.04045?r=te((r+.055)/1.055,2.4):r=r/12.92,n>.04045?n=te((n+.055)/1.055,2.4):n=n/12.92,t*=100,r*=100,n*=100;var a=t*.4124+r*.3576+n*.1805,o=t*.2126+r*.7152+n*.0722,i=t*.0193+r*.1192+n*.9505;return{X:a,Y:o,Z:i}}function Bn(e){var t=100,r=108.883,n=95.047,a=e.Y/t,o=e.Z/r,i=e.X/n;i>.008856?i=te(i,1/3):i=7.787*i+16/116,a>.008856?a=te(a,1/3):a=7.787*a+16/116,o>.008856?o=te(o,1/3):o=7.787*o+16/116;var d=116*a-16,p=500*(i-a),c=200*(a-o);return{L:d,a:p,b:c}}function Be(e){var t={R:e.R||e.r||0,G:e.G||e.g||0,B:e.B||e.b||0};return(typeof e.a<"u"||typeof e.A<"u")&&(t.A=e.A||e.a||0),t}});var ir=W(re=>{re.map_palette=Sn;re.map_palette_lab=xn;re.match_palette_lab=or;re.palette_map_key=nr;re.lab_palette_map_key=ar;var Qe=Je().ciede2000,xe=Ze();function nr(e){e=xe.normalize_rgb(e);var t="R"+e.R+"B"+e.B+"G"+e.G;return"A"in e&&(t=t+"A"+e.A),t}function ar(e){return"L"+e.L+"a"+e.a+"b"+e.b}function Sn(e,t,r,n){var a={};n=typeof n<"u"?n:{R:255,G:255,B:255},r=r||"closest";for(var o=0;o<e.length;o+=1){for(var i=e[o],d=void 0,p=void 0,c=0;c<t.length;c+=1){var s=t[c],u=Pn(i,s,n);if(d==null||r==="closest"&&u<p){d=s,p=u;continue}if(r==="furthest"&&u>p){d=s,p=u;continue}}a[nr(i)]=d}return a}function or(e,t,r){for(var n,a,o=t[0],i=Qe(e,o),d=1,p=t.length;d<p;d+=1)n=t[d],a=Qe(e,n),(!r&&a<i||r&&a>i)&&(o=n,i=a);return o}function xn(e,t,r){for(var n={},a=r==="furthest",o=0;o<e.length;o+=1){var i=e[o];n[ar(i)]=or(i,t,a)}return n}function Pn(e,t,r){var n=xe.rgb_to_lab,a=xe.rgb_to_lab,o=function(i){return xe.rgba_to_lab(i,r)};return"A"in e&&(n=o),"A"in t&&(a=o),e=n(e),t=a(t),Qe(e,t)}});var et=W((Ta,sr)=>{"use strict";var Ln=Je(),lr=Ze(),ge=ir(),G=sr.exports={};G.diff=Ln.ciede2000;G.rgb_to_lab=lr.rgb_to_lab;G.rgba_to_lab=lr.rgba_to_lab;G.map_palette=ge.map_palette;G.palette_map_key=ge.palette_map_key;G.map_palette_lab=ge.map_palette_lab;G.lab_palette_map_key=ge.lab_palette_map_key;G.match_palette_lab=ge.match_palette_lab;G.closest=function(e,t,r){var n=G.palette_map_key(e);r=typeof r<"u"?r:{R:255,G:255,B:255};var a=G.map_palette([e],t,"closest",r);return a[n]};G.furthest=function(e,t,r){var n=G.palette_map_key(e);r=typeof r<"u"?r:{R:255,G:255,B:255};var a=G.map_palette([e],t,"furthest",r);return a[n]};G.closest_lab=function(e,t){return G.match_palette_lab(e,t,!1)};G.furthest_lab=function(e,t){return G.match_palette_lab(e,t,!0)}});var Vr=W((Bo,ia)=>{ia.exports=`line.gridmajor {\r
+    stroke-width: 2px;\r
+    stroke: rgba(0, 0, 0, 0.5);\r
+    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, .3));\r
+    pointer-events: none;\r
+}\r
+\r
+line.gridminor {\r
+    stroke-width: 1px;\r
+    stroke: rgba(0, 0, 0, 0.2);\r
+    pointer-events: none;\r
+}\r
+\r
+text {\r
+    font-family: 'Courier New', Courier, monospace;\r
+    font-weight: bold;\r
+    font-size: 31px;\r
+    fill: black;\r
+    pointer-events: none;\r
+}\r
+\r
+use.dark text,\r
+text.dark {\r
+    fill: white;\r
+}\r
+\r
+use.light text,\r
+text.light {\r
+    fill: black;\r
+}\r
+`});j();j();var X,L,We,Mt,we=0,$t=[],E=P,Gt=E.__b,Rt=E.__r,It=E.diffed,Tt=E.__c,Vt=E.unmount,Ot=E.__;function he(e,t){E.__h&&E.__h(L,e,we||t),we=0;var r=L.__H||(L.__H={__:[],__h:[]});return e>=r.__.length&&r.__.push({}),r.__[e]}function Ht(e){return we=1,on(Nt,e)}function on(e,t,r){var n=he(X++,2);if(n.t=e,!n.__c&&(n.__=[r?r(t):Nt(void 0,t),function(d){var p=n.__N?n.__N[0]:n.__[0],c=n.t(p,d);p!==c&&(n.__N=[c,n.__[1]],n.__c.setState({}))}],n.__c=L,!L.__f)){var a=function(d,p,c){if(!n.__c.__H)return!0;var s=n.__c.__H.__.filter(function(f){return!!f.__c});if(s.every(function(f){return!f.__N}))return!o||o.call(this,d,p,c);var u=n.__c.props!==d;return s.forEach(function(f){if(f.__N){var g=f.__[0];f.__=f.__N,f.__N=void 0,g!==f.__[0]&&(u=!0)}}),o&&o.call(this,d,p,c)||u};L.__f=!0;var o=L.shouldComponentUpdate,i=L.componentWillUpdate;L.componentWillUpdate=function(d,p,c){if(this.__e){var s=o;o=void 0,a(d,p,c),o=s}i&&i.call(this,d,p,c)},L.shouldComponentUpdate=a}return n.__N||n.__}function K(e,t){var r=he(X++,3);!E.__s&&Ke(r.__H,t)&&(r.__=e,r.u=t,L.__H.__h.push(r))}function Ut(e,t){var r=he(X++,4);!E.__s&&Ke(r.__H,t)&&(r.__=e,r.u=t,L.__h.push(r))}function H(e){return we=5,ln(function(){return{current:e}},[])}function ln(e,t){var r=he(X++,7);return Ke(r.__H,t)&&(r.__=e(),r.__H=t,r.__h=e),r.__}function U(e){var t=L.context[e.__c],r=he(X++,9);return r.c=e,t?(r.__==null&&(r.__=!0,t.sub(L)),t.props.value):e.__}function sn(){for(var e;e=$t.shift();)if(e.__P&&e.__H)try{e.__H.__h.forEach(ve),e.__H.__h.forEach(je),e.__H.__h=[]}catch(t){e.__H.__h=[],E.__e(t,e.__v)}}E.__b=function(e){L=null,Gt&&Gt(e)},E.__=function(e,t){e&&t.__k&&t.__k.__m&&(e.__m=t.__k.__m),Ot&&Ot(e,t)},E.__r=function(e){Rt&&Rt(e),X=0;var t=(L=e.__c).__H;t&&(We===L?(t.__h=[],L.__h=[],t.__.forEach(function(r){r.__N&&(r.__=r.__N),r.u=r.__N=void 0})):(t.__h.forEach(ve),t.__h.forEach(je),t.__h=[],X=0)),We=L},E.diffed=function(e){It&&It(e);var t=e.__c;t&&t.__H&&(t.__H.__h.length&&($t.push(t)!==1&&Mt===E.requestAnimationFrame||((Mt=E.requestAnimationFrame)||cn)(sn)),t.__H.__.forEach(function(r){r.u&&(r.__H=r.u),r.u=void 0})),We=L=null},E.__c=function(e,t){t.some(function(r){try{r.__h.forEach(ve),r.__h=r.__h.filter(function(n){return!n.__||je(n)})}catch(n){t.some(function(a){a.__h&&(a.__h=[])}),t=[],E.__e(n,r.__v)}}),Tt&&Tt(e,t)},E.unmount=function(e){Vt&&Vt(e);var t,r=e.__c;r&&r.__H&&(r.__H.__.forEach(function(n){try{ve(n)}catch(a){t=a}}),r.__H=void 0,t&&E.__e(t,r.__v))};var zt=typeof requestAnimationFrame=="function";function cn(e){var t,r=function(){clearTimeout(n),zt&&cancelAnimationFrame(t),setTimeout(e)},n=setTimeout(r,35);zt&&(t=requestAnimationFrame(r))}function ve(e){var t=L,r=e.__c;typeof r=="function"&&(e.__c=void 0,r()),L=t}function je(e){var t=L;e.__c=e.__(),L=t}function Ke(e,t){return!e||e.length!==t.length||t.some(function(r,n){return r!==e[n]})}function Nt(e,t){return typeof t=="function"?t(e):t}j();j();var un=0;function l(e,t,r,n,a,o){t||(t={});var i,d,p=t;if("ref"in p)for(d in p={},t)d=="ref"?i=t[d]:p[d]=t[d];var c={type:e,props:p,key:r,ref:i,__k:null,__:null,__b:0,__e:null,__c:null,constructor:void 0,__v:--un,__i:-1,__u:0,__source:a,__self:o};if(typeof e=="function"&&(i=e.defaultProps))for(d in i)p[d]===void 0&&(p[d]=i[d]);return P.vnode&&P.vnode(c),c}var Da=(j(),gt(Ce));function Wt(e){let r=e.gallery.map(([n,a],o)=>l(dn,{alt:`${n}`,src:`${a}`,onClick:()=>e.load(n,a),onDeleteClick:()=>e.requestDelete(a)},n+"."+a));return l("div",{className:"gallery-list",children:r})}function dn(e){return l("div",{className:"gallery-entry",title:e.alt,onClick:e.onClick,children:[l("img",{src:e.src}),l("div",{className:"gallery-delete",onClick:t=>{t.preventDefault(),t.stopPropagation(),e.onDeleteClick()},children:"\u274C"})]})}function jt(e){let t=e.split(/\r?\n/g),r={headers:t[0].split(/,/g),rows:t.slice(1).map(n=>n.split(/,/g))};for(let n of r.rows)if(n.length!==r.headers.length)throw new Error(`Malformed line: ${JSON.stringify(n)} length doesn't match header size (${r.headers.length})`);return r}function Xt(e,t){let r={name:e,colors:[]},n=/^(\S\S)(\S\S)(\S\S)\.([^.]+)\.(.*)$/gm,a;for(;a=n.exec(t);)r.colors.push({r:parseInt(a[1],16),g:parseInt(a[2],16),b:parseInt(a[3],16),code:a[4],name:a[5]});if(r.colors.length)return r;let o=/^(\S\S)(\S\S)(\S\S)(.*)$/gm;for(;a=o.exec(t);)r.colors.push({r:parseInt(a[1],16),g:parseInt(a[2],16),b:parseInt(a[3],16),name:a[4]});return r}function Jt(){let e=jt(Kt());console.assert(e.headers[0]==="R","R"),console.assert(e.headers[1]==="G","G"),console.assert(e.headers[2]==="B","B"),console.assert(e.headers[3]==="Name","Name");let t=[];for(let r=4;r<e.headers.length;r++)t.push({name:e.headers[r],colors:[]});for(let r of e.rows)for(let n=4;n<r.length;n++){let a=r[n];if(a.length){let o={r:parseInt(r[0]),g:parseInt(r[1]),b:parseInt(r[2]),name:r[3]};a!=="1"&&(o.code=r[n]),t[n-4].colors.push(o)}}return t.push(Xt("dmc",Yt())),t.push(Xt("lego",qt())),{sets:t}}var De=.1593017578125;function fn(e,t,r){return[Ye(e),Ye(t),Ye(r)]}function Ye(e){let t=.8359375+18.8515625*Math.pow(e/1e4,De),r=1+2392/128*Math.pow(e/1e4,De);return Math.pow((3424/4096+2413/128*Math.pow(e/1e4,De))/(1+2392/128*Math.pow(e/1e4,De)),2523/32)}function mn(e,t,r){e=qe(e/255),t=qe(t/255),r=qe(r/255);let n=.4124*e+.3576*t+.1805*r,a=.2126*e+.7152*t+.0722*r,o=.0193*e+.1192*t+.9505*r;return[n,a,o]}function yn(e){return e.map(t=>Math.max(t*203,0))}function qe(e){return e<=.04045?e/12.92:Math.pow((e+.055)/1.055,2.4)}function Xe(e){let t=mn(e.r,e.g,e.b),r=yn(t),[n,a,o]=r,i=.3592*n+.6976*a-.0358*o,d=-.1922*n+1.1004*a+.0755*o,p=.007*n+.0749*a+.8434*o,[c,s,u]=fn(i,d,p),f=.5*c+.5*s,g=(6610*c-13613*s+7003*u)/4096,m=(17933*c-17390*s-543*u)/4096;return[f,g,m]}var Va=(j(),gt(Ce)),Oa=et(),ur="ABCDEFGHJKLMNPQRSTVXZ\u03B1\u03B2\u0394\u03B8\u03BB\u03C0\u03A6\u03A8\u03A9abcdefghijklmnopqrstuvwxyz0123456789";var dr={perler:{size:[29,29],pitch:139.75/28},"artkal-mini":{size:[50,50],pitch:137.8/49},"perler-mini":{size:[56,56],pitch:147.9/55},"16 ct":{size:[16,16],pitch:25.4/16},"30 ct":{size:[30,30],pitch:25.4/30},lego:{size:[32,32],pitch:8},funzbo:{size:[29,29],pitch:139.1/28},evoretro:{size:[29,29],pitch:139.3/28}};function fe(e){return dr[e].pitch}function Pe(e){return dr[e].size}function pr(e){return"rgb("+e.r+","+e.g+","+e.b+")"}function J(e){return"#"+tt(e.r)+tt(e.g)+tt(e.b)}function tt(e){return e===void 0?"":e===0?"00":e<16?"0"+e.toString(16):e.toString(16)}function rt(e){return e.r+e.g*1.4+e.b>460}function O(){let e=Date.now();return{mark:t};function t(r){if(window.location.hostname==="localhost"||window.location.search==="?dev"){let n=Date.now();console.log(`PERF: '${r}' finished in ${n-e}ms`),e=n}}}function hr(e,t){let r=[];for(let d=0;d<e.height;d++){r[d]=[];let p=0;for(let c=e.width-1;c>=-t;c--){let s=e.pixels[d][c];c<0||s===void 0||s===-1?p>0&&p--:p=t,r[d][c+t]=p!==0}}let n=[];for(let d=0;d<e.width+t;d++){n[d]=[];let p=0;for(let c=e.height-1;c>=-t;c--)c>=0&&r[c][d]?p=t:p>0&&p--,n[d][c+t]=p>0}let a=0,o=0,i=1/0;for(let d=0;d<t;d++)for(let p=0;p<t;p++){let c=0;for(let s=d;s<e.height+t;s+=t)for(let u=p;u<e.width+t;u+=t)n[u][s]&&c++;c<i&&(a=p,o=d,i=c)}return{xOffset:a,yOffset:o}}function nt(e,t,r,n){let a=[],o=cr(e,r),i=cr(t,n),d=0,p=0;for(let c of i){let s=0,u=0;p++;for(let f of o)u++,a.push({x:s,y:d,row:p,col:u,width:f,height:c}),s+=f;d+=c}return a}function cr(e,t){if(e<=t)return[e];if(e<=t*2)return[Math.ceil(e/2),Math.floor(e/2)];let n=[e%t],a=e-n[0];for(;a>t;)n.push(t),a-=t;return n.push(a),n}function gr(e,t){throw new Error(`Invalid ${e} - ${t}`)}function me(e){return e.code===void 0?e.name:`${e.code} (${e.name})`}function fr(e){return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2}).format(e)}function at(e){let t=e/25.4;return t<12?`${t.toFixed(1)}\u2033`:`${Math.floor(t/12)}\u2032\u2009${Math.round(t%12)}\u2033`}function mr(e){let t=Math.ceil(e/60);return t<1?"1 minute":t<60?`${t} minutes`:t<120?`${Math.floor(t/60)}:${Math.floor(t%60)}`:`${Math.ceil(t/60)} hours`}var _r=et();function br(e,t){let r=[],n=new Map;for(let a of t)n.set(a.color,a.target);for(let a=0;a<e.height;a++){let o=[];for(let i=0;i<e.width;i++)e.pixels[a][i]===-1?o.push(void 0):o.push(n.get(e.pixels[a][i]));r.push(o)}return{pixels:r,width:e.width,height:e.height}}function Cr(e){let t=O(),r=[],n=new Map;for(let a=0;a<e.height;a++)for(let o=0;o<e.width;o++){let i=e.pixels[a][o];if(i!==-1)if(n.has(i))n.get(i).count++;else{let d={color:i,count:1,r:i&255,g:i>>8&255,b:i>>16&255};r.push(d),n.set(i,d)}}return t.mark(`Palette: Survey colors (${r.length}) and counts`),r}function vr(e,t,r){let n=O(),a=r.nodupes&&(!t||e.length<t.length),o=[];e.sort((d,p)=>p.count-d.count);let i=ot[r.colorMatch];for(let d of e)if(t===void 0){let{r:p,g:c,b:s}=d;o.push({color:d.color,target:{r:p,g:c,b:s,name:J({r:p,g:c,b:s}),code:""},count:d.count})}else{let p=d;if(r.matchBlackAndWhite&&d.r===d.g&&d.g===d.b){let u;d.r>208?u=255-(255-d.r)*.5:d.r<41?u=d.r*.3:u=d.r,p={...d,r:u,b:u,g:u}}let c,s=1/0;for(let u of t){if(a&&o.some(g=>g.target===u))continue;let f=i(p,u);f<s&&(c=u,s=f)}if(c===void 0)throw new Error("impossible");o.push({color:d.color,target:c,count:d.count})}return n.mark("Palette: Assign color entries"),o}var ot={rgb:(e,t)=>Math.pow(e.r-t.r,2)*3+Math.pow(e.g-t.g,2)*4+Math.pow(e.b-t.b,2)*2,rgb2:(e,t,r,n)=>Math.pow(e-n.r,2)*3+Math.pow(t-n.g,2)*4+Math.pow(r-n.b,2)*2,ciede2000:(e,t)=>_r.diff(yr(e),yr(t)),ictcp:(e,t)=>{let r=Xe(e),n=Xe(t),a=r[0]-n[0],o=(r[1]-n[1])/2,i=r[2]-n[2];return a*a+o*o+i*i}};function yr(e){return"_lab"in e?e._lab:e._lab=_r.rgb_to_lab({R:e.r,G:e.g,B:e.b})}var Y=Jt();function wr(e){let t=[];for(let r=0;r<e.height;r++){let n=[];for(let a=0;a<e.width;a++){let o=4*(r*e.width+a);e.data[o+3]===255?n.push((e.data[o+2]<<16)+(e.data[o+1]<<8)+e.data[o]):n.push(-1)}t.push(n)}return{pixels:t,width:e.width,height:e.height}}function Fn(e,t,r,n,a,o){let i=document.createElement("canvas");i.width=e.width,i.height=e.height,i.getContext("2d").putImageData(e,0,0);let p=document.createElement("canvas");p.width=e.width,p.height=e.height;let c=p.getContext("2d");return c.filter=`saturate(${n}%) brightness(${t}%) contrast(${r}%)`,a&&(c.scale(1,-1),c.translate(0,-e.height)),o&&(c.scale(-1,1),c.translate(-e.width,0)),c.drawImage(i,0,0),c.getImageData(0,0,e.width,e.height)}function En(e){let{mark:t}=O(),{data:r,width:n,height:a}=e;for(let i of[8,7,6,5,4,3,2])for(let d=0;d<i;d++)for(let p=0;p<i;p++){let c=!0;for(let s=d;s<n;s+=i){for(let u=p;u<a;u+=i){for(let f=1;f<i;f++){for(let g=1;g<i;g++)if(!o(s+f,u+g,s,u)){c=!1;break}if(!c)break}if(!c)break}if(!c)break}if(c){let s=new ImageData(Math.floor((n-d)/i),Math.floor((a-p)/i)),u=0;for(let f=0;f<s.height;f++)for(let g=0;g<s.width;g++){let m=((f*i+p)*n+g*i+d)*4,C=(f*s.width+g)*4;s.data[C]=r[m],s.data[C+1]=r[m+1],s.data[C+2]=r[m+2],s.data[C+3]=r[m+3]}return t(`Descale with match ${n}x${a} (${i} ${d} ${p}) -> ${s.width}x${s.height}`),s}}return t("Descale with no match"),e;function o(i,d,p,c){if(i>=e.width||d>=e.height)return!0;let s=(d*e.width+i)*4,u=(c*e.width+p)*4;return r[s]===r[u]&&r[s+1]===r[u+1]&&r[s+2]===r[u+2]&&r[s+3]===r[u+3]}}function Mn(e,t,r){let n=new Array(e.width*e.height),a=1/0,o=-1/0,i=1/0,d=-1/0;if(isNaN(t))i=a=0,d=e.width-1,o=e.height-1,n.fill(!0,0,n.length);else{n.fill(!1,0,n.length);for(let s=0;s<e.height;s++)for(let u=0;u<e.width;u++)!c(ne(e,u,s))&&(i=Math.min(i,u),d=Math.max(d,u),a=Math.min(a,s),o=Math.max(o,s),n[s*e.width+u]=!0,r&&(u!==0&&(n[s*e.width+(u-1)]=!0),s!==0&&(n[(s-1)*e.width+u]=!0),u!==e.width-1&&(n[s*e.width+(u+1)]=!0),s!==e.height-1&&(n[(s+1)*e.width+u]=!0)));r&&(i!==0&&i--,a!==0&&a--,d!==e.width-1&&d++,o!==e.height-1&&o++)}let p=new ImageData(d-i+1,o-a+1);for(let s=0;s<p.height;s++)for(let u=0;u<p.width;u++)p.data[(s*p.width+u)*4+3]=0;for(let s=a;s<=o;s++)for(let u=i;u<=d;u++){let f=ne(e,u,s),g=((s-a)*p.width+(u-i))*4;n[s*e.width+u]&&(p.data[g+0]=f>>0&255,p.data[g+1]=f>>8&255,p.data[g+2]=f>>16&255,p.data[g+3]=255)}return p;function c(s){return isNaN(t)?!1:t===0?(s>>24)*255===0:(s&16777215)===(t&16777215)}}function Dr(e){let t=document.createElement("canvas");t.width=e.width,t.height=e.height;let r=t.getContext("2d");return r.drawImage(e,0,0,e.width,e.height),r.getImageData(0,0,e.width,e.height)}function Gn(e){let t=!1;for(let r=0;r<e.height;r++){let n=r===0||r===e.height-1;for(let a=0;a<e.width;a++){let o=4*(r*e.width+a);if(e.data[o+3]===0)return 0;(n||a===0||a===e.width-1)&&e.data[o+0]===255&&e.data[o+1]===0&&e.data[o+2]===255&&(t=!0)}}return t?16711935:kr(e)}function kr(e){let t=[ne(e,0,0),ne(e,0,e.height-1),ne(e,e.width-1,0),ne(e,e.width-1,e.height)];return t.sort(),t[1]===t[2]?t[1]:0}function ne(e,t,r){let n=(r*e.width+t)*4;return e.data[n+0]<<0|e.data[n+1]<<8|e.data[n+2]<<16|e.data[n+3]<<24}function Ar(e,t){let{mark:r}=O();r("Image -> RGBA");let n;switch(t.transparency){case"auto":r("Infer transparency"),n=Gn(e);break;case"alpha":n=0;break;case"none":n=NaN;break;case"magenta":n=4294902015;break;case"corners":n=kr(e);break}let a=t.descale?En(e):e,o=Mn(a,n,t.keepOutline);r("Apply transparency & crop");let i=[o.width,o.height],d=On(o,256)?96:480,p=Rn(i,d),c=p===i?o:Tn(o,p),s=Fn(c,t.brightness*10+100,t.contrast*10+100,t.saturation*10+100,t.flip,t.mirror);return r("Adjust image"),s}function Rn(e,t){if(e[0]<=t&&e[1]<=t)return e;let r=Math.max(e[0]/t,e[1]/t);return[Math.round(e[0]/r),Math.round(e[1]/r)]}function Br(e,t,r){let{mark:n}=O(),a;switch(t.palette){case"dmc":a=Y.sets.filter(p=>p.name==="dmc")[0].colors;break;case"lego":a=Y.sets.filter(p=>p.name==="lego")[0].colors;break;case"artkal-all-mini":a=Y.sets.filter(p=>p.name==="Artkal Mini")[0].colors;break;case"artkal-mini-starter":a=Y.sets.filter(p=>p.name==="Artkal Mini Starter")[0].colors;break;case"perler-all":a=Y.sets.filter(p=>p.name==="All Perler")[0].colors;break;case"perler-multimix":a=Y.sets.filter(p=>p.name==="Perler Multi Mix")[0].colors;break;case"evoretro":a=Y.sets.filter(p=>p.name==="EvoRetro")[0].colors;break;case"funzbo":a=Y.sets.filter(p=>p.name==="Funzbo")[0].colors;break;case"all":a=void 0;break;default:gr(t.palette,"Unknown palette")}let o=Cr(e),i;a===void 0?i=!1:r.dithering==="auto"?i=o.length>256:i=r.dithering==="on";let d;if(i)d=Vn(e,a);else{let p=vr(o,a,t);n("Create palette"),d=br(e,p),n("Apply palette")}return{rgbaArray:e,quantized:d}}function Sr(e){let t=In(e),r=new Array(e.height),n=new Map;for(let a=0;a<t.length;a++)n.set(t[a].target,a);for(let a=0;a<e.height;a++){r[a]=new Array(e.width);for(let o=0;o<e.width;o++){let i=e.pixels[a][o];i===void 0?r[a][o]=-1:r[a][o]=n.get(i)}}return{pixels:r,width:e.width,height:e.height,partList:t}}function In(e){let t=new Map;for(let n=0;n<e.height;n++)for(let a=0;a<e.width;a++){let o=e.pixels[n][a];if(o===void 0)continue;let i=t.get(o);i===void 0?t.set(o,{count:1,target:o,symbol:"#"}):i.count++}let r=[];for(let n of t.entries())r.push(n[1]);r.sort((n,a)=>a.count-n.count);for(let n=0;n<r.length;n++)r[n].symbol=ur[n];return r}function xr(e){return{pixels:e.partList.reduce((t,r)=>t+r.count,0)}}function it(e,t=1/0){let r=new Uint8ClampedArray(e.width*e.height*4),n=e.partList.map(d=>d.target);for(let d=0;d<e.width;d++)for(let p=0;p<e.height;p++){let c=(p*e.width+d)*4,s=e.pixels[p][d];if(s!==-1&&s<t){let u=e.partList[s];r[c+0]=u.target.r,r[c+1]=u.target.g,r[c+2]=u.target.b,r[c+3]=255}else r[c+3]=0}let a=document.createElement("canvas");a.width=e.width,a.height=e.height;let o=a.getContext("2d"),i=o.createImageData(e.width,e.height);return i.data.set(r),o.putImageData(i,0,0),a.toDataURL()}function Tn(e,t){let r=document.createElement("canvas");r.width=e.width,r.height=e.height,r.getContext("2d").putImageData(e,0,0);let n=document.createElement("canvas");[n.width,n.height]=t;let a=n.getContext("2d");return a.scale(t[0]/e.width,t[1]/e.height),a.drawImage(r,0,0),a.getImageData(0,0,t[0],t[1])}function Vn(e,t){let r=O(),n=e.pixels.map(c=>c.map(s=>s&255)),a=e.pixels.map(c=>c.map(s=>s>>8&255)),o=e.pixels.map(c=>c.map(s=>s>>16&255));r.mark("Create channel arrays");let i=new Array(e.height);for(let c=0;c<e.height;c++)if(i[c]=new Array(e.width),c%2===0)for(let s=0;s<e.width;s++)d(s,c,!0);else for(let s=e.width-1;s>=0;s--)d(s,c,!1);return r.mark("Dither"),console.trace(),{pixels:i,width:e.width,height:e.height};function d(c,s,u){if(e.pixels[s][c]===-1)i[s][c]=void 0;else{let f=1/0,g;for(let b of t){let h=ot.rgb2(n[s][c],a[s][c],o[s][c],b);h<f&&(g=b,f=h)}i[s][c]=g;let m=g.r-n[s][c],C=g.g-a[s][c],v=g.b-o[s][c];u?(p(c+1,s+0,m,C,v,7/16),p(c-1,s+1,m,C,v,3/16),p(c+0,s+1,m,C,v,5/16),p(c+1,s+1,m,C,v,1/16)):(p(c-1,s+0,m,C,v,7/16),p(c+1,s+1,m,C,v,3/16),p(c+0,s+1,m,C,v,5/16),p(c-1,s+1,m,C,v,1/16))}}function p(c,s,u,f,g,m){c<0||c>=e.width||s<0||s>=e.height||(n[s][c]-=u*m,a[s][c]-=f*m,o[s][c]-=g*m)}}function On(e,t){let r=new Set,n=0;for(let a=0;a<e.height;a++){for(let o=0;o<e.width;o++)r.add(e.data[n+0]<<0|e.data[n+1]<<8|e.data[n+2]<<16|e.data[n+3]<<24),n+=4;if(r.size>t)return!0}return!1}var R=({code:e})=>l("a",{href:"https://amzn.to/"+e,rel:"noreferrer",target:"_blank",title:"Buy",children:"\u{1F6D2}"}),Le={palette:[["artkal-mini-starter",l("span",{children:["Artkal Mini Starter ",l(R,{code:"3wThLo8"})]})],["artkal-all-mini","All Artkal Mini"],["perler-multimix",l("span",{children:["Perler Multi Mix ",l(R,{code:"2WjPiLU"})]})],["perler-all",l("span",{children:["All Perler ",l(R,{code:"3kPFwL9"})]})],["evoretro",l("span",{children:["Evoretro ",l(R,{code:"39Lp3kO"})]})],["funzbo",l("span",{children:["Funzbo ",l(R,{code:"3GDH7N3"})]})],["lego",l("span",{children:["LEGO ",l(R,{code:"3omMszN"})]})],["dmc",l("span",{children:["DMC ",l(R,{code:"3D4PRtf"})]})],["all","All Colors"]],size:[["artkal-mini",l("span",{children:["Artkal Mini",l(R,{code:"3eNjvcm"})]})],["perler-mini",l("span",{children:["Perler Mini",l(R,{code:"2WcXJIH"})]})],["perler",l("span",{children:["Perler",l(R,{code:"36U2tov"})]})],["evoretro",l("span",{children:["Evoretro",l(R,{code:"39Lp3kO"})]})],["funzbo",l("span",{children:["Funzbo",l(R,{code:"3GDH7N3"})]})],["16 ct",l("span",{title:"16 threads per inch (cross-stitch)",children:"16 ct"})],["30 ct",l("span",{title:"30 threads per inch (cross-stitch)",children:"30 ct"})],["lego","LEGO \u2122"]],colorMatch:[["ciede2000","CIEDE2000"],["ictcp","ICtCp"],["rgb","RGB"]]},lt={transparency:[["auto","Auto"],["alpha","Alpha Channel"],["magenta","Magenta"],["corners","Corners"],["none","None"]],dithering:[["auto","Auto"],["on","On"],["off","Off"]]},ye={planStyle:[["symbolspans","Symbols + Spans"],["spans","Spans"],["symbols","Symbols"],["none","None"]],grid:[["auto","Auto"],["50","50"],["25","25"],["10","10"],["none","None"]],background:[["#777","Grey"],["#000","Black"],["#FFF","White"],["url(#checkPattern)","Checker"],["transparent","Transparent"],["url(#wood)","Wood"]],refobj:[["none","None"],["quarter","Quarter"],["dollar","Dollar"],["credit","Bank Card"]]};j();var zn=()=>{},z=Ne(zn);function Pr(e){return de(z.Provider,{value:e.value},e.children)}async function Lr(e,t){$n(()=>Hn(e,t))}async function $n(e){let t="pdf-script-tag";if(document.getElementById(t)===null){let n=document.createElement("script");n.id=t,n.onload=()=>{e()},n.src="https://github.com/foliojs/pdfkit/releases/download/v0.12.1/pdfkit.standalone.js",document.head.appendChild(n)}else e()}function Hn(e,t){let r=ct(.3333333333333333),n=new PDFDocument({size:t.paperSize}),a=n.pipe(blobStream());t.style==="legend"&&Un(n,e);let o=n.page.width,i=n.page.height,d=o-r*2,p=i-r*2,c=n.heightOfString("Testing"),s;t.imageSize==="actual"?s=ut(t.pitch):t.imageSize==="legible"?t.breakStrategy==="grid"?s=.99*Math.min((d-c)/t.carveSize[0],(p-c)/t.carveSize[1]):s=ut(4):e.width>=e.height?s=Math.min((d-c)/e.height,(p-c)/e.width):s=Math.min((d-c)/e.width,(p-c)/e.height);let u;t.imageSize==="single-page"?u=[1/0,1/0]:t.breakStrategy==="grid"?u=t.carveSize:u=[Math.floor((d-c)/s),Math.floor((p-c)/s)];let f=Nn(e,u),g=Math.max.apply(Math.max,f.map(h=>h.width)),m=Math.max.apply(Math.max,f.map(h=>h.height)),C={width:s*g,height:s*m},v=C.width*1.2>C.height?"top":"side",b={width:C.width+(v==="side"?c:0),height:C.height+(v==="top"?c:0)};if(t.debug&&(n.rect(r,r,o-r*2,i-r*2),n.stroke("red")),t.style==="step-by-step"){let h=[];for(let y of f){let D=[];for(let w=0;w<y.height;w++){D[w]=[];for(let B=0;B<y.width;B++)D[w][B]=!1}for(let w=0;w<e.partList.length;w++)Fr(y,B=>B===e.partList[w])&&h.push({partIndex:w,slice:y})}let _=st(h.length,o,i,r,b.width,b.height),k=f.length>1;for(let y of h){let w=_.shift().next(n,y.slice.width*s,y.slice.height*s);jn({doc:n,image:e,partIndex:y.partIndex,slice:y.slice,pitch:s,textPlacement:v,cellHeaderHeightPts:c,multipleSlices:k,debug:t.debug}),w()}}else if(t.style==="color"){let h=st(f.length,o,i,r,b.width,b.height);for(let _ of f){let y=h.shift().next(n,_.width*s,_.height*s);t.debug&&(n.rect(0,0,_.width*s,_.height*s),n.stroke("blue"));for(let D=0;D<e.partList.length;D++){for(let B=_.y;B<_.y+_.height;B++){let x=B-_.y;for(let A=_.x;A<_.x+_.width;A++){let S=A-_.x;e.pixels[B][A]===D&&n.rect(S*s,x*s,s,s)}}let w=e.partList[D].target;n.fill([w.r,w.g,w.b])}y()}}else if(t.style==="legend"){let h=st(f.length,o,i,r,b.width,b.height);for(let _ of f){let y=h.shift().next(n,_.width*s,_.height*s);n.fontSize(s),n.font("Courier");for(let D=_.y;D<_.y+_.height;D++){let w=D-_.y;for(let B=_.x;B<_.x+_.width;B++){let x=B-_.x,A=e.pixels[D][B];A!==-1&&n.text(e.partList[A].symbol,x*s,w*s,{align:"center",baseline:"middle",height:s,width:s})}}y()}}a.on("finish",()=>{window.open(a.toBlobURL("application/pdf"),"_blank")}),n.end()}function Un(e,t){e.save(),e.fontSize(16);let r=5+Math.max.apply(Math,t.partList.map(u=>e.widthOfString(u.symbol))),n=5+Math.max.apply(Math,t.partList.map(u=>e.widthOfString(u.target.code??""))),a=5+Math.max.apply(Math,t.partList.map(u=>e.widthOfString(u.count.toLocaleString()))),o=32,i=5+Math.max.apply(Math,t.partList.map(u=>e.widthOfString(u.target.name))),d=2,p=d*2+e.heightOfString("I like you, person reading this code");e.translate(ct(1),ct(1));let c=0,s=0;for(let u=0;u<t.partList.length;u++){c=0,e.text(t.partList[u].symbol,c,s+d,{width:r,height:p,align:"center"}),c+=r,e.rect(c,s+d,o-5,p-d*2),e.fill([t.partList[u].target.r,t.partList[u].target.g,t.partList[u].target.b]),e.fillColor("black"),c+=o,e.text(t.partList[u].count.toLocaleString(),c,s+d,{width:a-5,align:"right"}),c+=a;let f=t.partList[u].target.code;f!==void 0&&(e.text(f,c,s+d,{width:n}),c+=n),e.text(t.partList[u].target.name,c,s+d,{width:i}),c+=i,e.moveTo(0,s),e.lineTo(c,s),e.stroke("grey"),s+=p}e.restore(),e.addPage()}function Nn(e,t){let r=nt(e.width,e.height,t[0],t[1]),n=nt(e.width,e.height,t[1],t[0]);return(r.length<=n.length?r:n).map(o=>({image:e,width:o.width,height:o.height,x:o.x,y:o.y,row:o.row,col:o.col,forEach:Wn(e,o.x,o.y,o.width,o.height)})).filter(o=>Fr(o,i=>!!i))}function Fr(e,t){for(let r=e.x;r<e.x+e.width;r++)for(let n=e.y;n<e.y+e.height;n++)if(t(e.image.partList[e.image.pixels[n][r]]))return!0;return!1}function Wn(e,t,r,n,a,o){return function(i){for(let d=t;d<t+n;d++)for(let p=r;p<r+a;p++){let c=e.pixels[p][d],s=e.partList[c];s&&(!o||o(s))&&i(d-t,p-r,s)}}}function jn(e){let{image:t,partIndex:r,doc:n,slice:a,pitch:o}=e,i={width:a.width*o,height:a.height*o},d=e.multipleSlices?`${me(t.partList[r].target)} Row ${a.row} Col ${a.col}`:`${me(t.partList[r].target)}`;e.textPlacement==="side"?(e.debug&&(n.rect(0,0,i.width+e.cellHeaderHeightPts,i.height),n.stroke("blue")),n.translate(e.cellHeaderHeightPts,0),n.save(),n.rotate(-90),n.translate(-i.height,0),n.text(d,0,0,{baseline:"bottom",align:"center",width:i.height,ellipsis:!0}),n.restore()):(e.debug&&(n.rect(0,0,i.width,i.height+e.cellHeaderHeightPts),n.stroke("blue")),n.translate(0,e.cellHeaderHeightPts),n.text(d,0,0,{baseline:"bottom",align:"center",width:i.width,ellipsis:!0})),n.rect(0,0,i.width,i.height),n.lineWidth(1),n.stroke("grey"),p(),n.fill("black"),c(),n.lineWidth(1.3),n.stroke("grey");function p(){for(let s=a.y;s<a.y+a.height;s++){let u=(s-a.y+.5)*o;for(let f=a.x;f<a.x+a.width;f++)if(t.pixels[s][f]===r){let g=(f-a.x+.5)*o;n.circle(g,u,o/2.5)}}}function c(){let s=new Map;for(let m=a.y;m<a.y+a.height;m++)g(a.x,a.x+a.width,C=>f(C,m),C=>u(C,m));for(let m=a.x;m<a.x+a.width;m++)g(a.y,a.y+a.height,C=>f(m,C),C=>u(m,C));function u(m,C){let v=m+"-"+C;if(s.has(v))return;s.set(v,!0);let b=(m-a.x)*o,h=(C-a.y)*o;n.moveTo(b+o*.3,h+o*.3),n.lineTo(b+o*.7,h+o*.7),n.moveTo(b+o*.3,h+o*.7),n.lineTo(b+o*.7,h+o*.3)}function f(m,C){let v=t.pixels[C][m];return v<r&&v!==-1}function g(m,C,v,b){let h=!1;for(let _=m;_<C;_++)v(_)?(h||b(_),h=!0):(h&&b(_-1),h=!1);h&&b(C-1)}}}function st(e,t,r,n,a,o){let i=ut(9),d=[],p=t-n*2,c=r-n*2,s={maxCols:Math.floor((i+p)/(i+a)),maxRows:Math.floor((i+c)/(i+o))},u={maxCols:Math.floor((i+p)/(i+o)),maxRows:Math.floor((i+c)/(i+a))},f=u.maxRows*u.maxCols>s.maxRows*s.maxCols&&s.maxRows*s.maxCols<e,g=f?u:s;if(g.maxRows*g.maxCols===0)throw new Error("Can't do this layout");for(;;){if(g.maxCols>=g.maxRows){if((g.maxCols-1)*g.maxRows>=e){g.maxCols--;continue}if((g.maxRows-1)*g.maxCols>=e){g.maxRows--;continue}}else{if((g.maxRows-1)*g.maxCols>=e){g.maxRows--;continue}if((g.maxCols-1)*g.maxRows>=e){g.maxCols--;continue}}break}let m=f?o:a,C=f?a:o,v=t-n*2-g.maxCols*m,b=r-n*2-g.maxRows*C,h=v/(g.maxCols+1),_=b/(g.maxRows+1),k=m+h,y=C+_;console.log(JSON.stringify({pageWidthPts:t,pageHeightPts:r,cellWidthPts:a,cellHeightPts:o,densestUnrotatedLayout:s,densestRotatedLayout:u,isRotated:f,densestLayout:g,unallocatedX:v,unallocatedY:b,xInterval:k,yInterval:y,xJustification:h,yJustification:_},void 0,2));let D=!0;for(;;){let x=!0;if(f)for(let A=g.maxCols-1;A>=0;A--)for(let S=0;S<g.maxRows;S++){if(w(A,S,x))return d;x=!1}else for(let A=0;A<g.maxRows;A++)for(let S=0;S<g.maxCols;S++){if(w(S,A,x))return d;x=!1}D=!1}function w(x,A,S){if(B(S&&!D,n+h+x*k,n+_+A*y),d.length===e)return!0}function B(x,A,S){d.push({next(F,I,$){x&&F.addPage();let oe=m-(f?$:I),Z=C-(f?I:$);return F.save(),F.translate(A+oe/2,S+Z/2),f&&(F.rotate(90),F.translate(0,-m)),()=>{F.restore()}}})}}function ct(e){return e*72}function ut(e){return e/25.4*72}function Er(e){let t=U(z);return l("div",{class:"print-dialog",children:[l("div",{class:"print-options",children:[l(Kn,{...e}),l(Yn,{...e}),l(qn,{...e}),l(Xn,{...e})]}),l("div",{class:"print-buttons",children:[l("button",{class:"cancel",onClick:()=>t("ui","isPrintOpen",!1),children:"Cancel"}),l("button",{class:"print",onClick:()=>r(),children:["Print\xA0",l("img",{class:"pdf-logo",src:"./pdf-logo.png"})]})]})]});function r(){let n={style:e.settings.format,paperSize:e.settings.paperSize,breakStrategy:e.settings.breakStrategy,imageSize:e.settings.imageSize,carveSize:Pe(e.gridSize),pitch:fe(e.gridSize),filename:e.filename.replace(".png",""),debug:window.location.host.indexOf("localhost")===0};window.clarity?.("event","print"),Lr(e.image,n)}}var Kn=Fe(({image:e})=>({title:"Format",key:"format",values:[{value:"step-by-step",title:"Single Color",description:"Print one black-and-white grid per color. Best for laser printers or when colors are difficult to tell apart.",icon:l(Jn,{image:e})},{value:"color",title:"Color Image",description:"Print a single color image. Best for color printers and images with fewer colors.",icon:l(Zn,{image:e})},{value:"legend",title:"Legend",description:"Print a grid of letters corresponding to the legend",icon:l(Qn,{image:e})}]})),Yn=Fe(()=>({key:"paperSize",title:"Paper Size",values:[{title:"Letter",value:"letter",description:'8.5" x 11"',icon:l("span",{class:"letter-icon"})},{title:"A4",value:"a4",description:"210mm x 297mm",icon:l("span",{class:"a4-icon"})}]})),qn=Fe(()=>({key:"imageSize",title:"Image Size",values:[{title:"Page",value:"single-page",description:"Scale the image to fit a single page",icon:l("span",{class:"size-stretch",children:"\u26F6"})},{title:"Actual",value:"actual",description:"Print at actual size. Multiple pages will be generated if necessary",icon:l("span",{class:"size-actual",children:"1:1"})},{title:"Legible",value:"legible",description:"Print at a legible size. Multiple pages will be generated if necessary",icon:l("span",{class:"size-legible",children:"\u{1F441}"})}]})),Xn=Fe(()=>({key:"breakStrategy",title:"Page Breaking",values:[{title:"Grid",value:"grid",description:"Split large images based on the pegboard grid size",icon:l("span",{class:"break-grid",children:"\u{1F533}"})},{title:"Page",value:"page",description:"Split large images based on the page size",icon:l("span",{class:"break-paper",children:"\u{1F4C4}"})}]}));function Jn(e){let[t,r]=Ht(0),n=H(null);return K(()=>{o();let i=window.setInterval(a,600);return()=>{window.clearInterval(i)}}),l("img",{class:"step-by-step-preview",ref:n});function a(){r((t+1)%(e.image.partList.length+3))}function o(){n.current&&(n.current.src=it(e.image,t))}}function Zn(e){return l("img",{src:it(e.image)})}function Qn(e){let n=Math.floor(e.image.width/2)-Math.floor(2.5),a=Math.floor(e.image.height/2)-Math.floor(4/2),o=[];for(let i=Math.max(a,0);i<Math.min(e.image.height,a+4);i++){let d="";for(let p=Math.max(n,0);p<Math.min(e.image.width,n+5);p++){let c=e.image.partList[e.image.pixels[i][p]];d=d+(c?.symbol??" ")}o.push(d)}return l("span",{children:l("pre",{children:o.join(`
+`)})})}function Fe(e){return function(t){let r=U(z),n=e(t);return l("div",{class:"print-setting-group",children:[l("h1",{children:n.title}),l("div",{class:"print-setting-group-options",children:n.values.map(a=>l("label",{children:[l("input",{type:"radio",name:n.key,checked:a.value===t.settings[n.key],onChange:()=>{r("print",n.key,a.value)}}),l("div",{class:"option",children:[l("h3",{children:a.title}),a.icon]})]}))}),l("span",{class:"description",children:n.values.filter(a=>a.value===t.settings[n.key])[0]?.description})]})}}async function Mr(e,t){let{width:r,height:n,pixels:a,partList:o}=e,i=new Map;for(let g=0;g<n;g++)for(let m=0;m<r;m++){let C=a[g][m];if(C!=null){let v=o[C];if(!v)continue;let b=J(v.color);i.has(b)||i.set(b,[]),i.get(b).push({x:m,y:g})}}let d=[],p=[],c=new Map,s=1;for(let[g,m]of i.entries())for(let C of m){let v=C.x,b=C.y,h=t.heightScale,_=[[v,b,0],[v+1,b,0],[v+1,b+1,0],[v,b+1,0],[v,b,h],[v+1,b,h],[v+1,b+1,h],[v,b+1,h]],k=[];for(let D of _){let w=D.join(",");c.has(w)?k.push(c.get(w)):(c.set(w,s),d.push(`<vertex x="${D[0]}" y="${D[1]}" z="${D[2]}" />`),k.push(s),s++)}let y=k;p.push(`<triangle v1="${y[0]}" v2="${y[1]}" v3="${y[2]}" />`),p.push(`<triangle v1="${y[0]}" v2="${y[2]}" v3="${y[3]}" />`),p.push(`<triangle v1="${y[4]}" v2="${y[6]}" v3="${y[5]}" />`),p.push(`<triangle v1="${y[4]}" v2="${y[7]}" v3="${y[6]}" />`),p.push(`<triangle v1="${y[0]}" v2="${y[4]}" v3="${y[5]}" />`),p.push(`<triangle v1="${y[0]}" v2="${y[5]}" v3="${y[1]}" />`),p.push(`<triangle v1="${y[1]}" v2="${y[5]}" v3="${y[6]}" />`),p.push(`<triangle v1="${y[1]}" v2="${y[6]}" v3="${y[2]}" />`),p.push(`<triangle v1="${y[2]}" v2="${y[6]}" v3="${y[7]}" />`),p.push(`<triangle v1="${y[2]}" v2="${y[7]}" v3="${y[3]}" />`),p.push(`<triangle v1="${y[3]}" v2="${y[7]}" v3="${y[4]}" />`),p.push(`<triangle v1="${y[3]}" v2="${y[4]}" v3="${y[0]}" />`)}let f=`<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02">
+    <metadata name="Application">firaga.io</metadata>
+    <resources>
+        <object id="1" type="model">
+            ${`
+        <mesh>
+            <vertices>
+                ${d.join(`
+                `)}
+            </vertices>
+            <triangles>
+                ${p.join(`
+                `)}
+            </triangles>
+        </mesh>`}
+        </object>
+    </resources>
+    <build>
+        <item objectid="1" />
+    </build>
+</model>`;await Ir(async g=>{let m=new g;m.file("[Content_Types].xml",`<?xml version="1.0" encoding="UTF-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+    <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+    <Default Extension="model" ContentType="application/vnd.ms-package.3dmodel+xml" />
+</Types>`),m.file("_rels/.rels",`<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+    <Relationship Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel" Target="3D/model.model" />
+</Relationships>`),m.file("3D/model.model",f);let C=await m.generateAsync({type:"blob"});Rr(C,`${t.filename}.3mf`)})}async function Gr(e,t){let{width:r,height:n,pixels:a,partList:o}=e,i=new Map,d=new Map;for(let u=0;u<n;u++)for(let f=0;f<r;f++){let g=a[u][f];if(g!=null){let m=o[g];if(!m)continue;let C=J(m.color);if(!i.has(C)){let b=[];for(let h=0;h<n;h++){b[h]=[];for(let _=0;_<r;_++)b[h][_]=!1}i.set(C,b),d.set(C,m.color.name)}let v=i.get(C);v[u][f]=!0}}let p=[];for(let[u]of i.entries()){let f=u.substring(1).toLowerCase();p.push({name:`mask_${f}.png`,color:u})}let c=ea(r,n,p,t.heightScale),s=`# 3D Model from firaga.io
 
-  // node_modules/preact/dist/preact.module.js
-  var preact_module_exports = {};
-  __export(preact_module_exports, {
-    Component: () => x,
-    Fragment: () => k,
-    cloneElement: () => K,
-    createContext: () => Q,
-    createElement: () => _,
-    createRef: () => b,
-    h: () => _,
-    hydrate: () => J,
-    isValidElement: () => t,
-    options: () => l,
-    render: () => G,
-    toChildArray: () => H
-  });
-  function w(n2, l3) {
-    for (var u4 in l3) n2[u4] = l3[u4];
-    return n2;
-  }
-  function g(n2) {
-    n2 && n2.parentNode && n2.parentNode.removeChild(n2);
-  }
-  function _(l3, u4, t3) {
-    var i3, o3, r3, e3 = {};
-    for (r3 in u4) "key" == r3 ? i3 = u4[r3] : "ref" == r3 ? o3 = u4[r3] : e3[r3] = u4[r3];
-    if (arguments.length > 2 && (e3.children = arguments.length > 3 ? n.call(arguments, 2) : t3), "function" == typeof l3 && null != l3.defaultProps) for (r3 in l3.defaultProps) void 0 === e3[r3] && (e3[r3] = l3.defaultProps[r3]);
-    return m(l3, e3, i3, o3, null);
-  }
-  function m(n2, t3, i3, o3, r3) {
-    var e3 = { type: n2, props: t3, key: i3, ref: o3, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: null == r3 ? ++u : r3, __i: -1, __u: 0 };
-    return null == r3 && null != l.vnode && l.vnode(e3), e3;
-  }
-  function b() {
-    return { current: null };
-  }
-  function k(n2) {
-    return n2.children;
-  }
-  function x(n2, l3) {
-    this.props = n2, this.context = l3;
-  }
-  function S(n2, l3) {
-    if (null == l3) return n2.__ ? S(n2.__, n2.__i + 1) : null;
-    for (var u4; l3 < n2.__k.length; l3++) if (null != (u4 = n2.__k[l3]) && null != u4.__e) return u4.__e;
-    return "function" == typeof n2.type ? S(n2) : null;
-  }
-  function C(n2) {
-    var l3, u4;
-    if (null != (n2 = n2.__) && null != n2.__c) {
-      for (n2.__e = n2.__c.base = null, l3 = 0; l3 < n2.__k.length; l3++) if (null != (u4 = n2.__k[l3]) && null != u4.__e) {
-        n2.__e = n2.__c.base = u4.__e;
-        break;
-      }
-      return C(n2);
-    }
-  }
-  function M(n2) {
-    (!n2.__d && (n2.__d = true) && i.push(n2) && !$.__r++ || o != l.debounceRendering) && ((o = l.debounceRendering) || r)($);
-  }
-  function $() {
-    for (var n2, u4, t3, o3, r3, f4, c3, s3 = 1; i.length; ) i.length > s3 && i.sort(e), n2 = i.shift(), s3 = i.length, n2.__d && (t3 = void 0, o3 = void 0, r3 = (o3 = (u4 = n2).__v).__e, f4 = [], c3 = [], u4.__P && ((t3 = w({}, o3)).__v = o3.__v + 1, l.vnode && l.vnode(t3), O(u4.__P, t3, o3, u4.__n, u4.__P.namespaceURI, 32 & o3.__u ? [r3] : null, f4, null == r3 ? S(o3) : r3, !!(32 & o3.__u), c3), t3.__v = o3.__v, t3.__.__k[t3.__i] = t3, N(f4, t3, c3), o3.__e = o3.__ = null, t3.__e != r3 && C(t3)));
-    $.__r = 0;
-  }
-  function I(n2, l3, u4, t3, i3, o3, r3, e3, f4, c3, s3) {
-    var a3, h3, y3, d3, w3, g2, _3, m3 = t3 && t3.__k || v, b2 = l3.length;
-    for (f4 = P(u4, l3, m3, f4, b2), a3 = 0; a3 < b2; a3++) null != (y3 = u4.__k[a3]) && (h3 = -1 == y3.__i ? p : m3[y3.__i] || p, y3.__i = a3, g2 = O(n2, y3, h3, i3, o3, r3, e3, f4, c3, s3), d3 = y3.__e, y3.ref && h3.ref != y3.ref && (h3.ref && B(h3.ref, null, y3), s3.push(y3.ref, y3.__c || d3, y3)), null == w3 && null != d3 && (w3 = d3), (_3 = !!(4 & y3.__u)) || h3.__k === y3.__k ? f4 = A(y3, f4, n2, _3) : "function" == typeof y3.type && void 0 !== g2 ? f4 = g2 : d3 && (f4 = d3.nextSibling), y3.__u &= -7);
-    return u4.__e = w3, f4;
-  }
-  function P(n2, l3, u4, t3, i3) {
-    var o3, r3, e3, f4, c3, s3 = u4.length, a3 = s3, h3 = 0;
-    for (n2.__k = new Array(i3), o3 = 0; o3 < i3; o3++) null != (r3 = l3[o3]) && "boolean" != typeof r3 && "function" != typeof r3 ? ("string" == typeof r3 || "number" == typeof r3 || "bigint" == typeof r3 || r3.constructor == String ? r3 = n2.__k[o3] = m(null, r3, null, null, null) : d(r3) ? r3 = n2.__k[o3] = m(k, { children: r3 }, null, null, null) : void 0 === r3.constructor && r3.__b > 0 ? r3 = n2.__k[o3] = m(r3.type, r3.props, r3.key, r3.ref ? r3.ref : null, r3.__v) : n2.__k[o3] = r3, f4 = o3 + h3, r3.__ = n2, r3.__b = n2.__b + 1, e3 = null, -1 != (c3 = r3.__i = L(r3, u4, f4, a3)) && (a3--, (e3 = u4[c3]) && (e3.__u |= 2)), null == e3 || null == e3.__v ? (-1 == c3 && (i3 > s3 ? h3-- : i3 < s3 && h3++), "function" != typeof r3.type && (r3.__u |= 4)) : c3 != f4 && (c3 == f4 - 1 ? h3-- : c3 == f4 + 1 ? h3++ : (c3 > f4 ? h3-- : h3++, r3.__u |= 4))) : n2.__k[o3] = null;
-    if (a3) for (o3 = 0; o3 < s3; o3++) null != (e3 = u4[o3]) && 0 == (2 & e3.__u) && (e3.__e == t3 && (t3 = S(e3)), D(e3, e3));
-    return t3;
-  }
-  function A(n2, l3, u4, t3) {
-    var i3, o3;
-    if ("function" == typeof n2.type) {
-      for (i3 = n2.__k, o3 = 0; i3 && o3 < i3.length; o3++) i3[o3] && (i3[o3].__ = n2, l3 = A(i3[o3], l3, u4, t3));
-      return l3;
-    }
-    n2.__e != l3 && (t3 && (l3 && n2.type && !l3.parentNode && (l3 = S(n2)), u4.insertBefore(n2.__e, l3 || null)), l3 = n2.__e);
-    do {
-      l3 = l3 && l3.nextSibling;
-    } while (null != l3 && 8 == l3.nodeType);
-    return l3;
-  }
-  function H(n2, l3) {
-    return l3 = l3 || [], null == n2 || "boolean" == typeof n2 || (d(n2) ? n2.some(function(n3) {
-      H(n3, l3);
-    }) : l3.push(n2)), l3;
-  }
-  function L(n2, l3, u4, t3) {
-    var i3, o3, r3, e3 = n2.key, f4 = n2.type, c3 = l3[u4], s3 = null != c3 && 0 == (2 & c3.__u);
-    if (null === c3 && null == e3 || s3 && e3 == c3.key && f4 == c3.type) return u4;
-    if (t3 > (s3 ? 1 : 0)) {
-      for (i3 = u4 - 1, o3 = u4 + 1; i3 >= 0 || o3 < l3.length; ) if (null != (c3 = l3[r3 = i3 >= 0 ? i3-- : o3++]) && 0 == (2 & c3.__u) && e3 == c3.key && f4 == c3.type) return r3;
-    }
-    return -1;
-  }
-  function T(n2, l3, u4) {
-    "-" == l3[0] ? n2.setProperty(l3, null == u4 ? "" : u4) : n2[l3] = null == u4 ? "" : "number" != typeof u4 || y.test(l3) ? u4 : u4 + "px";
-  }
-  function j(n2, l3, u4, t3, i3) {
-    var o3, r3;
-    n: if ("style" == l3) if ("string" == typeof u4) n2.style.cssText = u4;
-    else {
-      if ("string" == typeof t3 && (n2.style.cssText = t3 = ""), t3) for (l3 in t3) u4 && l3 in u4 || T(n2.style, l3, "");
-      if (u4) for (l3 in u4) t3 && u4[l3] == t3[l3] || T(n2.style, l3, u4[l3]);
-    }
-    else if ("o" == l3[0] && "n" == l3[1]) o3 = l3 != (l3 = l3.replace(f, "$1")), r3 = l3.toLowerCase(), l3 = r3 in n2 || "onFocusOut" == l3 || "onFocusIn" == l3 ? r3.slice(2) : l3.slice(2), n2.l || (n2.l = {}), n2.l[l3 + o3] = u4, u4 ? t3 ? u4.u = t3.u : (u4.u = c, n2.addEventListener(l3, o3 ? a : s, o3)) : n2.removeEventListener(l3, o3 ? a : s, o3);
-    else {
-      if ("http://www.w3.org/2000/svg" == i3) l3 = l3.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
-      else if ("width" != l3 && "height" != l3 && "href" != l3 && "list" != l3 && "form" != l3 && "tabIndex" != l3 && "download" != l3 && "rowSpan" != l3 && "colSpan" != l3 && "role" != l3 && "popover" != l3 && l3 in n2) try {
-        n2[l3] = null == u4 ? "" : u4;
-        break n;
-      } catch (n3) {
-      }
-      "function" == typeof u4 || (null == u4 || false === u4 && "-" != l3[4] ? n2.removeAttribute(l3) : n2.setAttribute(l3, "popover" == l3 && 1 == u4 ? "" : u4));
-    }
-  }
-  function F(n2) {
-    return function(u4) {
-      if (this.l) {
-        var t3 = this.l[u4.type + n2];
-        if (null == u4.t) u4.t = c++;
-        else if (u4.t < t3.u) return;
-        return t3(l.event ? l.event(u4) : u4);
-      }
-    };
-  }
-  function O(n2, u4, t3, i3, o3, r3, e3, f4, c3, s3) {
-    var a3, h3, p3, v3, y3, _3, m3, b2, S2, C3, M2, $2, P2, A3, H2, L2, T3, j3 = u4.type;
-    if (void 0 !== u4.constructor) return null;
-    128 & t3.__u && (c3 = !!(32 & t3.__u), r3 = [f4 = u4.__e = t3.__e]), (a3 = l.__b) && a3(u4);
-    n: if ("function" == typeof j3) try {
-      if (b2 = u4.props, S2 = "prototype" in j3 && j3.prototype.render, C3 = (a3 = j3.contextType) && i3[a3.__c], M2 = a3 ? C3 ? C3.props.value : a3.__ : i3, t3.__c ? m3 = (h3 = u4.__c = t3.__c).__ = h3.__E : (S2 ? u4.__c = h3 = new j3(b2, M2) : (u4.__c = h3 = new x(b2, M2), h3.constructor = j3, h3.render = E), C3 && C3.sub(h3), h3.state || (h3.state = {}), h3.__n = i3, p3 = h3.__d = true, h3.__h = [], h3._sb = []), S2 && null == h3.__s && (h3.__s = h3.state), S2 && null != j3.getDerivedStateFromProps && (h3.__s == h3.state && (h3.__s = w({}, h3.__s)), w(h3.__s, j3.getDerivedStateFromProps(b2, h3.__s))), v3 = h3.props, y3 = h3.state, h3.__v = u4, p3) S2 && null == j3.getDerivedStateFromProps && null != h3.componentWillMount && h3.componentWillMount(), S2 && null != h3.componentDidMount && h3.__h.push(h3.componentDidMount);
-      else {
-        if (S2 && null == j3.getDerivedStateFromProps && b2 !== v3 && null != h3.componentWillReceiveProps && h3.componentWillReceiveProps(b2, M2), u4.__v == t3.__v || !h3.__e && null != h3.shouldComponentUpdate && false === h3.shouldComponentUpdate(b2, h3.__s, M2)) {
-          for (u4.__v != t3.__v && (h3.props = b2, h3.state = h3.__s, h3.__d = false), u4.__e = t3.__e, u4.__k = t3.__k, u4.__k.some(function(n3) {
-            n3 && (n3.__ = u4);
-          }), $2 = 0; $2 < h3._sb.length; $2++) h3.__h.push(h3._sb[$2]);
-          h3._sb = [], h3.__h.length && e3.push(h3);
-          break n;
-        }
-        null != h3.componentWillUpdate && h3.componentWillUpdate(b2, h3.__s, M2), S2 && null != h3.componentDidUpdate && h3.__h.push(function() {
-          h3.componentDidUpdate(v3, y3, _3);
-        });
-      }
-      if (h3.context = M2, h3.props = b2, h3.__P = n2, h3.__e = false, P2 = l.__r, A3 = 0, S2) {
-        for (h3.state = h3.__s, h3.__d = false, P2 && P2(u4), a3 = h3.render(h3.props, h3.state, h3.context), H2 = 0; H2 < h3._sb.length; H2++) h3.__h.push(h3._sb[H2]);
-        h3._sb = [];
-      } else do {
-        h3.__d = false, P2 && P2(u4), a3 = h3.render(h3.props, h3.state, h3.context), h3.state = h3.__s;
-      } while (h3.__d && ++A3 < 25);
-      h3.state = h3.__s, null != h3.getChildContext && (i3 = w(w({}, i3), h3.getChildContext())), S2 && !p3 && null != h3.getSnapshotBeforeUpdate && (_3 = h3.getSnapshotBeforeUpdate(v3, y3)), L2 = a3, null != a3 && a3.type === k && null == a3.key && (L2 = V(a3.props.children)), f4 = I(n2, d(L2) ? L2 : [L2], u4, t3, i3, o3, r3, e3, f4, c3, s3), h3.base = u4.__e, u4.__u &= -161, h3.__h.length && e3.push(h3), m3 && (h3.__E = h3.__ = null);
-    } catch (n3) {
-      if (u4.__v = null, c3 || null != r3) if (n3.then) {
-        for (u4.__u |= c3 ? 160 : 128; f4 && 8 == f4.nodeType && f4.nextSibling; ) f4 = f4.nextSibling;
-        r3[r3.indexOf(f4)] = null, u4.__e = f4;
-      } else {
-        for (T3 = r3.length; T3--; ) g(r3[T3]);
-        z(u4);
-      }
-      else u4.__e = t3.__e, u4.__k = t3.__k, n3.then || z(u4);
-      l.__e(n3, u4, t3);
-    }
-    else null == r3 && u4.__v == t3.__v ? (u4.__k = t3.__k, u4.__e = t3.__e) : f4 = u4.__e = q(t3.__e, u4, t3, i3, o3, r3, e3, c3, s3);
-    return (a3 = l.diffed) && a3(u4), 128 & u4.__u ? void 0 : f4;
-  }
-  function z(n2) {
-    n2 && n2.__c && (n2.__c.__e = true), n2 && n2.__k && n2.__k.forEach(z);
-  }
-  function N(n2, u4, t3) {
-    for (var i3 = 0; i3 < t3.length; i3++) B(t3[i3], t3[++i3], t3[++i3]);
-    l.__c && l.__c(u4, n2), n2.some(function(u5) {
-      try {
-        n2 = u5.__h, u5.__h = [], n2.some(function(n3) {
-          n3.call(u5);
-        });
-      } catch (n3) {
-        l.__e(n3, u5.__v);
-      }
-    });
-  }
-  function V(n2) {
-    return "object" != typeof n2 || null == n2 || n2.__b && n2.__b > 0 ? n2 : d(n2) ? n2.map(V) : w({}, n2);
-  }
-  function q(u4, t3, i3, o3, r3, e3, f4, c3, s3) {
-    var a3, h3, v3, y3, w3, _3, m3, b2 = i3.props || p, k3 = t3.props, x3 = t3.type;
-    if ("svg" == x3 ? r3 = "http://www.w3.org/2000/svg" : "math" == x3 ? r3 = "http://www.w3.org/1998/Math/MathML" : r3 || (r3 = "http://www.w3.org/1999/xhtml"), null != e3) {
-      for (a3 = 0; a3 < e3.length; a3++) if ((w3 = e3[a3]) && "setAttribute" in w3 == !!x3 && (x3 ? w3.localName == x3 : 3 == w3.nodeType)) {
-        u4 = w3, e3[a3] = null;
-        break;
-      }
-    }
-    if (null == u4) {
-      if (null == x3) return document.createTextNode(k3);
-      u4 = document.createElementNS(r3, x3, k3.is && k3), c3 && (l.__m && l.__m(t3, e3), c3 = false), e3 = null;
-    }
-    if (null == x3) b2 === k3 || c3 && u4.data == k3 || (u4.data = k3);
-    else {
-      if (e3 = e3 && n.call(u4.childNodes), !c3 && null != e3) for (b2 = {}, a3 = 0; a3 < u4.attributes.length; a3++) b2[(w3 = u4.attributes[a3]).name] = w3.value;
-      for (a3 in b2) if (w3 = b2[a3], "children" == a3) ;
-      else if ("dangerouslySetInnerHTML" == a3) v3 = w3;
-      else if (!(a3 in k3)) {
-        if ("value" == a3 && "defaultValue" in k3 || "checked" == a3 && "defaultChecked" in k3) continue;
-        j(u4, a3, null, w3, r3);
-      }
-      for (a3 in k3) w3 = k3[a3], "children" == a3 ? y3 = w3 : "dangerouslySetInnerHTML" == a3 ? h3 = w3 : "value" == a3 ? _3 = w3 : "checked" == a3 ? m3 = w3 : c3 && "function" != typeof w3 || b2[a3] === w3 || j(u4, a3, w3, b2[a3], r3);
-      if (h3) c3 || v3 && (h3.__html == v3.__html || h3.__html == u4.innerHTML) || (u4.innerHTML = h3.__html), t3.__k = [];
-      else if (v3 && (u4.innerHTML = ""), I("template" == t3.type ? u4.content : u4, d(y3) ? y3 : [y3], t3, i3, o3, "foreignObject" == x3 ? "http://www.w3.org/1999/xhtml" : r3, e3, f4, e3 ? e3[0] : i3.__k && S(i3, 0), c3, s3), null != e3) for (a3 = e3.length; a3--; ) g(e3[a3]);
-      c3 || (a3 = "value", "progress" == x3 && null == _3 ? u4.removeAttribute("value") : null != _3 && (_3 !== u4[a3] || "progress" == x3 && !_3 || "option" == x3 && _3 != b2[a3]) && j(u4, a3, _3, b2[a3], r3), a3 = "checked", null != m3 && m3 != u4[a3] && j(u4, a3, m3, b2[a3], r3));
-    }
-    return u4;
-  }
-  function B(n2, u4, t3) {
-    try {
-      if ("function" == typeof n2) {
-        var i3 = "function" == typeof n2.__u;
-        i3 && n2.__u(), i3 && null == u4 || (n2.__u = n2(u4));
-      } else n2.current = u4;
-    } catch (n3) {
-      l.__e(n3, t3);
-    }
-  }
-  function D(n2, u4, t3) {
-    var i3, o3;
-    if (l.unmount && l.unmount(n2), (i3 = n2.ref) && (i3.current && i3.current != n2.__e || B(i3, null, u4)), null != (i3 = n2.__c)) {
-      if (i3.componentWillUnmount) try {
-        i3.componentWillUnmount();
-      } catch (n3) {
-        l.__e(n3, u4);
-      }
-      i3.base = i3.__P = null;
-    }
-    if (i3 = n2.__k) for (o3 = 0; o3 < i3.length; o3++) i3[o3] && D(i3[o3], u4, t3 || "function" != typeof n2.type);
-    t3 || g(n2.__e), n2.__c = n2.__ = n2.__e = void 0;
-  }
-  function E(n2, l3, u4) {
-    return this.constructor(n2, u4);
-  }
-  function G(u4, t3, i3) {
-    var o3, r3, e3, f4;
-    t3 == document && (t3 = document.documentElement), l.__ && l.__(u4, t3), r3 = (o3 = "function" == typeof i3) ? null : i3 && i3.__k || t3.__k, e3 = [], f4 = [], O(t3, u4 = (!o3 && i3 || t3).__k = _(k, null, [u4]), r3 || p, p, t3.namespaceURI, !o3 && i3 ? [i3] : r3 ? null : t3.firstChild ? n.call(t3.childNodes) : null, e3, !o3 && i3 ? i3 : r3 ? r3.__e : t3.firstChild, o3, f4), N(e3, u4, f4);
-  }
-  function J(n2, l3) {
-    G(n2, l3, J);
-  }
-  function K(l3, u4, t3) {
-    var i3, o3, r3, e3, f4 = w({}, l3.props);
-    for (r3 in l3.type && l3.type.defaultProps && (e3 = l3.type.defaultProps), u4) "key" == r3 ? i3 = u4[r3] : "ref" == r3 ? o3 = u4[r3] : f4[r3] = void 0 === u4[r3] && null != e3 ? e3[r3] : u4[r3];
-    return arguments.length > 2 && (f4.children = arguments.length > 3 ? n.call(arguments, 2) : t3), m(l3.type, f4, i3 || l3.key, o3 || l3.ref, null);
-  }
-  function Q(n2) {
-    function l3(n3) {
-      var u4, t3;
-      return this.getChildContext || (u4 = /* @__PURE__ */ new Set(), (t3 = {})[l3.__c] = this, this.getChildContext = function() {
-        return t3;
-      }, this.componentWillUnmount = function() {
-        u4 = null;
-      }, this.shouldComponentUpdate = function(n4) {
-        this.props.value != n4.value && u4.forEach(function(n5) {
-          n5.__e = true, M(n5);
-        });
-      }, this.sub = function(n4) {
-        u4.add(n4);
-        var l4 = n4.componentWillUnmount;
-        n4.componentWillUnmount = function() {
-          u4 && u4.delete(n4), l4 && l4.call(n4);
-        };
-      }), n3.children;
-    }
-    return l3.__c = "__cC" + h++, l3.__ = n2, l3.Provider = l3.__l = (l3.Consumer = function(n3, l4) {
-      return n3.children(l4);
-    }).contextType = l3, l3;
-  }
-  var n, l, u, t, i, o, r, e, f, c, s, a, h, p, v, y, d;
-  var init_preact_module = __esm({
-    "node_modules/preact/dist/preact.module.js"() {
-      p = {};
-      v = [];
-      y = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
-      d = Array.isArray;
-      n = v.slice, l = { __e: function(n2, l3, u4, t3) {
-        for (var i3, o3, r3; l3 = l3.__; ) if ((i3 = l3.__c) && !i3.__) try {
-          if ((o3 = i3.constructor) && null != o3.getDerivedStateFromError && (i3.setState(o3.getDerivedStateFromError(n2)), r3 = i3.__d), null != i3.componentDidCatch && (i3.componentDidCatch(n2, t3 || {}), r3 = i3.__d), r3) return i3.__E = i3;
-        } catch (l4) {
-          n2 = l4;
-        }
-        throw n2;
-      } }, u = 0, t = function(n2) {
-        return null != n2 && void 0 === n2.constructor;
-      }, x.prototype.setState = function(n2, l3) {
-        var u4;
-        u4 = null != this.__s && this.__s != this.state ? this.__s : this.__s = w({}, this.state), "function" == typeof n2 && (n2 = n2(w({}, u4), this.props)), n2 && w(u4, n2), null != n2 && this.__v && (l3 && this._sb.push(l3), M(this));
-      }, x.prototype.forceUpdate = function(n2) {
-        this.__v && (this.__e = true, n2 && this.__h.push(n2), M(this));
-      }, x.prototype.render = k, i = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, e = function(n2, l3) {
-        return n2.__v.__b - l3.__v.__b;
-      }, $.__r = 0, f = /(PointerCapture)$|Capture$/i, c = 0, s = F(false), a = F(true), h = 0;
-    }
-  });
+This package contains:
+- masks/: Directory with black/white PNG images for each color
+- model.scad: OpenSCAD script that loads all masks and creates a 3D model
 
-  // data/color-data-new.csv
-  var require_color_data_new = __commonJS({
-    "data/color-data-new.csv"(exports, module) {
-      module.exports = "R,G,B,Name,Artkal Midi,Artkal Mini,Artkal Mini Starter,Artkal Midi Soft,Artkal Mini Soft,All Perler,Perler Multi Mix,Perler Mini Assorted,Perler Mini Bulk,EvoRetro,Funzbo\r\n255,255,255,White,S01,C01,C01,R01,A01,,,,,,\r\n255,163,139,Burning Sand,S02,C44,C44,R02,A44,,,,,,\r\n246,176,76,Tangerine,S03,C03,C03,R03,A03,,,,,,\r\n255,103,31,Orange,S04,C17,C17,R04,A17,,,,,,\r\n225,6,0,Tall Poppy,S05,C05,C05,R05,A05,,,,,,\r\n236,134,208,Raspberry Pink,S06,C49,,R06,A49,,,,,,\r\n155,155,155,Gray,S07,C33,C33,R07,A33,,,,,,\r\n36,222,91,Emerald,S08,,,R08,,,,,,,\r\n0,104,94,Dark Green,S09,,,R09,,,,,,,\r\n65,182,230,Baby Blue,S10,C19,C19,R10,A19,,,,,,\r\n79,159,179,Lagoon,S100,C99,,,A99,,,,,,\r\n49,150,221,Electric Blue,S101,C100,,,A100,,,,,,\r\n27,108,182,Pool Blue,S102,C101,,,A101,,,,,,\r\n8,57,128,Caribbean Blue,S103,C102,,,A102,,,,,,\r\n10,102,139,Deep Water,S104,C103,,,A103,,,,,,\r\n8,91,110,Petrol Blue,S105,C104,,,A104,,,,,,\r\n0,78,120,Wegdewood Blue,S106,C105,,,A105,,,,,,\r\n0,85,116,Pond Blue,S107,C106,,,A106,,,,,,\r\n204,190,128,Seashell Beige,S108,C107,,,A107,,,,,,\r\n164,147,80,Beige,S109,C108,,,A108,,,,,,\r\n0,51,153,Dark Blue,S11,C21,C21,R11,A21,,,,,,\r\n158,136,60,Beach Beige,S110,C109,,,A109,,,,,,\r\n118,108,43,Caffe Latt\xE9,S111,C110,,,A110,,,,,,\r\n121,95,38,Oaktree Brown,S112,C111,,,A111,,,,,,\r\n186,184,162,Khaki,S113,C112,,,A112,,,,,,\r\n114,140,84,Light Greengray,S114,C113,,,A113,,,,,,\r\n126,124,68,Mossy Green,S115,C114,,,A114,,,,,,\r\n100,105,46,Earth Green,S116,C115,,,A115,,,,,,\r\n78,88,44,Sage Green,S117,C116,,,A116,,,,,,\r\n74,94,45,Pinetree Green,S118,C117,,,A117,,,,,,\r\n113,196,182,Frosty Blue,S119,C118,,,A118,,,,,,\r\n160,94,181,Pastel Lavender,S12,C26,C26,R12,A26,,,,,,\r\n102,204,153,Polar Mint,S120,C119,,,A119,,,,,,\r\n86,154,131,Celadon Green,S121,C120,,,A120,,,,,,\r\n20,194,91,Eucalyptus,S122,C121,,,A121,,,,,,\r\n24,168,24,Clover Field,S123,C122,,,A122,,,,,,\r\n4,85,46,Pooltable Felt,S124,C123,,,A123,,,,,,\r\n19,107,90,Snake Green,S125,C124,,,A124,,,,,,\r\n5,70,65,Dark Eucalyptus,S126,C125,,,A125,,,,,,\r\n217,182,214,Marsmallow Rose,S127,C126,,,A126,,,,,,\r\n173,98,164,Light Grape,S128,C127,,,A127,,,,,,\r\n230,140,163,Rosebud Pink,S129,C128,,,A128,,,,,,\r\n0,0,0,Black,S13,C02,C02,R13,A02,,,,,,\r\n222,84,121,Fuschia,S130,C129,,,A129,,,,,,\r\n158,130,186,Candy Violet,S131,C130,,,A130,,,,,,\r\n232,65,107,Flamingo,S132,C131,,,A131,,,,,,\r\n183,56,143,Pink Plum,S133,C132,,,A132,,,,,,\r\n88,31,126,Amethyst,S134,C133,,,A133,,,,,,\r\n140,163,212,Moonlight Blue,S135,C134,,,A134,,,,,,\r\n154,154,204,Summer Rain,S136,C135,,,A135,,,,,,\r\n89,129,193,Azure Blue,S137,C136,,,A136,,,,,,\r\n65,102,176,Cornflower Blue,S138,C137,,,A137,,,,,,\r\n71,95,171,Forget Me Not,S139,C138,,,A138,,,,,,\r\n250,224,83,Sandstorm,S14,C42,C42,R14,A42,,,,,,\r\n55,69,147,Indigo,S140,C139,,,A139,,,,,,\r\n61,86,165,Horizon Blue,S141,C140,,,A140,,,,,,\r\n41,66,135,Cobalt,S142,C141,,,A141,,,,,,\r\n37,38,138,Royal Blue,S143,C142,,,A142,,,,,,\r\n26,47,111,Marine,S144,C143,,,A143,,,,,,\r\n211,201,93,Pale Yellow Moss,S145,C144,,,A144,,,,,,\r\n81,9,24,Bloodrose Red,S146,C145,,,A145,,,,,,\r\n100,179,158,Spearmint,S147,C146,,,A146,,,,,,\r\n99,67,56,Mocha,S148,C147,,,A147,,,,,,\r\n237,211,158,Creme,S149,C148,,,A148,,,,,,\r\n122,62,44,Redwood,S15,C30,,R15,A30,,,,,,\r\n105,99,171,Iris Violet,S150,C149,,,A149,,,,,,\r\n43,63,31,Forest Green,S151,C150,,,A150,,,,,,\r\n151,145,197,Lilac,S152,C151,,,A151,,,,,,\r\n184,189,224,Pale Lilac,S153,C152,,,A152,,,,,,\r\n249,200,152,Sahara Sand,S154,C153,,,A153,,,,,,\r\n195,144,105,Sunkissed Teint,S155,C154,,,A154,,,,,,\r\n90,90,90,Steel Grey,S156,C155,,,A155,,,,,,\r\n60,60,60,Iron Grey,S157,C156,,,A156,,,,,,\r\n26,26,26,Pepper,S158,C157,,,A157,,,,,,\r\n139,139,139,Oslo Gray,S159,C56,,,A56,,,,,,\r\n92,71,56,Brown,S16,C32,C32,R16,A32,,,,,,\r\n123,77,53,Light Brown,S17,C31,C31,R17,A31,,,,,,\r\n204,153,102,Sand,S18,C23,C23,R18,A23,,,,,,\r\n252,191,169,Bubble Gum,S19,C22,C22,R19,A22,,,,,,\r\n36,158,107,Green,S20,C14,,R20,A14,,,,,,\r\n135,216,57,Pastel Green,S21,C13,C13,R21,A13,,,,,,\r\n51,0,114,Purple,S22,C27,C27,R22,A27,,,,,,\r\n100,53,155,Royal Purple,S23,,,R23,,,,,,,\r\n20,123,209,True Blue,S24,C37,C37,R24,A37,,,,,,\r\n255,52,179,Hot Pink,S25,C08,,R25,A08,,,,,,\r\n219,33,82,Magenta,S26,C09,C09,R26,A09,,,,,,\r\n255,209,0,Yellow,S27,C11,,R27,A11,,,,,,\r\n234,184,228,Lily Pink,S28,,,R28,,,,,,,\r\n246,235,97,Pastel Yellow,S29,C41,,R29,A41,,,,,,\r\n153,214,234,Shadow Green,S30,C39,C39,R30,A39,,,,,,\r\n158,229,176,Sea Mist,S31,C60,C60,R31,A60,,,,,,\r\n255,231,128,Beeswax,S32,C24,,R32,A24,,,,,,\r\n197,180,227,Maverick,S33,C50,C50,R33,A50,,,,,,\r\n186,12,47,Red,S34,C06,,R34,A06,,,,,,\r\n247,206,215,Mona Lisa,S35,,,R35,,,,,,,\r\n201,128,158,Old Pink,S36,C36,,R36,A36,,,,,,\r\n113,216,191,Blue-Green,S37,,,R37,,,,,,,\r\n171,37,86,Burgundy,S38,,,R38,,,,,,,\r\n237,139,0,Yellow Orange,S39,C04,C04,R39,A04,,,,,,\r\n241,167,220,Carnation Pink,S40,C07,C07,R40,A07,,,,,,\r\n154,85,22,Metallic Gold,S41,,,R41,,,,,,,\r\n125,124,121,Metallic Silver,S42,C35,,R42,A35,,,,,,\r\n118,119,119,Dark Gray,S43,C34,C34,R43,A34,,,,,,\r\n170,220,235,Sky Blue,S44,C18,,R44,A18,,,,,,\r\n0,178,169,Medium Turquoise,S45,C54,C54,R45,A54,,,,,,\r\n115,211,60,Bright Green,S46,C53,,R46,A53,,,,,,\r\n180,126,0,Marigold,S47,C28,,R47,A28,,,,,,\r\n255,199,44,Corn,S48,C48,C48,R48,A48,,,,,,\r\n114,25,95,Mulberry Wood,S49,,,R49,,,,,,,\r\n250,170,114,Mandy's Pink,S50,,,R50,,,,,,,\r\n252,251,205,Spring Sun,S51,C51,C51,R51,A51,,,,,,\r\n242,240,161,Picasso,S52,C10,C10,R52,A10,,,,,,\r\n105,179,231,Turquoise,S53,C38,C38,R53,A38,,,,,,\r\n0,144,218,Light Blue,S54,C20,C20,R54,A20,,,,,,\r\n173,220,145,Pistachio,S55,C12,C12,R57,A12,,,,,,\r\n255,106,19,Bright Carrot,S56,C16,,R59,A16,,,,,,\r\n164,73,61,Buccaneer,S57,C29,,R63,A29,,,,,,\r\n165,0,52,Paprika,S58,C43,,R64,A43,,,,,,\r\n74,31,135,Butterfly Bush,S59,C52,C52,,A52,,,,,,\r\n167,123,202,Lavender,S60,C25,C25,R66,A25,,,,,,\r\n206,220,0,Key Lime Pie,S61,C40,,R68,A40,,,,,,\r\n0,124,88,Green Tea,S62,C15,C15,R69,A15,,,,,,\r\n88,87,53,Metallic Copper,S63,,,R70,,,,,,,\r\n5,8,73,Black Rock,S64,C58,,R55,A58,,,,,,\r\n243,234,93,Canary,S65,C46,,R58,A46,,,,,,\r\n244,99,58,Blaze Orange,S66,,,R60,,,,,,,\r\n243,207,179,Vanilla,S67,C47,C47,R61,A47,,,,,,\r\n225,192,120,Tan,S68,,,R71,,,,,,,\r\n40,40,40,Mine Shaft,S69,C69,,R72,A69,,,,,,\r\n155,188,17,Dark Algae,S70,C84,,R89,A84,,,,,,\r\n0,133,34,Jade Green,S71,C86,C86,R73,A86,,,,,,\r\n89,213,216,Light Sea Blue,S72,C79,C79,R74,A79,,,,,,\r\n72,169,197,Steel Blue,S73,C81,C81,R91,A81,,,,,,\r\n0,174,214,Azure,S74,C82,C82,R75,A82,,,,,,\r\n0,133,173,Dark Steel Blue,S75,C83,,R92,A83,,,,,,\r\n0,174,199,Sea Blue,S76,C80,,R76,A80,,,,,,\r\n239,239,239,Ghost While,S77,C87,,R77,A87,,,,,,\r\n209,209,209,Ash Grey,S78,C88,C88,R78,A88,,,,,,\r\n187,188,188,Light Gray,S79,C89,,R79,A89,,,,,,\r\n153,155,48,Dark Olive,S80,C85,,R90,A85,,,,,,\r\n205,178,119,Deer,S81,C74,,R81,A74,,,,,,\r\n181,129,80,Clay,S82,C75,,R82,A75,,,,,,\r\n184,97,37,Sienna,S83,C73,,R83,A73,,,,,,\r\n170,87,97,Deep Chestnut,S84,C77,,R84,A77,,,,,,\r\n92,19,27,Red Wine,S85,C78,C78,R85,A78,,,,,,\r\n234,170,0,Goldenrod,S86,C71,,R86,A71,,,,,,\r\n255,109,106,Coral Red,S87,C76,,R87,A76,,,,,,\r\n218,24,132,Dark Pink,S88,,,,,,,,,,\r\n77,77,77,Charcoal Gray,S89,C90,,R88,A90,,,,,,\r\n255,197,110,Pastel Orange,S90,C72,,R80,A72,,,,,,\r\n24,48,40,Brunswick Green,S91,C70,C70,R93,A70,,,,,,\r\n222,185,71,Dandelion,S92,C91,,,A91,,,,,,\r\n218,182,152,Pale Skin,S93,C92,,,A92,,,,,,\r\n244,169,153,Warm Blush,S94,C93,,,A93,,,,,,\r\n238,125,103,Salmon,S95,C94,,,A94,,,,,,\r\n240,134,97,Apricot,S96,C95,,,A95,,,,,,\r\n212,114,42,Papaya,S97,C96,,,A96,,,,,,\r\n100,172,223,Himalaya Blue,S98,C97,,,A97,,,,,,\r\n100,194,220,Waterfall,S99,C98,,,A98,,,,,,\r\n93,219,93,Spring Green,,C45,,R56,A45,,,,,,\r\n108,194,74,Confier,,C55,,,A55,,,,,,\r\n188,4,35,Fresh Red,,C57,C57,R65,A57,,,,,,\r\n83,26,35,Scarlett,,C59,,R62,A59,,,,,,\r\n241,235,156,Feta,,C61,,,A61,,,,,,\r\n252,63,63,Carnation,,C62,,,A62,,,,,,\r\n234,190,219,Pink Pearl,,C63,,,A63,,,,,,\r\n165,0,80,Rose,,C64,C64,,A64,,,,,,\r\n239,129,46,Mango Tango,,C65,,,A65,,,,,,\r\n252,108,133,Wild Watermelon,,C66,,,A66,,,,,,\r\n177,78,181,Orchid,,C67,,,A67,,,,,,\r\n105,194,238,Toothpaste Blue,,C68,C68,,A68,,,,,,\r\n255,197,110,Yolk Yellow,,,,R67,,,,,,,\r\n255,255,255,White,,,,,,1,1,,1,,\r\n190,195,191,Light Gray,,,,,,1,,,1,,\r\n150,152,156,Gray,,,,,,1,1,,1,,\r\n147,161,159,Pewter,,,,,,1,,,,,\r\n84,95,95,Charcoal,,,,,,1,,,,,\r\n86,87,92,Dark Gray,,,,,,1,,,,,\r\n0,0,0,Black,,,,,,1,1,,1,,\r\n241,229,216,Toasted Marshmallow,,,,,,1,,,1,,\r\n234,196,159,Sand,,,,,,1,,,1,,\r\n215,176,135,Fawn,,,,,,1,,,,,\r\n207,168,137,Tan,,,,,,1,1,,1,,\r\n160,78,63,Rust,,,,,,1,,,,,\r\n136,64,79,Cranapple,,,,,,1,,,,,\r\n164,123,71,Light Brown,,,,,,1,1,,1,,\r\n126,84,70,Gingerbread,,,,,,1,,,,,\r\n108,82,77,Brown,,,,,,1,1,,1,,\r\n237,231,186,Creme,,,,,,1,,,,,\r\n250,238,141,Pastel Yellow,,,,,,1,,,,,\r\n249,215,55,Yellow,,,,,,1,1,,1,,\r\n255,182,78,Cheddar,,,,,,1,1,,,,\r\n255,128,62,Orange,,,,,,1,,,1,,\r\n225,154,82,Butterscotch,,,,,,1,1,,1,,\r\n218,140,44,Honey,,,,,,1,,,,,\r\n255,97,88,Hot Coral,,,,,,1,1,,,,\r\n255,119,127,Salmon,,,,,,1,,,,,\r\n255,158,141,Blush,,,,,,1,1,,,,\r\n255,181,190,Flamingo,,,,,,1,,,,,\r\n252,198,184,Peach,,,,,,1,,,1,,\r\n245,192,213,Light Pink,,,,,,1,,,,,\r\n225,109,157,Bubblegum,,,,,,1,,,1,,\r\n230,87,148,Pink,,,,,,1,,,,,\r\n243,70,118,Magenta,,,,,,1,,,,,\r\n196,58,68,Red,,,,,,1,1,,1,,\r\n173,51,69,Cherry,,,,,,1,,,,,\r\n173,60,108,Raspberry,,,,,,1,1,,,,\r\n178,95,170,Plum,,,,,,1,1,,,,\r\n180,166,211,Lavender,,,,,,1,,,,,\r\n149,130,187,Pastel Lavender,,,,,,1,1,,1,,\r\n111,84,147,Purple,,,,,,1,1,,1,,\r\n135,167,225,Blueberry Cr\xE8me,,,,,,1,,,,,\r\n108,136,191,Periwinkle,,,,,,1,,,,,\r\n180,217,223,Robin's Egg,,,,,,1,,,,,\r\n99,169,214,Pastel Blue,,,,,,1,,,,,\r\n39,138,203,Light Blue,,,,,,1,1,,1,,\r\n0,102,179,Cobalt,,,,,,1,,,,,\r\n43,48,124,Dark Blue,,,,,,1,1,,1,,\r\n22,40,70,Midnight,,,,,,1,,,,,\r\n176,232,213,Toothpaste,,,,,,1,1,,1,,\r\n0,143,204,Turquoise,,,,,,1,1,,1,,\r\n56,199,175,Light Green,,,,,,1,,,,,\r\n0,150,138,Parrot Green,,,,,,1,1,,,,\r\n115,213,148,Pastel Green,,,,,,1,1,,,,\r\n119,202,74,Kiwi Lime,,,,,,1,1,,1,,\r\n84,177,96,Bright Green,,,,,,1,,,1,,\r\n0,150,84,Shamrock,,,,,,1,,,,,\r\n16,131,85,Dark Green,,,,,,1,1,,1,,\r\n203,215,53,Prickly Pear,,,,,,1,,,,,\r\n60,97,79,Evergreen,,,,,,1,,,,,\r\n247,209,0,Yellow,,,,,,,,,,1,\r\n255,147,0,Orange,,,,,,,,,,1,\r\n250,217,138,Cream,,,,,,,,,,1,\r\n238,0,4,Red,,,,,,,,,,1,\r\n161,171,172,Gray,,,,,,,,,,1,\r\n0,63,44,Dark Green,,,,,,,,,,1,\r\n2,18,153,Blue,,,,,,,,,,1,\r\n116,38,160,Purple,,,,,,,,,,1,\r\n0,111,223,Light Blue,,,,,,,,,,1,\r\n80,50,22,Brown,,,,,,,,,,1,\r\n80,171,110,Light Green,,,,,,,,,,1,\r\n243,0,118,Pink,,,,,,,,,,1,\r\n0,0,0,Black,,,,,,,,,,1,\r\n255,255,255,White,,,,,,,,,,1,\r\n0,0,0,Black,,,,,,,,,,,1\r\n1,78,218,Blue,,,,,,,,,,,1\r\n1,0,78,Dark Blue,,,,,,,,,,,1\r\n0,196,249,Light Blue,,,,,,,,,,,1\r\n0,40,39,Forest Green,,,,,,,,,,,1\r\n1,195,81,Green,,,,,,,,,,,1\r\n157,212,0,Light Green,,,,,,,,,,,1\r\n248,235,193,Peach,,,,,,,,,,,1\r\n239,240,244,White,,,,,,,,,,,1\r\n126,101,221,Purple,,,,,,,,,,,1\r\n116,0,160,Royal Purple,,,,,,,,,,,1\r\n170,91,0,Leather,,,,,,,,,,,1\r\n161,102,0,Brown,,,,,,,,,,,1\r\n155,158,151,Gray,,,,,,,,,,,1\r\n252,218,0,Yellow,,,,,,,,,,,1\r\n254,230,0,Light Yellow,,,,,,,,,,,1\r\n251,197,62,Light Orange,,,,,,,,,,,1\r\n255,176,224,Pink,,,,,,,,,,,1\r\n241,0,109,Deep Pink,,,,,,,,,,,1\r\n255,151,0,Orange,,,,,,,,,,,1\r\n149,0,2,Burgundy,,,,,,,,,,,1\r\n240,12,1,Red,,,,,,,,,,,1";
-    }
-  });
+To use:
+1. Open model.scad in OpenSCAD
+2. Render (F6) to generate the 3D model
+3. Export as STL or other formats
 
-  // data/color/dmc.txt
-  var require_dmc = __commonJS({
-    "data/color/dmc.txt"(exports, module) {
-      module.exports = "FFE2E2.3713.Salmon Very Light\r\nFFC9C9.761.Salmon Light\r\nF5ADAD.760.Salmon\r\nF18787.3712.Salmon Medium\r\nE36D6D.3328.Salmon Dark\r\nBF2D2D.347.Salmon Very Dark\r\nFED7CC.353.Peach\r\nFD9C97.352.Coral Light\r\nE96A67.351.Coral\r\nE04848.350.Coral Medium\r\nD21035.349.Coral Dark\r\nBB051F.817.Coral Red Very Dark\r\nFFCBD5.3708.Melon Light\r\nFFADBC.3706.Melon Medium\r\nFF7992.3705.Melon Dark\r\nE74967.3801.Melon Very Dark\r\nE31D42.666.Bright Red\r\nC72B3B.321.Red\r\nB71F33.304.Red Medium\r\nA7132B.498.Red Dark\r\n970B23.816.Garnet\r\n87071F.815.Garnet Medium\r\n7B001B.814.Garnet Dark\r\nFFB2BB.894.Carnation Very Light\r\nFC90A2.893.Carnation Light\r\nFF798C.892.Carnation Medium\r\nFF5773.891.Carnation Dark\r\nFFDFD9.818.Baby Pink\r\nFDB5B5.957.Geranium Pale\r\nFF9191.956.Geranium\r\n564A4A.309.Rose Dark\r\nFFD7D7.963.Dusty Rose Ultra Very Light\r\nFFBDBD.3716.Dusty Rose Medium Very Light\r\nE68A8A.962.Dusty Rose Medium\r\nCF7373.961.Dusty Rose Dark\r\nEA8699.3833.Raspberry Light\r\nDB556E.3832.Raspberry Medium\r\nB32F48.3831.Raspberry Dark\r\n913546.777.Raspberry Very Dark\r\nFFEEEB.819.Baby Pink Light\r\nFBADB4.3326.Rose Light\r\nFCB0B9.776.Pink Medium\r\nF27688.899.Rose Medium\r\nEE546E.335.Rose\r\nB33B4B.326.Rose Very Dark\r\nF0CED4.151.Dusty Rose Very Light\r\nE4A6AC.3354.Dusty Rose Light\r\nE8879B.3733.Dusty Rose\r\nDA6783.3731.Dusty Rose Very Dark\r\nBC4365.3350.Dusty Rose Ultra Dark\r\nAB0249.150.Dusty Rose Ultra Very Dark\r\nFBBFC2.3689.Mauve Light\r\nE7A9AC.3688.Mauve Medium\r\nC96B70.3687.Mauve\r\nAB3357.3803.Mauve Dark\r\n881531.3685.Mauve Very Dark\r\nFFC0CD.605.Cranberry Very Light\r\nFFB0BE.604.Cranberry Light\r\nFFA4BE.603.Cranberry\r\nE24874.602.Cranberry Medium\r\nD1286A.601.Cranberry Dark\r\nCD2F63.600.Cranberry Very Dark\r\nFF8CAE.3806.Cyclamen Pink Light\r\nF3478B.3805.Cyclamen Pink\r\nE02876.3804.Cyclamen Pink Dark\r\nF4AED5.3609.Plum Ultra Light\r\nEA9CC4.3608.Plum Very Light\r\nC54989.3607.Plum Light\r\n9C2462.718.Plum\r\n9B1359.917.Plum Medium\r\n820043.915.Plum Dark\r\nFFDFD5.225.Shell Pink Ultra Very Light\r\nEBB7AF.224.Shell Pink Very Light\r\nE2A099.152.Shell Pink Medium Light\r\nCC847C.223.Shell Pink Light\r\nBC6C64.3722.Shell Pink Medium\r\nA14B51.3721.Shell Pink Dark\r\n883E43.221.Shell Pink Very Dark\r\nDFB3BB.778.Antique Mauve Very Light\r\nDBA9B2.3727.Antique Mauve Light\r\nB7737F.316.Antique Mauve Medium\r\n9B5B66.3726.Antique Mauve Dark\r\n814952.315.Antique Mauve Medium Dark\r\n714149.3802.Antique Mauve Very Darkv\r\n822637.902.Garnet Very Dark\r\nD7CBD3.3743.Antique Violet Very Light\r\nB79DA7.3042.Antique Violet Light\r\n956F7C.3041.Antique Violet Medium\r\n785762.3740.Antique Violet Dark\r\nBA91AA.3836.Grape Light\r\n946083.3835.Grape Medium\r\n72375D.3834.Grape Dark\r\n572433.154.Grape Very Dark\r\nE3CBE3.211.Lavender Light\r\nC39FC3.210.Lavender Medium\r\nA37BA7.209.Lavender Dark\r\n835B8B.208.Lavender Very Dark\r\n6C3A6E.3837.Lavender Ultra Dark\r\n633666.327.Violet Dark\r\nE6CCD9.153.Violet Very Light\r\nDBB3CB.554.Violet Light\r\nA3638B.553.Violet\r\n803A6B.552.Violet Medium\r\n5C184E.550.Violet Very Dark\r\nD3D7ED.3747.Blue Violet Very Light\r\nB7BFDD.341.Blue Violet Light\r\nA3AED1.156.Blue Violet Medium Light\r\nADA7C7.340.Blue Violet Medium\r\n9891B6.155.Blue Violet Medium Dark\r\n776B98.3746.Blue Violet Dark\r\n5C5478.333.Blue Violet Very Dark\r\nBBC3D9.157.Cornflower Blue Very Light\r\n8F9CC1.794.Cornflower Blue Light\r\n707DA2.793.Cornflower Blue Medium\r\n60678C.3807.Cornflower Blue\r\n555B7B.792.Cornflower Blue Dark\r\n4C526E.158.Cornflower Blue Very Dark\r\n464563.791.Cornflower Blue Very Dark\r\nB0C0DA.3840.Lavender Blue Light\r\n7B8EAB.3839.Lavender Blue Medium\r\n5C7294.3838.Lavender Blue Dark\r\nC0CCDE.800.Delft Blue Pale\r\n94A8C6.809.Delft Blue\r\n748EB6.799.Delft Blue Medium\r\n466A8E.798.Delft Blue Dark\r\n13477D.797.Royal Blue\r\n11416D.796.Royal Blue Dark\r\n0E365C.820.Royal Blue Very Dark\r\nDBECF5.162.Blue Ultra Very Light\r\nBDDDED.827.Blue Very Light\r\nA1C2D7.813.Blue Light\r\n6B9EBF.826.Blue Medium\r\n4781A5.825.Blue Dark\r\n396987.824.Blue Very Dark\r\n30C2EC.996.Electric Blue Medium\r\n14AAD0.3843.Electric Blue\r\n2696B6.995.Electric Blue Dark\r\n06E3E6.3846.Turquoise Bright Light\r\n04C4CA.3845.Turquoise Bright Medium\r\n12AEBA.3844.Turquoise Bright Dark\r\nC7CAD7.159.Blue Gray Light\r\n999FB7.160.Blue Gray Medium\r\n7880A4.161.Blue Gray\r\nEEFCFC.3756.Baby Blue Ultra Very Light\r\nD9EBF1.775.Baby Blue Very Light\r\nCDDFED.3841.Baby Blue Pale\r\nB8D2E6.3325.Baby Blue Light\r\n93B4CE.3755.Baby Blue\r\n739FC1.334.Baby Blue Medium\r\n5A8FB8.322.Baby Blue Dark\r\n35668B.312.Baby Blue Very Dark\r\n2C597C.803.Baby Blue Ultra Very Dark\r\n253B73.336.Navy Blue\r\n213063.823.Navy Blue Dark\r\n1B2853.939.Navy Blue Very Dark\r\nDBE2E9.3753.Antique Blue Ultra Very Light\r\nC7D1DB.3752.Antique Blue Very Light\r\nA2B5C6.932.Antique Blue Light\r\n6A859E.931.Antique Blue Medium\r\n455C71.930.Antique Blue Dark\r\n384C5E.3750.Antique Blue Very Dark\r\nC5E8ED.828.Sky Blue Very Light\r\nACD8E2.3761.Sky Blue Light\r\n7EB1C8.519.Sky Blue\r\n4F93A7.518.Wedgewood Light\r\n3E85A2.3760.Wedgewood Medium\r\n3B768F.517.Wedgewood Dark\r\n32667C.3842.Wedgewood Very Dark\r\n1C5066.311.Wedgewood Ultra Very Dark\r\nE5FCFD.747.Peacock Blue Very Light\r\n99CFD9.3766.Peacock Blue Light\r\n64ABBA.807.Peacock Blue\r\n3D95A5.806.Peacock Blue Dark\r\n347F8C.3765.Peacock Blue Very Dark\r\nBCE3E6.3811.Turquoise Very Light\r\n90C3CC.598.Turquoise Light\r\n5BA3B3.597.Turquoise\r\n488E9A.3810.Turquoise Dark\r\n3F7C85.3809.Turquoise Vy Dark\r\n366970.3808.Turquoise Ultra Very Dark\r\nDDE3E3.928.Gray Green Very Light\r\nBDCBCB.927.Gray Green Light\r\n98AEAE.926.Gray Green Medium\r\n657F7F.3768.Gray Green Dark\r\n566A6A.924.Gray Green Vy Dark\r\n52B3A4.3849.Teal Green Light\r\n559392.3848.Teal Green Medium\r\n347D75.3847.Teal Green Dark\r\nA9E2D8.964.Sea Green Light\r\n59C7B4.959.Sea Green Medium\r\n3EB6A1.958.Sea Green Dark\r\n2F8C84.3812.Sea Green Very Dark\r\n49B3A1.3851.Green Bright Light\r\n3D9384.943.Green Bright Medium\r\n378477.3850.Green Bright Dark\r\n90C0B4.993.Aquamarine Very Light\r\n6FAE9F.992.Aquamarine Light\r\n508B7D.3814.Aquamarine\r\n477B6E.991.Aquamarine Dark\r\nB9D7C0.966.Jade Ultra Very Light\r\nA7CDAF.564.Jade Very Light\r\n8FC098.563.Jade Light\r\n53976A.562.Jade Medium\r\n338362.505.Jade Green\r\n99C3AA.3817.Celadon Green Light\r\n65A57D.3816.Celadon Green\r\n4D8361.163.Celadon Green Medium\r\n477759.3815.Celadon Green Dark\r\n2C6A45.561.Celadon Green VD\r\nC4DECC.504.Blue Green Very Light\r\nB2D4BD.3813.Blue Green Light\r\n7BAC94.503.Blue Green Medium\r\n5B9071.502.Blue Green\r\n396F52.501.Blue Green Dark\r\n044D33.500.Blue Green Very Dark\r\nA2D6AD.955.Nile Green Light\r\n88BA91.954.Nile Green\r\n6DAB77.913.Nile Green Medium\r\n1B9D6B.912.Emerald Green Light\r\n189065.911.Emerald Green Medium\r\n187E56.910.Emerald Green Dark\r\n156F49.909.Emerald Green Very Dark\r\n115A3B.3818.Emerald Green Ultra Very Dark\r\nD7EDCC.369.Pistachio Green Very Light\r\nA6C298.368.Pistachio Green Light\r\n69885A.320.Pistachio Green Medium\r\n617A52.367.Pistachio Green Dark\r\n205F2E.319.Pistachio Grn Very Dark\r\n174923.890.Pistachio Grn Ultra Very Dark\r\nC8D8B8.164.Forest Green Light\r\n8DA675.989.Forest Green\r\n738B5B.988.Forest Green Medium\r\n587141.987.Forest Green Dark\r\n405230.986.Forest Green Very Dark\r\nE4ECD4.772.Yellow Green Very Light\r\nCCD9B1.3348.Yellow Green Light\r\n71935C.3347.Yellow Green Medium\r\n406A3A.3346.Hunter Green\r\n1B5915.3345.Hunter Green Dark\r\n1B5300.895.Hunter Green Very Dark\r\n9ECF34.704.Chartreuse Bright\r\n7BB547.703.Chartreuse\r\n47A72F.702.Kelly Green\r\n3F8F29.701.Green Light\r\n07731B.700.Green Bright\r\n056517.699.Green\r\nC7E666.907.Parrot Green Light\r\n7FB335.906.Parrot Green Medium\r\n628A28.905.Parrot Green Dark\r\n557822.904.Parrot Green Very Dark\r\nD8E498.472.Avocado Green Ultra Light\r\nAEBF79.471.Avocado Grn Very Light\r\n94AB4F.470.Avocado Grn Light\r\n72843C.469.Avocado Green\r\n627133.937.Avocado Green Medium\r\n4C5826.936.Avocado Green Very Dark\r\n424D21.935.Avocado Green Dark\r\n313919.934.Avocado Grn Black\r\nABB197.523.Fern Green Light\r\n9CA482.3053.Green Gray\r\n889268.3052.Green Gray Medium\r\n5F6648.3051.Green Gray Dark\r\nC4CDAC.524.Fern Green Very Light\r\n969E7E.522.Fern Green\r\n666D4F.520.Fern Green Dark\r\n83975F.3364.Pine Green\r\n728256.3363.Pine Green Medium\r\n5E6B47.3362.Pine Green Dark\r\nEFF4A4.165.Moss Green Very Light\r\nE0E868.3819.Moss Green Light\r\nC0C840.166.Moss Green Medium Light\r\nA7AE38.581.Moss Green\r\n888D33.580.Moss Green Dark\r\nC7C077.734.Olive Green Light\r\nBCB34C.733.Olive Green Medium\r\n948C36.732.Olive Green\r\n938B37.731.Olive Green Dark\r\n827B30.730.Olive Green Very Dark\r\nB9B982.3013.Khaki Green Light\r\nA6A75D.3012.Khaki Green Medium\r\n898A58.3011.Khaki Green Dark\r\nCCB784.372.Mustard Light\r\nBFA671.371.Mustard\r\nB89D64.370.Mustard Medium\r\nDBBE7F.834.Golden Olive Very Light\r\nC8AB6C.833.Golden Olive Light\r\nBD9B51.832.Golden Olive\r\nAA8F56.831.Golden Olive Medium\r\n8D784B.830.Golden Olive Dark\r\n7E6B42.829.Golden Olive Very Dark\r\nDCC4AA.613.Drab Brown Very Light\r\nBC9A78.612.Drab Brown Light\r\n967656.611.Drab Brown\r\n796047.610.Drab Brown Dark\r\nE7D6C1.3047.Yellow Beige Light\r\nD8BC9A.3046.Yellow Beige Medium\r\nBC966A.3045.Yellow Beige Dark\r\nA77C49.167.Yellow Beige Very Dark\r\nFCFCEE.746.Off White\r\nF5ECCB.677.Old Gold Very Light\r\nC69F7B.422.Hazelnut Brown Light\r\nB78B61.3828.Hazelnut Brown\r\nA07042.420.Hazelnut Brown Dark\r\n835E39.869.Hazelnut Brown Very Dark\r\nE4B468.728.Topaz\r\nCE9124.783.Topaz Medium\r\nAE7720.782.Topaz Dark\r\nA26D20.781.Topaz Very Dark\r\n94631A.780.Topaz Ultra Very Dark\r\nE5CE97.676.Old Gold Light\r\nD0A53E.729.Old Gold Medium\r\nBC8D0E.680.Old Gold Dark\r\nA98204.3829.Old Gold Vy Dark\r\nF6DC98.3822.Straw Light\r\nF3CE75.3821.Straw\r\nDFB65F.3820.Straw Dark\r\nCD9D37.3852.Straw Very Dark\r\nFFFB8B.445.Lemon Light\r\nFDED54.307.Lemon\r\nFFE300.973.Canary Bright\r\nFFD600.444.Lemon Dark\r\nFDF9CD.3078.Golden Yellow Very Light\r\nFFF1AF.727.Topaz Very Light\r\nFDD755.726.Topaz Light\r\nFFC840.725.Topaz Medium Light\r\nFFB515.972.Canary Deep\r\nFFE9AD.745.Yellow Pale Light\r\nFFE793.744.Yellow Pale\r\nFED376.743.Yellow Medium\r\nFFBF57.742.Tangerine Light\r\nFFA32B.741.Tangerine Medium\r\nFF8B00.740.Tangerine\r\nF78B13.970.Pumpkin Light\r\nF67F00.971.Pumpkin\r\nFF7B4D.947.Burnt Orange\r\nEB6307.946.Burnt Orange Medium\r\nD15807.900.Burnt Orange Dark\r\nFFDED5.967.Apricot Very Light\r\nFECDC2.3824.Apricot Light\r\nFCAB98.3341.Apricot\r\nFF836F.3340.Apricot Medium\r\nFD5D35.608.Burnt Orange Bright\r\nFA3203.606.Orange Red Bright\r\nFFE2CF.951.Tawny Light\r\nFFD3B5.3856.Mahogany Ultra Very Light\r\nF7976F.722.Orange Spice Light\r\nF27842.721.Orange Spice Medium\r\nE55C1F.720.Orange Spice Dark\r\nFDBD96.3825.Pumpkin Pale\r\nE27323.922.Copper Light\r\nC66218.921.Copper\r\nAC5414.920.Copper Medium\r\nA64510.919.Red Copper\r\n82340A.918.Red Copper Dark\r\nFFEEE3.3770.Tawny Vy Light\r\nFBD5BB.945.Tawny\r\nF7A777.402.Mahogany Very Light\r\nCF7939.3776.Mahogany Light\r\nB35F2B.301.Mahogany Medium\r\n8F430F.400.Mahogany Dark\r\n6F2F00.300.Mahogany Very Dark\r\nFFFDE3.3823.Yellow Ultra Pale\r\nFAD396.3855.Autumn Gold Light\r\nF2AF68.3854.Autumn Gold Medium\r\nF29746.3853.Autumn Gold Dark\r\nF7BB77.3827.Golden Brown Pale\r\nDC9C56.977.Golden Brown Light\r\nC28142.976.Golden Brown Medium\r\nAD7239.3826.Golden Brown\r\n914F12.975.Golden Brown Dark\r\nFEE7DA.948.Peach Very Light\r\nF7CBBF.754.Peach Light\r\nF4BBA9.3771.Terra Cotta Ultra Very Light\r\nEEAA9B.758.Terra Cotta Very Light\r\nD98978.3778.Terra Cotta Light\r\nC56A5B.356.Terra Cotta Medium\r\nB95544.3830.Terra Cotta\r\n984436.355.Terra Cotta Dark\r\n863022.3777.Terra Cotta Very Dark\r\nF8CAC8.3779.Rosewood Ultra Very Light\r\nBA8B7C.3859.Rosewood Light\r\n964A3F.3858.Rosewood Medium\r\n68251A.3857.Rosewood Dark\r\nF3E1D7.3774.Desert Sand Very Light\r\nEED3C4.950.Desert Sand Light\r\nC48E70.3064.Desert Sand\r\nBB8161.407.Desert Sand Medium\r\nB67552.3773.Desert Sand Dark\r\nA06C50.3772.Desert Sand Very Dark\r\n875539.632.Desert Sand Ultra Very Dark\r\nD7CECB.453.Shell Gray Light\r\nC0B3AE.452.Shell Gray Medium\r\n917B73.451.Shell Gray Dark\r\nA68881.3861.Cocoa Light\r\n7D5D57.3860.Cocoa\r\n624B45.779.Cocoa Dark\r\nFFFBEF.712.Cream\r\nF8E4C8.739.Tan Ultra Very Light\r\nECCC9E.738.Tan Very Light\r\nE4BB8E.437.Tan Light\r\nCB9051.436.Tan\r\nB87748.435.Brown Very Light\r\n985E33.434.Brown Light\r\n7A451F.433.Brown Medium\r\n653919.801.Coffee Brown Dark\r\n492A13.898.Coffee Brown Very Dark\r\n361F0E.938.Coffee Brown Ultra Dark\r\n1E1108.3371.Black Brown\r\nF2E3CE.543.Beige Brown Ultra Very Light\r\nCBB69C.3864.Mocha Beige Light\r\nA4835C.3863.Mocha Beige Medium\r\n8A6E4E.3862.Mocha Beige Dark\r\n4B3C2A.3031.Mocha Brown Very Dark\r\nFFFFFF.B5200.Snow White\r\nFCFBF8.Blanc.White\r\nF9F7F1.3865.Winter White\r\nF0EADA.Ecru.Ecru\r\nE7E2D3.822.Beige Gray Light\r\nDDD8CB.644.Beige Gray Medium\r\nA49878.642.Beige Gray Dark\r\n857B61.640.Beige Gray Very Dark\r\n625D50.3787.Brown Gray Dark\r\n4F4B41.3021.Brown Gray Very Dark\r\nEBEAE7.3024.Brown Gray Very Light\r\nB1AA97.3023.Brown Gray Light\r\n8E9078.3022.Brown Gray Medium\r\n636458.535.Ash Gray Very Light\r\nE3D8CC.3033.Mocha Brown Very Light\r\nD2BCA6.3782.Mocha Brown Light\r\nB39F8B.3032.Mocha Brown Medium\r\n7F6A55.3790.Beige Gray Ultra Dark\r\n6B5743.3781.Mocha Brown Dark\r\nFAF6F0.3866.Mocha Brown Ultra Very Light\r\nD1BAA1.842.Beige Brown Very Light\r\nB69B7E.841.Beige Brown Light\r\n9A7C5C.840.Beige Brown Medium\r\n675541.839.Beige Brown Dark\r\n594937.838.Beige Brown Very Dark\r\nE6E8E8.3072.Beaver Gray Very Light\r\nBCB4AC.648.Beaver Gray Light\r\nB0A69C.647.Beaver Gray Medium\r\n877D73.646.Beaver Gray Dark\r\n6E655C.645.Beaver Gray Very Dark\r\n484848.844.Beaver Gray Ultra Dark\r\nECECEC.762.Pearl Gray Very Light\r\nD3D3D6.415.Pearl Gray\r\nABABAB.318.Steel Gray Light\r\n8C8C8C.414.Steel Gray Dark\r\nD1D1D1.168.Pewter Very Light\r\n848484.169.Pewter Light\r\n6C6C6C.317.Pewter Gray\r\n565656.413.Pewter Gray Dark\r\n424242.3799.Pewter Gray Very Dark\r\n000000.310.Black\r\nE3E3E6.1.White Tin\r\nD7D7D8.2.Tin\r\nB8B8BB.3.Tin Medium\r\nAEAEB1.4.Tin Dark\r\nE3CCBE.5.Driftwood Light\r\nDCC6B8.6.Driftwood Medium Light\r\n8F7B6E.7.Driftwood\r\n6A5046.8.Driftwood Dark\r\n55200E.9.Cocoa Very Dark\r\nEDFED9.10.Tender Green Very Light\r\nE2EDB5.11.Tender Green Light\r\nCDD99A.12.Tender Green\r\nBFF6E0.13.Nile Green Medium Light\r\nD0FBB2.14.Apple Green Pale\r\nD1EDA4.15.Apple Green\r\nC9C258.16.Chartreuse Light\r\nE5E272.17.Yellow Plum Light\r\nD9D56D.18.Yellow Plum\r\nF7C95F.19.Autumn Gold medium Light\r\nF7AF93.20.Shrimp\r\nD79982.21.Alizarin Light\r\nBC604E.22.Alizarin\r\nEDE2ED.23.Apple Blossom\r\nE0D7EE.24.White Lavender\r\nDAD2E9.25.Lavender Ultra Light\r\nD7CAE6.26.Lavender Pale\r\nF0EEF9.27.White Violet\r\n9086A9.28.Eggplant Medium Light\r\n674076.29.Eggplant\r\n7D77A5.30.Blueberry Medium Light\r\n50518D.31.Blueberry\r\n4D2E8A.32.Blueberry Dark\r\n9C599E.33.Fuschia\r\n7D3064.34.Fuschia Dark\r\n46052D.35.Fuschia Very Dark";
-    }
-  });
+You can modify the HEIGHT_SCALE parameter in model.scad to adjust the height of peaks.
+`;await Ir(async u=>{let f=new u;for(let[m,C]of i.entries()){let v=m.substring(1).toLowerCase(),b=await ta(r,n,C);f.file(`masks/mask_${v}.png`,b)}f.file("model.scad",c),f.file("README.txt",s);let g=await f.generateAsync({type:"blob"});Rr(g,`${t.filename}-openscad.zip`)})}function ea(e,t,r,n){return`// 3D Model generated by firaga.io
+// Adjust HEIGHT_SCALE below to change the height of the 3D model
 
-  // data/color/lego.txt
-  var require_lego = __commonJS({
-    "data/color/lego.txt"(exports, module) {
-      module.exports = "FFFFFF.1.White\r\nDDDEDD.2.Grey\r\nD9BB7B.5.Brick Yellow\r\nD67240.18.Nougat\r\nFF0000.21.Bright Red\r\n0000FF.23.Bright Blue\r\nFFFF00.24.Bright Yellow\r\n000000.26.Black\r\n009900.28.Dark Green\r\n00CC00.37.Bright Green\r\nA83D15.38.Dark Orange\r\n478CC6.102.Medium Blue\r\nFF6600.106.Bright Orange\r\n059D9E.107.Bright Bluish Green\r\n95B90B.119.Bright Yellowish-Green\r\n990066.124.Bright Reddish Violet\r\n5E748C.135.Sand Blue\r\n8D7452.138.Sand Yellow\r\n002541.140.Earth Blue\r\n003300.141.Earth Green\r\n5F8265.151.Sand Green\r\n80081B.154.Dark Red\r\nF49B00.191.Flame Yellowish Orange\r\n5B1C0C.192.Reddish Brown\r\n9C9291.194.Medium Stone Grey\r\n4C5156.199.Dark Stone Grey\r\nE4E4DA.208.Light Stone Grey\r\n87C0EA.212.Light Royal Blue\r\nDE378B.221.Bright Purple\r\nEE9DC3.222.Light Purple\r\nFFFF99.226.Cool Yellow\r\n2C1577.268.Dark Purple\r\nF5C189.283.Light Nougat\r\n300F06.308.Dark Brown\r\nAA7D55.312.Medium Nougat\r\n469BC3.321.Dark Azure\r\n68C3E2.322.Medium Azure\r\nD3F2EA.323.Aqua\r\nA06EB9.324.Medium Lavender\r\nCDA4DE.325.Lavender\r\nF5F3D7.329.White Glow\r\nE2F99A.326.Spring Yellowish Green\r\n77774E.330.Olive Green\r\n96B93B.331.Medium-Yellowish Green";
-    }
-  });
+HEIGHT_SCALE = ${n};
+IMAGE_WIDTH = ${e};
+IMAGE_HEIGHT = ${t};
 
-  // node_modules/color-diff/lib/diff.js
-  var require_diff = __commonJS({
-    "node_modules/color-diff/lib/diff.js"(exports) {
-      exports.ciede2000 = ciede2000;
-      var sqrt = Math.sqrt;
-      var pow = Math.pow;
-      var cos = Math.cos;
-      var atan2 = Math.atan2;
-      var sin = Math.sin;
-      var abs = Math.abs;
-      var exp = Math.exp;
-      var PI = Math.PI;
-      function ciede2000(c1, c22) {
-        var L1 = c1.L;
-        var a1 = c1.a;
-        var b1 = c1.b;
-        var L2 = c22.L;
-        var a22 = c22.a;
-        var b2 = c22.b;
-        var kL = 1;
-        var kC = 1;
-        var kH = 1;
-        var C1 = sqrt(pow(a1, 2) + pow(b1, 2));
-        var C22 = sqrt(pow(a22, 2) + pow(b2, 2));
-        var a_C1_C2 = (C1 + C22) / 2;
-        var G2 = 0.5 * (1 - sqrt(pow(a_C1_C2, 7) / (pow(a_C1_C2, 7) + pow(25, 7))));
-        var a1p = (1 + G2) * a1;
-        var a2p = (1 + G2) * a22;
-        var C1p = sqrt(pow(a1p, 2) + pow(b1, 2));
-        var C2p = sqrt(pow(a2p, 2) + pow(b2, 2));
-        var h1p = hp_f(b1, a1p);
-        var h2p = hp_f(b2, a2p);
-        var dLp = L2 - L1;
-        var dCp = C2p - C1p;
-        var dhp = dhp_f(C1, C22, h1p, h2p);
-        var dHp = 2 * sqrt(C1p * C2p) * sin(radians(dhp) / 2);
-        var a_L = (L1 + L2) / 2;
-        var a_Cp = (C1p + C2p) / 2;
-        var a_hp = a_hp_f(C1, C22, h1p, h2p);
-        var T3 = 1 - 0.17 * cos(radians(a_hp - 30)) + 0.24 * cos(radians(2 * a_hp)) + 0.32 * cos(radians(3 * a_hp + 6)) - 0.2 * cos(radians(4 * a_hp - 63));
-        var d_ro = 30 * exp(-pow((a_hp - 275) / 25, 2));
-        var RC = sqrt(pow(a_Cp, 7) / (pow(a_Cp, 7) + pow(25, 7)));
-        var SL = 1 + 0.015 * pow(a_L - 50, 2) / sqrt(20 + pow(a_L - 50, 2));
-        var SC = 1 + 0.045 * a_Cp;
-        var SH = 1 + 0.015 * a_Cp * T3;
-        var RT = -2 * RC * sin(radians(2 * d_ro));
-        var dE = sqrt(pow(dLp / (SL * kL), 2) + pow(dCp / (SC * kC), 2) + pow(dHp / (SH * kH), 2) + RT * (dCp / (SC * kC)) * (dHp / (SH * kH)));
-        return dE;
-      }
-      function degrees(n2) {
-        return n2 * (180 / PI);
-      }
-      function radians(n2) {
-        return n2 * (PI / 180);
-      }
-      function hp_f(x3, y3) {
-        if (x3 === 0 && y3 === 0) return 0;
-        else {
-          var tmphp = degrees(atan2(x3, y3));
-          if (tmphp >= 0) return tmphp;
-          else return tmphp + 360;
-        }
-      }
-      function dhp_f(C1, C22, h1p, h2p) {
-        if (C1 * C22 === 0) return 0;
-        else if (abs(h2p - h1p) <= 180) return h2p - h1p;
-        else if (h2p - h1p > 180) return h2p - h1p - 360;
-        else if (h2p - h1p < -180) return h2p - h1p + 360;
-        else throw new Error();
-      }
-      function a_hp_f(C1, C22, h1p, h2p) {
-        if (C1 * C22 === 0) return h1p + h2p;
-        else if (abs(h1p - h2p) <= 180) return (h1p + h2p) / 2;
-        else if (abs(h1p - h2p) > 180 && h1p + h2p < 360) return (h1p + h2p + 360) / 2;
-        else if (abs(h1p - h2p) > 180 && h1p + h2p >= 360) return (h1p + h2p - 360) / 2;
-        else throw new Error();
-      }
-    }
-  });
+// Layer: Load and display all color masks
+union() {
+${r.map(a=>`    surface(file = "masks/mask_${a.color.substring(1).toLowerCase()}.png", center = true, invert = true)
+        scale([1, 1, HEIGHT_SCALE])
+        color("${a.color}")
+        cube([IMAGE_WIDTH, IMAGE_HEIGHT, 1]);`).join(`
 
-  // node_modules/color-diff/lib/convert.js
-  var require_convert = __commonJS({
-    "node_modules/color-diff/lib/convert.js"(exports) {
-      exports.rgb_to_lab = rgb_to_lab;
-      exports.rgba_to_lab = rgba_to_lab;
-      exports.normalize_rgb = normalize_rgb;
-      var pow = Math.pow;
-      function rgba_to_lab(c3, bc) {
-        c3 = normalize_rgb(c3);
-        var bc = typeof bc !== "undefined" ? normalize_rgb(bc) : { R: 255, G: 255, B: 255 };
-        var new_c = {
-          R: bc.R + (c3.R - bc.R) * c3.A,
-          G: bc.G + (c3.G - bc.G) * c3.A,
-          B: bc.B + (c3.B - bc.B) * c3.A
-        };
-        return rgb_to_lab(new_c);
-      }
-      function rgb_to_lab(c3) {
-        return xyz_to_lab(rgb_to_xyz(c3));
-      }
-      function rgb_to_xyz(c3) {
-        c3 = normalize_rgb(c3);
-        var R = c3.R / 255;
-        var G2 = c3.G / 255;
-        var B3 = c3.B / 255;
-        if (R > 0.04045) R = pow((R + 0.055) / 1.055, 2.4);
-        else R = R / 12.92;
-        if (G2 > 0.04045) G2 = pow((G2 + 0.055) / 1.055, 2.4);
-        else G2 = G2 / 12.92;
-        if (B3 > 0.04045) B3 = pow((B3 + 0.055) / 1.055, 2.4);
-        else B3 = B3 / 12.92;
-        R *= 100;
-        G2 *= 100;
-        B3 *= 100;
-        var X = R * 0.4124 + G2 * 0.3576 + B3 * 0.1805;
-        var Y = R * 0.2126 + G2 * 0.7152 + B3 * 0.0722;
-        var Z = R * 0.0193 + G2 * 0.1192 + B3 * 0.9505;
-        return { "X": X, "Y": Y, "Z": Z };
-      }
-      function xyz_to_lab(c3) {
-        var ref_Y = 100;
-        var ref_Z = 108.883;
-        var ref_X = 95.047;
-        var Y = c3.Y / ref_Y;
-        var Z = c3.Z / ref_Z;
-        var X = c3.X / ref_X;
-        if (X > 8856e-6) X = pow(X, 1 / 3);
-        else X = 7.787 * X + 16 / 116;
-        if (Y > 8856e-6) Y = pow(Y, 1 / 3);
-        else Y = 7.787 * Y + 16 / 116;
-        if (Z > 8856e-6) Z = pow(Z, 1 / 3);
-        else Z = 7.787 * Z + 16 / 116;
-        var L2 = 116 * Y - 16;
-        var a3 = 500 * (X - Y);
-        var b2 = 200 * (Y - Z);
-        return { "L": L2, "a": a3, "b": b2 };
-      }
-      function normalize_rgb(c3) {
-        var new_c = {
-          R: c3.R || c3.r || 0,
-          G: c3.G || c3.g || 0,
-          B: c3.B || c3.b || 0
-        };
-        if (typeof c3.a !== "undefined" || typeof c3.A !== "undefined") {
-          new_c.A = c3.A || c3.a || 0;
-        }
-        return new_c;
-      }
-    }
-  });
-
-  // node_modules/color-diff/lib/palette.js
-  var require_palette = __commonJS({
-    "node_modules/color-diff/lib/palette.js"(exports) {
-      exports.map_palette = map_palette;
-      exports.map_palette_lab = map_palette_lab;
-      exports.match_palette_lab = match_palette_lab;
-      exports.palette_map_key = palette_map_key;
-      exports.lab_palette_map_key = lab_palette_map_key;
-      var ciede2000 = require_diff().ciede2000;
-      var color_convert = require_convert();
-      function palette_map_key(c3) {
-        c3 = color_convert.normalize_rgb(c3);
-        var s3 = "R" + c3.R + "B" + c3.B + "G" + c3.G;
-        if ("A" in c3) {
-          s3 = s3 + "A" + c3.A;
-        }
-        return s3;
-      }
-      function lab_palette_map_key(c3) {
-        return "L" + c3.L + "a" + c3.a + "b" + c3.b;
-      }
-      function map_palette(a3, b2, type, bc) {
-        var c3 = {};
-        bc = typeof bc !== "undefined" ? bc : { R: 255, G: 255, B: 255 };
-        type = type || "closest";
-        for (var idx1 = 0; idx1 < a3.length; idx1 += 1) {
-          var color1 = a3[idx1];
-          var best_color = void 0;
-          var best_color_diff = void 0;
-          for (var idx2 = 0; idx2 < b2.length; idx2 += 1) {
-            var color2 = b2[idx2];
-            var current_color_diff = diff3(color1, color2, bc);
-            if (best_color == void 0 || type === "closest" && current_color_diff < best_color_diff) {
-              best_color = color2;
-              best_color_diff = current_color_diff;
-              continue;
-            }
-            if (type === "furthest" && current_color_diff > best_color_diff) {
-              best_color = color2;
-              best_color_diff = current_color_diff;
-              continue;
-            }
-          }
-          c3[palette_map_key(color1)] = best_color;
-        }
-        return c3;
-      }
-      function match_palette_lab(target_color, palette, find_furthest) {
-        var color2, current_color_diff;
-        var best_color = palette[0];
-        var best_color_diff = ciede2000(target_color, best_color);
-        for (var idx2 = 1, l3 = palette.length; idx2 < l3; idx2 += 1) {
-          color2 = palette[idx2];
-          current_color_diff = ciede2000(target_color, color2);
-          if (!find_furthest && current_color_diff < best_color_diff || find_furthest && current_color_diff > best_color_diff) {
-            best_color = color2;
-            best_color_diff = current_color_diff;
-          }
-        }
-        return best_color;
-      }
-      function map_palette_lab(a3, b2, type) {
-        var c3 = {};
-        var find_furthest = type === "furthest";
-        for (var idx1 = 0; idx1 < a3.length; idx1 += 1) {
-          var color1 = a3[idx1];
-          c3[lab_palette_map_key(color1)] = match_palette_lab(color1, b2, find_furthest);
-        }
-        return c3;
-      }
-      function diff3(c1, c22, bc) {
-        var conv_c1 = color_convert.rgb_to_lab;
-        var conv_c2 = color_convert.rgb_to_lab;
-        var rgba_conv = function(x3) {
-          return color_convert.rgba_to_lab(x3, bc);
-        };
-        if ("A" in c1) {
-          conv_c1 = rgba_conv;
-        }
-        if ("A" in c22) {
-          conv_c2 = rgba_conv;
-        }
-        c1 = conv_c1(c1);
-        c22 = conv_c2(c22);
-        return ciede2000(c1, c22);
-      }
-    }
-  });
-
-  // node_modules/color-diff/lib/index.js
-  var require_lib = __commonJS({
-    "node_modules/color-diff/lib/index.js"(exports, module) {
-      "use strict";
-      var diff3 = require_diff();
-      var convert = require_convert();
-      var palette = require_palette();
-      var color = module.exports = {};
-      color.diff = diff3.ciede2000;
-      color.rgb_to_lab = convert.rgb_to_lab;
-      color.rgba_to_lab = convert.rgba_to_lab;
-      color.map_palette = palette.map_palette;
-      color.palette_map_key = palette.palette_map_key;
-      color.map_palette_lab = palette.map_palette_lab;
-      color.lab_palette_map_key = palette.lab_palette_map_key;
-      color.match_palette_lab = palette.match_palette_lab;
-      color.closest = function(target, relative, bc) {
-        var key = color.palette_map_key(target);
-        bc = typeof bc !== "undefined" ? bc : { R: 255, G: 255, B: 255 };
-        var result = color.map_palette([target], relative, "closest", bc);
-        return result[key];
-      };
-      color.furthest = function(target, relative, bc) {
-        var key = color.palette_map_key(target);
-        bc = typeof bc !== "undefined" ? bc : { R: 255, G: 255, B: 255 };
-        var result = color.map_palette([target], relative, "furthest", bc);
-        return result[key];
-      };
-      color.closest_lab = function(target, relative) {
-        return color.match_palette_lab(target, relative, false);
-      };
-      color.furthest_lab = function(target, relative) {
-        return color.match_palette_lab(target, relative, true);
-      };
-    }
-  });
-
-  // src/components/svg.css
-  var require_svg = __commonJS({
-    "src/components/svg.css"(exports, module) {
-      module.exports = "line.gridmajor {\r\n    stroke-width: 2px;\r\n    stroke: rgba(0, 0, 0, 0.5);\r\n    filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, .3));\r\n    pointer-events: none;\r\n}\r\n\r\nline.gridminor {\r\n    stroke-width: 1px;\r\n    stroke: rgba(0, 0, 0, 0.2);\r\n    pointer-events: none;\r\n}\r\n\r\ntext {\r\n    font-family: 'Courier New', Courier, monospace;\r\n    font-weight: bold;\r\n    font-size: 31px;\r\n    fill: black;\r\n    pointer-events: none;\r\n}\r\n\r\nuse.dark text,\r\ntext.dark {\r\n    fill: white;\r\n}\r\n\r\nuse.light text,\r\ntext.light {\r\n    fill: black;\r\n}\r\n";
-    }
-  });
-
-  // src/app.tsx
-  init_preact_module();
-
-  // node_modules/preact/hooks/dist/hooks.module.js
-  init_preact_module();
-  var t2;
-  var r2;
-  var u2;
-  var i2;
-  var o2 = 0;
-  var f2 = [];
-  var c2 = l;
-  var e2 = c2.__b;
-  var a2 = c2.__r;
-  var v2 = c2.diffed;
-  var l2 = c2.__c;
-  var m2 = c2.unmount;
-  var s2 = c2.__;
-  function p2(n2, t3) {
-    c2.__h && c2.__h(r2, n2, o2 || t3), o2 = 0;
-    var u4 = r2.__H || (r2.__H = { __: [], __h: [] });
-    return n2 >= u4.__.length && u4.__.push({}), u4.__[n2];
-  }
-  function d2(n2) {
-    return o2 = 1, h2(D2, n2);
-  }
-  function h2(n2, u4, i3) {
-    var o3 = p2(t2++, 2);
-    if (o3.t = n2, !o3.__c && (o3.__ = [i3 ? i3(u4) : D2(void 0, u4), function(n3) {
-      var t3 = o3.__N ? o3.__N[0] : o3.__[0], r3 = o3.t(t3, n3);
-      t3 !== r3 && (o3.__N = [r3, o3.__[1]], o3.__c.setState({}));
-    }], o3.__c = r2, !r2.__f)) {
-      var f4 = function(n3, t3, r3) {
-        if (!o3.__c.__H) return true;
-        var u5 = o3.__c.__H.__.filter(function(n4) {
-          return !!n4.__c;
-        });
-        if (u5.every(function(n4) {
-          return !n4.__N;
-        })) return !c3 || c3.call(this, n3, t3, r3);
-        var i4 = o3.__c.props !== n3;
-        return u5.forEach(function(n4) {
-          if (n4.__N) {
-            var t4 = n4.__[0];
-            n4.__ = n4.__N, n4.__N = void 0, t4 !== n4.__[0] && (i4 = true);
-          }
-        }), c3 && c3.call(this, n3, t3, r3) || i4;
-      };
-      r2.__f = true;
-      var c3 = r2.shouldComponentUpdate, e3 = r2.componentWillUpdate;
-      r2.componentWillUpdate = function(n3, t3, r3) {
-        if (this.__e) {
-          var u5 = c3;
-          c3 = void 0, f4(n3, t3, r3), c3 = u5;
-        }
-        e3 && e3.call(this, n3, t3, r3);
-      }, r2.shouldComponentUpdate = f4;
-    }
-    return o3.__N || o3.__;
-  }
-  function y2(n2, u4) {
-    var i3 = p2(t2++, 3);
-    !c2.__s && C2(i3.__H, u4) && (i3.__ = n2, i3.u = u4, r2.__H.__h.push(i3));
-  }
-  function _2(n2, u4) {
-    var i3 = p2(t2++, 4);
-    !c2.__s && C2(i3.__H, u4) && (i3.__ = n2, i3.u = u4, r2.__h.push(i3));
-  }
-  function A2(n2) {
-    return o2 = 5, T2(function() {
-      return { current: n2 };
-    }, []);
-  }
-  function T2(n2, r3) {
-    var u4 = p2(t2++, 7);
-    return C2(u4.__H, r3) && (u4.__ = n2(), u4.__H = r3, u4.__h = n2), u4.__;
-  }
-  function x2(n2) {
-    var u4 = r2.context[n2.__c], i3 = p2(t2++, 9);
-    return i3.c = n2, u4 ? (null == i3.__ && (i3.__ = true, u4.sub(r2)), u4.props.value) : n2.__;
-  }
-  function j2() {
-    for (var n2; n2 = f2.shift(); ) if (n2.__P && n2.__H) try {
-      n2.__H.__h.forEach(z2), n2.__H.__h.forEach(B2), n2.__H.__h = [];
-    } catch (t3) {
-      n2.__H.__h = [], c2.__e(t3, n2.__v);
-    }
-  }
-  c2.__b = function(n2) {
-    r2 = null, e2 && e2(n2);
-  }, c2.__ = function(n2, t3) {
-    n2 && t3.__k && t3.__k.__m && (n2.__m = t3.__k.__m), s2 && s2(n2, t3);
-  }, c2.__r = function(n2) {
-    a2 && a2(n2), t2 = 0;
-    var i3 = (r2 = n2.__c).__H;
-    i3 && (u2 === r2 ? (i3.__h = [], r2.__h = [], i3.__.forEach(function(n3) {
-      n3.__N && (n3.__ = n3.__N), n3.u = n3.__N = void 0;
-    })) : (i3.__h.forEach(z2), i3.__h.forEach(B2), i3.__h = [], t2 = 0)), u2 = r2;
-  }, c2.diffed = function(n2) {
-    v2 && v2(n2);
-    var t3 = n2.__c;
-    t3 && t3.__H && (t3.__H.__h.length && (1 !== f2.push(t3) && i2 === c2.requestAnimationFrame || ((i2 = c2.requestAnimationFrame) || w2)(j2)), t3.__H.__.forEach(function(n3) {
-      n3.u && (n3.__H = n3.u), n3.u = void 0;
-    })), u2 = r2 = null;
-  }, c2.__c = function(n2, t3) {
-    t3.some(function(n3) {
-      try {
-        n3.__h.forEach(z2), n3.__h = n3.__h.filter(function(n4) {
-          return !n4.__ || B2(n4);
-        });
-      } catch (r3) {
-        t3.some(function(n4) {
-          n4.__h && (n4.__h = []);
-        }), t3 = [], c2.__e(r3, n3.__v);
-      }
-    }), l2 && l2(n2, t3);
-  }, c2.unmount = function(n2) {
-    m2 && m2(n2);
-    var t3, r3 = n2.__c;
-    r3 && r3.__H && (r3.__H.__.forEach(function(n3) {
-      try {
-        z2(n3);
-      } catch (n4) {
-        t3 = n4;
-      }
-    }), r3.__H = void 0, t3 && c2.__e(t3, r3.__v));
-  };
-  var k2 = "function" == typeof requestAnimationFrame;
-  function w2(n2) {
-    var t3, r3 = function() {
-      clearTimeout(u4), k2 && cancelAnimationFrame(t3), setTimeout(n2);
-    }, u4 = setTimeout(r3, 35);
-    k2 && (t3 = requestAnimationFrame(r3));
-  }
-  function z2(n2) {
-    var t3 = r2, u4 = n2.__c;
-    "function" == typeof u4 && (n2.__c = void 0, u4()), r2 = t3;
-  }
-  function B2(n2) {
-    var t3 = r2;
-    n2.__c = n2.__(), r2 = t3;
-  }
-  function C2(n2, t3) {
-    return !n2 || n2.length !== t3.length || t3.some(function(t4, r3) {
-      return t4 !== n2[r3];
-    });
-  }
-  function D2(n2, t3) {
-    return "function" == typeof t3 ? t3(n2) : t3;
-  }
-
-  // node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
-  init_preact_module();
-  init_preact_module();
-  var f3 = 0;
-  function u3(e3, t3, n2, o3, i3, u4) {
-    t3 || (t3 = {});
-    var a3, c3, p3 = t3;
-    if ("ref" in p3) for (c3 in p3 = {}, t3) "ref" == c3 ? a3 = t3[c3] : p3[c3] = t3[c3];
-    var l3 = { type: e3, props: p3, key: n2, ref: a3, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: --f3, __i: -1, __u: 0, __source: i3, __self: u4 };
-    if ("function" == typeof e3 && (a3 = e3.defaultProps)) for (c3 in a3) void 0 === p3[c3] && (p3[c3] = a3[c3]);
-    return l.vnode && l.vnode(l3), l3;
-  }
-
-  // src/gallery.tsx
-  var preact = (init_preact_module(), __toCommonJS(preact_module_exports));
-  function Gallery(props) {
-    const storage = props.gallery;
-    const cells = storage.map(([name, uri], index) => {
-      return /* @__PURE__ */ u3(
-        GalleryCell,
-        {
-          alt: `${name}`,
-          src: `${uri}`,
-          onClick: () => props.load(name, uri),
-          onDeleteClick: () => props.requestDelete(uri)
-        },
-        name + "." + uri
-      );
-    });
-    return /* @__PURE__ */ u3("div", { className: "gallery-list", children: cells });
-  }
-  function GalleryCell(props) {
-    return /* @__PURE__ */ u3(
-      "div",
-      {
-        className: "gallery-entry",
-        title: props.alt,
-        onClick: props.onClick,
-        children: [
-          /* @__PURE__ */ u3("img", { src: props.src }),
-          /* @__PURE__ */ u3("div", { className: "gallery-delete", onClick: (e3) => {
-            e3.preventDefault();
-            e3.stopPropagation();
-            props.onDeleteClick();
-          }, children: "\u274C" })
-        ]
-      }
-    );
-  }
-
-  // src/csv.ts
-  function parseCsv(content) {
-    const lines = content.split(/\r?\n/g);
-    const result = {
-      headers: lines[0].split(/,/g),
-      rows: lines.slice(1).map((s3) => s3.split(/,/g))
-    };
-    for (const r3 of result.rows) {
-      if (r3.length !== result.headers.length) {
-        throw new Error(`Malformed line: ${JSON.stringify(r3)} length doesn't match header size (${result.headers.length})`);
-      }
-    }
-    return result;
-  }
-
-  // src/color-data.ts
-  function parseColorFile(name, s3) {
-    const res = {
-      name,
-      colors: []
-    };
-    const rgx1 = /^(\S\S)(\S\S)(\S\S)\.([^.]+)\.(.*)$/gm;
-    let m3;
-    while (m3 = rgx1.exec(s3)) {
-      res.colors.push({
-        r: parseInt(m3[1], 16),
-        g: parseInt(m3[2], 16),
-        b: parseInt(m3[3], 16),
-        code: m3[4],
-        name: m3[5]
-      });
-    }
-    if (res.colors.length) {
-      return res;
-    }
-    const rgx2 = /^(\S\S)(\S\S)(\S\S)(.*)$/gm;
-    while (m3 = rgx2.exec(s3)) {
-      res.colors.push({
-        r: parseInt(m3[1], 16),
-        g: parseInt(m3[2], 16),
-        b: parseInt(m3[3], 16),
-        name: m3[4]
-      });
-    }
-    return res;
-  }
-  function loadColorData() {
-    const colorDataRaw = parseCsv(require_color_data_new());
-    console.assert(colorDataRaw.headers[0] === "R", "R");
-    console.assert(colorDataRaw.headers[1] === "G", "G");
-    console.assert(colorDataRaw.headers[2] === "B", "B");
-    console.assert(colorDataRaw.headers[3] === "Name", "Name");
-    const sets = [];
-    for (let i3 = 4; i3 < colorDataRaw.headers.length; i3++) {
-      sets.push({
-        name: colorDataRaw.headers[i3],
-        colors: []
-      });
-    }
-    for (const r3 of colorDataRaw.rows) {
-      for (let i3 = 4; i3 < r3.length; i3++) {
-        const codeInThisSet = r3[i3];
-        if (codeInThisSet.length) {
-          const entry = {
-            r: parseInt(r3[0]),
-            g: parseInt(r3[1]),
-            b: parseInt(r3[2]),
-            name: r3[3]
-          };
-          if (codeInThisSet !== "1") {
-            entry.code = r3[i3];
-          }
-          sets[i3 - 4].colors.push(entry);
-        }
-      }
-    }
-    sets.push(parseColorFile("dmc", require_dmc()));
-    sets.push(parseColorFile("lego", require_lego()));
-    return { sets };
-  }
-
-  // src/ictcp.ts
-  var m1 = 2610 / 16384;
-  function PQ(L2, M2, S2) {
-    return [PQf(L2), PQf(M2), PQf(S2)];
-  }
-  function PQf(n2) {
-    let num = 3424 / 4096 + 2413 / 128 * Math.pow(n2 / 1e4, m1);
-    let denom = 1 + 2392 / 128 * Math.pow(n2 / 1e4, m1);
-    return Math.pow(
-      (3424 / 4096 + 2413 / 128 * Math.pow(n2 / 1e4, m1)) / (1 + 2392 / 128 * Math.pow(n2 / 1e4, m1)),
-      2523 / 32
-    );
-  }
-  function rgbToXyz(r3, g2, b2) {
-    r3 = sRGBtoLinearRGB(r3 / 255);
-    g2 = sRGBtoLinearRGB(g2 / 255);
-    b2 = sRGBtoLinearRGB(b2 / 255);
-    const X = 0.4124 * r3 + 0.3576 * g2 + 0.1805 * b2;
-    const Y = 0.2126 * r3 + 0.7152 * g2 + 0.0722 * b2;
-    const Z = 0.0193 * r3 + 0.1192 * g2 + 0.9505 * b2;
-    return [X, Y, Z];
-  }
-  function xyzToXYZa(xyz) {
-    return xyz.map((n2) => Math.max(n2 * 203, 0));
-  }
-  function sRGBtoLinearRGB(color) {
-    if (color <= 0.04045) {
-      return color / 12.92;
-    }
-    return Math.pow((color + 0.055) / 1.055, 2.4);
-  }
-  function rgbToICtCp(arg) {
-    const xyz = rgbToXyz(arg.r, arg.g, arg.b);
-    const xyza = xyzToXYZa(xyz);
-    const [R, G2, B3] = xyza;
-    const L2 = 0.3592 * R + 0.6976 * G2 - 0.0358 * B3;
-    const M2 = -0.1922 * R + 1.1004 * G2 + 0.0755 * B3;
-    const S2 = 7e-3 * R + 0.0749 * G2 + 0.8434 * B3;
-    const [Lp, Mp, Sp] = PQ(L2, M2, S2);
-    const I2 = 0.5 * Lp + 0.5 * Mp;
-    const Ct = (6610 * Lp - 13613 * Mp + 7003 * Sp) / 4096;
-    const Cp = (17933 * Lp - 17390 * Mp - 543 * Sp) / 4096;
-    return [I2, Ct, Cp];
-  }
-
-  // src/utils.tsx
-  var preact2 = (init_preact_module(), __toCommonJS(preact_module_exports));
-  var diff = require_lib();
-  var symbolAlphabet = "ABCDEFGHJKLMNPQRSTVXZ\u03B1\u03B2\u0394\u03B8\u03BB\u03C0\u03A6\u03A8\u03A9abcdefghijklmnopqrstuvwxyz0123456789";
-  var GridFormats = {
-    "perler": {
-      size: [29, 29],
-      pitch: 139.75 / (29 - 1)
-    },
-    "artkal-mini": {
-      size: [50, 50],
-      pitch: 137.8 / (50 - 1)
-    },
-    "perler-mini": {
-      size: [56, 56],
-      pitch: 147.9 / (56 - 1)
-    },
-    "16 ct": {
-      size: [16, 16],
-      pitch: 25.4 / 16
-    },
-    "30 ct": {
-      size: [30, 30],
-      pitch: 25.4 / 30
-    },
-    // https://orionrobots.co.uk/wiki/lego_specifications.html
-    "lego": {
-      size: [32, 32],
-      pitch: 8
-    },
-    "funzbo": {
-      size: [29, 29],
-      pitch: 139.1 / (29 - 1)
-    },
-    "evoretro": {
-      size: [29, 29],
-      pitch: 139.3 / (29 - 1)
-    }
-  };
-  function getPitch(size) {
-    return GridFormats[size].pitch;
-  }
-  function getGridSize(size) {
-    return GridFormats[size].size;
-  }
-  function colorEntryToHtml(c3) {
-    return "rgb(" + c3.r + "," + c3.g + "," + c3.b + ")";
-  }
-  function colorEntryToHex(c3) {
-    return "#" + hx(c3.r) + hx(c3.g) + hx(c3.b);
-  }
-  function hx(n2) {
-    if (n2 === void 0) return "";
-    if (n2 === 0) return "00";
-    if (n2 < 16) return "0" + n2.toString(16);
-    return n2.toString(16);
-  }
-  function isBright(i3) {
-    return i3.r + i3.g * 1.4 + i3.b > 460;
-  }
-  function timer() {
-    let last = Date.now();
-    return { mark };
-    function mark(event) {
-      if (window.location.hostname === "localhost" || window.location.search === "?dev") {
-        const n2 = Date.now();
-        console.log(`PERF: '${event}' finished in ${n2 - last}ms`);
-        last = n2;
-      }
-    }
-  }
-  function carveImageFast(image, carveSize) {
-    const rowOccupancyMatrix = [];
-    for (let y3 = 0; y3 < image.height; y3++) {
-      rowOccupancyMatrix[y3] = [];
-      let counter = 0;
-      for (let x3 = image.width - 1; x3 >= -carveSize; x3--) {
-        const px = image.pixels[y3][x3];
-        if (x3 < 0 || (px === void 0 || px === -1)) {
-          if (counter > 0) counter--;
-        } else {
-          counter = carveSize;
-        }
-        rowOccupancyMatrix[y3][x3 + carveSize] = counter !== 0;
-      }
-    }
-    const occupancyMatrix = [];
-    for (let x3 = 0; x3 < image.width + carveSize; x3++) {
-      occupancyMatrix[x3] = [];
-      let counter = 0;
-      for (let y3 = image.height - 1; y3 >= -carveSize; y3--) {
-        if (y3 >= 0 && rowOccupancyMatrix[y3][x3]) {
-          counter = carveSize;
-        } else {
-          if (counter > 0) counter--;
-        }
-        occupancyMatrix[x3][y3 + carveSize] = counter > 0;
-      }
-    }
-    let xOffset = 0;
-    let yOffset = 0;
-    let bestCount = Infinity;
-    for (let y3 = 0; y3 < carveSize; y3++) {
-      for (let x3 = 0; x3 < carveSize; x3++) {
-        let occCount = 0;
-        for (let oy = y3; oy < image.height + carveSize; oy += carveSize) {
-          for (let ox = x3; ox < image.width + carveSize; ox += carveSize) {
-            if (occupancyMatrix[ox][oy]) occCount++;
-          }
-        }
-        if (occCount < bestCount) {
-          xOffset = x3;
-          yOffset = y3;
-          bestCount = occCount;
-        }
-      }
-    }
-    return { xOffset, yOffset };
-  }
-  function carve(width, height, xSize, ySize) {
-    const res = [];
-    const xa = carveAxis(width, xSize);
-    const ya = carveAxis(height, ySize);
-    let cy = 0;
-    let row = 0;
-    for (const y3 of ya) {
-      let cx = 0;
-      let col = 0;
-      row++;
-      for (const x3 of xa) {
-        col++;
-        res.push({
-          x: cx,
-          y: cy,
-          row,
-          col,
-          width: x3,
-          height: y3
-        });
-        cx += x3;
-      }
-      cy += y3;
-    }
-    return res;
-  }
-  function carveAxis(width, size) {
-    if (width <= size) return [width];
-    if (width <= size * 2) {
-      return [Math.ceil(width / 2), Math.floor(width / 2)];
-    }
-    const remainder = width % size;
-    let res = [remainder];
-    let remaining = width - res[0];
-    while (remaining > size) {
-      res.push(size);
-      remaining -= size;
-    }
-    res.push(remaining);
-    return res;
-  }
-  function assertNever(n2, message) {
-    throw new Error(`Invalid ${n2} - ${message}`);
-  }
-  function nameOfColor(color) {
-    if (color.code === void 0) {
-      return color.name;
-    }
-    return `${color.code} (${color.name})`;
-  }
-  function dollars(amt) {
-    const formatter = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-    return formatter.format(amt);
-  }
-  function feetInches(mm) {
-    const inches = mm / 25.4;
-    if (inches < 12) {
-      return `${inches.toFixed(1)}\u2033`;
-    }
-    return `${Math.floor(inches / 12)}\u2032${String.fromCharCode(8201)}${Math.round(inches % 12)}\u2033`;
-  }
-  function timeAmount(seconds) {
-    const minutes = Math.ceil(seconds / 60);
-    if (minutes < 1) {
-      return `1 minute`;
-    } else if (minutes < 60) {
-      return `${minutes} minutes`;
-    } else if (minutes < 120) {
-      return `${Math.floor(minutes / 60)}:${Math.floor(minutes % 60)}`;
-    }
-    return `${Math.ceil(minutes / 60)} hours`;
-  }
-
-  // src/palettizer.ts
-  var diff2 = require_lib();
-  function palettize(rgbaArray, palette) {
-    const pixels = [];
-    const colorLookup = /* @__PURE__ */ new Map();
-    for (const p3 of palette) {
-      colorLookup.set(p3.color, p3.target);
-    }
-    for (let y3 = 0; y3 < rgbaArray.height; y3++) {
-      const row = [];
-      for (let x3 = 0; x3 < rgbaArray.width; x3++) {
-        if (rgbaArray.pixels[y3][x3] === -1) {
-          row.push(void 0);
-        } else {
-          row.push(colorLookup.get(rgbaArray.pixels[y3][x3]));
-        }
-      }
-      pixels.push(row);
-    }
-    return {
-      pixels,
-      width: rgbaArray.width,
-      height: rgbaArray.height
-    };
-  }
-  function surveyColors(rgbaArray) {
-    const perf = timer();
-    const inputColors = [];
-    const colorToColor = /* @__PURE__ */ new Map();
-    for (let y3 = 0; y3 < rgbaArray.height; y3++) {
-      for (let x3 = 0; x3 < rgbaArray.width; x3++) {
-        const color = rgbaArray.pixels[y3][x3];
-        if (color === -1) continue;
-        if (colorToColor.has(color)) {
-          colorToColor.get(color).count++;
-        } else {
-          const entry = {
-            color,
-            count: 1,
-            r: color & 255,
-            g: color >> 8 & 255,
-            b: color >> 16 & 255
-          };
-          inputColors.push(entry);
-          colorToColor.set(color, entry);
-        }
-      }
-    }
-    perf.mark(`Palette: Survey colors (${inputColors.length}) and counts`);
-    return inputColors;
-  }
-  function makePalette(inputColors, allowedColors, settings) {
-    const perf = timer();
-    const noDuplicates = settings.nodupes && (!allowedColors || inputColors.length < allowedColors.length);
-    const tempAssignments = [];
-    inputColors.sort((a3, b2) => b2.count - a3.count);
-    const diff3 = colorDiff[settings.colorMatch];
-    for (const inColor of inputColors) {
-      if (allowedColors === void 0) {
-        const { r: r3, g: g2, b: b2 } = inColor;
-        tempAssignments.push({
-          color: inColor.color,
-          target: {
-            r: r3,
-            g: g2,
-            b: b2,
-            name: colorEntryToHex({ r: r3, g: g2, b: b2 }),
-            code: ""
-          },
-          count: inColor.count
-        });
-      } else {
-        let targetColor = inColor;
-        if (settings.matchBlackAndWhite && (inColor.r === inColor.g && inColor.g === inColor.b)) {
-          let rgb;
-          if (inColor.r > 208) {
-            rgb = 255 - (255 - inColor.r) * 0.5;
-          } else if (inColor.r < 41) {
-            rgb = inColor.r * 0.3;
-          } else {
-            rgb = inColor.r;
-          }
-          targetColor = {
-            ...inColor,
-            r: rgb,
-            b: rgb,
-            g: rgb
-          };
-        }
-        let bestTarget = void 0;
-        let bestScore = Infinity;
-        for (const c3 of allowedColors) {
-          if (noDuplicates) {
-            if (tempAssignments.some((t3) => t3.target === c3)) continue;
-          }
-          const score = diff3(targetColor, c3);
-          if (score < bestScore) {
-            bestTarget = c3;
-            bestScore = score;
-          }
-        }
-        if (bestTarget === void 0) throw new Error("impossible");
-        tempAssignments.push({
-          color: inColor.color,
-          target: bestTarget,
-          count: inColor.count
-        });
-      }
-    }
-    perf.mark("Palette: Assign color entries");
-    return tempAssignments;
-  }
-  var colorDiff = {
-    rgb: (lhs, rhs) => {
-      return Math.pow(lhs.r - rhs.r, 2) * 3 + Math.pow(lhs.g - rhs.g, 2) * 4 + Math.pow(lhs.b - rhs.b, 2) * 2;
-    },
-    rgb2: (r3, g2, b2, rhs) => {
-      return Math.pow(r3 - rhs.r, 2) * 3 + Math.pow(g2 - rhs.g, 2) * 4 + Math.pow(b2 - rhs.b, 2) * 2;
-    },
-    "ciede2000": (lhs, rhs) => {
-      return diff2.diff(rgbToLabCached(lhs), rgbToLabCached(rhs));
-    },
-    "ictcp": (lhs, rhs) => {
-      const a3 = rgbToICtCp(lhs), b2 = rgbToICtCp(rhs);
-      const di = a3[0] - b2[0], dct = (a3[1] - b2[1]) / 2, dcp = a3[2] - b2[2];
-      return di * di + dct * dct + dcp * dcp;
-    }
-  };
-  function rgbToLabCached(rgb) {
-    if ("_lab" in rgb) {
-      return rgb["_lab"];
-    }
-    return rgb["_lab"] = diff2.rgb_to_lab({ R: rgb.r, G: rgb.g, B: rgb.b });
-  }
-
-  // src/image-utils.tsx
-  var colorData = loadColorData();
-  function imageDataToRgbaArray(imageData) {
-    const raw = [];
-    for (let y3 = 0; y3 < imageData.height; y3++) {
-      const row = [];
-      for (let x3 = 0; x3 < imageData.width; x3++) {
-        const b2 = 4 * (y3 * imageData.width + x3);
-        if (imageData.data[b2 + 3] === 255) {
-          row.push((imageData.data[b2 + 2] << 16) + (imageData.data[b2 + 1] << 8) + imageData.data[b2]);
-        } else {
-          row.push(-1);
-        }
-      }
-      raw.push(row);
-    }
-    return {
-      pixels: raw,
-      width: imageData.width,
-      height: imageData.height
-    };
-  }
-  function applyImageAdjustments(image, brightnessPct, contrastPct, saturationPct, flip, mirror) {
-    const srcCanvas = document.createElement("canvas");
-    srcCanvas.width = image.width;
-    srcCanvas.height = image.height;
-    const srcContext = srcCanvas.getContext("2d");
-    srcContext.putImageData(image, 0, 0);
-    const dstCanvas = document.createElement("canvas");
-    dstCanvas.width = image.width;
-    dstCanvas.height = image.height;
-    const dstContext = dstCanvas.getContext("2d");
-    dstContext.filter = `saturate(${saturationPct}%) brightness(${brightnessPct}%) contrast(${contrastPct}%)`;
-    if (flip) {
-      dstContext.scale(1, -1);
-      dstContext.translate(0, -image.height);
-    }
-    if (mirror) {
-      dstContext.scale(-1, 1);
-      dstContext.translate(-image.width, 0);
-    }
-    dstContext.drawImage(srcCanvas, 0, 0);
-    return dstContext.getImageData(0, 0, image.width, image.height);
-  }
-  function descale(imageData) {
-    const { mark } = timer();
-    const { data, width, height } = imageData;
-    for (const scaleChk of [8, 7, 6, 5, 4, 3, 2]) {
-      for (let xOffset = 0; xOffset < scaleChk; xOffset++) {
-        for (let yOffset = 0; yOffset < scaleChk; yOffset++) {
-          let match = true;
-          for (let x3 = xOffset; x3 < width; x3 += scaleChk) {
-            for (let y3 = yOffset; y3 < height; y3 += scaleChk) {
-              for (let xi = 1; xi < scaleChk; xi++) {
-                for (let yi = 1; yi < scaleChk; yi++) {
-                  if (!areSame(x3 + xi, y3 + yi, x3, y3)) {
-                    match = false;
-                    break;
-                  }
-                }
-                if (!match) break;
-              }
-              if (!match) break;
-            }
-            if (!match) break;
-          }
-          if (match) {
-            const newData = new ImageData(Math.floor((width - xOffset) / scaleChk), Math.floor((height - yOffset) / scaleChk));
-            let c3 = 0;
-            for (let y3 = 0; y3 < newData.height; y3++) {
-              for (let x3 = 0; x3 < newData.width; x3++) {
-                const src = ((y3 * scaleChk + yOffset) * width + x3 * scaleChk + xOffset) * 4;
-                const dst = (y3 * newData.width + x3) * 4;
-                newData.data[dst] = data[src];
-                newData.data[dst + 1] = data[src + 1];
-                newData.data[dst + 2] = data[src + 2];
-                newData.data[dst + 3] = data[src + 3];
-              }
-            }
-            mark(`Descale with match ${width}x${height} (${scaleChk} ${xOffset} ${yOffset}) -> ${newData.width}x${newData.height}`);
-            return newData;
-          }
-        }
-      }
-    }
-    mark("Descale with no match");
-    return imageData;
-    function areSame(x0, y0, x1, y1) {
-      if (x0 >= imageData.width || y0 >= imageData.height) return true;
-      const c0 = (y0 * imageData.width + x0) * 4;
-      const c1 = (y1 * imageData.width + x1) * 4;
-      return data[c0] === data[c1] && data[c0 + 1] === data[c1 + 1] && data[c0 + 2] === data[c1 + 2] && data[c0 + 3] === data[c1 + 3];
-    }
-  }
-  function applyTransparencyAndCrop(imageData, transparentValue, keepOutline) {
-    const keepArray = new Array(imageData.width * imageData.height);
-    let minY = Infinity, maxY = -Infinity;
-    let minX = Infinity, maxX = -Infinity;
-    if (isNaN(transparentValue)) {
-      minX = minY = 0;
-      maxX = imageData.width - 1;
-      maxY = imageData.height - 1;
-      keepArray.fill(true, 0, keepArray.length);
-    } else {
-      keepArray.fill(false, 0, keepArray.length);
-      for (let y3 = 0; y3 < imageData.height; y3++) {
-        for (let x3 = 0; x3 < imageData.width; x3++) {
-          const keep = !isTransparent(colorAt(imageData, x3, y3));
-          if (keep) {
-            minX = Math.min(minX, x3);
-            maxX = Math.max(maxX, x3);
-            minY = Math.min(minY, y3);
-            maxY = Math.max(maxY, y3);
-            keepArray[y3 * imageData.width + x3] = true;
-            if (keepOutline) {
-              if (x3 !== 0) keepArray[y3 * imageData.width + (x3 - 1)] = true;
-              if (y3 !== 0) keepArray[(y3 - 1) * imageData.width + x3] = true;
-              if (x3 !== imageData.width - 1) keepArray[y3 * imageData.width + (x3 + 1)] = true;
-              if (y3 !== imageData.height - 1) keepArray[(y3 + 1) * imageData.width + x3] = true;
-            }
-          }
-        }
-      }
-      if (keepOutline) {
-        if (minX !== 0) minX--;
-        if (minY !== 0) minY--;
-        if (maxX !== imageData.width - 1) maxX++;
-        if (maxY !== imageData.height - 1) maxY++;
-      }
-    }
-    const newImage = new ImageData(maxX - minX + 1, maxY - minY + 1);
-    for (let y3 = 0; y3 < newImage.height; y3++)
-      for (let x3 = 0; x3 < newImage.width; x3++)
-        newImage.data[(y3 * newImage.width + x3) * 4 + 3] = 0;
-    for (let y3 = minY; y3 <= maxY; y3++) {
-      for (let x3 = minX; x3 <= maxX; x3++) {
-        const color = colorAt(imageData, x3, y3);
-        const c3 = ((y3 - minY) * newImage.width + (x3 - minX)) * 4;
-        if (keepArray[y3 * imageData.width + x3]) {
-          newImage.data[c3 + 0] = color >> 0 & 255;
-          newImage.data[c3 + 1] = color >> 8 & 255;
-          newImage.data[c3 + 2] = color >> 16 & 255;
-          newImage.data[c3 + 3] = 255;
-        }
-      }
-    }
-    return newImage;
-    function isTransparent(n2) {
-      if (isNaN(transparentValue)) return false;
-      if (transparentValue === 0) {
-        return (n2 >> 24) * 255 === 0;
-      }
-      return (n2 & 16777215) === (transparentValue & 16777215);
-    }
-  }
-  function getImageData(img) {
-    const canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0, img.width, img.height);
-    const imageData = ctx.getImageData(0, 0, img.width, img.height);
-    return imageData;
-  }
-  function inferTransparencyValue(imageData) {
-    let hasEdgeMagenta = false;
-    for (let y3 = 0; y3 < imageData.height; y3++) {
-      const isYedge = y3 === 0 || y3 === imageData.height - 1;
-      for (let x3 = 0; x3 < imageData.width; x3++) {
-        const c3 = 4 * (y3 * imageData.width + x3);
-        if (imageData.data[c3 + 3] === 0) {
-          return 0;
-        }
-        if (isYedge || x3 === 0 || x3 === imageData.width - 1) {
-          if (imageData.data[c3 + 0] === 255 && imageData.data[c3 + 1] === 0 && imageData.data[c3 + 2] === 255) {
-            hasEdgeMagenta = true;
-          }
-        }
-      }
-    }
-    if (hasEdgeMagenta) return 16711935;
-    return getCornerTransparency(imageData);
-  }
-  function getCornerTransparency(rgbaArray) {
-    const arr = [
-      colorAt(rgbaArray, 0, 0),
-      colorAt(rgbaArray, 0, rgbaArray.height - 1),
-      colorAt(rgbaArray, rgbaArray.width - 1, 0),
-      colorAt(rgbaArray, rgbaArray.width - 1, rgbaArray.height)
-    ];
-    arr.sort();
-    if (arr[1] === arr[2]) {
-      return arr[1];
-    }
-    return 0;
-  }
-  function colorAt(img, x3, y3) {
-    const c3 = (y3 * img.width + x3) * 4;
-    return img.data[c3 + 0] << 0 | img.data[c3 + 1] << 8 | img.data[c3 + 2] << 16 | img.data[c3 + 3] << 24;
-  }
-  function adjustImage(imageData, imageSettings) {
-    const { mark } = timer();
-    mark("Image -> RGBA");
-    let transparency;
-    switch (imageSettings.transparency) {
-      case "auto":
-        mark("Infer transparency");
-        transparency = inferTransparencyValue(imageData);
-        break;
-      case "alpha":
-        transparency = 0;
-        break;
-      case "none":
-        transparency = NaN;
-        break;
-      case "magenta":
-        transparency = 4294902015;
-        break;
-      case "corners":
-        transparency = getCornerTransparency(imageData);
-        break;
-    }
-    const descaledImageData = imageSettings.descale ? descale(imageData) : imageData;
-    const croppedImageData = applyTransparencyAndCrop(descaledImageData, transparency, imageSettings.keepOutline);
-    mark("Apply transparency & crop");
-    const originalSize = [croppedImageData.width, croppedImageData.height];
-    const maxSize = isTrueColorImage(croppedImageData, 256) ? 96 : 480;
-    const downsize = maxDimension(originalSize, maxSize);
-    const rescaledImageData = downsize === originalSize ? croppedImageData : resizeImage(croppedImageData, downsize);
-    const adjustedImageData = applyImageAdjustments(
-      rescaledImageData,
-      imageSettings.brightness * 10 + 100,
-      imageSettings.contrast * 10 + 100,
-      imageSettings.saturation * 10 + 100,
-      imageSettings.flip,
-      imageSettings.mirror
-    );
-    mark("Adjust image");
-    return adjustedImageData;
-  }
-  function maxDimension(size, max) {
-    if (size[0] <= max && size[1] <= max) return size;
-    const scale = Math.max(size[0] / max, size[1] / max);
-    return [Math.round(size[0] / scale), Math.round(size[1] / scale)];
-  }
-  function palettizeImage(rgbaArray, materialSettings, imageProps) {
-    const { mark } = timer();
-    let allowedColors;
-    switch (materialSettings.palette) {
-      case "dmc":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "dmc")[0].colors;
-        break;
-      case "lego":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "lego")[0].colors;
-        break;
-      case "artkal-all-mini":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "Artkal Mini")[0].colors;
-        break;
-      case "artkal-mini-starter":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "Artkal Mini Starter")[0].colors;
-        break;
-      case "perler-all":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "All Perler")[0].colors;
-        break;
-      case "perler-multimix":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "Perler Multi Mix")[0].colors;
-        break;
-      case "evoretro":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "EvoRetro")[0].colors;
-        break;
-      case "funzbo":
-        allowedColors = colorData.sets.filter((f4) => f4.name === "Funzbo")[0].colors;
-        break;
-      case "all":
-        allowedColors = void 0;
-        break;
-      default:
-        assertNever(materialSettings.palette, "Unknown palette");
-    }
-    const survey = surveyColors(rgbaArray);
-    let doDither;
-    if (allowedColors === void 0) {
-      doDither = false;
-    } else if (imageProps.dithering === "auto") {
-      doDither = survey.length > 256;
-    } else {
-      doDither = imageProps.dithering === "on";
-    }
-    let quantized;
-    if (doDither) {
-      quantized = dither(rgbaArray, allowedColors);
-    } else {
-      const palette = makePalette(survey, allowedColors, materialSettings);
-      mark("Create palette");
-      quantized = palettize(rgbaArray, palette);
-      mark("Apply palette");
-    }
-    return {
-      /*palette,*/
-      rgbaArray,
-      quantized
-    };
-  }
-  function createPartListImage(quantized) {
-    const partList = getPartList(quantized);
-    const res = new Array(quantized.height);
-    const lookup = /* @__PURE__ */ new Map();
-    for (let i3 = 0; i3 < partList.length; i3++) {
-      lookup.set(partList[i3].target, i3);
-    }
-    for (let y3 = 0; y3 < quantized.height; y3++) {
-      res[y3] = new Array(quantized.width);
-      for (let x3 = 0; x3 < quantized.width; x3++) {
-        const px = quantized.pixels[y3][x3];
-        if (px === void 0) {
-          res[y3][x3] = -1;
-        } else {
-          res[y3][x3] = lookup.get(px);
-        }
-      }
-    }
-    return {
-      pixels: res,
-      width: quantized.width,
-      height: quantized.height,
-      partList
-    };
-  }
-  function getPartList(quantized) {
-    const lookup = /* @__PURE__ */ new Map();
-    for (let y3 = 0; y3 < quantized.height; y3++) {
-      for (let x3 = 0; x3 < quantized.width; x3++) {
-        const c3 = quantized.pixels[y3][x3];
-        if (c3 === void 0) continue;
-        const entry = lookup.get(c3);
-        if (entry === void 0) {
-          lookup.set(c3, { count: 1, target: c3, symbol: "#" });
-        } else {
-          entry.count++;
-        }
-      }
-    }
-    const res = [];
-    for (const entry of lookup.entries()) {
-      res.push(entry[1]);
-    }
-    res.sort((a3, b2) => b2.count - a3.count);
-    for (let i3 = 0; i3 < res.length; i3++) {
-      res[i3].symbol = symbolAlphabet[i3];
-    }
-    return res;
-  }
-  function getImageStats(image) {
-    return {
-      pixels: image.partList.reduce((a3, b2) => a3 + b2.count, 0)
-    };
-  }
-  function renderPartListImageToDataURL(image, maxPartFrame = Infinity) {
-    const buffer = new Uint8ClampedArray(image.width * image.height * 4);
-    const partList = image.partList.map((p3) => p3.target);
-    for (let x3 = 0; x3 < image.width; x3++) {
-      for (let y3 = 0; y3 < image.height; y3++) {
-        const c3 = (y3 * image.width + x3) * 4;
-        const px = image.pixels[y3][x3];
-        if (px !== -1 && px < maxPartFrame) {
-          const color = image.partList[px];
-          buffer[c3 + 0] = color.target.r;
-          buffer[c3 + 1] = color.target.g;
-          buffer[c3 + 2] = color.target.b;
-          buffer[c3 + 3] = 255;
-        } else {
-          buffer[c3 + 3] = 0;
-        }
-      }
-    }
-    const canvas = document.createElement("canvas");
-    canvas.width = image.width;
-    canvas.height = image.height;
-    const ctx = canvas.getContext("2d");
-    const data = ctx.createImageData(image.width, image.height);
-    data.data.set(buffer);
-    ctx.putImageData(data, 0, 0);
-    return canvas.toDataURL();
-  }
-  function resizeImage(imageData, downsize) {
-    const src = document.createElement("canvas");
-    src.width = imageData.width;
-    src.height = imageData.height;
-    src.getContext("2d").putImageData(imageData, 0, 0);
-    const dst = document.createElement("canvas");
-    [dst.width, dst.height] = downsize;
-    const context = dst.getContext("2d");
-    context.scale(downsize[0] / imageData.width, downsize[1] / imageData.height);
-    context.drawImage(src, 0, 0);
-    return context.getImageData(0, 0, downsize[0], downsize[1]);
-  }
-  function dither(image, allowedColors) {
-    const perf = timer();
-    const chR = image.pixels.map((line) => line.map((e3) => e3 & 255));
-    const chG = image.pixels.map((line) => line.map((e3) => e3 >> 8 & 255));
-    const chB = image.pixels.map((line) => line.map((e3) => e3 >> 16 & 255));
-    perf.mark("Create channel arrays");
-    const pixels = new Array(image.height);
-    for (let y3 = 0; y3 < image.height; y3++) {
-      pixels[y3] = new Array(image.width);
-      if (y3 % 2 === 0) {
-        for (let x3 = 0; x3 < image.width; x3++) {
-          quantize(x3, y3, true);
-        }
-      } else {
-        for (let x3 = image.width - 1; x3 >= 0; x3--) {
-          quantize(x3, y3, false);
-        }
-      }
-    }
-    perf.mark("Dither");
-    console.trace();
-    return {
-      pixels,
-      width: image.width,
-      height: image.height
-    };
-    function quantize(x3, y3, rightScanning) {
-      if (image.pixels[y3][x3] === -1) {
-        pixels[y3][x3] = void 0;
-      } else {
-        let bestError = Infinity;
-        let bestColor = void 0;
-        for (const c3 of allowedColors) {
-          const e3 = colorDiff.rgb2(chR[y3][x3], chG[y3][x3], chB[y3][x3], c3);
-          if (e3 < bestError) {
-            bestColor = c3;
-            bestError = e3;
-          }
-        }
-        pixels[y3][x3] = bestColor;
-        const er = bestColor.r - chR[y3][x3], eg = bestColor.g - chG[y3][x3], eb = bestColor.b - chB[y3][x3];
-        if (rightScanning) {
-          applyError(x3 + 1, y3 + 0, er, eg, eb, 7 / 16);
-          applyError(x3 - 1, y3 + 1, er, eg, eb, 3 / 16);
-          applyError(x3 + 0, y3 + 1, er, eg, eb, 5 / 16);
-          applyError(x3 + 1, y3 + 1, er, eg, eb, 1 / 16);
-        } else {
-          applyError(x3 - 1, y3 + 0, er, eg, eb, 7 / 16);
-          applyError(x3 + 1, y3 + 1, er, eg, eb, 3 / 16);
-          applyError(x3 + 0, y3 + 1, er, eg, eb, 5 / 16);
-          applyError(x3 - 1, y3 + 1, er, eg, eb, 1 / 16);
-        }
-      }
-    }
-    function applyError(x3, y3, r3, g2, b2, f4) {
-      if (x3 < 0 || x3 >= image.width) return;
-      if (y3 < 0 || y3 >= image.height) return;
-      chR[y3][x3] -= r3 * f4;
-      chG[y3][x3] -= g2 * f4;
-      chB[y3][x3] -= b2 * f4;
-    }
-  }
-  function isTrueColorImage(img, threshold) {
-    const set = /* @__PURE__ */ new Set();
-    let c3 = 0;
-    for (let y3 = 0; y3 < img.height; y3++) {
-      for (let x3 = 0; x3 < img.width; x3++) {
-        set.add(
-          img.data[c3 + 0] << 0 | img.data[c3 + 1] << 8 | img.data[c3 + 2] << 16 | img.data[c3 + 3] << 24
-        );
-        c3 += 4;
-      }
-      if (set.size > threshold) return true;
-    }
-    return false;
-  }
-
-  // src/types.tsx
-  var BuyLink = ({ code }) => {
-    return /* @__PURE__ */ u3("a", { href: "https://amzn.to/" + code, rel: "noreferrer", target: "_blank", title: "Buy", children: "\u{1F6D2}" });
-  };
-  var MaterialSettings = {
-    palette: [
-      ["artkal-mini-starter", /* @__PURE__ */ u3("span", { children: [
-        "Artkal Mini Starter ",
-        /* @__PURE__ */ u3(BuyLink, { code: "3wThLo8" })
-      ] })],
-      ["artkal-all-mini", "All Artkal Mini"],
-      ["perler-multimix", /* @__PURE__ */ u3("span", { children: [
-        "Perler Multi Mix ",
-        /* @__PURE__ */ u3(BuyLink, { code: "2WjPiLU" })
-      ] })],
-      ["perler-all", /* @__PURE__ */ u3("span", { children: [
-        "All Perler ",
-        /* @__PURE__ */ u3(BuyLink, { code: "3kPFwL9" })
-      ] })],
-      ["evoretro", /* @__PURE__ */ u3("span", { children: [
-        "Evoretro ",
-        /* @__PURE__ */ u3(BuyLink, { code: "39Lp3kO" })
-      ] })],
-      ["funzbo", /* @__PURE__ */ u3("span", { children: [
-        "Funzbo ",
-        /* @__PURE__ */ u3(BuyLink, { code: "3GDH7N3" })
-      ] })],
-      ["lego", /* @__PURE__ */ u3("span", { children: [
-        "LEGO ",
-        /* @__PURE__ */ u3(BuyLink, { code: "3omMszN" })
-      ] })],
-      ["dmc", /* @__PURE__ */ u3("span", { children: [
-        "DMC ",
-        /* @__PURE__ */ u3(BuyLink, { code: "3D4PRtf" })
-      ] })],
-      ["all", "All Colors"]
-    ],
-    size: [
-      ["artkal-mini", /* @__PURE__ */ u3("span", { children: [
-        "Artkal Mini",
-        /* @__PURE__ */ u3(BuyLink, { code: "3eNjvcm" })
-      ] })],
-      ["perler-mini", /* @__PURE__ */ u3("span", { children: [
-        "Perler Mini",
-        /* @__PURE__ */ u3(BuyLink, { code: "2WcXJIH" })
-      ] })],
-      ["perler", /* @__PURE__ */ u3("span", { children: [
-        "Perler",
-        /* @__PURE__ */ u3(BuyLink, { code: "36U2tov" })
-      ] })],
-      ["evoretro", /* @__PURE__ */ u3("span", { children: [
-        "Evoretro",
-        /* @__PURE__ */ u3(BuyLink, { code: "39Lp3kO" })
-      ] })],
-      ["funzbo", /* @__PURE__ */ u3("span", { children: [
-        "Funzbo",
-        /* @__PURE__ */ u3(BuyLink, { code: "3GDH7N3" })
-      ] })],
-      ["16 ct", /* @__PURE__ */ u3("span", { title: "16 threads per inch (cross-stitch)", children: "16 ct" })],
-      ["30 ct", /* @__PURE__ */ u3("span", { title: "30 threads per inch (cross-stitch)", children: "30 ct" })],
-      ["lego", "LEGO \u2122"]
-    ],
-    colorMatch: [
-      ["ciede2000", "CIEDE2000"],
-      ["ictcp", "ICtCp"],
-      ["rgb", "RGB"]
-    ]
-  };
-  var ImageSettings = {
-    transparency: [
-      ["auto", "Auto"],
-      ["alpha", "Alpha Channel"],
-      ["magenta", "Magenta"],
-      ["corners", "Corners"],
-      ["none", "None"]
-    ],
-    dithering: [
-      ["auto", "Auto"],
-      ["on", "On"],
-      ["off", "Off"]
-    ]
-  };
-  var DisplaySettings = {
-    planStyle: [
-      ["symbolspans", "Symbols + Spans"],
-      ["spans", "Spans"],
-      ["symbols", "Symbols"],
-      ["none", "None"]
-    ],
-    grid: [
-      ["auto", "Auto"],
-      ["50", "50"],
-      ["25", "25"],
-      ["10", "10"],
-      ["none", "None"]
-    ],
-    background: [
-      ["#777", "Grey"],
-      ["#000", "Black"],
-      ["#FFF", "White"],
-      ["url(#checkPattern)", "Checker"],
-      ["transparent", "Transparent"],
-      ["url(#wood)", "Wood"]
-    ],
-    /*
-    shaping: [
-        ["melted", "Melted"],
-        ["square", "Square"],
-        ["circle", "Circle"],
-        ["none", "None"]
-    ],
-    */
-    refobj: [
-      ["none", "None"],
-      ["quarter", "Quarter"],
-      ["dollar", "Dollar"],
-      ["credit", "Bank Card"]
-    ]
-  };
-
-  // src/components/context.tsx
-  init_preact_module();
-  var defaultUpdateProp = () => {
-  };
-  var PropContext = Q(defaultUpdateProp);
-  function PropContextProvider(props) {
-    return _(PropContext.Provider, { value: props.value }, props.children);
-  }
-
-  // src/pdf-generator.ts
-  async function makePdf(image, settings) {
-    loadPdfAnd(() => makePdfWorker(image, settings));
-  }
-  async function loadPdfAnd(func) {
-    const tagName = "pdf-script-tag";
-    const scriptEl = document.getElementById(tagName);
-    if (scriptEl === null) {
-      const tag1 = document.createElement("script");
-      tag1.id = tagName;
-      tag1.onload = () => {
-        func();
-      };
-      tag1.src = "https://github.com/foliojs/pdfkit/releases/download/v0.12.1/pdfkit.standalone.js";
-      document.head.appendChild(tag1);
-    } else {
-      func();
-    }
-  }
-  function makePdfWorker(image, settings) {
-    const pageMarginPts = inchesToPoints(1 / 3);
-    const doc = new PDFDocument({
-      size: settings.paperSize
-    });
-    const stream = doc.pipe(blobStream());
-    if (settings.style === "legend") {
-      drawLegend(doc, image);
-    }
-    const paperWidthPts = doc.page.width;
-    const paperHeightPts = doc.page.height;
-    const printableWidthPts = paperWidthPts - pageMarginPts * 2;
-    const printableHeightPts = paperHeightPts - pageMarginPts * 2;
-    const cellHeaderHeightPts = doc.heightOfString("Testing");
-    let pitchPts;
-    if (settings.imageSize === "actual") {
-      pitchPts = mmToPoints(settings.pitch);
-    } else if (settings.imageSize === "legible") {
-      if (settings.breakStrategy === "grid") {
-        pitchPts = 0.99 * Math.min((printableWidthPts - cellHeaderHeightPts) / settings.carveSize[0], (printableHeightPts - cellHeaderHeightPts) / settings.carveSize[1]);
-      } else {
-        pitchPts = mmToPoints(4);
-      }
-    } else {
-      if (image.width >= image.height) {
-        pitchPts = Math.min((printableWidthPts - cellHeaderHeightPts) / image.height, (printableHeightPts - cellHeaderHeightPts) / image.width);
-      } else {
-        pitchPts = Math.min((printableWidthPts - cellHeaderHeightPts) / image.width, (printableHeightPts - cellHeaderHeightPts) / image.height);
-      }
-    }
-    let carveSize;
-    if (settings.imageSize === "single-page") {
-      carveSize = [Infinity, Infinity];
-    } else if (settings.breakStrategy === "grid") {
-      carveSize = settings.carveSize;
-    } else {
-      carveSize = [Math.floor((printableWidthPts - cellHeaderHeightPts) / pitchPts), Math.floor((printableHeightPts - cellHeaderHeightPts) / pitchPts)];
-    }
-    const slices = generateImageSlices(image, carveSize);
-    const sliceWidth = Math.max.apply(Math.max, slices.map((s3) => s3.width));
-    const sliceHeight = Math.max.apply(Math.max, slices.map((s3) => s3.height));
-    const gridSizePts = {
-      width: pitchPts * sliceWidth,
-      height: pitchPts * sliceHeight
-    };
-    const textPlacement = gridSizePts.width * 1.2 > gridSizePts.height ? "top" : "side";
-    const imageCellSizePts = {
-      width: gridSizePts.width + (textPlacement === "side" ? cellHeaderHeightPts : 0),
-      height: gridSizePts.height + (textPlacement === "top" ? cellHeaderHeightPts : 0)
-    };
-    if (settings.debug) {
-      doc.rect(pageMarginPts, pageMarginPts, paperWidthPts - pageMarginPts * 2, paperHeightPts - pageMarginPts * 2);
-      doc.stroke("red");
-    }
-    if (settings.style === "step-by-step") {
-      const slicesToPrint = [];
-      for (const slice of slices) {
-        const doneMap = [];
-        for (let y3 = 0; y3 < slice.height; y3++) {
-          doneMap[y3] = [];
-          for (let x3 = 0; x3 < slice.width; x3++) {
-            doneMap[y3][x3] = false;
-          }
-        }
-        for (let i3 = 0; i3 < image.partList.length; i3++) {
-          if (isAnyPixel(slice, (p3) => p3 === image.partList[i3])) {
-            slicesToPrint.push({ partIndex: i3, slice });
-          }
-        }
-      }
-      const layout = getLayout(slicesToPrint.length, paperWidthPts, paperHeightPts, pageMarginPts, imageCellSizePts.width, imageCellSizePts.height);
-      const multipleSlices = slices.length > 1;
-      for (const stp of slicesToPrint) {
-        const pos = layout.shift();
-        const done = pos.next(doc, stp.slice.width * pitchPts, stp.slice.height * pitchPts);
-        printSteppedSlice({
-          doc,
-          image,
-          partIndex: stp.partIndex,
-          slice: stp.slice,
-          pitch: pitchPts,
-          textPlacement,
-          cellHeaderHeightPts,
-          multipleSlices,
-          debug: settings.debug
-        });
-        done();
-      }
-    } else if (settings.style === "color") {
-      const layout = getLayout(slices.length, paperWidthPts, paperHeightPts, pageMarginPts, imageCellSizePts.width, imageCellSizePts.height);
-      for (const slice of slices) {
-        const pos = layout.shift();
-        const done = pos.next(doc, slice.width * pitchPts, slice.height * pitchPts);
-        if (settings.debug) {
-          doc.rect(0, 0, slice.width * pitchPts, slice.height * pitchPts);
-          doc.stroke("blue");
-        }
-        for (let i3 = 0; i3 < image.partList.length; i3++) {
-          for (let y3 = slice.y; y3 < slice.y + slice.height; y3++) {
-            const cy = y3 - slice.y;
-            for (let x3 = slice.x; x3 < slice.x + slice.width; x3++) {
-              const cx = x3 - slice.x;
-              if (image.pixels[y3][x3] === i3) {
-                doc.rect(cx * pitchPts, cy * pitchPts, pitchPts, pitchPts);
-              }
-            }
-          }
-          const color = image.partList[i3].target;
-          doc.fill([color.r, color.g, color.b]);
-        }
-        done();
-      }
-    } else if (settings.style === "legend") {
-      const layout = getLayout(slices.length, paperWidthPts, paperHeightPts, pageMarginPts, imageCellSizePts.width, imageCellSizePts.height);
-      for (const slice of slices) {
-        const pos = layout.shift();
-        const done = pos.next(doc, slice.width * pitchPts, slice.height * pitchPts);
-        doc.fontSize(pitchPts);
-        doc.font("Courier");
-        for (let y3 = slice.y; y3 < slice.y + slice.height; y3++) {
-          const cy = y3 - slice.y;
-          for (let x3 = slice.x; x3 < slice.x + slice.width; x3++) {
-            const cx = x3 - slice.x;
-            const px = image.pixels[y3][x3];
-            if (px === -1) continue;
-            doc.text(image.partList[px].symbol, cx * pitchPts, cy * pitchPts, { align: "center", baseline: "middle", height: pitchPts, width: pitchPts });
-          }
-        }
-        done();
-      }
-    }
-    stream.on("finish", () => {
-      window.open(stream.toBlobURL("application/pdf"), "_blank");
-    });
-    doc.end();
-  }
-  function drawLegend(doc, image) {
-    doc.save();
-    doc.fontSize(16);
-    const symbolColumnWidth = 5 + Math.max.apply(Math, image.partList.map((p3) => doc.widthOfString(p3.symbol)));
-    const codeColumnWidth = 5 + Math.max.apply(Math, image.partList.map((p3) => doc.widthOfString(p3.target.code ?? "")));
-    const countColumnWidth = 5 + Math.max.apply(Math, image.partList.map((p3) => doc.widthOfString(p3.count.toLocaleString())));
-    const swatchColumnWidth = 32;
-    const nameColumnWidth = 5 + Math.max.apply(Math, image.partList.map((p3) => doc.widthOfString(p3.target.name)));
-    const lineMargin = 2;
-    const lineHeight = lineMargin * 2 + doc.heightOfString("I like you, person reading this code");
-    doc.translate(inchesToPoints(1), inchesToPoints(1));
-    let x3 = 0;
-    let y3 = 0;
-    for (let i3 = 0; i3 < image.partList.length; i3++) {
-      x3 = 0;
-      doc.text(image.partList[i3].symbol, x3, y3 + lineMargin, { width: symbolColumnWidth, height: lineHeight, align: "center" });
-      x3 += symbolColumnWidth;
-      doc.rect(x3, y3 + lineMargin, swatchColumnWidth - 5, lineHeight - lineMargin * 2);
-      doc.fill([image.partList[i3].target.r, image.partList[i3].target.g, image.partList[i3].target.b]);
-      doc.fillColor("black");
-      x3 += swatchColumnWidth;
-      doc.text(image.partList[i3].count.toLocaleString(), x3, y3 + lineMargin, { width: countColumnWidth - 5, align: "right" });
-      x3 += countColumnWidth;
-      const code = image.partList[i3].target.code;
-      if (code !== void 0) {
-        doc.text(code, x3, y3 + lineMargin, { width: codeColumnWidth });
-        x3 += codeColumnWidth;
-      }
-      doc.text(image.partList[i3].target.name, x3, y3 + lineMargin, { width: nameColumnWidth });
-      x3 += nameColumnWidth;
-      doc.moveTo(0, y3);
-      doc.lineTo(x3, y3);
-      doc.stroke("grey");
-      y3 += lineHeight;
-    }
-    doc.restore();
-    doc.addPage();
-  }
-  function generateImageSlices(image, size) {
-    const carves1 = carve(image.width, image.height, size[0], size[1]);
-    const carves2 = carve(image.width, image.height, size[1], size[0]);
-    const carves = carves1.length <= carves2.length ? carves1 : carves2;
-    return carves.map((c3) => ({
-      image,
-      width: c3.width,
-      height: c3.height,
-      x: c3.x,
-      y: c3.y,
-      row: c3.row,
-      col: c3.col,
-      forEach: makeForEach(image, c3.x, c3.y, c3.width, c3.height)
-    })).filter((slice) => isAnyPixel(slice, (p3) => !!p3));
-  }
-  function isAnyPixel(slice, test) {
-    for (let x3 = slice.x; x3 < slice.x + slice.width; x3++) {
-      for (let y3 = slice.y; y3 < slice.y + slice.height; y3++) {
-        if (test(slice.image.partList[slice.image.pixels[y3][x3]])) return true;
-      }
-    }
-    return false;
-  }
-  function makeForEach(image, x0, y0, width, height, test) {
-    return function(callback) {
-      for (let x3 = x0; x3 < x0 + width; x3++) {
-        for (let y3 = y0; y3 < y0 + height; y3++) {
-          const p3 = image.pixels[y3][x3];
-          const color = image.partList[p3];
-          if (color && (!test || test(color))) {
-            callback(x3 - x0, y3 - y0, color);
-          }
-        }
-      }
-    };
-  }
-  function printSteppedSlice(opts) {
-    const {
-      image,
-      partIndex,
-      doc,
-      slice,
-      pitch
-    } = opts;
-    const gridSizePts = {
-      width: slice.width * pitch,
-      height: slice.height * pitch
-    };
-    const text = opts.multipleSlices ? `${nameOfColor(image.partList[partIndex].target)} Row ${slice.row} Col ${slice.col}` : `${nameOfColor(image.partList[partIndex].target)}`;
-    if (opts.textPlacement === "side") {
-      if (opts.debug) {
-        doc.rect(0, 0, gridSizePts.width + opts.cellHeaderHeightPts, gridSizePts.height);
-        doc.stroke("blue");
-      }
-      doc.translate(opts.cellHeaderHeightPts, 0);
-      doc.save();
-      doc.rotate(-90);
-      doc.translate(-gridSizePts.height, 0);
-      doc.text(text, 0, 0, { baseline: "bottom", align: "center", width: gridSizePts.height, ellipsis: true });
-      doc.restore();
-    } else {
-      if (opts.debug) {
-        doc.rect(0, 0, gridSizePts.width, gridSizePts.height + opts.cellHeaderHeightPts);
-        doc.stroke("blue");
-      }
-      doc.translate(0, opts.cellHeaderHeightPts);
-      doc.text(text, 0, 0, { baseline: "bottom", align: "center", width: gridSizePts.width, ellipsis: true });
-    }
-    doc.rect(0, 0, gridSizePts.width, gridSizePts.height);
-    doc.lineWidth(1);
-    doc.stroke("grey");
-    traceOwnPixels();
-    doc.fill("black");
-    tracePriorPixels();
-    doc.lineWidth(1.3);
-    doc.stroke("grey");
-    function traceOwnPixels() {
-      for (let y3 = slice.y; y3 < slice.y + slice.height; y3++) {
-        const cyPts = (y3 - slice.y + 0.5) * pitch;
-        for (let x3 = slice.x; x3 < slice.x + slice.width; x3++) {
-          if (image.pixels[y3][x3] === partIndex) {
-            const cxPts = (x3 - slice.x + 0.5) * pitch;
-            doc.circle(cxPts, cyPts, pitch / 2.5);
-          }
-        }
-      }
-    }
-    function tracePriorPixels() {
-      const alreadyPlotted = /* @__PURE__ */ new Map();
-      for (let y3 = slice.y; y3 < slice.y + slice.height; y3++) {
-        outline(slice.x, slice.x + slice.width, (x3) => isPrior(x3, y3), (x3) => plot(x3, y3));
-      }
-      for (let x3 = slice.x; x3 < slice.x + slice.width; x3++) {
-        outline(slice.y, slice.y + slice.height, (y3) => isPrior(x3, y3), (y3) => plot(x3, y3));
-      }
-      function plot(x3, y3) {
-        const s3 = x3 + "-" + y3;
-        if (alreadyPlotted.has(s3)) return;
-        alreadyPlotted.set(s3, true);
-        const cxPts = (x3 - slice.x) * pitch;
-        const cyPts = (y3 - slice.y) * pitch;
-        doc.moveTo(cxPts + pitch * 0.3, cyPts + pitch * 0.3);
-        doc.lineTo(cxPts + pitch * 0.7, cyPts + pitch * 0.7);
-        doc.moveTo(cxPts + pitch * 0.3, cyPts + pitch * 0.7);
-        doc.lineTo(cxPts + pitch * 0.7, cyPts + pitch * 0.3);
-      }
-      function isPrior(x3, y3) {
-        const px = image.pixels[y3][x3];
-        if (px < partIndex && px !== -1) {
-          return true;
-        }
-        return false;
-      }
-      function outline(startInclusive, endEnclusive, callback, plotter) {
-        let inside = false;
-        for (let i3 = startInclusive; i3 < endEnclusive; i3++) {
-          if (callback(i3)) {
-            if (!inside) plotter(i3);
-            inside = true;
-          } else {
-            if (inside) plotter(i3 - 1);
-            inside = false;
-          }
-        }
-        if (inside) plotter(endEnclusive - 1);
-      }
-    }
-  }
-  function getLayout(cellCount, pageWidthPts, pageHeightPts, pageMarginPts, cellWidthPts, cellHeightPts) {
-    const cellMarginPts = mmToPoints(9);
-    const result = [];
-    const printableWidthPts = pageWidthPts - pageMarginPts * 2;
-    const printableHeightPts = pageHeightPts - pageMarginPts * 2;
-    const densestUnrotatedLayout = {
-      maxCols: Math.floor((cellMarginPts + printableWidthPts) / (cellMarginPts + cellWidthPts)),
-      maxRows: Math.floor((cellMarginPts + printableHeightPts) / (cellMarginPts + cellHeightPts))
-    };
-    const densestRotatedLayout = {
-      maxCols: Math.floor((cellMarginPts + printableWidthPts) / (cellMarginPts + cellHeightPts)),
-      maxRows: Math.floor((cellMarginPts + printableHeightPts) / (cellMarginPts + cellWidthPts))
-    };
-    const isRotated = densestRotatedLayout.maxRows * densestRotatedLayout.maxCols > densestUnrotatedLayout.maxRows * densestUnrotatedLayout.maxCols && densestUnrotatedLayout.maxRows * densestUnrotatedLayout.maxCols < cellCount;
-    const densestLayout = isRotated ? densestRotatedLayout : densestUnrotatedLayout;
-    if (densestLayout.maxRows * densestLayout.maxCols === 0) {
-      throw new Error("Can't do this layout");
-    }
-    while (true) {
-      if (densestLayout.maxCols >= densestLayout.maxRows) {
-        if ((densestLayout.maxCols - 1) * densestLayout.maxRows >= cellCount) {
-          densestLayout.maxCols--;
-          continue;
-        }
-        if ((densestLayout.maxRows - 1) * densestLayout.maxCols >= cellCount) {
-          densestLayout.maxRows--;
-          continue;
-        }
-      } else {
-        if ((densestLayout.maxRows - 1) * densestLayout.maxCols >= cellCount) {
-          densestLayout.maxRows--;
-          continue;
-        }
-        if ((densestLayout.maxCols - 1) * densestLayout.maxRows >= cellCount) {
-          densestLayout.maxCols--;
-          continue;
-        }
-      }
-      break;
-    }
-    const layoutXsize = isRotated ? cellHeightPts : cellWidthPts;
-    const layoutYsize = isRotated ? cellWidthPts : cellHeightPts;
-    const unallocatedX = pageWidthPts - pageMarginPts * 2 - densestLayout.maxCols * layoutXsize;
-    const unallocatedY = pageHeightPts - pageMarginPts * 2 - densestLayout.maxRows * layoutYsize;
-    const xJustification = unallocatedX / (densestLayout.maxCols + 1);
-    const yJustification = unallocatedY / (densestLayout.maxRows + 1);
-    const xInterval = layoutXsize + xJustification;
-    const yInterval = layoutYsize + yJustification;
-    console.log(JSON.stringify({
-      pageWidthPts,
-      pageHeightPts,
-      cellWidthPts,
-      cellHeightPts,
-      densestUnrotatedLayout,
-      densestRotatedLayout,
-      isRotated,
-      densestLayout,
-      unallocatedX,
-      unallocatedY,
-      xInterval,
-      yInterval,
-      xJustification,
-      yJustification
-    }, void 0, 2));
-    let firstPage = true;
-    while (true) {
-      let first = true;
-      if (isRotated) {
-        for (let x3 = densestLayout.maxCols - 1; x3 >= 0; x3--) {
-          for (let y3 = 0; y3 < densestLayout.maxRows; y3++) {
-            if (iter(x3, y3, first)) {
-              return result;
-            }
-            first = false;
-          }
-        }
-      } else {
-        for (let y3 = 0; y3 < densestLayout.maxRows; y3++) {
-          for (let x3 = 0; x3 < densestLayout.maxCols; x3++) {
-            if (iter(x3, y3, first)) {
-              return result;
-            }
-            first = false;
-          }
-        }
-      }
-      firstPage = false;
-    }
-    function iter(x3, y3, first) {
-      const newPage = first && !firstPage;
-      addCell(
-        newPage,
-        pageMarginPts + xJustification + x3 * xInterval,
-        pageMarginPts + yJustification + y3 * yInterval
-      );
-      if (result.length === cellCount) {
-        return true;
-      }
-    }
-    function addCell(newPage, translateX, translateY) {
-      result.push({
-        next(doc, actualWidthPts, actualHeightPts) {
-          if (newPage) {
-            doc.addPage();
-          }
-          const spareX = layoutXsize - (isRotated ? actualHeightPts : actualWidthPts);
-          const spareY = layoutYsize - (isRotated ? actualWidthPts : actualHeightPts);
-          doc.save();
-          doc.translate(translateX + spareX / 2, translateY + spareY / 2);
-          if (isRotated) {
-            doc.rotate(90);
-            doc.translate(0, -layoutXsize);
-          }
-          return () => {
-            doc.restore();
-          };
-        }
-      });
-    }
-  }
-  function inchesToPoints(inches) {
-    return inches * 72;
-  }
-  function mmToPoints(mm) {
-    return mm / 25.4 * 72;
-  }
-
-  // src/components/print-dialog.tsx
-  function PrintDialog(props) {
-    const updateProp = x2(PropContext);
-    return /* @__PURE__ */ u3("div", { class: "print-dialog", children: [
-      /* @__PURE__ */ u3("div", { class: "print-options", children: [
-        /* @__PURE__ */ u3(FormatGroup, { ...props }),
-        /* @__PURE__ */ u3(PaperSizeGroup, { ...props }),
-        /* @__PURE__ */ u3(ImageSizeGroup, { ...props }),
-        /* @__PURE__ */ u3(PageBreakingGroup, { ...props })
-      ] }),
-      /* @__PURE__ */ u3("div", { class: "print-buttons", children: [
-        /* @__PURE__ */ u3("button", { class: "cancel", onClick: () => updateProp("ui", "isPrintOpen", false), children: "Cancel" }),
-        /* @__PURE__ */ u3("button", { class: "print", onClick: () => print(), children: [
-          "Print\xA0",
-          /* @__PURE__ */ u3("img", { class: "pdf-logo", src: "./pdf-logo.png" })
-        ] })
-      ] })
-    ] });
-    function print() {
-      const settings = {
-        style: props.settings.format,
-        paperSize: props.settings.paperSize,
-        breakStrategy: props.settings.breakStrategy,
-        imageSize: props.settings.imageSize,
-        carveSize: getGridSize(props.gridSize),
-        pitch: getPitch(props.gridSize),
-        filename: props.filename.replace(".png", ""),
-        debug: window.location.host.indexOf("localhost") === 0
-        // perspective: props.settings.perpsective,
-      };
-      window.clarity?.("event", "print");
-      makePdf(props.image, settings);
-    }
-  }
-  var FormatGroup = makeRadioGroup(({ image }) => ({
-    title: "Format",
-    key: "format",
-    values: [
-      {
-        value: "step-by-step",
-        title: "Single Color",
-        description: "Print one black-and-white grid per color. Best for laser printers or when colors are difficult to tell apart.",
-        icon: /* @__PURE__ */ u3(StepByStepPreviewer, { image })
-      },
-      {
-        value: "color",
-        title: "Color Image",
-        description: "Print a single color image. Best for color printers and images with fewer colors.",
-        icon: /* @__PURE__ */ u3(ColorImagePreviewer, { image })
-      },
-      {
-        value: "legend",
-        title: "Legend",
-        description: "Print a grid of letters corresponding to the legend",
-        icon: /* @__PURE__ */ u3(SinglePlanPreviewer, { image })
-      }
-    ]
-  }));
-  var PaperSizeGroup = makeRadioGroup(() => ({
-    key: "paperSize",
-    title: "Paper Size",
-    values: [
-      {
-        title: "Letter",
-        value: "letter",
-        description: '8.5" x 11"',
-        icon: /* @__PURE__ */ u3("span", { class: "letter-icon" })
-      },
-      {
-        title: "A4",
-        value: "a4",
-        description: "210mm x 297mm",
-        icon: /* @__PURE__ */ u3("span", { class: "a4-icon" })
-      }
-    ]
-  }));
-  var ImageSizeGroup = makeRadioGroup(() => ({
-    key: "imageSize",
-    title: "Image Size",
-    values: [
-      {
-        title: "Page",
-        value: "single-page",
-        description: "Scale the image to fit a single page",
-        icon: /* @__PURE__ */ u3("span", { class: "size-stretch", children: "\u26F6" })
-      },
-      {
-        title: "Actual",
-        value: "actual",
-        description: "Print at actual size. Multiple pages will be generated if necessary",
-        icon: /* @__PURE__ */ u3("span", { class: "size-actual", children: "1:1" })
-      },
-      {
-        title: "Legible",
-        value: "legible",
-        description: "Print at a legible size. Multiple pages will be generated if necessary",
-        icon: /* @__PURE__ */ u3("span", { class: "size-legible", children: "\u{1F441}" })
-      }
-    ]
-  }));
-  var PageBreakingGroup = makeRadioGroup(() => ({
-    key: "breakStrategy",
-    title: "Page Breaking",
-    values: [
-      {
-        title: "Grid",
-        value: "grid",
-        description: "Split large images based on the pegboard grid size",
-        icon: /* @__PURE__ */ u3("span", { class: "break-grid", children: "\u{1F533}" })
-      },
-      {
-        title: "Page",
-        value: "page",
-        description: "Split large images based on the page size",
-        icon: /* @__PURE__ */ u3("span", { class: "break-paper", children: "\u{1F4C4}" })
-      }
-    ]
-  }));
-  function StepByStepPreviewer(props) {
-    const [frame, setFrame] = d2(0);
-    const imgRef = A2(null);
-    y2(() => {
-      drawNextFrame();
-      const id = window.setInterval(incrementFrame, 600);
-      return () => {
-        window.clearInterval(id);
-      };
-    });
-    return /* @__PURE__ */ u3("img", { class: "step-by-step-preview", ref: imgRef });
-    function incrementFrame() {
-      setFrame((frame + 1) % (props.image.partList.length + 3));
-    }
-    function drawNextFrame() {
-      if (imgRef.current) {
-        imgRef.current.src = renderPartListImageToDataURL(props.image, frame);
-      }
-    }
-  }
-  function ColorImagePreviewer(props) {
-    return /* @__PURE__ */ u3("img", { src: renderPartListImageToDataURL(props.image) });
-  }
-  function SinglePlanPreviewer(props) {
-    const width = 5;
-    const height = 4;
-    const startX = Math.floor(props.image.width / 2) - Math.floor(width / 2);
-    const startY = Math.floor(props.image.height / 2) - Math.floor(height / 2);
-    const lines = [];
-    for (let y3 = Math.max(startY, 0); y3 < Math.min(props.image.height, startY + height); y3++) {
-      let s3 = "";
-      for (let x3 = Math.max(startX, 0); x3 < Math.min(props.image.width, startX + width); x3++) {
-        const px = props.image.partList[props.image.pixels[y3][x3]];
-        s3 = s3 + (px?.symbol ?? " ");
-      }
-      lines.push(s3);
-    }
-    return /* @__PURE__ */ u3("span", { children: /* @__PURE__ */ u3("pre", { children: lines.join("\n") }) });
-  }
-  function makeRadioGroup(factory) {
-    return function(props) {
-      const updateProp = x2(PropContext);
-      const p3 = factory(props);
-      return /* @__PURE__ */ u3("div", { class: "print-setting-group", children: [
-        /* @__PURE__ */ u3("h1", { children: p3.title }),
-        /* @__PURE__ */ u3("div", { class: "print-setting-group-options", children: p3.values.map((v3) => /* @__PURE__ */ u3("label", { children: [
-          /* @__PURE__ */ u3(
-            "input",
-            {
-              type: "radio",
-              name: p3.key,
-              checked: v3.value === props.settings[p3.key],
-              onChange: () => {
-                updateProp("print", p3.key, v3.value);
-              }
-            }
-          ),
-          /* @__PURE__ */ u3("div", { class: "option", children: [
-            /* @__PURE__ */ u3("h3", { children: v3.title }),
-            v3.icon
-          ] })
-        ] })) }),
-        /* @__PURE__ */ u3("span", { class: "description", children: p3.values.filter((v3) => v3.value === props.settings[p3.key])[0]?.description })
-      ] });
-    };
-  }
-
-  // src/components/plan-display.tsx
-  var svgns = "http://www.w3.org/2000/svg";
-  var svgCss = require_svg();
-  var refObjs = {
-    quarter: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/4/44/2014_ATB_Quarter_Obv.png",
-      width: 24.26,
-      height: 24.26
-    },
-    dollar: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/2/23/US_one_dollar_bill%2C_obverse%2C_series_2009.jpg",
-      width: 156.1,
-      height: 66.3
-    },
-    credit: {
-      url: "https://upload.wikimedia.org/wikipedia/commons/2/23/CIDSampleAmex.png",
-      width: 85.6,
-      height: 53.98
-    }
-  };
-  function PlanSvg(props) {
-    const {
-      image,
-      displaySettings
-    } = props;
-    const {
-      planStyle
-    } = displaySettings;
-    const isBackgroundDark = displaySettings.background === "#000" || displaySettings.background === "#777";
-    return /* @__PURE__ */ u3(
-      "svg",
-      {
-        class: "plan",
-        xmlns: "http://www.w3.org/2000/svg",
-        viewBox: `-16 -16 ${(image.width + 1) * 32} ${(image.height + 1) * 32}`,
-        preserveAspectRatio: "xMidYMid meet",
-        children: [
-          /* @__PURE__ */ u3("style", { children: svgCss }),
-          /* @__PURE__ */ u3("defs", { children: [
-            /* @__PURE__ */ u3("rect", { id: "melted", width: "32", height: "32", rx: "7", ry: "7" }),
-            /* @__PURE__ */ u3("rect", { id: "square", width: "32", height: "32" }),
-            /* @__PURE__ */ u3("rect", { id: "circle", width: "32", height: "32", rx: "16", ry: "16" }),
-            /* @__PURE__ */ u3("pattern", { id: "wood", patternUnits: "userSpaceOnUse", width: "400", height: "400", children: /* @__PURE__ */ u3(
-              "image",
-              {
-                href: "https://upload.wikimedia.org/wikipedia/commons/5/50/Mahag%C3%B3ni_001.jpg",
-                x: "0",
-                y: "0",
-                width: "400",
-                height: "400"
-              }
-            ) }),
-            /* @__PURE__ */ u3("filter", { id: "blurFilter", children: /* @__PURE__ */ u3("feGaussianBlur", { in: "SourceGraphic", stdDeviation: "4" }) }),
-            /* @__PURE__ */ u3("pattern", { id: "checkPattern", viewBox: "0 0 32 32", width: "32", height: "32", patternUnits: "userSpaceOnUse", children: [
-              /* @__PURE__ */ u3("rect", { x: "0", y: "0", width: "16", height: "16", fill: "#DDDDDD" }),
-              /* @__PURE__ */ u3("rect", { x: "0", y: "16", width: "16", height: "16", fill: "#999999" }),
-              /* @__PURE__ */ u3("rect", { x: "16", y: "0", width: "16", height: "16", fill: "#999999" }),
-              /* @__PURE__ */ u3("rect", { x: "16", y: "16", width: "16", height: "16", fill: "#DDDDDD" })
-            ] })
-          ] }),
-          /* @__PURE__ */ u3(BackgroundLayer, { image, bg: displaySettings.background }),
-          /* @__PURE__ */ u3(ColorLayer, { image }),
-          /* @__PURE__ */ u3(GridLayer, { image, grid: displaySettings.grid, boardSize: props.gridSize, nudgeGrid: displaySettings.nudgeGrid }),
-          /* @__PURE__ */ u3(TextLayer, { image, planStyle: props.displaySettings.planStyle, isBackgroundDark }),
-          /* @__PURE__ */ u3(RefObjLayer, { pitch: props.pitch, name: displaySettings.refobj })
-        ]
-      }
-    );
-  }
-  function BackgroundLayer(props) {
-    return /* @__PURE__ */ u3(
-      "rect",
-      {
-        x: -16,
-        y: -16,
-        width: (props.image.width + 1) * 32,
-        height: (props.image.height + 1) * 32,
-        fill: props.bg,
-        filter: props.bg === "url(#checkPattern)" ? "url(#blurFilter)" : ""
-      }
-    );
-  }
-  function TextLayer(props) {
-    const { image, planStyle, isBackgroundDark } = props;
-    const textLayer = A2(null);
-    y2(() => {
-      renderSpans();
-    }, [image, planStyle, isBackgroundDark]);
-    return /* @__PURE__ */ u3("g", { ref: textLayer });
-    function renderSpans() {
-      clearChildren(textLayer.current);
-      const target = textLayer.current;
-      if (planStyle === "symbols") {
-        for (let y3 = 0; y3 < image.height; y3++) {
-          for (let x3 = 0; x3 < image.width; x3++) {
-            const px = image.partList[image.pixels[y3][x3]];
-            if (px === void 0) continue;
-            const t3 = document.createElementNS(svgns, "text");
-            t3.innerHTML = px.symbol;
-            t3.setAttribute("x", (x3 + 0.5) * 32);
-            t3.setAttribute("y", (y3 + 0.8) * 32);
-            t3.setAttribute("text-anchor", "middle");
-            if (isBright(px.target)) {
-              t3.setAttribute("class", "bright");
-            } else {
-              t3.setAttribute("class", "dark");
-            }
-            target.appendChild(t3);
-          }
-        }
-      }
-      if (planStyle === "spans" || planStyle === "symbolspans") {
-        let addAt2 = function(px, runCount, endX, y3) {
-          if (planStyle === "spans") {
-            if (runCount < 2) return;
-          } else {
-            if (px === void 0 && runCount < 3) return;
-          }
-          const t3 = document.createElementNS(svgns, "text");
-          if (planStyle === "spans") {
-            t3.innerHTML = runCount.toString();
-          } else {
-            const sym = px?.symbol;
-            if (sym === void 0) {
-              t3.innerHTML = runCount.toString();
-            } else if (runCount === 1) {
-              t3.innerHTML = sym;
-            } else if (runCount === 2) {
-              t3.innerHTML = `${sym}`;
-            } else {
-              t3.innerHTML = `${sym}\xD7${runCount.toString()}`;
-            }
-          }
-          t3.setAttribute("x", ((endX - runCount / 2) * 32).toString());
-          t3.setAttribute("y", ((y3 + 0.8) * 32).toString());
-          t3.setAttribute("text-anchor", "middle");
-          if (px === void 0 ? !props.isBackgroundDark : isBright(px.target)) {
-            t3.setAttribute("class", "bright");
-          } else {
-            t3.setAttribute("class", "dark");
-          }
-          target.appendChild(t3);
-        };
-        var addAt = addAt2;
-        for (let y3 = 0; y3 < image.height; y3++) {
-          let nowColor = void 0;
-          let runCount = 0;
-          for (let x3 = 0; x3 <= image.width; x3++) {
-            if (x3 === image.width) {
-              addAt2(nowColor, runCount, x3, y3);
-              break;
-            }
-            const px = image.partList[image.pixels[y3][x3]];
-            if (nowColor === px) {
-              runCount++;
-            } else {
-              if (runCount > 0) {
-                addAt2(nowColor, runCount, x3, y3);
-              }
-              nowColor = px;
-              runCount = 1;
-            }
-          }
-        }
-      }
-    }
-  }
-  function GridLayer(props) {
-    const { image, grid, nudgeGrid } = props;
-    const gridLayer = A2(null);
-    y2(() => {
-      renderGrid();
-    }, [image, grid, nudgeGrid]);
-    return /* @__PURE__ */ u3("g", { ref: gridLayer });
-    function renderGrid() {
-      clearChildren(gridLayer.current);
-      const target = gridLayer.current;
-      if (grid !== "none") {
-        let gridInterval;
-        if (grid === "auto") {
-          gridInterval = getGridSize(props.boardSize)[0];
-        } else {
-          gridInterval = parseInt(grid);
-        }
-        const gridOffset = props.nudgeGrid ? carveImageFast(image, gridInterval) : { xOffset: 0, yOffset: 0 };
-        for (let y3 = 0; y3 <= image.height; y3++) {
-          const line = document.createElementNS(svgns, "line");
-          line.classList.add("gridline");
-          line.classList.add(gridInterval < image.height && y3 % gridInterval === gridOffset.yOffset ? "gridmajor" : "gridminor");
-          line.setAttribute("x1", -16);
-          line.setAttribute("x2", image.width * 32 + 16);
-          line.setAttribute("y1", y3 * 32);
-          line.setAttribute("y2", y3 * 32);
-          target.appendChild(line);
-        }
-        for (let x3 = 0; x3 <= image.width; x3++) {
-          const line = document.createElementNS(svgns, "line");
-          line.classList.add(gridInterval < image.width && x3 % gridInterval === gridOffset.xOffset ? "gridmajor" : "gridminor");
-          line.setAttribute("x1", x3 * 32);
-          line.setAttribute("x2", x3 * 32);
-          line.setAttribute("y1", -16);
-          line.setAttribute("y2", image.height * 32 + 16);
-          target.appendChild(line);
-        }
-      }
-    }
-  }
-  function ColorLayer(props) {
-    const colorsLayer = A2(null);
-    const { image } = props;
-    y2(() => {
-      clearChildren(colorsLayer.current);
-      renderColors(colorsLayer.current);
-    }, [props.image]);
-    return /* @__PURE__ */ u3("g", { ref: colorsLayer });
-    function renderColors(colorLayer) {
-      const { mark } = timer();
-      for (let i3 = 0; i3 < image.partList.length; i3++) {
-        const parts = [];
-        for (let y3 = 0; y3 < image.height; y3++) {
-          for (let x3 = 0; x3 < image.width; x3++) {
-            if (image.pixels[y3][x3] === i3) {
-              parts.push(`M ${x3 * 32} ${y3 * 32} l 32 0 l 0 32 l -32 0 l 0 -32 z`);
-            }
-          }
-        }
-        const r3 = document.createElementNS(svgns, "path");
-        r3.setAttribute("d", parts.join(" "));
-        r3.setAttribute("fill", colorEntryToHtml(image.partList[i3].target));
-        r3.setAttribute("stroke-width", "1px");
-        const title = document.createElementNS(svgns, "title");
-        title.innerHTML = nameOfColor(image.partList[i3].target);
-        r3.appendChild(title);
-        colorLayer.appendChild(r3);
-      }
-      mark("Render colors");
-    }
-  }
-  function RefObjLayer(props) {
-    if (props.name === "none") {
-      return /* @__PURE__ */ u3("g", {});
-    }
-    const refObj = refObjs[props.name];
-    const factor = 32 / props.pitch;
-    return /* @__PURE__ */ u3("g", { children: /* @__PURE__ */ u3(
-      "image",
-      {
-        href: refObj.url,
-        width: refObj.width * factor,
-        height: refObj.height * factor,
-        opacity: 0.8,
-        x: 0,
-        y: 0
-      }
-    ) });
-  }
-  function clearChildren(el) {
-    if (el) {
-      el.innerHTML = "";
-    }
-  }
-
-  // src/components/welcome-screen.tsx
-  function WelcomeScreen() {
-    const updateProp = x2(PropContext);
-    return /* @__PURE__ */ u3("div", { class: "welcome-screen", children: [
-      /* @__PURE__ */ u3("h1", { children: "Welcome to firaga.io!" }),
-      /* @__PURE__ */ u3("p", { children: [
-        /* @__PURE__ */ u3("b", { children: "firaga" }),
-        " is an online tool to help you plan and create pixel art crafts using materials like Perler beads, cross-stitching, LEGO, or just regular old paint."
-      ] }),
-      /* @__PURE__ */ u3("p", { children: [
-        /* @__PURE__ */ u3("b", { children: "firaga" }),
-        " comes preconfigured with color palettes corresponding to many popular crafting products, and uses an ",
-        /* @__PURE__ */ u3("b", { children: "advanced color-matching" }),
-        " formula to produce the most accurate results."
-      ] }),
-      /* @__PURE__ */ u3("p", { children: [
-        /* @__PURE__ */ u3("b", { children: "firaga" }),
-        " also makes high-quality, actual-size ",
-        /* @__PURE__ */ u3("b", { children: "printable plans" }),
-        " for both color and black-and-white printers. Placing one of these plans under a transparent pegboard makes for quick and easy crafting."
-      ] }),
-      /* @__PURE__ */ u3("p", { children: [
-        "For more info, read ",
-        /* @__PURE__ */ u3("a", { href: "https://firaga.io/help", children: "the documentation" }),
-        ", or talk to us on ",
-        /* @__PURE__ */ u3("a", { href: "https://twitter.com/firaga_io", children: "Twitter" }),
-        " or ",
-        /* @__PURE__ */ u3("a", { href: "https://github.com/SeaRyanC/firaga-io", children: "GitHub" }),
-        ". Happy making!"
-      ] }),
-      /* @__PURE__ */ u3("button", { class: "cancel", onClick: () => updateProp("ui", "isWelcomeOpen", false), children: "Let's go!" })
-    ] });
-  }
-
-  // src/app.tsx
-  var memoized = {
-    adjustImage: memoize(adjustImage),
-    palettizeImage: memoize(palettizeImage),
-    createPartListImage: memoize(createPartListImage),
-    imageDataToRgbaArray: memoize(imageDataToRgbaArray)
-  };
-  function createApp(initProps, galleryStorage2, renderTarget) {
-    let _props = initProps;
-    selectImage(_props.source.displayName, _props.source.uri);
-    function updateProp(parent, name, value, skipRender = false) {
-      _props = { ..._props, [parent]: { ..._props[parent], [name]: value } };
-      if (!skipRender) {
-        G(/* @__PURE__ */ u3(App, { ..._props }), renderTarget);
-        window.localStorage.setItem("props", JSON.stringify(_props, (name2, val) => name2.startsWith("_") ? void 0 : val));
-        setTimeout(() => document.body.className = "", 1e3);
-      }
-    }
-    function toggleProp(parent, name) {
-      updateProp(parent, name, !_props[parent][name]);
-    }
-    function acceptUserImage(displayName, uri) {
-      galleryStorage2.add(displayName, uri);
-      selectImage(displayName, uri);
-    }
-    function selectImage(displayName, uri) {
-      getImageDataFromName(uri, (data) => {
-        updateProp("source", "uri", uri, true);
-        updateProp("source", "displayName", displayName, true);
-        updateProp("source", "_decoded", data, true);
-        updateProp("ui", "isUploadOpen", false);
-      });
-    }
-    function App(props) {
-      _2(() => {
-        window.addEventListener("paste", function(evt) {
-          const e3 = evt;
-          for (const item of e3.clipboardData?.items ?? []) {
-            if (item.type.indexOf("image") !== -1) {
-              const blob = item.getAsFile();
-              if (!blob) continue;
-              const reader = new FileReader();
-              reader.onload = (img) => {
-                const uri = img.target.result;
-                acceptUserImage(blob.name, uri);
-              };
-              reader.readAsDataURL(blob);
-            }
-          }
-        });
-        window.addEventListener("keydown", (evt) => {
-          if (evt.ctrlKey) {
-            switch (evt.key) {
-              case "o":
-                window.clarity?.("event", "toggle-upload");
-                toggleProp("ui", "isUploadOpen");
-                break;
-              case "p":
-                window.clarity?.("event", "toggle-print");
-                toggleProp("ui", "isPrintOpen");
-                break;
-              case "l":
-                window.clarity?.("event", "toggle-legend");
-                toggleProp("ui", "showLegend");
-                break;
-              case "e":
-                window.clarity?.("event", "toggle-settings");
-                toggleProp("ui", "showSettings");
-                break;
-              default:
-                return;
-            }
-            evt.preventDefault();
-          } else {
-            switch (evt.key) {
-              case "Escape":
-                updateProp("ui", "isPrintOpen", false);
-                updateProp("ui", "isUploadOpen", false);
-                break;
-            }
-          }
-        });
-      }, []);
-      const none = {};
-      const imageData = props.source._decoded;
-      const adjustedImageData = imageData && memoized.adjustImage(imageData, props.image);
-      const processedRgbaArray = adjustedImageData && memoized.imageDataToRgbaArray(adjustedImageData);
-      const { quantized } = processedRgbaArray ? memoized.palettizeImage(processedRgbaArray, props.material, props.image) : none;
-      const image = quantized ? memoized.createPartListImage(quantized) : void 0;
-      const pitch = getPitch(props.material.size);
-      return /* @__PURE__ */ u3("div", { class: "app-top", children: [
-        /* @__PURE__ */ u3(PropContextProvider, { value: updateProp, children: [
-          props.ui.isWelcomeOpen && /* @__PURE__ */ u3(WelcomeScreen, {}),
-          /* @__PURE__ */ u3("div", { class: "toolbar", children: [
-            /* @__PURE__ */ u3("button", { title: "Open...", class: `toolbar-button ${props.ui.isUploadOpen ? "on" : "off"} text`, onClick: () => toggleProp("ui", "isUploadOpen"), children: [
-              "\u{1F4C2}",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Open" })
-            ] }),
-            /* @__PURE__ */ u3("button", { title: "Print...", class: `toolbar-button ${props.ui.isPrintOpen ? "on" : "off"} text`, onClick: () => toggleProp("ui", "isPrintOpen"), children: [
-              "\u{1F5A8}\uFE0F",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Print" })
-            ] }),
-            /* @__PURE__ */ u3("span", { class: "toolbar-divider" }),
-            /* @__PURE__ */ u3("button", { title: "Settings", class: `toolbar-button ${props.ui.showSettings ? "on" : "off"} text`, onClick: () => toggleProp("ui", "showSettings"), children: [
-              "\u2699\uFE0F",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Settings" })
-            ] }),
-            /* @__PURE__ */ u3("button", { title: "Legend", class: `toolbar-button ${props.ui.showLegend ? "on" : "off"} text`, onClick: () => toggleProp("ui", "showLegend"), children: [
-              "\u{1F511}",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Legend" })
-            ] }),
-            /* @__PURE__ */ u3("span", { class: "toolbar-divider" }),
-            /* @__PURE__ */ u3("button", { title: "Help", class: `toolbar-button ${props.ui.isWelcomeOpen ? "on" : "off"} text`, onClick: () => toggleProp("ui", "isWelcomeOpen"), children: [
-              "\u2754",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Help" })
-            ] }),
-            /* @__PURE__ */ u3("a", { class: `toolbar-button off`, title: "GitHub", href: "https://github.com/SeaRyanC/firaga-io", children: [
-              "\u{1F468}\u200D\u{1F4BB}",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Code" })
-            ] }),
-            /* @__PURE__ */ u3("a", { class: `toolbar-button off`, title: "Twitter", href: "https://twitter.com/firaga_io", children: [
-              "\u{1F4AC}",
-              /* @__PURE__ */ u3("span", { class: "extended-label", children: "Twitter" })
-            ] })
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "app-main", children: [
-            props.ui.showSettings && /* @__PURE__ */ u3("div", { class: "settings", children: [
-              /* @__PURE__ */ u3("div", { class: "settings-header", children: [
-                "Settings",
-                /* @__PURE__ */ u3("div", { class: "close-button", onClick: () => updateProp("ui", "showSettings", false), children: "\u2716" })
-              ] }),
-              /* @__PURE__ */ u3("div", { class: "settings-list", children: [
-                /* @__PURE__ */ u3(MaterialSettingsRow, { ...props.material }),
-                /* @__PURE__ */ u3(ImageSettingsRow, { ...props.image }),
-                /* @__PURE__ */ u3(DisplaySettingsRow, { ...props.display })
-              ] })
-            ] }),
-            image ? /* @__PURE__ */ u3(PlanSvg, { image, pitch, displaySettings: props.display, gridSize: props.material.size }) : /* @__PURE__ */ u3("div", { children: "Loading..." }),
-            props.ui.showLegend && image && /* @__PURE__ */ u3(Legend, { partList: image.partList, image, pitch: getPitch(props.material.size) })
-          ] }),
-          props.ui.isUploadOpen && /* @__PURE__ */ u3(
-            GalleryContainer,
-            {
-              gallery: galleryStorage2.current,
-              load: (name, uri) => {
-                selectImage(name, uri);
-              },
-              requestDelete: (uri) => {
-                galleryStorage2.remove(uri);
-                G(/* @__PURE__ */ u3(App, { ..._props }), renderTarget);
-              }
-            }
-          ),
-          props.ui.isPrintOpen && image && /* @__PURE__ */ u3(
-            PrintDialog,
-            {
-              image,
-              settings: props.print,
-              gridSize: props.material.size,
-              filename: props.source.displayName
-            }
-          )
-        ] }),
-        /* @__PURE__ */ u3("datalist", { id: "image-ticks", children: /* @__PURE__ */ u3("option", { value: "0", label: "0" }) })
-      ] });
-    }
-    function ImageSettingsRow(props) {
-      return /* @__PURE__ */ u3("div", { class: "settings-row", children: [
-        /* @__PURE__ */ u3("h1", { children: "Image" }),
-        /* @__PURE__ */ u3("div", { class: "options-row", children: [
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Transparency" }),
-            getRadioGroup(props, "image", "transparency", ImageSettings.transparency),
-            getCheckbox(props, "image", "keepOutline", "Keep Outline")
-          ] }),
-          // All current Safari implementations do not support the Canvas2d.filter property yet
-          navigator.vendor !== "Apple Computer, Inc." && /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Color Adjust" }),
-            getSlider(props, "image", "brightness", "Brightness"),
-            getSlider(props, "image", "contrast", "Contrast"),
-            getSlider(props, "image", "saturation", "Saturation")
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Dithering" }),
-            getRadioGroup(props, "image", "dithering", ImageSettings.dithering)
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Transforms" }),
-            getCheckbox(props, "image", "flip", "Flip"),
-            getCheckbox(props, "image", "mirror", "Mirror"),
-            getCheckbox(props, "image", "descale", "Undo Upscaling")
-          ] })
-        ] })
-      ] });
-    }
-    function MaterialSettingsRow(props) {
-      return /* @__PURE__ */ u3("div", { class: "settings-row", children: [
-        /* @__PURE__ */ u3("h1", { children: "Material" }),
-        /* @__PURE__ */ u3("div", { class: "options-row", children: [
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Color Matching" }),
-            getRadioGroup(props, "material", "colorMatch", MaterialSettings.colorMatch),
-            getCheckbox(props, "material", "nodupes", "No Duplicates"),
-            getCheckbox(props, "material", "matchBlackAndWhite", "Improve Black/White")
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Palette" }),
-            getRadioGroup(props, "material", "palette", MaterialSettings.palette)
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Size" }),
-            getRadioGroup(props, "material", "size", MaterialSettings.size)
-          ] })
-        ] })
-      ] });
-    }
-    function Legend({ partList, image, pitch }) {
-      return /* @__PURE__ */ u3("div", { class: "part-list-container", children: [
-        /* @__PURE__ */ u3("table", { class: "part-list", children: [
-          /* @__PURE__ */ u3("thead", { children: /* @__PURE__ */ u3("tr", { children: /* @__PURE__ */ u3("th", { colSpan: 5, class: "top-header", children: "Legend" }) }) }),
-          /* @__PURE__ */ u3("tbody", { children: partList.map((ent) => {
-            return /* @__PURE__ */ u3("tr", { children: [
-              /* @__PURE__ */ u3("td", { class: "legend-symbol", children: ent.symbol }),
-              /* @__PURE__ */ u3("td", { class: "part-count", children: ent.count.toLocaleString() }),
-              ent.target.code && /* @__PURE__ */ u3("td", { class: "color-code", children: ent.target.code }),
-              /* @__PURE__ */ u3("td", { class: "color-swatch", style: { color: colorEntryToHex(ent.target) }, children: "\u2B24" }),
-              /* @__PURE__ */ u3("td", { class: "color-name", children: /* @__PURE__ */ u3("span", { class: "colorName", children: ent.target.name }) })
-            ] }, ent.symbol + ent.count + ent.target.name);
-          }) })
-        ] }),
-        /* @__PURE__ */ u3(Stats, { image, pitch })
-      ] });
-    }
-    function Stats({ image, pitch }) {
-      const pixelCount = getImageStats(image).pixels;
-      return /* @__PURE__ */ u3("table", { class: "plan-stats", children: [
-        /* @__PURE__ */ u3("thead", { children: /* @__PURE__ */ u3("tr", { children: /* @__PURE__ */ u3("th", { colSpan: 4, class: "top-header", children: "Statistics" }) }) }),
-        /* @__PURE__ */ u3("tbody", { children: [
-          /* @__PURE__ */ u3("tr", { children: [
-            /* @__PURE__ */ u3("td", { class: "stat-label", rowSpan: 3, children: "Size" }),
-            /* @__PURE__ */ u3("td", { class: "stat-value", children: [
-              image.width.toLocaleString(),
-              "\xD7",
-              image.height.toLocaleString(),
-              "px"
-            ] })
-          ] }),
-          /* @__PURE__ */ u3("tr", { children: /* @__PURE__ */ u3("td", { class: "stat-value", children: [
-            feetInches(image.width * pitch),
-            "\xD7",
-            feetInches(image.height * pitch)
-          ] }) }),
-          /* @__PURE__ */ u3("tr", { children: /* @__PURE__ */ u3("td", { class: "stat-value", children: [
-            fmt(image.width * pitch / 10),
-            "\xD7",
-            fmt(image.height * pitch / 10),
-            "cm"
-          ] }) }),
-          /* @__PURE__ */ u3("tr", { children: [
-            /* @__PURE__ */ u3("td", { class: "stat-label", children: "Pixels" }),
-            /* @__PURE__ */ u3("td", { colSpan: 4, class: "stat-value", children: pixelCount.toLocaleString() })
-          ] }),
-          /* @__PURE__ */ u3("tr", { children: [
-            /* @__PURE__ */ u3("td", { class: "stat-label", children: "Cost (USD)" }),
-            /* @__PURE__ */ u3("td", { colSpan: 4, class: "stat-value", children: dollars(pixelCount * 2e-3) })
-          ] }),
-          /* @__PURE__ */ u3("tr", { children: [
-            /* @__PURE__ */ u3("td", { class: "stat-label", children: "Time" }),
-            /* @__PURE__ */ u3("td", { colSpan: 4, class: "stat-value", children: timeAmount(pixelCount * 4) })
-          ] })
-        ] })
-      ] });
-      function fmt(n2) {
-        return n2.toFixed(1);
-      }
-    }
-    function DisplaySettingsRow(props) {
-      return /* @__PURE__ */ u3("div", { class: "settings-row", children: [
-        /* @__PURE__ */ u3("h1", { children: "Plan" }),
-        /* @__PURE__ */ u3("div", { class: "options-row", children: [
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Legend" }),
-            getRadioGroup(props, "display", "planStyle", DisplaySettings.planStyle)
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Grid" }),
-            getRadioGroup(props, "display", "grid", DisplaySettings.grid),
-            getCheckbox(props, "display", "nudgeGrid", "Nudge Grid")
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Background" }),
-            getRadioGroup(props, "display", "background", DisplaySettings.background)
-          ] }),
-          /* @__PURE__ */ u3("div", { class: "options-group", children: [
-            /* @__PURE__ */ u3("span", { class: "header", children: "Comparison" }),
-            getRadioGroup(props, "display", "refobj", DisplaySettings.refobj)
-          ] })
-        ] })
-      ] });
-    }
-    function GalleryContainer(props) {
-      const fileInputRef = A2(null);
-      const dropBoxRef = A2(null);
-      y2(() => {
-        const db = dropBoxRef.current;
-        db.addEventListener("dragenter", (e3) => (e3.stopPropagation(), e3.preventDefault()), false);
-        db.addEventListener("dragover", (e3) => (e3.stopPropagation(), e3.preventDefault()), false);
-        db.addEventListener("drop", function(e3) {
-          e3.stopPropagation();
-          e3.preventDefault();
-          const files = e3.dataTransfer?.files;
-          if (!files) return;
-          for (let i3 = 0; i3 < files.length; i3++) {
-            const file = files[i3];
-            if (!file.type.startsWith("image/"))
-              continue;
-            const reader = new FileReader();
-            reader.onload = (img) => {
-              const name = file.name;
-              const uri = img.target.result;
-              acceptUserImage(name, uri);
-            };
-            reader.readAsDataURL(file);
-          }
-        }, false);
-      }, []);
-      return /* @__PURE__ */ u3("div", { class: "gallery", children: [
-        /* @__PURE__ */ u3("div", { class: "close-button", onClick: () => updateProp("ui", "isUploadOpen", false), children: "\u2716" }),
-        /* @__PURE__ */ u3("h2", { children: "Pick Image" }),
-        /* @__PURE__ */ u3("div", { ref: dropBoxRef, class: "dropbox", children: [
-          /* @__PURE__ */ u3(
-            "label",
-            {
-              for: "upload-image-button",
-              style: "display: inline",
-              class: "download-button-label",
-              children: "Upload"
-            }
-          ),
-          /* @__PURE__ */ u3(
-            "input",
-            {
-              id: "upload-image-button",
-              style: "display: none;",
-              type: "file",
-              accept: "image/png, image/jpeg",
-              ref: fileInputRef,
-              onChange: fileInputChanged,
-              value: "Choose..."
-            }
-          ),
-          ", Paste, or Drag & Drop here"
-        ] }),
-        /* @__PURE__ */ u3("h2", { children: "Gallery" }),
-        /* @__PURE__ */ u3("div", { class: "gallery-list-container", children: /* @__PURE__ */ u3(Gallery, { ...props }) })
-      ] });
-      function fileInputChanged() {
-        if (!fileInputRef.current) return;
-        if (!fileInputRef.current.files) return;
-        const files = fileInputRef.current.files;
-        for (let i3 = 0; i3 < files.length; i3++) {
-          const file = files[i3];
-          const reader = new FileReader();
-          reader.onload = (img) => {
-            acceptUserImage(file.name, img.target.result);
-          };
-          reader.readAsDataURL(file);
-        }
-      }
-    }
-    function getCheckbox(props, subKey, valueKey, label) {
-      return /* @__PURE__ */ u3("label", { children: [
-        /* @__PURE__ */ u3(
-          "input",
-          {
-            type: "checkbox",
-            checked: props[valueKey],
-            onChange: (arg) => {
-              updateProp(subKey, valueKey, !props[valueKey]);
-            }
-          }
-        ),
-        label
-      ] });
-    }
-    function getSlider(props, parentKey, key, label) {
-      return /* @__PURE__ */ u3("div", { class: "slider-caption", children: [
-        /* @__PURE__ */ u3("input", { type: "range", list: "image-ticks", class: "slider", onChange: changed, min: "-10", max: "10", step: "1", value: props[key] }),
-        /* @__PURE__ */ u3("span", { children: label })
-      ] });
-      function changed(e3) {
-        updateProp(parentKey, key, e3.target.value);
-      }
-    }
-    function getRadioGroup(props, parentProp, key, settings) {
-      return radioGroup(key, (k3, v3) => updateProp(parentProp, k3, v3), props[key], settings);
-    }
-  }
-  function radioGroup(name, changed, defaultValue, values) {
-    return /* @__PURE__ */ u3(k, { children: [
-      ...values.map(
-        ([value, caption]) => {
-          return /* @__PURE__ */ u3("label", { children: [
-            /* @__PURE__ */ u3("input", { type: "radio", onChange: fireChanged, name, value, checked: value === defaultValue }),
-            caption
-          ] }, value);
-          function fireChanged() {
-            changed(name, value);
-          }
-        }
-      )
-    ] });
-  }
-  function getImageDataFromName(name, callback) {
-    const img = new Image();
-    img.addEventListener("load", () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = img.width;
-      canvas.height = img.height;
-      canvas.getContext("2d")?.drawImage(img, 0, 0);
-      callback(getImageData(img));
-    });
-    img.src = name;
-  }
-  function memoize(func) {
-    const calls = [];
-    return function(...args) {
-      for (let i3 = 0; i3 < calls.length; i3++) {
-        if (calls[i3][0].length === args.length) {
-          let match = true;
-          for (let j3 = 0; j3 < args.length; j3++) {
-            if (calls[i3][0][j3] !== args[j3]) {
-              match = false;
-              break;
-            }
-          }
-          if (match) {
-            return calls[i3][1];
-          }
-        }
-      }
-      const r3 = func.apply(void 0, args);
-      calls.push([args, r3]);
-      if (calls.length > 20) {
-        calls.splice(0, 20);
-      }
-      return r3;
-    };
-  }
-
-  // src/user-gallery.ts
-  var defaultGallery = [
-    ["Eevee", "eevee"],
-    ["Mario 3", "mario-3"],
-    ["Megaman X", "megaman_x"],
-    ["Earthbound", "earthbound"],
-    ["Kirby", "kirby"],
-    ["Mushrom", "mushroom"],
-    ["Crono", "crono"],
-    ["Ghost", "ghost-smw"],
-    ["Mew", "mew"],
-    ["Caped Mario", "mario-cape"],
-    ["Link (NES)", "link-nes"],
-    ["Pac-man Ghost", "ghost"],
-    ["Link (SNES)", "link"],
-    ["Mario (NES)", "mario-1"],
-    ["Gannon", "gannon"],
-    ["Ken", "ken"],
-    ["Shyguy", "shyguy"],
-    ["Squirtle", "squirtle"],
-    ["Brachiosaur", "brachiosaur"],
-    ["Sonic", "sonic"],
-    ["Piranha Plant", "smw-plant"]
-  ];
-  var keyname = "user-gallery";
-  function createGallery() {
-    let current = defaultGallery.map(([name, uri]) => [name, `./gallery/${uri}.png`]);
-    const s3 = window.localStorage.getItem(keyname);
-    if (s3 !== null) {
-      current = JSON.parse(s3);
-    }
-    function add(name, uri) {
-      for (let i3 = 0; i3 < current.length; i3++) {
-        if (current[i3][1] === uri) {
-          return;
-        }
-      }
-      current = [[name, uri], ...current];
-      window.setTimeout(save, 250);
-      window.clarity?.("event", "add-user-image");
-    }
-    function remove(uri) {
-      for (let i3 = 0; i3 < current.length; i3++) {
-        if (current[i3][1] === uri) {
-          current.splice(i3, 1);
-          current = [...current];
-        }
-      }
-    }
-    function save() {
-      window.localStorage.setItem(keyname, JSON.stringify(current));
-    }
-    return {
-      add,
-      remove,
-      get current() {
-        return current;
-      }
-    };
-  }
-
-  // src/firaga.tsx
-  var galleryStorage = createGallery();
-  var DefaultAppProps = {
-    display: {
-      background: "url(#checkPattern)",
-      grid: "auto",
-      nudgeGrid: true,
-      planStyle: "none",
-      refobj: "none"
-    },
-    image: {
-      brightness: 0,
-      contrast: 0,
-      saturation: 0,
-      flip: false,
-      mirror: false,
-      descale: true,
-      dithering: "auto",
-      transparency: "auto",
-      keepOutline: false
-    },
-    material: {
-      colorMatch: "ictcp",
-      nodupes: false,
-      palette: "perler-multimix",
-      size: "perler",
-      matchBlackAndWhite: true
-    },
-    print: {
-      paperSize: "letter",
-      format: "step-by-step",
-      imageSize: "actual",
-      breakStrategy: "page"
-    },
-    source: {
-      displayName: galleryStorage.current[0][0],
-      uri: galleryStorage.current[0][1],
-      _decoded: void 0
-    },
-    ui: {
-      isUploadOpen: false,
-      isPrintOpen: false,
-      isWelcomeOpen: true,
-      showLegend: false,
-      showSettings: false,
-      tourStage: void 0,
-      helpTopic: void 0
-    }
-  };
-  window.addEventListener("DOMContentLoaded", function() {
-    const s3 = window.localStorage.getItem("props");
-    let props;
-    if (s3 === null) {
-      props = DefaultAppProps;
-    } else {
-      props = JSON.parse(s3);
-    }
-    try {
-      createApp(props, galleryStorage, document.body);
-    } catch (e3) {
-      window.localStorage.clear();
-      console.error(e3);
-      props = DefaultAppProps;
-      createApp(props, galleryStorage, document.body);
-    }
-  });
-})();
+`)}
+}
+`}async function ta(e,t,r){return new Promise((n,a)=>{let o=document.createElement("canvas");o.width=e,o.height=t;let i=o.getContext("2d");if(!i){a(new Error("Could not get canvas context"));return}let d=i.createImageData(e,t);for(let p=0;p<t;p++)for(let c=0;c<e;c++){let s=r[p][c]?255:0,u=(p*e+c)*4;d.data[u]=s,d.data[u+1]=s,d.data[u+2]=s,d.data[u+3]=255}i.putImageData(d,0,0),o.toBlob(p=>{p?n(p):a(new Error("Could not create blob"))},"image/png")})}function Rr(e,t){let r=URL.createObjectURL(e),n=document.createElement("a");n.href=r,n.download=t,document.body.appendChild(n),n.click(),document.body.removeChild(n),URL.revokeObjectURL(r)}async function Ir(e){if(typeof window<"u"&&window.JSZip)await e(window.JSZip);else{let t=document.createElement("script");t.src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",t.onload=async()=>{await e(window.JSZip)},t.onerror=()=>{console.error("Failed to load JSZip")},document.head.appendChild(t)}}function Tr(e){let t=U(z);return l("div",{class:"threed-dialog",children:[l("div",{class:"threed-options",children:[l(ra,{...e}),l(na,{...e})]}),l("div",{class:"threed-buttons",children:[l("button",{class:"cancel",onClick:()=>t("ui","is3dOpen",!1),children:"Cancel"}),l("button",{class:"export",onClick:()=>r(),children:"Export 3D"})]})]});function r(){let n={format:e.settings.format,heightScale:e.settings.heightScale,filename:e.filename.replace(".png","")};window.clarity?.("event","3d-export"),n.format==="3mf"?Mr(e.image,n):n.format==="openscad-masks"&&Gr(e.image,n),t("ui","is3dOpen",!1)}}var ra=aa(({image:e})=>({title:"Format",key:"format",values:[{value:"3mf",title:"3MF Mesh",description:"Export as a 3D triangle mesh in 3MF format. Each color is a separate material. Compatible with most 3D printers and viewers.",icon:l("span",{class:"threed-format-icon",children:"\u{1F537}"})},{value:"openscad-masks",title:"OpenSCAD",description:"Export as a zip file containing masks and an OpenSCAD script. Edit heights and combine shapes in OpenSCAD.",icon:l("span",{class:"threed-format-icon",children:"\u{1F4E6}"})}]})),na=oa(({image:e})=>({title:"Height Scale",key:"heightScale",min:.1,max:5,step:.1,description:"Scale the height of the 3D model. Higher values create taller peaks."}));function aa(e){return function(t){let r=U(z),n=e(t);return l("div",{class:"threed-setting-group",children:[l("h1",{children:n.title}),l("div",{class:"threed-setting-group-options",children:n.values.map(a=>l("label",{children:[l("input",{type:"radio",name:n.key,checked:a.value===t.settings[n.key],onChange:()=>{r("threeD",n.key,a.value)}}),l("div",{class:"option",children:[l("h3",{children:a.title}),a.icon]})]}))}),l("span",{class:"description",children:n.values.filter(a=>a.value===t.settings[n.key])[0]?.description})]})}}function oa(e){return function(t){let r=U(z),n=e(t),a=t.settings[n.key];return l("div",{class:"threed-setting-group slider-group",children:[l("h1",{children:n.title}),l("input",{type:"range",min:n.min,max:n.max,step:n.step,value:typeof a=="number"?a:1,onChange:o=>{let i=parseFloat(o.target.value);r("threeD",n.key,i)}}),l("span",{class:"slider-value",children:typeof a=="number"?a.toFixed(1):a}),l("span",{class:"description",children:n.description})]})}}var ae="http://www.w3.org/2000/svg",la=Vr(),sa={quarter:{url:"https://upload.wikimedia.org/wikipedia/commons/4/44/2014_ATB_Quarter_Obv.png",width:24.26,height:24.26},dollar:{url:"https://upload.wikimedia.org/wikipedia/commons/2/23/US_one_dollar_bill%2C_obverse%2C_series_2009.jpg",width:156.1,height:66.3},credit:{url:"https://upload.wikimedia.org/wikipedia/commons/2/23/CIDSampleAmex.png",width:85.6,height:53.98}};function Or(e){let{image:t,displaySettings:r}=e,{planStyle:n}=r,a=r.background==="#000"||r.background==="#777";return l("svg",{class:"plan",xmlns:"http://www.w3.org/2000/svg",viewBox:`-16 -16 ${(t.width+1)*32} ${(t.height+1)*32}`,preserveAspectRatio:"xMidYMid meet",children:[l("style",{children:la}),l("defs",{children:[l("rect",{id:"melted",width:"32",height:"32",rx:"7",ry:"7"}),l("rect",{id:"square",width:"32",height:"32"}),l("rect",{id:"circle",width:"32",height:"32",rx:"16",ry:"16"}),l("pattern",{id:"wood",patternUnits:"userSpaceOnUse",width:"400",height:"400",children:l("image",{href:"https://upload.wikimedia.org/wikipedia/commons/5/50/Mahag%C3%B3ni_001.jpg",x:"0",y:"0",width:"400",height:"400"})}),l("filter",{id:"blurFilter",children:l("feGaussianBlur",{in:"SourceGraphic",stdDeviation:"4"})}),l("pattern",{id:"checkPattern",viewBox:"0 0 32 32",width:"32",height:"32",patternUnits:"userSpaceOnUse",children:[l("rect",{x:"0",y:"0",width:"16",height:"16",fill:"#DDDDDD"}),l("rect",{x:"0",y:"16",width:"16",height:"16",fill:"#999999"}),l("rect",{x:"16",y:"0",width:"16",height:"16",fill:"#999999"}),l("rect",{x:"16",y:"16",width:"16",height:"16",fill:"#DDDDDD"})]})]}),l(ca,{image:t,bg:r.background}),l(pa,{image:t}),l(da,{image:t,grid:r.grid,boardSize:e.gridSize,nudgeGrid:r.nudgeGrid}),l(ua,{image:t,planStyle:e.displaySettings.planStyle,isBackgroundDark:a}),l(ha,{pitch:e.pitch,name:r.refobj})]})}function ca(e){return l("rect",{x:-16,y:-16,width:(e.image.width+1)*32,height:(e.image.height+1)*32,fill:e.bg,filter:e.bg==="url(#checkPattern)"?"url(#blurFilter)":""})}function ua(e){let{image:t,planStyle:r,isBackgroundDark:n}=e,a=H(null);return K(()=>{o()},[t,r,n]),l("g",{ref:a});function o(){dt(a.current);let i=a.current;if(r==="symbols")for(let p=0;p<t.height;p++)for(let c=0;c<t.width;c++){let s=t.partList[t.pixels[p][c]];if(s===void 0)continue;let u=document.createElementNS(ae,"text");u.innerHTML=s.symbol,u.setAttribute("x",(c+.5)*32),u.setAttribute("y",(p+.8)*32),u.setAttribute("text-anchor","middle"),rt(s.target)?u.setAttribute("class","bright"):u.setAttribute("class","dark"),i.appendChild(u)}if(r==="spans"||r==="symbolspans"){let p=function(c,s,u,f){if(r==="spans"){if(s<2)return}else if(c===void 0&&s<3)return;let g=document.createElementNS(ae,"text");if(r==="spans")g.innerHTML=s.toString();else{let m=c?.symbol;m===void 0?g.innerHTML=s.toString():s===1?g.innerHTML=m:s===2?g.innerHTML=`${m}`:g.innerHTML=`${m}\xD7${s.toString()}`}g.setAttribute("x",((u-s/2)*32).toString()),g.setAttribute("y",((f+.8)*32).toString()),g.setAttribute("text-anchor","middle"),(c===void 0?!e.isBackgroundDark:rt(c.target))?g.setAttribute("class","bright"):g.setAttribute("class","dark"),i.appendChild(g)};var d=p;for(let c=0;c<t.height;c++){let s,u=0;for(let f=0;f<=t.width;f++){if(f===t.width){p(s,u,f,c);break}let g=t.partList[t.pixels[c][f]];s===g?u++:(u>0&&p(s,u,f,c),s=g,u=1)}}}}}function da(e){let{image:t,grid:r,nudgeGrid:n}=e,a=H(null);return K(()=>{o()},[t,r,n]),l("g",{ref:a});function o(){dt(a.current);let i=a.current;if(r!=="none"){let d;r==="auto"?d=Pe(e.boardSize)[0]:d=parseInt(r);let p=e.nudgeGrid?hr(t,d):{xOffset:0,yOffset:0};for(let c=0;c<=t.height;c++){let s=document.createElementNS(ae,"line");s.classList.add("gridline"),s.classList.add(d<t.height&&c%d===p.yOffset?"gridmajor":"gridminor"),s.setAttribute("x1",-16),s.setAttribute("x2",t.width*32+16),s.setAttribute("y1",c*32),s.setAttribute("y2",c*32),i.appendChild(s)}for(let c=0;c<=t.width;c++){let s=document.createElementNS(ae,"line");s.classList.add(d<t.width&&c%d===p.xOffset?"gridmajor":"gridminor"),s.setAttribute("x1",c*32),s.setAttribute("x2",c*32),s.setAttribute("y1",-16),s.setAttribute("y2",t.height*32+16),i.appendChild(s)}}}}function pa(e){let t=H(null),{image:r}=e;return K(()=>{dt(t.current),n(t.current)},[e.image]),l("g",{ref:t});function n(a){let{mark:o}=O();for(let i=0;i<r.partList.length;i++){let d=[];for(let s=0;s<r.height;s++)for(let u=0;u<r.width;u++)r.pixels[s][u]===i&&d.push(`M ${u*32} ${s*32} l 32 0 l 0 32 l -32 0 l 0 -32 z`);let p=document.createElementNS(ae,"path");p.setAttribute("d",d.join(" ")),p.setAttribute("fill",pr(r.partList[i].target)),p.setAttribute("stroke-width","1px");let c=document.createElementNS(ae,"title");c.innerHTML=me(r.partList[i].target),p.appendChild(c),a.appendChild(p)}o("Render colors")}}function ha(e){if(e.name==="none")return l("g",{});let t=sa[e.name],r=32/e.pitch;return l("g",{children:l("image",{href:t.url,width:t.width*r,height:t.height*r,opacity:.8,x:0,y:0})})}function dt(e){e&&(e.innerHTML="")}function zr(){let e=U(z);return l("div",{class:"welcome-screen",children:[l("h1",{children:"Welcome to firaga.io!"}),l("p",{children:[l("b",{children:"firaga"})," is an online tool to help you plan and create pixel art crafts using materials like Perler beads, cross-stitching, LEGO, or just regular old paint."]}),l("p",{children:[l("b",{children:"firaga"})," comes preconfigured with color palettes corresponding to many popular crafting products, and uses an ",l("b",{children:"advanced color-matching"})," formula to produce the most accurate results."]}),l("p",{children:[l("b",{children:"firaga"})," also makes high-quality, actual-size ",l("b",{children:"printable plans"})," for both color and black-and-white printers. Placing one of these plans under a transparent pegboard makes for quick and easy crafting."]}),l("p",{children:["For more info, read ",l("a",{href:"https://firaga.io/help",children:"the documentation"}),", or talk to us on ",l("a",{href:"https://twitter.com/firaga_io",children:"Twitter"})," or ",l("a",{href:"https://github.com/SeaRyanC/firaga-io",children:"GitHub"}),". Happy making!"]}),l("button",{class:"cancel",onClick:()=>e("ui","isWelcomeOpen",!1),children:"Let's go!"})]})}var Ee={adjustImage:Me(Ar),palettizeImage:Me(Br),createPartListImage:Me(Sr),imageDataToRgbaArray:Me(wr)};function pt(e,t,r){let n=e;d(n.source.displayName,n.source.uri);function a(h,_,k,y=!1){n={...n,[h]:{...n[h],[_]:k}},y||(pe(l(p,{...n}),r),window.localStorage.setItem("props",JSON.stringify(n,(D,w)=>D.startsWith("_")?void 0:w)),setTimeout(()=>document.body.className="",1e3))}function o(h,_){a(h,_,!n[h][_])}function i(h,_){t.add(h,_),d(h,_)}function d(h,_){fa(_,k=>{a("source","uri",_,!0),a("source","displayName",h,!0),a("source","_decoded",k,!0),a("ui","isUploadOpen",!1)})}function p(h){Ut(()=>{window.addEventListener("paste",function(A){let S=A;for(let F of S.clipboardData?.items??[])if(F.type.indexOf("image")!==-1){let I=F.getAsFile();if(!I)continue;let $=new FileReader;$.onload=oe=>{let Z=oe.target.result;i(I.name,Z)},$.readAsDataURL(I)}}),window.addEventListener("keydown",A=>{if(A.ctrlKey){switch(A.key){case"o":window.clarity?.("event","toggle-upload"),o("ui","isUploadOpen");break;case"p":window.clarity?.("event","toggle-print"),o("ui","isPrintOpen");break;case"3":window.clarity?.("event","toggle-3d"),o("ui","is3dOpen");break;case"l":window.clarity?.("event","toggle-legend"),o("ui","showLegend");break;case"e":window.clarity?.("event","toggle-settings"),o("ui","showSettings");break;default:return}A.preventDefault()}else A.key==="Escape"&&(a("ui","isPrintOpen",!1),a("ui","isUploadOpen",!1),a("ui","is3dOpen",!1))})},[]);let _={},k=h.source._decoded,y=k&&Ee.adjustImage(k,h.image),D=y&&Ee.imageDataToRgbaArray(y),{quantized:w}=D?Ee.palettizeImage(D,h.material,h.image):_,B=w?Ee.createPartListImage(w):void 0,x=fe(h.material.size);return l("div",{class:"app-top",children:[l(Pr,{value:a,children:[h.ui.isWelcomeOpen&&l(zr,{}),l("div",{class:"toolbar",children:[l("button",{title:"Open...",class:`toolbar-button ${h.ui.isUploadOpen?"on":"off"} text`,onClick:()=>o("ui","isUploadOpen"),children:["\u{1F4C2}",l("span",{class:"extended-label",children:"Open"})]}),l("button",{title:"Print...",class:`toolbar-button ${h.ui.isPrintOpen?"on":"off"} text`,onClick:()=>o("ui","isPrintOpen"),children:["\u{1F5A8}\uFE0F",l("span",{class:"extended-label",children:"Print"})]}),l("button",{title:"3D...",class:`toolbar-button ${h.ui.is3dOpen?"on":"off"} text`,onClick:()=>o("ui","is3dOpen"),children:["\u{1F3B2}",l("span",{class:"extended-label",children:"3D"})]}),l("span",{class:"toolbar-divider"}),l("button",{title:"Settings",class:`toolbar-button ${h.ui.showSettings?"on":"off"} text`,onClick:()=>o("ui","showSettings"),children:["\u2699\uFE0F",l("span",{class:"extended-label",children:"Settings"})]}),l("button",{title:"Legend",class:`toolbar-button ${h.ui.showLegend?"on":"off"} text`,onClick:()=>o("ui","showLegend"),children:["\u{1F511}",l("span",{class:"extended-label",children:"Legend"})]}),l("span",{class:"toolbar-divider"}),l("button",{title:"Help",class:`toolbar-button ${h.ui.isWelcomeOpen?"on":"off"} text`,onClick:()=>o("ui","isWelcomeOpen"),children:["\u2754",l("span",{class:"extended-label",children:"Help"})]}),l("a",{class:"toolbar-button off",title:"GitHub",href:"https://github.com/SeaRyanC/firaga-io",children:["\u{1F468}\u200D\u{1F4BB}",l("span",{class:"extended-label",children:"Code"})]}),l("a",{class:"toolbar-button off",title:"Twitter",href:"https://twitter.com/firaga_io",children:["\u{1F4AC}",l("span",{class:"extended-label",children:"Twitter"})]})]}),l("div",{class:"app-main",children:[h.ui.showSettings&&l("div",{class:"settings",children:[l("div",{class:"settings-header",children:["Settings",l("div",{class:"close-button",onClick:()=>a("ui","showSettings",!1),children:"\u2716"})]}),l("div",{class:"settings-list",children:[l(s,{...h.material}),l(c,{...h.image}),l(g,{...h.display})]})]}),B?l(Or,{image:B,pitch:x,displaySettings:h.display,gridSize:h.material.size}):l("div",{children:"Loading..."}),h.ui.showLegend&&B&&l(u,{partList:B.partList,image:B,pitch:fe(h.material.size)})]}),h.ui.isUploadOpen&&l(m,{gallery:t.current,load:(A,S)=>{d(A,S)},requestDelete:A=>{t.remove(A),pe(l(p,{...n}),r)}}),h.ui.isPrintOpen&&B&&l(Er,{image:B,settings:h.print,gridSize:h.material.size,filename:h.source.displayName}),h.ui.is3dOpen&&B&&l(Tr,{image:B,settings:h.threeD,filename:h.source.displayName})]}),l("datalist",{id:"image-ticks",children:l("option",{value:"0",label:"0"})})]})}function c(h){return l("div",{class:"settings-row",children:[l("h1",{children:"Image"}),l("div",{class:"options-row",children:[l("div",{class:"options-group",children:[l("span",{class:"header",children:"Transparency"}),b(h,"image","transparency",lt.transparency),C(h,"image","keepOutline","Keep Outline")]}),navigator.vendor!=="Apple Computer, Inc."&&l("div",{class:"options-group",children:[l("span",{class:"header",children:"Color Adjust"}),v(h,"image","brightness","Brightness"),v(h,"image","contrast","Contrast"),v(h,"image","saturation","Saturation")]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Dithering"}),b(h,"image","dithering",lt.dithering)]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Transforms"}),C(h,"image","flip","Flip"),C(h,"image","mirror","Mirror"),C(h,"image","descale","Undo Upscaling")]})]})]})}function s(h){return l("div",{class:"settings-row",children:[l("h1",{children:"Material"}),l("div",{class:"options-row",children:[l("div",{class:"options-group",children:[l("span",{class:"header",children:"Color Matching"}),b(h,"material","colorMatch",Le.colorMatch),C(h,"material","nodupes","No Duplicates"),C(h,"material","matchBlackAndWhite","Improve Black/White")]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Palette"}),b(h,"material","palette",Le.palette)]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Size"}),b(h,"material","size",Le.size)]})]})]})}function u({partList:h,image:_,pitch:k}){return l("div",{class:"part-list-container",children:[l("table",{class:"part-list",children:[l("thead",{children:l("tr",{children:l("th",{colSpan:5,class:"top-header",children:"Legend"})})}),l("tbody",{children:h.map(y=>l("tr",{children:[l("td",{class:"legend-symbol",children:y.symbol}),l("td",{class:"part-count",children:y.count.toLocaleString()}),y.target.code&&l("td",{class:"color-code",children:y.target.code}),l("td",{class:"color-swatch",style:{color:J(y.target)},children:"\u2B24"}),l("td",{class:"color-name",children:l("span",{class:"colorName",children:y.target.name})})]},y.symbol+y.count+y.target.name))})]}),l(f,{image:_,pitch:k})]})}function f({image:h,pitch:_}){let k=xr(h).pixels;return l("table",{class:"plan-stats",children:[l("thead",{children:l("tr",{children:l("th",{colSpan:4,class:"top-header",children:"Statistics"})})}),l("tbody",{children:[l("tr",{children:[l("td",{class:"stat-label",rowSpan:3,children:"Size"}),l("td",{class:"stat-value",children:[h.width.toLocaleString(),"\xD7",h.height.toLocaleString(),"px"]})]}),l("tr",{children:l("td",{class:"stat-value",children:[at(h.width*_),"\xD7",at(h.height*_)]})}),l("tr",{children:l("td",{class:"stat-value",children:[y(h.width*_/10),"\xD7",y(h.height*_/10),"cm"]})}),l("tr",{children:[l("td",{class:"stat-label",children:"Pixels"}),l("td",{colSpan:4,class:"stat-value",children:k.toLocaleString()})]}),l("tr",{children:[l("td",{class:"stat-label",children:"Cost (USD)"}),l("td",{colSpan:4,class:"stat-value",children:fr(k*.002)})]}),l("tr",{children:[l("td",{class:"stat-label",children:"Time"}),l("td",{colSpan:4,class:"stat-value",children:mr(k*4)})]})]})]});function y(D){return D.toFixed(1)}}function g(h){return l("div",{class:"settings-row",children:[l("h1",{children:"Plan"}),l("div",{class:"options-row",children:[l("div",{class:"options-group",children:[l("span",{class:"header",children:"Legend"}),b(h,"display","planStyle",ye.planStyle)]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Grid"}),b(h,"display","grid",ye.grid),C(h,"display","nudgeGrid","Nudge Grid")]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Background"}),b(h,"display","background",ye.background)]}),l("div",{class:"options-group",children:[l("span",{class:"header",children:"Comparison"}),b(h,"display","refobj",ye.refobj)]})]})]})}function m(h){let _=H(null),k=H(null);return K(()=>{let D=k.current;D.addEventListener("dragenter",w=>(w.stopPropagation(),w.preventDefault()),!1),D.addEventListener("dragover",w=>(w.stopPropagation(),w.preventDefault()),!1),D.addEventListener("drop",function(w){w.stopPropagation(),w.preventDefault();let B=w.dataTransfer?.files;if(B)for(let x=0;x<B.length;x++){let A=B[x];if(!A.type.startsWith("image/"))continue;let S=new FileReader;S.onload=F=>{let I=A.name,$=F.target.result;i(I,$)},S.readAsDataURL(A)}},!1)},[]),l("div",{class:"gallery",children:[l("div",{class:"close-button",onClick:()=>a("ui","isUploadOpen",!1),children:"\u2716"}),l("h2",{children:"Pick Image"}),l("div",{ref:k,class:"dropbox",children:[l("label",{for:"upload-image-button",style:"display: inline",class:"download-button-label",children:"Upload"}),l("input",{id:"upload-image-button",style:"display: none;",type:"file",accept:"image/png, image/jpeg",ref:_,onChange:y,value:"Choose..."}),", Paste, or Drag & Drop here"]}),l("h2",{children:"Gallery"}),l("div",{class:"gallery-list-container",children:l(Wt,{...h})})]});function y(){if(!_.current||!_.current.files)return;let D=_.current.files;for(let w=0;w<D.length;w++){let B=D[w],x=new FileReader;x.onload=A=>{i(B.name,A.target.result)},x.readAsDataURL(B)}}}function C(h,_,k,y){return l("label",{children:[l("input",{type:"checkbox",checked:h[k],onChange:D=>{a(_,k,!h[k])}}),y]})}function v(h,_,k,y){return l("div",{class:"slider-caption",children:[l("input",{type:"range",list:"image-ticks",class:"slider",onChange:D,min:"-10",max:"10",step:"1",value:h[k]}),l("span",{children:y})]});function D(w){a(_,k,w.target.value)}}function b(h,_,k,y){return ga(k,(D,w)=>a(_,D,w),h[k],y)}}function ga(e,t,r,n){return l(V,{children:[...n.map(([a,o])=>{return l("label",{children:[l("input",{type:"radio",onChange:i,name:e,value:a,checked:a===r}),o]},a);function i(){t(e,a)}})]})}function fa(e,t){let r=new Image;r.addEventListener("load",()=>{let n=document.createElement("canvas");n.width=r.width,n.height=r.height,n.getContext("2d")?.drawImage(r,0,0),t(Dr(r))}),r.src=e}function Me(e){let t=[];return function(...r){for(let a=0;a<t.length;a++)if(t[a][0].length===r.length){let o=!0;for(let i=0;i<r.length;i++)if(t[a][0][i]!==r[i]){o=!1;break}if(o)return t[a][1]}let n=e.apply(void 0,r);return t.push([r,n]),t.length>20&&t.splice(0,20),n}}var ma=[["Eevee","eevee"],["Mario 3","mario-3"],["Megaman X","megaman_x"],["Earthbound","earthbound"],["Kirby","kirby"],["Mushrom","mushroom"],["Crono","crono"],["Ghost","ghost-smw"],["Mew","mew"],["Caped Mario","mario-cape"],["Link (NES)","link-nes"],["Pac-man Ghost","ghost"],["Link (SNES)","link"],["Mario (NES)","mario-1"],["Gannon","gannon"],["Ken","ken"],["Shyguy","shyguy"],["Squirtle","squirtle"],["Brachiosaur","brachiosaur"],["Sonic","sonic"],["Piranha Plant","smw-plant"]],$r="user-gallery";function Hr(){let e=ma.map(([o,i])=>[o,`./gallery/${i}.png`]),t=window.localStorage.getItem($r);t!==null&&(e=JSON.parse(t));function r(o,i){for(let d=0;d<e.length;d++)if(e[d][1]===i)return;e=[[o,i],...e],window.setTimeout(a,250),window.clarity?.("event","add-user-image")}function n(o){for(let i=0;i<e.length;i++)e[i][1]===o&&(e.splice(i,1),e=[...e])}function a(){window.localStorage.setItem($r,JSON.stringify(e))}return{add:r,remove:n,get current(){return e}}}var Ge=Hr(),Ur={display:{background:"url(#checkPattern)",grid:"auto",nudgeGrid:!0,planStyle:"none",refobj:"none"},image:{brightness:0,contrast:0,saturation:0,flip:!1,mirror:!1,descale:!0,dithering:"auto",transparency:"auto",keepOutline:!1},material:{colorMatch:"ictcp",nodupes:!1,palette:"perler-multimix",size:"perler",matchBlackAndWhite:!0},print:{paperSize:"letter",format:"step-by-step",imageSize:"actual",breakStrategy:"page"},threeD:{format:"3mf",heightScale:1},source:{displayName:Ge.current[0][0],uri:Ge.current[0][1],_decoded:void 0},ui:{isUploadOpen:!1,isPrintOpen:!1,is3dOpen:!1,isWelcomeOpen:!0,showLegend:!1,showSettings:!1,tourStage:void 0,helpTopic:void 0}};window.addEventListener("DOMContentLoaded",function(){let e=window.localStorage.getItem("props"),t;e===null?t=Ur:t=JSON.parse(e);try{pt(t,Ge,document.body)}catch(r){window.localStorage.clear(),console.error(r),t=Ur,pt(t,Ge,document.body)}});})();
 /*! Bundled license information:
 
 color-diff/lib/diff.js:
