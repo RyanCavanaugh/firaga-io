@@ -661,6 +661,149 @@ div.print-dialog img.pdf-logo {
     vertical-align: middle;
 }
 
+div.threeD-dialog {
+    animation: 0.2s ease-out 0s 1 printDialogAppear;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+div.threeD-dialog div.threeD-options {
+    display: flex;
+    justify-content: center;
+}
+
+@media (orientation: portrait) {
+    div.threeD-dialog div.threeD-options {
+        flex-direction: column;
+    }
+}
+
+@media (orientation: landscape) {
+    div.threeD-dialog div.threeD-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+div.threeD-dialog div.threeD-options div.threeD-setting-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin: 10px;
+    border: solid 1px #CCC;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+div.threeD-dialog div.threeD-setting-group span.description {
+    width: 0;
+    min-width: 90%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+div.threeD-dialog div.threeD-setting-group-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+div.threeD-dialog div.threeD-setting-group h1 {
+    text-align: center;
+    font-size: 140%;
+    margin: 0 0 15px 0;
+}
+
+div.threeD-dialog input[type="radio"] {
+    display: none;
+}
+
+div.threeD-dialog label div.option {
+    display: inline-block;
+    width: 65px;
+    padding: 10px;
+    border: solid 3px #AAA;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+div.threeD-dialog label div.option::selection {
+    border-width: 4px;
+}
+
+div.threeD-dialog label div.option h3 {
+    font-weight: normal;
+    font-size: 110%;
+    margin: 5px 0;
+}
+
+div.threeD-dialog span.format-icon {
+    display: block;
+    font-size: 32px;
+    height: 40px;
+}
+
+div.threeD-dialog input:checked+div.option {
+    background-color: #ADF;
+}
+
+div.threeD-dialog img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+div.threeD-dialog div.threeD-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+div.threeD-dialog div.threeD-buttons button {
+    display: inline;
+    font-size: 110%;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+div.threeD-dialog button.export {
+    order: 0;
+    background-color: #4CAF50;
+    color: white;
+}
+
+div.threeD-dialog button.export:hover {
+    background-color: #45a049;
+}
+
+div.threeD-dialog button.cancel {
+    order: 1;
+    background-color: #f44336;
+    color: white;
+}
+
+div.threeD-dialog button.cancel:hover {
+    background-color: #da190b;
+}
+
 label.download-button-label {
     padding: 3px;
     margin-left: 5px;

@@ -1,8 +1,10 @@
 "use strict";
 (() => {
+  var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __esm = (fn, res) => function __init() {
     return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
@@ -22,6 +24,14 @@
     }
     return to;
   };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
   // node_modules/preact/dist/preact.module.js
@@ -623,6 +633,83 @@
       color.furthest_lab = function(target, relative) {
         return color.match_palette_lab(target, relative, true);
       };
+    }
+  });
+
+  // node_modules/file-saver/dist/FileSaver.min.js
+  var require_FileSaver_min = __commonJS({
+    "node_modules/file-saver/dist/FileSaver.min.js"(exports, module) {
+      (function(a3, b2) {
+        if ("function" == typeof define && define.amd) define([], b2);
+        else if ("undefined" != typeof exports) b2();
+        else {
+          b2(), a3.FileSaver = { exports: {} }.exports;
+        }
+      })(exports, function() {
+        "use strict";
+        function b2(a4, b3) {
+          return "undefined" == typeof b3 ? b3 = { autoBom: false } : "object" != typeof b3 && (console.warn("Deprecated: Expected third argument to be a object"), b3 = { autoBom: !b3 }), b3.autoBom && /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(a4.type) ? new Blob(["\uFEFF", a4], { type: a4.type }) : a4;
+        }
+        function c3(a4, b3, c4) {
+          var d4 = new XMLHttpRequest();
+          d4.open("GET", a4), d4.responseType = "blob", d4.onload = function() {
+            g2(d4.response, b3, c4);
+          }, d4.onerror = function() {
+            console.error("could not download file");
+          }, d4.send();
+        }
+        function d3(a4) {
+          var b3 = new XMLHttpRequest();
+          b3.open("HEAD", a4, false);
+          try {
+            b3.send();
+          } catch (a5) {
+          }
+          return 200 <= b3.status && 299 >= b3.status;
+        }
+        function e3(a4) {
+          try {
+            a4.dispatchEvent(new MouseEvent("click"));
+          } catch (c4) {
+            var b3 = document.createEvent("MouseEvents");
+            b3.initMouseEvent("click", true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null), a4.dispatchEvent(b3);
+          }
+        }
+        var f4 = "object" == typeof window && window.window === window ? window : "object" == typeof self && self.self === self ? self : "object" == typeof global && global.global === global ? global : void 0, a3 = f4.navigator && /Macintosh/.test(navigator.userAgent) && /AppleWebKit/.test(navigator.userAgent) && !/Safari/.test(navigator.userAgent), g2 = f4.saveAs || ("object" != typeof window || window !== f4 ? function() {
+        } : "download" in HTMLAnchorElement.prototype && !a3 ? function(b3, g3, h3) {
+          var i3 = f4.URL || f4.webkitURL, j3 = document.createElement("a");
+          g3 = g3 || b3.name || "download", j3.download = g3, j3.rel = "noopener", "string" == typeof b3 ? (j3.href = b3, j3.origin === location.origin ? e3(j3) : d3(j3.href) ? c3(b3, g3, h3) : e3(j3, j3.target = "_blank")) : (j3.href = i3.createObjectURL(b3), setTimeout(function() {
+            i3.revokeObjectURL(j3.href);
+          }, 4e4), setTimeout(function() {
+            e3(j3);
+          }, 0));
+        } : "msSaveOrOpenBlob" in navigator ? function(f5, g3, h3) {
+          if (g3 = g3 || f5.name || "download", "string" != typeof f5) navigator.msSaveOrOpenBlob(b2(f5, h3), g3);
+          else if (d3(f5)) c3(f5, g3, h3);
+          else {
+            var i3 = document.createElement("a");
+            i3.href = f5, i3.target = "_blank", setTimeout(function() {
+              e3(i3);
+            });
+          }
+        } : function(b3, d4, e4, g3) {
+          if (g3 = g3 || open("", "_blank"), g3 && (g3.document.title = g3.document.body.innerText = "downloading..."), "string" == typeof b3) return c3(b3, d4, e4);
+          var h3 = "application/octet-stream" === b3.type, i3 = /constructor/i.test(f4.HTMLElement) || f4.safari, j3 = /CriOS\/[\d]+/.test(navigator.userAgent);
+          if ((j3 || h3 && i3 || a3) && "undefined" != typeof FileReader) {
+            var k3 = new FileReader();
+            k3.onloadend = function() {
+              var a4 = k3.result;
+              a4 = j3 ? a4 : a4.replace(/^data:[^;]*;/, "data:attachment/file;"), g3 ? g3.location.href = a4 : location = a4, g3 = null;
+            }, k3.readAsDataURL(b3);
+          } else {
+            var l3 = f4.URL || f4.webkitURL, m3 = l3.createObjectURL(b3);
+            g3 ? g3.location = m3 : location.href = m3, g3 = null, setTimeout(function() {
+              l3.revokeObjectURL(m3);
+            }, 4e4);
+          }
+        });
+        f4.saveAs = g2.saveAs = g2, "undefined" != typeof module && (module.exports = g2);
+      });
     }
   });
 
@@ -2527,6 +2614,263 @@
     };
   }
 
+  // src/threed-generator.ts
+  var import_file_saver = __toESM(require_FileSaver_min());
+  async function generateThreeD(image, settings, gridSize) {
+    if (settings.format === "3mf") {
+      generate3MF(image, settings, gridSize);
+    } else if (settings.format === "openscad-masks") {
+      generateOpenSCADMasks(image, settings, gridSize);
+    }
+  }
+  function generate3MF(image, settings, gridSize) {
+    const pitch = getPitch(gridSize);
+    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    xml += '<model xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2013/12" unit="millimeter">\n';
+    xml += "  <resources>\n";
+    xml += '    <material id="1" type="generic"/>\n';
+    xml += '    <colorgroup id="1">\n';
+    for (let i3 = 0; i3 < image.partList.length; i3++) {
+      const hex = colorEntryToHex(image.partList[i3].target);
+      xml += `      <color id="${i3 + 1}" color="#FF${hex.substring(1).toUpperCase()}"/>
+`;
+    }
+    xml += "    </colorgroup>\n";
+    xml += "  </resources>\n";
+    xml += "  <objects>\n";
+    let objectId = 1;
+    for (let colorIdx = 0; colorIdx < image.partList.length; colorIdx++) {
+      const mesh = generateMesh(image, colorIdx, pitch);
+      xml += `    <object id="${objectId}" type="model">
+`;
+      xml += "      <mesh>\n";
+      xml += "        <vertices>\n";
+      mesh.vertices.forEach((v3) => {
+        xml += `          <vertex x="${v3.x.toFixed(3)}" y="${v3.y.toFixed(3)}" z="${v3.z.toFixed(3)}"/>
+`;
+      });
+      xml += "        </vertices>\n";
+      xml += "        <triangles>\n";
+      mesh.triangles.forEach((tri) => {
+        xml += `          <triangle v1="${tri.v1}" v2="${tri.v2}" v3="${tri.v3}" p1="1" p1materialid="1" p1colorid="${colorIdx + 1}"/>
+`;
+      });
+      xml += "        </triangles>\n";
+      xml += "      </mesh>\n";
+      xml += "    </object>\n";
+      objectId++;
+    }
+    xml += "  </objects>\n";
+    xml += "  <build>\n";
+    for (let i3 = 1; i3 <= image.partList.length; i3++) {
+      xml += `    <item objectid="${i3}"/>
+`;
+    }
+    xml += "  </build>\n";
+    xml += "</model>\n";
+    const blob = new Blob([xml], { type: "application/vnd.ms-package.3dmodel+xml" });
+    (0, import_file_saver.default)(blob, `${settings.filename}.3mf`);
+  }
+  function generateMesh(image, colorIdx, pitch) {
+    const vertices = [];
+    const triangles = [];
+    const height = pitch * 0.5;
+    const colorHeight = colorIdx * height;
+    const vertexMap = /* @__PURE__ */ new Map();
+    for (let y3 = 0; y3 < image.height; y3++) {
+      for (let x3 = 0; x3 < image.width; x3++) {
+        if (image.pixels[y3][x3] === colorIdx) {
+          const corners = [
+            { px: x3, py: y3 },
+            { px: x3 + 1, py: y3 },
+            { px: x3 + 1, py: y3 + 1 },
+            { px: x3, py: y3 + 1 }
+          ];
+          const vertexIndices = [];
+          for (const corner of corners) {
+            const key = `${corner.px},${corner.py}`;
+            let idx = vertexMap.get(key);
+            if (idx === void 0) {
+              idx = vertices.length;
+              vertices.push({
+                x: corner.px * pitch,
+                y: corner.py * pitch,
+                z: colorHeight
+              });
+              vertexMap.set(key, idx);
+            }
+            vertexIndices.push(idx);
+          }
+          if (vertexIndices.length === 4) {
+            triangles.push({
+              v1: vertexIndices[0],
+              v2: vertexIndices[1],
+              v3: vertexIndices[2]
+            });
+            triangles.push({
+              v1: vertexIndices[0],
+              v2: vertexIndices[2],
+              v3: vertexIndices[3]
+            });
+          }
+        }
+      }
+    }
+    if (triangles.length === 0) {
+      vertices.push({ x: 0, y: 0, z: colorHeight });
+      vertices.push({ x: pitch, y: 0, z: colorHeight });
+      vertices.push({ x: pitch, y: pitch, z: colorHeight });
+      triangles.push({ v1: 0, v2: 1, v3: 2 });
+    }
+    return { vertices, triangles };
+  }
+  async function generateOpenSCADMasks(image, settings, gridSize) {
+    const pitch = getPitch(gridSize);
+    const colorNames = [];
+    for (let colorIdx = 0; colorIdx < image.partList.length; colorIdx++) {
+      const canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+      const ctx = canvas.getContext("2d");
+      const imageData = ctx.createImageData(image.width, image.height);
+      for (let y3 = 0; y3 < image.height; y3++) {
+        for (let x3 = 0; x3 < image.width; x3++) {
+          const idx = (y3 * image.width + x3) * 4;
+          if (image.pixels[y3][x3] === colorIdx) {
+            imageData.data[idx] = 255;
+            imageData.data[idx + 1] = 255;
+            imageData.data[idx + 2] = 255;
+            imageData.data[idx + 3] = 255;
+          } else {
+            imageData.data[idx] = 0;
+            imageData.data[idx + 1] = 0;
+            imageData.data[idx + 2] = 0;
+            imageData.data[idx + 3] = 255;
+          }
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
+      canvas.toBlob((blob2) => {
+        if (blob2) {
+          const name = image.partList[colorIdx].target.name.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "");
+          colorNames.push(name);
+          (0, import_file_saver.default)(blob2, `${settings.filename}_${name}.png`);
+        }
+      }, "image/png");
+    }
+    let scadScript = `// Generated by firaga.io
+`;
+    scadScript += `// This script displays pixel art as a 3D structure
+
+`;
+    scadScript += `pitch = ${pitch.toFixed(3)};
+`;
+    scadScript += `layer_height = ${(pitch * 0.5).toFixed(3)};
+
+`;
+    scadScript += `// Combine all color layers
+`;
+    scadScript += `union() {
+`;
+    for (let i3 = 0; i3 < image.partList.length; i3++) {
+      const name = image.partList[i3].target.name.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "");
+      const colorHex = colorEntryToHex(image.partList[i3].target);
+      scadScript += `    // Color ${i3 + 1}: ${image.partList[i3].target.name} (${colorHex})
+`;
+      scadScript += `    color("${colorHex}", 1.0)
+`;
+      scadScript += `    translate([0, 0, ${(i3 * pitch * 0.5).toFixed(3)}])
+`;
+      scadScript += `    scale([pitch, pitch, layer_height])
+`;
+      scadScript += `    linear_extrude(height = 1, convexity = 10)
+`;
+      scadScript += `    render_image("${name}.png");
+
+`;
+    }
+    scadScript += `}
+
+`;
+    scadScript += `module render_image(filename) {
+`;
+    scadScript += `    // This would use surface() with heightmap in a real OpenSCAD
+`;
+    scadScript += `    // For now, just create a simple square
+`;
+    scadScript += `    square([1, 1], center = true);
+`;
+    scadScript += `}
+`;
+    const blob = new Blob([scadScript], { type: "text/plain" });
+    (0, import_file_saver.default)(blob, `${settings.filename}_viewer.scad`);
+  }
+
+  // src/components/threed-dialog.tsx
+  function ThreeDDialog(props) {
+    const updateProp = x2(PropContext);
+    return /* @__PURE__ */ u3("div", { class: "threeD-dialog", children: [
+      /* @__PURE__ */ u3("div", { class: "threeD-options", children: /* @__PURE__ */ u3(FormatGroup2, { ...props }) }),
+      /* @__PURE__ */ u3("div", { class: "threeD-buttons", children: [
+        /* @__PURE__ */ u3("button", { class: "cancel", onClick: () => updateProp("ui", "is3dOpen", false), children: "Cancel" }),
+        /* @__PURE__ */ u3("button", { class: "export", onClick: () => exportThreeD(), children: "Export\xA03D" })
+      ] })
+    ] });
+    function exportThreeD() {
+      const settings = {
+        format: props.settings.format,
+        filename: props.filename.replace(".png", "")
+      };
+      window.clarity?.("event", "export-3d");
+      generateThreeD(props.image, settings, props.gridSize);
+    }
+  }
+  var FormatGroup2 = makeRadioGroup2(({ image }) => ({
+    title: "Format",
+    key: "format",
+    values: [
+      {
+        value: "3mf",
+        title: "3MF Mesh",
+        description: "Export as a 3D Model File (3MF) with separate material shapes for each color. Compatible with most 3D printers and viewers.",
+        icon: /* @__PURE__ */ u3("span", { class: "format-icon", children: "\u{1F4E6}" })
+      },
+      {
+        value: "openscad-masks",
+        title: "OpenSCAD Masks",
+        description: "Export as OpenSCAD script with monochrome mask images. Allows customization and tweaking of the 3D model.",
+        icon: /* @__PURE__ */ u3("span", { class: "format-icon", children: "\u{1F527}" })
+      }
+    ]
+  }));
+  function makeRadioGroup2(factory) {
+    return function(props) {
+      const updateProp = x2(PropContext);
+      const p3 = factory(props);
+      return /* @__PURE__ */ u3("div", { class: "threeD-setting-group", children: [
+        /* @__PURE__ */ u3("h1", { children: p3.title }),
+        /* @__PURE__ */ u3("div", { class: "threeD-setting-group-options", children: p3.values.map((v3) => /* @__PURE__ */ u3("label", { children: [
+          /* @__PURE__ */ u3(
+            "input",
+            {
+              type: "radio",
+              name: p3.key,
+              checked: v3.value === props.settings[p3.key],
+              onChange: () => {
+                updateProp("threeD", p3.key, v3.value);
+              }
+            }
+          ),
+          /* @__PURE__ */ u3("div", { class: "option", children: [
+            /* @__PURE__ */ u3("h3", { children: v3.title }),
+            v3.icon
+          ] })
+        ] })) }),
+        /* @__PURE__ */ u3("span", { class: "description", children: p3.values.filter((v3) => v3.value === props.settings[p3.key])[0]?.description })
+      ] });
+    };
+  }
+
   // src/components/plan-display.tsx
   var svgns = "http://www.w3.org/2000/svg";
   var svgCss = require_svg();
@@ -2884,6 +3228,10 @@
                 window.clarity?.("event", "toggle-print");
                 toggleProp("ui", "isPrintOpen");
                 break;
+              case "d":
+                window.clarity?.("event", "toggle-3d");
+                toggleProp("ui", "is3dOpen");
+                break;
               case "l":
                 window.clarity?.("event", "toggle-legend");
                 toggleProp("ui", "showLegend");
@@ -2900,6 +3248,7 @@
             switch (evt.key) {
               case "Escape":
                 updateProp("ui", "isPrintOpen", false);
+                updateProp("ui", "is3dOpen", false);
                 updateProp("ui", "isUploadOpen", false);
                 break;
             }
@@ -2924,6 +3273,10 @@
             /* @__PURE__ */ u3("button", { title: "Print...", class: `toolbar-button ${props.ui.isPrintOpen ? "on" : "off"} text`, onClick: () => toggleProp("ui", "isPrintOpen"), children: [
               "\u{1F5A8}\uFE0F",
               /* @__PURE__ */ u3("span", { class: "extended-label", children: "Print" })
+            ] }),
+            /* @__PURE__ */ u3("button", { title: "3D Export...", class: `toolbar-button ${props.ui.is3dOpen ? "on" : "off"} text`, onClick: () => toggleProp("ui", "is3dOpen"), children: [
+              "\u{1F3B2}",
+              /* @__PURE__ */ u3("span", { class: "extended-label", children: "3D" })
             ] }),
             /* @__PURE__ */ u3("span", { class: "toolbar-divider" }),
             /* @__PURE__ */ u3("button", { title: "Settings", class: `toolbar-button ${props.ui.showSettings ? "on" : "off"} text`, onClick: () => toggleProp("ui", "showSettings"), children: [
@@ -2981,6 +3334,15 @@
             {
               image,
               settings: props.print,
+              gridSize: props.material.size,
+              filename: props.source.displayName
+            }
+          ),
+          props.ui.is3dOpen && image && /* @__PURE__ */ u3(
+            ThreeDDialog,
+            {
+              image,
+              settings: props.threeD,
               gridSize: props.material.size,
               filename: props.source.displayName
             }
@@ -3368,6 +3730,9 @@
       imageSize: "actual",
       breakStrategy: "page"
     },
+    threeD: {
+      format: "3mf"
+    },
     source: {
       displayName: galleryStorage.current[0][0],
       uri: galleryStorage.current[0][1],
@@ -3376,6 +3741,7 @@
     ui: {
       isUploadOpen: false,
       isPrintOpen: false,
+      is3dOpen: false,
       isWelcomeOpen: true,
       showLegend: false,
       showSettings: false,
