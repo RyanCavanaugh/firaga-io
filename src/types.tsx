@@ -62,6 +62,10 @@ export type PrintProps = {
     breakStrategy: PrintSettings["breakStrategy"];
 };
 
+export type Export3DProps = {
+    format: "3mf" | "openscad";
+};
+
 export type DisplayProps = RadioSettings<typeof DisplaySettings> & {
     nudgeGrid: boolean;
 };
@@ -71,6 +75,7 @@ export type AppProps = {
     print: PrintProps;
     display: DisplayProps;
     image: ImageProps;
+    export3d: Export3DProps;
     source: {
         uri: string;
         displayName: string;
@@ -80,6 +85,7 @@ export type AppProps = {
         isWelcomeOpen: boolean;
         isUploadOpen: boolean;
         isPrintOpen: boolean;
+        is3DOpen: boolean;
         showLegend: boolean;
         showSettings: boolean;
         tourStage: undefined | number;
